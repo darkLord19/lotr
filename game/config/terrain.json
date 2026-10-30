@@ -7,7 +7,7 @@
     "large_wavelength_m": [350.0, 1800.0],
     "large_amp_m": 4.0,
     "small_wavelength_m": [25.0, 140.0],
-    "small_amp_m": 0.7,
+    "small_amp_m": 0.4,
     "barrow_amp_gain": 3.0,
     "barrow_sigma_m": 1400.0
   },
@@ -39,5 +39,5 @@
     "field_ring": [0.45, 1.0],
     "rock_slope": [0.45, 0.9]
   },
-  "preview": {"hillshade_step": 4, "vertical_exaggeration": 5.0}
+  "preview": {"hillshade_step": 4, "vertical_exaggeration": 3.0}
 }

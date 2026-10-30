@@ -38,8 +38,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: 
 - [ ] M1-T08 — Player controller and camera
   - notes: 
-- [ ] M1-T09 — Character creation and origins
-  - notes: 
+- [x] M1-T09 — Character creation and origins
+  - notes: origins/m1.json (5), background_traits.json, appearance.json, core/new_game.gd, ui/char_creation/; test_new_game.gd 5/5 pass; capture docs/reports/m1_creation/creation_screen.png. First-play-frame captures for 2 origins pending (needs player/world scene, M1-T08).
 - [ ] M1-T10 — Off-screen simulation and roster NPC bodies
   - notes: 
 - [~] M1-T11 — Black Riders, stealth and soft failure — logic + tests done; scene test, vegetation volumes, HUD eye icon, rider screech audio pending (need terrain/rendering)

@@ -13,7 +13,7 @@
       {"item": "copper_pennies", "count": 12}
     ],
     "reputation_offset": {"shire": 8},
-    "skill_bonus": {"skill": "foraging", "amount": 10},
+    "skill_bonus": {"skill": "woodcraft", "amount": 10},
     "known_by": [
       {"npc": "gaffer_gamgee", "memory": "A Hobbiton lad who has helped in the Bag End gardens. The Gaffer thinks him sound, if a bit lax with the hoe.", "disposition": 4, "days_ago": 2},
       {"npc": "sam", "memory": "Sam has worked beside you in the Bag End garden for years and counts you a friend.", "disposition": 5, "days_ago": 1}
@@ -73,7 +73,7 @@
       {"item": "copper_pennies", "count": 18}
     ],
     "reputation_offset": {"bree": 8},
-    "skill_bonus": {"skill": "animal_handling", "amount": 10},
+    "skill_bonus": {"skill": "woodcraft", "amount": 10},
     "known_by": [
       {"npc": "barliman_butterbur", "memory": "Barliman's hired hand in the Pony's yard. Reliable with the beasts, though his mind wanders from errands.", "disposition": 3, "days_ago": 0},
       {"npc": "nob", "memory": "Nob works the Pony's doors and shares the yard with you; the two of you swap gossip over the evening chores.", "disposition": 5, "days_ago": 0}

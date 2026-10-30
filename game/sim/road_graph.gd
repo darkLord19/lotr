@@ -12,6 +12,8 @@ const DEFAULT_REGION_PATH: String = "res://content/regions/eriador_west.json"
 # Region edges are [a, b, kind] with an optional 4th element overriding the length (metres),
 # e.g. for a winding road whose polyline is much longer than the straight line.
 const EDGE_LENGTH_INDEX: int = 3
+# Within this fraction of an edge end a position counts as "at the node" (float noise guard).
+const NODE_SNAP_T: float = 1e-6
 
 var region_id: String = ""
 # poi id -> Vector3 (y is 0 here; terrain height is a seam resolved by whoever places a body)
@@ -189,6 +191,10 @@ func locate(r: Dictionary, s: float) -> Dictionary:
 		i += 1
 	var seg_len: float = float(cum[i]) - float(cum[i - 1])
 	var t: float = (s - float(cum[i - 1])) / seg_len if seg_len > 0.0 else 0.0
+	if t <= NODE_SNAP_T:
+		return {"poi": nodes[i - 1], "pos": poi_pos(str(nodes[i - 1]))}
+	if t >= 1.0 - NODE_SNAP_T:
+		return {"poi": nodes[i], "pos": poi_pos(str(nodes[i]))}
 	return {"edge": [nodes[i - 1], nodes[i]], "t": t, "pos": edge_pos(str(nodes[i - 1]), str(nodes[i]), t)}
 
 

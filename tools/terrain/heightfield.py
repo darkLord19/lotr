@@ -179,7 +179,7 @@ def build(region: dict | None = None, cfg: dict | None = None, seed: int | None 
     tx = _ss(1 - np.minimum(xs, (W - 1) * res - xs) / ec["width_m"])
     tz = _ss(1 - np.minimum(zs, (H - 1) * res - zs) / ec["width_m"])
     ridge = tx + tz - tx * tz
-    ridge_noise = 1.0 + ec["noise_gain"] * fft_noise(shape, rng, (150.0, 900.0), res)
+    ridge_noise = np.clip(1.0 + ec["noise_gain"] * fft_noise(shape, rng, (150.0, 900.0), res), 0.5, 1.6)
     h += ec["height_m"] * ridge * ridge_noise * (ridge > 0)
     del tx, tz, ridge, ridge_noise
 
