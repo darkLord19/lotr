@@ -8,8 +8,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: layout, .gitignore, .gitattributes (LFS patterns listed by `git lfs track`), verify.sh exits 0.
 - [x] M0-T03 — Godot project and test framework
   - notes: GUT 9.6.1 (copied from bitwes/Gut via git proxy). `tools/test.sh` 2/2 pass; broken test -> exit 1; boot prints BOOT_OK, no ERROR. Autoload scripts have NO class_name (Godot errors when a class_name hides an autoload) - logged in REVIEW.md.
-- [ ] M0-T04 — Capture tool (how the agent sees the game)
-  - notes: 
+- [x] M0-T04 — Capture tool (how the agent sees the game)
+  - notes: `tools/capture.sh res://tests/scenes/capture_test.tscn build/cap_test.png` exit 0, 2560x1440, cube visible and lit (viewed). In the Linux cloud it runs under xvfb + mesa lavapipe (software Vulkan, `apt install mesa-vulkan-drivers xvfb`); on the Mac it runs windowed with Metal. Software rendering is slow, so performance work can't be judged here.
 - [ ] M0-T05 — Content schemas and validator
   - notes: 
 - [ ] M0-T06 — GameDate and WorldClock
