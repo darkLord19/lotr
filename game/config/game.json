@@ -1,4 +1,14 @@
 {
-  "clock": {"minutes_per_second": 0.5, "start_date": "3018-09-22T08:00"},
-  "save": {"autosave_game_hours": 6, "autosave_keep": 3}
+  "clock": {
+    "minutes_per_second": 0.5,
+    "start_date": "3018-09-22T08:00"
+  },
+  "save": {
+    "autosave_game_hours": 6,
+    "autosave_keep": 3
+  },
+  "new_game": {
+    "region": "eriador_west",
+    "name_max_length": 24
+  }
 }

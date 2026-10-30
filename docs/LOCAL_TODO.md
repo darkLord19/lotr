@@ -14,3 +14,6 @@ Run with LIVE_LLM=1 and save outputs to `docs/reports/m0_dialogue.md` (see PLAN 
 2. same NPC on `--date=3018-09-20`: must NOT know about riders (date filter)
 3. `--say` x2 then re-run with `--keep-memory`: memory summary persists; also exercise offline fallback by unsetting the key.
 Also M1-T13 live probes (Gaffer 09-24, Butterbur 09-20, Maggot rumour, Strider 09-29, Gandalf).
+
+## M1-T03 Terrain3D (deferred)
+Terrain3D release binaries are not downloadable in the cloud container (GitHub release assets blocked) and building it from source was not done here. The cloud session used the PLAN §8 fallback: chunked MeshInstance3D terrain generated from the heightmap (`world/terrain_chunks.gd`). On the Mac: download the Terrain3D release matching your Godot into `game/addons/terrain_3d`, enable it, and import `build/terrain/*` (regenerate with `tools/terrain/build_heightmap.py`) if you prefer it over the fallback.
