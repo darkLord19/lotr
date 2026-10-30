@@ -12,6 +12,7 @@ func before_each() -> void:
 
 func after_each() -> void:
 	WorldState.reset()
+	WorldState.poi_info = {}
 	WorldClock.now = saved_now
 
 

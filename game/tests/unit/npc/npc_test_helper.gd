@@ -7,6 +7,7 @@ const NPC: String = "barliman_butterbur"
 
 static func reset_world(date: String) -> void:
 	WorldState.reset()
+	WorldState.poi_info = {}  # reset() keeps world geometry; tests register their own
 	WorldClock.now = GameDate.parse(date)
 	WorldState.spawn_entity(WorldState.PLAYER_ID, "player", "prancing_pony", "", {"race": "hobbit", "origin": "the Shire"})
 	WorldState.spawn_entity(NPC, "npc", "prancing_pony")
