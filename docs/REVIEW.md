@@ -21,3 +21,4 @@
 - Dwarves rumour: plan says "going east"; the book (FotR I.2) may say west. `dwarves_going_east` is `verify: true`.
 - No west-edge POI exists for Gildor's company to leave the map; they walk to `woody_end_camp` and stay (`gildor_moves_on`, verify).
 - Mode B: the party idles at `bree_west_gate` (step `frodo_at_bree_west_gate`) until `party_arrives_pony` fires; riders and Bill Ferny steps in Bree depend on it.
+- **M0-T10:** `godot -s` SceneTree scripts can't see autoloads, so `tools/talk.sh` runs `res://tools/talk_cli.tscn` instead of a -s script. `WorldState.reset()` does not clear `poi_info` (tests must clear it). Knowledge granted by a timeline add_knowledge effect counts as visible regardless of known_from.

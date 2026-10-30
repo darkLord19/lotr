@@ -74,3 +74,20 @@ def test_calendar_lookup() -> None:
     d = dt.datetime(3019, 1, 1)
     seen = {validate.shire_date(d + dt.timedelta(days=i), cal) for i in range(365)}
     assert len(seen) == 365
+
+
+def test_dialogue_fallback_checked(tmp_path: Path) -> None:
+    root = tmp_path / "content"
+    shutil.copytree(validate.DEFAULT_ROOT, root)
+    fb = root / "dialogue_fallbacks" / "barliman_butterbur.json"
+    assert fb.exists()
+    data = json.loads(fb.read_text())
+    data["greetings"].append({"text": "late", "from": "3018-02-30"})
+    fb.write_text(json.dumps(data))
+    rep = validate.validate(root, validate.DEFAULT_SCHEMAS)
+    assert any("does not parse" in e and "dialogue_fallbacks" in e for e in rep.errors)
+    data["greetings"].pop()
+    fb.write_text(json.dumps(data))
+    fb.rename(fb.with_name("renamed.json"))
+    rep = validate.validate(root, validate.DEFAULT_SCHEMAS)
+    assert any("file name must match npc id" in e for e in rep.errors)
