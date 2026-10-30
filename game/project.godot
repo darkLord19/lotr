@@ -1,0 +1,36 @@
+config_version=5
+
+[application]
+
+config/name="Middle-earth"
+run/main_scene="res://world/boot.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+Config="*res://autoload/config.gd"
+EventBus="*res://autoload/event_bus.gd"
+WorldClock="*res://autoload/world_clock.gd"
+WorldState="*res://autoload/world_state.gd"
+Timeline="*res://autoload/timeline.gd"
+SaveSystem="*res://autoload/save_system.gd"
+LLMGateway="*res://autoload/llm_gateway.gd"
+Capture="*res://autoload/capture.gd"
+
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/resizable=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.macos="metal"

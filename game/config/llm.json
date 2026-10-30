@@ -1,0 +1,11 @@
+{
+  "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+  "tiers": {
+    "key_figure": {"model": "anthropic/claude-opus-4.5", "max_tokens": 600, "temperature": 0.8},
+    "standard": {"model": "anthropic/claude-sonnet-4.5", "max_tokens": 400, "temperature": 0.8},
+    "summariser": {"model": "anthropic/claude-sonnet-4.5", "max_tokens": 400, "temperature": 0.2}
+  },
+  "timeout_s": 25,
+  "retries": 1,
+  "app_title": "Middle-earth (personal)"
+}

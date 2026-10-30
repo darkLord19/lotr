@@ -6,8 +6,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: Godot 4.7.2.stable (tools/bin/godot, Linux build, git-ignored); Blender 4.0.2 (apt); git-lfs 3.4.1; .venv with numpy/pillow/jsonschema/opensimplex/scipy/requests/pytest OK. On the Mac: `brew install --cask godot blender`, then symlink into tools/bin.
 - [x] M0-T02 — Repository scaffold
   - notes: layout, .gitignore, .gitattributes (LFS patterns listed by `git lfs track`), verify.sh exits 0.
-- [ ] M0-T03 — Godot project and test framework
-  - notes: 
+- [x] M0-T03 — Godot project and test framework
+  - notes: GUT 9.6.1 (copied from bitwes/Gut via git proxy). `tools/test.sh` 2/2 pass; broken test -> exit 1; boot prints BOOT_OK, no ERROR. Autoload scripts have NO class_name (Godot errors when a class_name hides an autoload) - logged in REVIEW.md.
 - [ ] M0-T04 — Capture tool (how the agent sees the game)
   - notes: 
 - [ ] M0-T05 — Content schemas and validator
