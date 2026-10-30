@@ -22,3 +22,6 @@ Terrain3D release binaries are not downloadable in the cloud container (GitHub r
 - M1-T11: scene test (player 10 m off-road crouched in bushes vs on road), vegetation concealment volumes, HUD eye icon, rider screech/heartbeat audio hooks. The scene layer supplies has_line_of_sight, road_distance_m and concealment to RiderPerception.
 - M1-T12: Tab inventory UI, trading UI, HUD (hunger, fatigue, eye, date) capture; `place_world.py` must emit forage nodes ({id,item,pos,yield,zone}); wire `Skills.prompt_lines()` into prompt_builder; controller must call Survival.add_exertion and keep a ref to Survival (call detach() on discard).
 - Rumour network must resolve the `{player}` placeholder in rumour `player_found_senseless` from flag `rumour_subject.player_found_senseless`.
+
+## M1-T10 scene work still to do
+Register OffscreenSim as an autoload (bind(WorldClock, WorldState, Timeline, graph), load_tracks() after content), npc_body spawner (600 m spawn / 700 m despawn, NavigationAgent3D; use set_body_driven/report_body_progress), terrain height for y, villager spawner + villager definitions content, wire OffscreenSim.serialise/deserialise into SaveSystem, capture to docs/reports/m1_sim/ (--date=3018-09-24T16:00 at the riders' road).

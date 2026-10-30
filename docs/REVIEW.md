@@ -22,3 +22,10 @@
 - No west-edge POI exists for Gildor's company to leave the map; they walk to `woody_end_camp` and stay (`gildor_moves_on`, verify).
 - Mode B: the party idles at `bree_west_gate` (step `frodo_at_bree_west_gate`) until `party_arrives_pony` fires; riders and Bill Ferny steps in Bree depend on it.
 - **M0-T10:** `godot -s` SceneTree scripts can't see autoloads, so `tools/talk.sh` runs `res://tools/talk_cli.tscn` instead of a -s script. `WorldState.reset()` does not clear `poi_info` (tests must clear it). Knowledge granted by a timeline add_knowledge effect counts as visible regardless of known_from.
+
+## M1-T10 off-screen sim (logic; scene work pending)
+- **Speeds are in compressed-map metres per game minute** (`game/config/sim.json`: walk max 12 / run 24, ride 30 / 45). Canon itinerary times on the ~1:25 map imply 0.2-22 m/min; the fastest legs (riders Stock -> Crickhollow 22.6 m/min, Khamul Three-Farthing -> Bagshot Row 14.7) fit the ride cap. A 3D body following the abstract path will look very slow for most legs (e.g. Khamul: 0.64 m/min over 3 days); the spawner should not use these numbers as body walk speed.
+- **Abstract origins**: `bombadil_house` is off-graph, so the party "emerges" at the nearest routable POI (`old_forest_edge`) when `frodo_leaves_bombadil` fires and walks the road to the West-gate. Alternative: keep them hidden and let the Timeline place them at the gate.
+- **Mode-B hold** is parked at `bree_waiting_point` by the sim (config `sim.hold_points`), not by the content: the itinerary has the party idle at `bree_west_gate`; the sim stops them one node earlier while `party_arrives_pony` would wait for the player.
+- **Timeline guard**: an event with a `move_entity` effect cannot fire while its target is on the road (any mode). A character mid-leg for an unrelated trip would block such an event until it arrives.
+- Real game starts 09-22 08:00 but itineraries start 09-20: the Timeline fires those 09-20 `stay` steps with a 2-day "delay" on the first minute. Nothing depends on them today, but a `depends_on` on one would shift by 2 days.

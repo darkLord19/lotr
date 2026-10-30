@@ -248,7 +248,7 @@ def _blur(h: np.ndarray, sigma_m: float, res: float) -> np.ndarray:
     f = max(1, int(sigma_m / res / 4))
     small = h[: h.shape[0] // f * f, : h.shape[1] // f * f].reshape(h.shape[0] // f, f, h.shape[1] // f, f).mean(axis=(1, 3))
     small = ndi.gaussian_filter(small, sigma_m / res / f, mode="nearest")
-    full = ndi.zoom(small, f, order=1, mode="nearest")
+    full = ndi.zoom(small, f, order=3, mode="nearest", grid_mode=True)
     out = np.empty(h.shape, np.float32)
     hh, ww = min(h.shape[0], full.shape[0]), min(h.shape[1], full.shape[1])
     out[:] = full[-1, -1]

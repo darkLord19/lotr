@@ -23,6 +23,8 @@ var _settlement: Dictionary = {}
 # node id -> Array of {"to": String, "len": float, "kind": String}
 var _adj: Dictionary = {}
 var _route_cache: Dictionary = {}
+# settlement id -> {"faction": String, "center": Vector3, "radius": float}
+var _settlements: Dictionary = {}
 
 
 func load_region(path: String = DEFAULT_REGION_PATH) -> bool:
@@ -42,6 +44,12 @@ func load_dict(region: Dictionary) -> void:
 	_settlement = {}
 	_adj = {}
 	_route_cache = {}
+	_settlements = {}
+	for raw: Variant in region.get("settlements", []):
+		var st: Dictionary = raw
+		var c: Array = st.get("center", [0, 0])
+		_settlements[str(st.get("id", ""))] = {"faction": str(st.get("faction", "")),
+				"center": Vector3(float(c[0]), 0.0, float(c[1])), "radius": float(st.get("radius", 0.0))}
 	for raw: Variant in region.get("pois", []):
 		var p: Dictionary = raw
 		var a: Array = p.get("pos", [0, 0, 0])
@@ -106,6 +114,21 @@ func edge_length(a: String, b: String) -> float:
 		if (e as Dictionary)["to"] == b:
 			return float((e as Dictionary)["len"])
 	return -1.0
+
+
+func settlement_info(id: String) -> Dictionary:
+	return (_settlements.get(id, {}) as Dictionary).duplicate()
+
+
+# Settlements whose edge is within `radius` metres of `pos` (horizontal distance).
+func settlements_near(pos: Vector3, radius: float) -> Array[String]:
+	var out: Array[String] = []
+	for id: String in _settlements:
+		var st: Dictionary = _settlements[id]
+		var c: Vector3 = st["center"]
+		if Vector2(pos.x, pos.z).distance_to(Vector2(c.x, c.z)) - float(st["radius"]) <= radius:
+			out.append(id)
+	return out
 
 
 # Closest routable, non-abstract POI; where a character that "emerges" from an abstract

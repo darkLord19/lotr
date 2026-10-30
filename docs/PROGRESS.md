@@ -40,8 +40,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: 
 - [x] M1-T09 — Character creation and origins
   - notes: origins/m1.json (5), background_traits.json, appearance.json, core/new_game.gd, ui/char_creation/; test_new_game.gd 5/5 pass; capture docs/reports/m1_creation/creation_screen.png. First-play-frame captures for 2 origins pending (needs player/world scene, M1-T08).
-- [ ] M1-T10 — Off-screen simulation and roster NPC bodies
-  - notes: 
+- [~] M1-T10 — Off-screen simulation and roster NPC bodies — headless logic + tests done; NPC body spawning, capture, autoload registration, SaveSystem wiring pending
+  - notes: RoadGraph, OffscreenSim, VillagerSchedule; real-content test: Frodo party within 50 m of canon POIs 09-23..09-30; Khamul at bagshot_row 09-23 19:00; mode B hold at bree_waiting_point then enters and dependents shift. 
 - [~] M1-T11 — Black Riders, stealth and soft failure — logic + tests done; scene test, vegetation volumes, HUD eye icon, rider screech audio pending (need terrain/rendering)
   - notes: RiderPerception (17 table cases), RiderAI state machine, SoftFailure (time 120-360, black_breath debuff 12h, rumour player_found_senseless, robbery), scripted interrogation JSON. 
 - [~] M1-T12 — Survival, skills, reputation, inventory, foraging — logic + tests done; Tab/inventory UI, trading UI, HUD capture, place_world forage-node placement pending
