@@ -24,7 +24,8 @@
           "name": {"type": "string"},
           "pos": {"$ref": "#/$defs/xyz"},
           "kind": {"type": "string"},
-          "settlement": {"$ref": "_defs.json#/$defs/id"}
+          "settlement": {"$ref": "_defs.json#/$defs/id"},
+          "abstract": {"type": "boolean"}
         }
       }
     },
@@ -78,7 +79,8 @@
           "id": {"$ref": "_defs.json#/$defs/id"},
           "center": {"$ref": "#/$defs/xz"},
           "radius": {"type": "number", "exclusiveMinimum": 0},
-          "height": {"type": "number"}
+          "height": {"type": "number"},
+          "enterable": {"type": "boolean"}
         }
       }
     },
@@ -93,6 +95,20 @@
           "polygon": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/xz"}},
           "density": {"type": "number", "minimum": 0},
           "enterable": {"type": "boolean"}
+        }
+      }
+    },
+    "walls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "points"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "kind": {"type": "string"},
+          "points": {"$ref": "#/$defs/xz_list"},
+          "closed": {"type": "boolean"}
         }
       }
     },
