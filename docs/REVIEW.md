@@ -10,3 +10,4 @@
 
 ## Deferred / fallbacks used
 - **M0-T03:** PLAN says autoload stubs get `class_name`; Godot rejects a class_name equal to an autoload name, so autoloads have none and are referenced by their autoload name. Helper classes (GameDate etc.) do use class_name.
+- **M0-T09:** `OPENROUTER_API_KEY` missing and openrouter.ai unreachable, so `game/config/llm.json` still holds the PLACEHOLDER slugs (`anthropic/claude-opus-4.5`, `anthropic/claude-sonnet-4.5`). On the Mac: run `.venv/bin/python tools/llm/list_models.py`, re-pick the newest Opus-/Sonnet-class slugs, then run the live probe `LIVE_LLM=1 tools/test.sh` (test_live_pong) and record latency in PROGRESS.md. Also confirm OpenRouter's current `cache_control` part format. Only mock tests were run.

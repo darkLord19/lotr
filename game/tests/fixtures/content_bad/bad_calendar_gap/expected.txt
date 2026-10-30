@@ -1,0 +1,1 @@
+periods must be contiguous

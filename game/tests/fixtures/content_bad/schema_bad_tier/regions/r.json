@@ -1,0 +1,55 @@
+{
+  "id": "test_region",
+  "size_m": [
+    1000,
+    1000
+  ],
+  "pois": [
+    {
+      "id": "inn",
+      "name": "Inn",
+      "pos": [
+        10,
+        0,
+        10
+      ],
+      "kind": "inn",
+      "settlement": "town"
+    },
+    {
+      "id": "farm",
+      "name": "Farm",
+      "pos": [
+        500,
+        0,
+        500
+      ],
+      "kind": "dwelling",
+      "settlement": "town"
+    }
+  ],
+  "settlements": [
+    {
+      "id": "town",
+      "faction": "bree",
+      "center": [
+        10,
+        10
+      ],
+      "radius": 100
+    }
+  ],
+  "road_graph": {
+    "nodes": [
+      "inn",
+      "farm"
+    ],
+    "edges": [
+      [
+        "inn",
+        "farm",
+        "road"
+      ]
+    ]
+  }
+}

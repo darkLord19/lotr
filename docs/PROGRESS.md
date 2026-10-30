@@ -18,8 +18,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: 
 - [ ] M0-T08 — Timeline engine
   - notes: 
-- [ ] M0-T09 — LLM gateway (OpenRouter)
-  - notes: 
+- [~] M0-T09 — LLM gateway (OpenRouter) — mock tests pass; live probe + real model slugs DEFERRED
+  - notes: 10 pass, 1 pending (live PONG test needs LIVE_LLM=1). llm.json slugs are placeholders; HTTPSSETransport untested against a real server; confirm `usage:{include:true}` and cache_control format vs OpenRouter docs on the Mac. See REVIEW.md + LOCAL_TODO.md.
 - [ ] M0-T10 — NPC mind (prompt → reply → intents → memory)
   - notes: 
 - [ ] M1-T01 — Canon content pass: timeline and cast

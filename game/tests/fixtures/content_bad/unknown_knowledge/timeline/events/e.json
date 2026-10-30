@@ -1,0 +1,15 @@
+[
+  {
+    "id": "e1",
+    "at": "3018-09-23T19:00",
+    "type": "world_event",
+    "effects": [
+      {
+        "add_knowledge": {
+          "npc": "innkeeper",
+          "knowledge_id": "nothing"
+        }
+      }
+    ]
+  }
+]

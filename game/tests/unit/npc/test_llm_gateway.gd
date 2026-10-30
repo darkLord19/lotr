@@ -37,7 +37,7 @@ func _make() -> LLMTransport:
 	var cfg: Dictionary = scripts[mocks.size()] if mocks.size() < scripts.size() else (scripts.back() if not scripts.is_empty() else {})
 	var s: Array[String] = []
 	s.assign(cfg.get("script", []))
-	m.script = s
+	m.canned = s
 	m.fail_with = cfg.get("fail_with", "")
 	m.stall = cfg.get("stall", false)
 	m.synchronous = cfg.get("synchronous", true)
@@ -65,7 +65,7 @@ func test_chunk_assembly_and_done() -> void:
 	assert_true(result["ok"])
 	assert_eq(result["text"], "Hello worldIGNORED?", "mock keeps replaying; gateway only stops at stream end")
 	assert_eq(chunks.slice(0, 3), ["Hel", "lo ", "world"])
-	assert_eq(result["usage"]["completion_tokens"], 2)
+	assert_eq(result["usage"]["completion_tokens"], 2.0)
 
 
 func test_split_lines_across_chunks() -> void:
@@ -97,8 +97,11 @@ func test_timeout() -> void:
 	gw.request("standard", [], func(_t: String) -> void: pass, func(r: Dictionary) -> void: result = r)
 	gw.tick(1.0)
 	assert_true(result.is_empty())
+	gw.tick(30.0)  # first attempt times out -> one retry
+	assert_eq(mocks.size(), 2)
+	assert_true(result.is_empty())
 	gw.tick(30.0)
-	assert_false(result["ok"] if not result.is_empty() else true)
+	assert_false(result.get("ok", true))
 	assert_eq(result.get("error", ""), "timeout")
 
 

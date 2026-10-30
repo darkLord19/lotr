@@ -1,0 +1,21 @@
+{
+  "id": "innkeeper",
+  "race": "man",
+  "faction": "bree",
+  "tier": "standard",
+  "home_poi": "inn",
+  "voice": "v",
+  "personality": [
+    "p"
+  ],
+  "knowledge": [
+    {
+      "id": "fact_one",
+      "fact": "f",
+      "known_from": "3018-07-01"
+    }
+  ],
+  "inventory_can_give": [
+    "mug"
+  ]
+}

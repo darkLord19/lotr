@@ -122,8 +122,8 @@ func _start_attempt(st: Dictionary) -> void:
 	st["transport"] = t
 	st["elapsed_s"] = 0.0
 	st["stream_error"] = ""
-	t.data_received.connect(_on_data.bind(st))
-	t.finished.connect(_on_transport_finished.bind(st))
+	t.data_received.connect(func(payload: String) -> void: _on_data(payload, st))
+	t.finished.connect(func(ok: bool, error: String) -> void: _on_transport_finished(st, ok, error))
 	t.start(str(Config.get_value("endpoint", "")), headers, JSON.stringify(body))
 
 
@@ -154,7 +154,7 @@ func _on_data(payload: String, st: Dictionary) -> void:
 				cb.call(piece)
 
 
-func _on_transport_finished(ok: bool, error: String, st: Dictionary) -> void:
+func _on_transport_finished(st: Dictionary, ok: bool, error: String) -> void:
 	if st["finished"]:
 		return
 	if ok and not st["stream_error"].is_empty():

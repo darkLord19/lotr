@@ -1,0 +1,23 @@
+{
+  "comment": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "epoch_ta_year": 3018,
+  "sr_year_offset": -1600,
+  "shire_index_shift": 1,
+  "year_rollover_index": 365,
+  "days_in_year": 365,
+  "leap_day_name": "Overlithe",
+  "periods": [
+    {
+      "name": "A",
+      "first_index": 0,
+      "length": 30,
+      "intercalary": false
+    },
+    {
+      "name": "B",
+      "first_index": 40,
+      "length": 325,
+      "intercalary": false
+    }
+  ]
+}

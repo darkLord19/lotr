@@ -1,0 +1,22 @@
+[
+  {
+    "id": "o",
+    "name": "O",
+    "race": "hobbit",
+    "description": "d",
+    "start_poi": "inn",
+    "start_date": "3018-09-20T08:00",
+    "items": [
+      {
+        "item": "ring",
+        "count": 1
+      }
+    ],
+    "reputation_offset": {},
+    "skill_bonus": {
+      "skill": "s",
+      "amount": 1
+    },
+    "known_by": []
+  }
+]
