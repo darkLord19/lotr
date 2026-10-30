@@ -28,6 +28,8 @@ class LoadedCell:
 	var shapes: Dictionary = {}          # key String -> CollisionShape3D
 	var multimeshes: int = 0
 	var foliage_instances: int = 0
+	## One per (model): {mi, kind, n, buf, meshes, ranges, mmis: Array (a MultiMeshInstance3D or null per LOD tier)}.
+	var groups: Array = []
 	var objects: Dictionary = {}         # object id -> Node3D
 	var col_objects: Array = []          # [{key, model, xf, scale}]
 	var pois: Dictionary = {}            # poi id -> Poi
@@ -202,6 +204,7 @@ func budget_for(p: Vector3) -> Dictionary:
 		out["objects"] += (data["objects"] as Array).size()
 		var centre: Vector3 = placements.cell_center(c)
 		var dist: float = Vector2(p.x - centre.x, p.z - centre.z).length()
+		var span: Vector2 = _cell_span(c, p)
 		var per_model: Dictionary = data["foliage"]
 		for mi: int in per_model:
 			var n: int = (per_model[mi] as PackedFloat32Array).size() / Placements.FOLIAGE_STRIDE
@@ -209,14 +212,16 @@ func budget_for(p: Vector3) -> Dictionary:
 			var tris: Array = info.get("tris", [])
 			var ranges: Array = _foliage_ranges(str(info["kind"]), int(info["lods"]))
 			out["foliage_instances"] += n
-			out["multimeshes"] += ranges.size()
 			var drawn: bool = false
 			for t in ranges.size():
 				var r: Array = ranges[t]
+				if _tier_needed(r, span, 0.0):
+					out["multimeshes"] += 1
 				if dist >= float(r[0]) and dist <= float(r[1]):
 					drawn = true
 					out["multimeshes_drawn"] += 1
-					out["foliage_triangles"] += n * int(tris[mini(t, tris.size() - 1)]) if not tris.is_empty() else 0
+					if not tris.is_empty():
+						out["foliage_triangles"] += n * int(tris[mini(t, tris.size() - 1)])
 			if drawn:
 				out["foliage_drawn"] += n
 	return out
@@ -255,6 +260,8 @@ func _plan() -> void:
 			drop.append(c)
 	for c in drop:
 		_free_cell(c)
+	for c: Vector2i in _cells:
+		_sync_tiers(_cells[c] as LoadedCell)
 
 
 func _build_next() -> void:
@@ -313,37 +320,77 @@ func _ranges(tiers: Array, single: Dictionary, kind: String, lods: int) -> Array
 	return tiers
 
 
+## (nearest, farthest) flat distance from p to a cell's rectangle: the range of AABB-centre distances any
+## instance group of the cell can have.
+func _cell_span(c: Vector2i, p: Vector3) -> Vector2:
+	var near: float = placements.cell_distance(c, p)
+	var x0: float = c.x * placements.cell_m
+	var z0: float = c.y * placements.cell_m
+	var far: float = 0.0
+	for ox in [0.0, placements.cell_m]:
+		for oz in [0.0, placements.cell_m]:
+			far = maxf(far, Vector2(x0 + ox - p.x, z0 + oz - p.z).length())
+	return Vector2(near, far)
+
+
+func _tier_needed(r: Array, span: Vector2, margin: float) -> bool:
+	return float(r[1]) + margin >= span.x and float(r[0]) - margin <= span.y
+
+
 func _build_foliage(lc: LoadedCell, data: Dictionary) -> void:
-	var fcfg: Dictionary = _cfg.get("foliage", {})
-	var fade: float = float(fcfg.get("fade_margin_m", 40.0))
-	var shadow_tiers: int = int(fcfg.get("shadow_tiers", 1))
-	var shadow_kinds: Array = fcfg.get("shadow_kinds", ["tree"])
 	var per_model: Dictionary = data["foliage"]
 	for mi: int in per_model:
 		var arr: PackedFloat32Array = per_model[mi]
 		var info: Dictionary = placements.models[mi]
-		var mid: String = str(info["id"])
-		var meshes: Array[Mesh] = library.meshes(mid)
+		var meshes: Array[Mesh] = library.meshes(str(info["id"]))
 		if meshes.is_empty():
 			continue
 		var n: int = arr.size() / Placements.FOLIAGE_STRIDE
-		var buf: PackedFloat32Array = _transform_buffer(arr, n)
-		var ranges: Array = _foliage_ranges(str(info["kind"]), meshes.size())
-		for t in meshes.size():
-			var mm := MultiMesh.new()
-			mm.transform_format = MultiMesh.TRANSFORM_3D
-			mm.mesh = meshes[t]
-			mm.instance_count = n
-			mm.buffer = buf
-			var mmi := MultiMeshInstance3D.new()
-			mmi.name = "mm_%s_t%d" % [mid.get_file(), t]
-			mmi.multimesh = mm
-			_apply_range(mmi, ranges[mini(t, ranges.size() - 1)], fade)
-			mmi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON if (t < shadow_tiers and str(info["kind"]) in shadow_kinds) else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-			mmi.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
-			lc.node.add_child(mmi)
-			lc.multimeshes += 1
+		var mmis: Array = []
+		mmis.resize(meshes.size())
+		lc.groups.append({"mi": mi, "kind": str(info["kind"]), "n": n, "buf": _transform_buffer(arr, n), "meshes": meshes,
+			"ranges": _foliage_ranges(str(info["kind"]), meshes.size()), "mmis": mmis})
 		lc.foliage_instances += n
+	_sync_tiers(lc)
+
+
+## Creates the LOD tiers whose distance range can reach the cell from the current focus and frees the ones that
+## cannot (with a margin so a hovering focus never thrashes). This keeps resident MultiMeshes near what is drawn.
+func _sync_tiers(lc: LoadedCell) -> void:
+	var fcfg: Dictionary = _cfg.get("foliage", {})
+	var fade: float = float(fcfg.get("fade_margin_m", 40.0))
+	var shadow_tiers: int = int(fcfg.get("shadow_tiers", 1))
+	var shadow_kinds: Array = fcfg.get("shadow_kinds", ["tree"])
+	var span: Vector2 = _cell_span(lc.coord, _focus)
+	var keep_margin: float = _refocus * 2.0 + fade
+	for g: Dictionary in lc.groups:
+		var mmis: Array = g["mmis"]
+		var ranges: Array = g["ranges"]
+		var meshes: Array = g["meshes"]
+		for t in mmis.size():
+			var r: Array = ranges[mini(t, ranges.size() - 1)]
+			var exists: bool = mmis[t] != null
+			if not exists and _tier_needed(r, span, 0.0):
+				var mm := MultiMesh.new()
+				mm.transform_format = MultiMesh.TRANSFORM_3D
+				mm.mesh = meshes[t] as Mesh
+				mm.instance_count = int(g["n"])
+				mm.buffer = g["buf"] as PackedFloat32Array
+				var mmi := MultiMeshInstance3D.new()
+				mmi.name = "mm_%s_t%d" % [str(placements.models[int(g["mi"])]["id"]).get_file(), t]
+				mmi.multimesh = mm
+				_apply_range(mmi, r, fade)
+				var casts: bool = t < shadow_tiers and str(g["kind"]) in shadow_kinds
+				mmi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON if casts else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+				mmi.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
+				lc.node.add_child(mmi)
+				mmis[t] = mmi
+				lc.multimeshes += 1
+			elif exists and not _tier_needed(r, span, keep_margin):
+				(mmis[t] as MultiMeshInstance3D).queue_free()
+				(mmis[t] as MultiMeshInstance3D).get_parent().remove_child(mmis[t] as Node)
+				mmis[t] = null
+				lc.multimeshes -= 1
 
 
 func _apply_range(gi: GeometryInstance3D, r: Array, fade: float) -> void:
