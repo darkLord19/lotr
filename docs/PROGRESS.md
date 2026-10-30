@@ -30,8 +30,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: TerrainChunks (256 m chunks, 5 LODs, skirts, collision <128 m), WaterRibbons, world_root.tscn, capture presets; 13 GUT tests; captures (2560x1440) docs/reports/m1_terrain/capture_*.png viewed: river in channel, roads as dirt, no holes. Capture tip: `tools/capture.sh - out.png --preset=east_road --after=0.05` (~12 s; the default --after=3 takes >10 min under software rendering). `.venv/bin/python tools/terrain/build_heightmap.py` (~85 s) -> build/terrain/*.r16 + splats; previews in docs/reports/m1_terrain/. 
 - [~] M1-T04 — Style frame and art direction — terrain/sky/fog/water style done (config/style.json); Blender set-dressing and 3 style captures wait on M1-T05 assets
   - notes: toon terrain shader, banded clouds sky, golden-hour sun. 
-- [ ] M1-T05 — Blender procedural asset library
-  - notes: 
+- [x] M1-T05 — Blender procedural asset library
+  - notes: 106 seeded assets (nature/shire/bree/props) -> game/assets/models/ (6.7 MB, plain git, no LFS); LOD0 tri counts well under budgets (BUDGET_OK in verify.sh); godot import 0 errors; lineup capture docs/reports/m1_style/asset_lineup.png viewed: cohesive, Shire warm thatch vs Bree slate/timber. Weak: LOD2 on thin-trunk trees crude; nature has no Bree-tinted variants. Rebuild: `.venv/bin/python tools/blender/build_all.py`. 📝 REVIEW ITEM: docs/reports/m1_style/ contact sheets. 
 - [ ] M1-T06 — World population
   - notes: 
 - [ ] M1-T07 — Characters
