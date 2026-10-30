@@ -26,7 +26,7 @@ var _syncing: bool = false
 
 
 func _ready() -> void:
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	MenuKit.backdrop(self, MenuKit.SCRIM_COLOR)
 	var box: VBoxContainer = MenuKit.panel(self, PANEL_WIDTH)
 	box.add_child(MenuKit.heading("Settings"))

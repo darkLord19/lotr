@@ -22,7 +22,7 @@ const SEPARATION: int = 14
 static func backdrop(parent: Control, color: Color) -> ColorRect:
 	var bg := ColorRect.new()
 	bg.color = color
-	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	bg.mouse_filter = Control.MOUSE_FILTER_STOP  # clicks must not reach the screen underneath
 	parent.add_child(bg)
 	return bg
@@ -31,7 +31,7 @@ static func backdrop(parent: Control, color: Color) -> ColorRect:
 ## Centred panel; returns the VBox to fill.
 static func panel(parent: Control, width: float) -> VBoxContainer:
 	var center := CenterContainer.new()
-	center.set_anchors_preset(Control.PRESET_FULL_RECT)
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	center.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	parent.add_child(center)
 	var pc := PanelContainer.new()

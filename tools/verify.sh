@@ -11,4 +11,5 @@ run() { echo "== $*"; "$@" || { echo "FAILED: $*"; fail=1; }; }
 [ -f tools/terrain/check_region.py ] && run .venv/bin/python tools/terrain/check_region.py
 [ -f tools/terrain/test_check_region.py ] && run .venv/bin/python -m pytest -q tools/terrain
 [ -f tools/terrain/test_heightfield.py ] && run .venv/bin/python -m pytest -q tools/terrain/test_heightfield.py
+[ -f tools/audio/test_audio_assets.py ] && run .venv/bin/python -m pytest -q tools/audio
 exit $fail

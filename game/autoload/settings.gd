@@ -31,7 +31,8 @@ func load_file() -> void:
 	values = defaults()
 	if not FileAccess.file_exists(path):
 		return
-	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+	var json := JSON.new()
+	var parsed: Variant = json.data if json.parse(FileAccess.get_file_as_string(path)) == OK else null
 	if not (parsed is Dictionary):
 		push_warning("Settings: ignoring unreadable %s" % path)
 		return

@@ -18,10 +18,10 @@ var _is_open: bool = false
 func _ready() -> void:
 	# Must keep receiving input while the tree is paused.
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	MenuKit.backdrop(self, MenuKit.SCRIM_COLOR)
 	_panel_root = Control.new()
-	_panel_root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_panel_root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_panel_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_panel_root)
 	var box: VBoxContainer = MenuKit.panel(_panel_root, PANEL_WIDTH)

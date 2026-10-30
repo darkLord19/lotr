@@ -19,10 +19,10 @@ var _latest: String = ""
 
 
 func _ready() -> void:
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	MenuKit.backdrop(self, MenuKit.BG_COLOR)
 	_panel_root = Control.new()
-	_panel_root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_panel_root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_panel_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_panel_root)
 	_box = MenuKit.panel(_panel_root, PANEL_WIDTH)

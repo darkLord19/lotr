@@ -21,6 +21,13 @@ TILE = 384
 CATEGORIES = ["nature", "shire", "bree", "props"]
 
 
+def lod_sample(assets: list[dict]) -> list[dict]:
+    """Eight evenly spaced assets that have LODs; only these get LOD tiles (software GL is ~2.5 s per tile)."""
+    withl = [a for a in assets if len(a["files"]) > 1]
+    step = max(1, len(withl) // 8)
+    return withl[::step][:8]
+
+
 def render_tiles(cat: str) -> None:
     import bpy
     from mathutils import Vector
@@ -33,9 +40,10 @@ def render_tiles(cat: str) -> None:
     region = "bree" if cat == "bree" else "shire"
     tdir = os.path.join(OUT, "tiles", cat)
     os.makedirs(tdir, exist_ok=True)
+    sampled = {a["name"] for a in lod_sample(assets)}
     for a in assets:
         for lod, fn in enumerate(a["files"]):
-            if lod > 0 and not os.environ.get("LODS"):
+            if lod > 0 and a["name"] not in sampled:
                 continue
             bpy.ops.wm.read_factory_settings(use_empty=True)
             sc = bpy.context.scene
@@ -86,7 +94,7 @@ def compose(cat: str, lods: bool = False) -> str:
     with open(os.path.join(MODELS, cat, "manifest.json"), encoding="utf-8") as f:
         assets = json.load(f)["assets"]
     if lods:
-        assets = [a for a in assets if len(a["files"]) > 1][:: max(1, len([a for a in assets if len(a["files"]) > 1]) // 8)][:8]
+        assets = lod_sample(assets)
     cols_per_asset = 3 if lods else 1
     n = len(assets)
     cols = 2 if lods else min(6, max(1, math.ceil(math.sqrt(n * 1.5))))
@@ -134,9 +142,8 @@ def main() -> int:
     pre = ["xvfb-run", "-a"] if not os.environ.get("DISPLAY") and shutil.which("xvfb-run") else []
     procs = []
     for cat in only:
-        extra = {"LODS": "1"}
         procs.append(subprocess.Popen(pre + ["blender", "-b", "-noaudio", "-P", os.path.join(HERE, "preview.py"), "--", f"--tiles={cat}"],
-                                      stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, env={**env, **extra}))
+                                      stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, env=env))
     for cat, p in zip(only, procs):
         out = p.communicate()[0]
         if p.returncode or "TILES_DONE" not in out:

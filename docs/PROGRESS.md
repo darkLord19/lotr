@@ -50,8 +50,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: RumourNetwork (Hobbiton->Bree mean 4.06 days over 300 seeds, always <10), DialoguePanel (pauses clock, typewriter, options 1-4, offline badge, memory saved on close), Journal (J). Captures docs/reports/m1_dialogue/{mid,done,journal}.png viewed. Not yet instantiated by any world scene (no autoload). 
 - [~] M1-T14 — Day/night, weather, streaming and performance pass — day/night + weather done; profiling, occlusion, benchmarks (flyover_full, walk_hobbiton_to_bree, night_rain_bree) and quality presets DEFERRED to the Mac
   - notes: WeatherModel (pure fn of seed/day/minute, 11 tests) + WeatherDayNight node; captures docs/reports/m1_daynight/ at 1280x720 viewed (06:00, 12:00, 17:30, 19:00, 23:00, rain, fog, dawn fog). Not wired into SaveSystem/RiderPerception yet. Lanterns/inn windows pending. 
-- [ ] M1-T15 — Audio
-  - notes: 
+- [~] M1-T15 — Audio — procedural fallback done; real CC0 effects, MusicGen cues, scene wiring and the --write-movie recording DEFERRED to the Mac (docs/LOCAL_TODO.md)
+  - notes: tools/audio/{synth_sfx,compose,dsp,catalog}.py render 33 OGGs (1.4 MB) into game/assets/audio/{sfx,music,ambience} (footsteps x4 surfaces x3, door, rider screech, heartbeat, 6 ambience loops of 12 s, 6 music stems phase-locked at 24 s). audio/{ambience_logic,ambience,music_logic,music_director,audio_fade}.gd, config/audio.json. GUT: 22 audio tests pass (tests/unit/audio). pytest tools/audio: 59 passed (files, manifest entries, loop lengths, ffmpeg volumedetect max < 0 dB, size budget), added to verify.sh. Import of all OGGs clean. 
 - [ ] M1-T16 — Menus, save/load integration
   - notes: 
 - [ ] M1-T17 — M1 acceptance

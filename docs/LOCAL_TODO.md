@@ -36,3 +36,21 @@ The cloud sandbox cannot reach the Git LFS server, so `game/assets/terrain/**` i
 
 ## M1-T14 remaining
 Profiling (Godot profiler/monitors on the M5), occlusion culling bakes, shadow cascade tuning, foliage density scaling, impostors for far trees, quality presets in config/game.json, benchmarks `tools/bench.sh flyover_full | walk_hobbiton_to_bree | night_rain_bree` (avg >= 60 fps, 1% low >= 45, mem < 6 GB; write tools/bench.sh + game/tools/bench_runner.gd first), lanterns/inn window glow at night, river mist volumes (WeatherModel.river_mist), wire WeatherDayNight.serialise into SaveSystem and its concealment/fear multipliers into RiderPerception callers. Re-run final daynight captures at 2560x1440.
+
+## M1-T15 Audio (cloud used procedural fallback)
+The cloud sandbox cannot download CC0 packs (Kenney, freesound) or MusicGen weights, so every sound is synthesised
+(`tools/audio/synth_sfx.py`, `tools/audio/compose.py`; outputs in `game/assets/audio/{sfx,music,ambience}`, plain git
+objects because the sandbox cannot reach LFS; `.gitattributes` already exempts `game/assets/**`). To finish on the Mac:
+1. Listen to everything (nothing was auditioned; there is no audio device in the cloud). Retune synth constants or swap in real CC0 recordings
+   for footsteps, birds, river, door and crowd murmur (record source + licence of each in `assets_src/MANIFEST.md`; keep the filenames or edit `config/audio.json`).
+2. MusicGen (MLX, `small` if disk is tight): generate 8-12 cues (pastoral folk flute/harp, tense low strings, tavern fiddle jig, night lullaby, ...) at 30 s,
+   trim to loops, loudnorm to -16 LUFS, OGG into `game/assets/audio/music/`, then add them as new cues/stems in `config/audio.json` (`music.cues`) — the director is data driven.
+   The current stems are 24 s phase-locked loops of one shared length; whole-cue MusicGen files would need a second player path (or be cut into the same length).
+3. Record the 60 s gameplay audio check: `godot --write-movie build/m1_audio.avi` along `walk_hobbiton_to_bree`, then
+   `ffmpeg -i build/m1_audio.avi -af volumedetect -f null -` (max_volume < 0 dB) and copy to `docs/reports/m1_audio/`. Skipped in the cloud (no audio device).
+4. Scene wiring (world/ was off limits): add `Ambience` and `MusicDirector` nodes to the world scene; call `set_location` (settlement/field/river/forest_edge/inn_interior)
+   and `set_weather(state, rain_intensity)` from `WeatherModel.Snapshot`; call `MusicDirector.set_place(region, settlement, area, in_inn)`, `set_weather`, and each frame
+   `report_rider(distance, RiderAI.State, RiderPerception.EyeState)` / `clear_rider()` for the nearest rider; forward `MusicLogic` threat to `Ambience.set_threat` (3 = heartbeat).
+   Footstep/door/screech one-shots are not yet played by anything (player controller / door / rider nodes should pick `sfx/footstep_<surface>_<1-3>.ogg`).
+   Create Music/Ambience audio buses if wanted (currently Master with a per-class dB offset in `config/audio.json` `bus_db`).
+5. Verify on the Mac that `AudioStreamSynchronized` stems stay loop-aligned and that the OGG loops are gap-free (Vorbis encoder padding).
