@@ -30,3 +30,6 @@ Register OffscreenSim as an autoload (bind(WorldClock, WorldState, Timeline, gra
 1. Portraits via mflux: `pip install mflux` into .venv (check disk, `df -h`, >= 30 GB must remain; use `-q 4` if tight), write tools/art/style.txt + tools/art/portraits.py (one per named NPC, 6 per villager template, 768x768 fixed seeds -> game/assets/portraits/<id>.png; Black Rider = hood with darkness, no face). Contact sheet check; max 3 retries per failure. Also journal/inventory UI textures, parchment, illustrated map.
 2. Live dialogue probes -> docs/reports/m1_dialogue.md (Gaffer 09-24, Butterbur 09-20, Maggot/Mrs Maggot rumour, Strider 09-29, Gandalf).
 3. World scene must instantiate RumourNetwork, DialoguePanel and Journal (not autoloads yet).
+
+## Git LFS note
+The cloud sandbox cannot reach the Git LFS server, so `game/assets/terrain/**` is exempted from LFS in `.gitattributes` (small files committed as plain objects). Any further generated assets committed from the cloud (models, portraits) need the same treatment or must be generated on the Mac. When ready, remove that line and run `git lfs migrate import --include="game/assets/**"`.
