@@ -12,12 +12,12 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: `tools/capture.sh res://tests/scenes/capture_test.tscn build/cap_test.png` exit 0, 2560x1440, cube visible and lit (viewed). In the Linux cloud it runs under xvfb + mesa lavapipe (software Vulkan, `apt install mesa-vulkan-drivers xvfb`); on the Mac it runs windowed with Metal. Software rendering is slow, so performance work can't be judged here.
 - [x] M0-T05 — Content schemas and validator
   - notes: validate.py prints CONTENT_OK (1 expected portrait WARN); 22 pytest cases pass (17 bad fixtures); calendar 3018-09-22 -> Halimath 22, S.R. 1418. Event effects schema is narrow (set_flag/clear_flag/add_knowledge) - must be widened to move_entity/give_item/spread_rumour for M0-T08/M1-T01.
-- [ ] M0-T06 — GameDate and WorldClock
-  - notes: 
-- [ ] M0-T07 — EventBus, WorldState, SaveSystem
-  - notes: 
-- [ ] M0-T08 — Timeline engine
-  - notes: 
+- [x] M0-T06 — GameDate and WorldClock
+  - notes: GameDate + WorldClock (modes A/B, pause stack, advance emits every signal). `tools/verify.sh` exit 0: GUT 49 pass / 1 pending (live), 0 fail; CONTENT_OK. 
+- [x] M0-T07 — EventBus, WorldState, SaveSystem
+  - notes: WorldState, SaveSystem (autosave rotation 3, corrupt-safe load; `load_slot` instead of `load`). `tools/verify.sh` exit 0: GUT 49 pass / 1 pending (live), 0 fail; CONTENT_OK. 
+- [x] M0-T08 — Timeline engine
+  - notes: Timeline with mode A/B holds, delay shifting, serialise. `tools/verify.sh` exit 0: GUT 49 pass / 1 pending (live), 0 fail; CONTENT_OK. 
 - [~] M0-T09 — LLM gateway (OpenRouter) — mock tests pass; live probe + real model slugs DEFERRED
   - notes: 10 pass, 1 pending (live PONG test needs LIVE_LLM=1). llm.json slugs are placeholders; HTTPSSETransport untested against a real server; confirm `usage:{include:true}` and cache_control format vs OpenRouter docs on the Mac. See REVIEW.md + LOCAL_TODO.md.
 - [ ] M0-T10 — NPC mind (prompt → reply → intents → memory)

@@ -1,0 +1,10 @@
+[
+  {"id": "ev_a", "at": "3018-09-22T09:00", "type": "world_event", "effects": [{"set_flag": "a"}]},
+  {"id": "ev_b", "at": "3018-09-22T10:00", "type": "anchor", "waits_for_player": true,
+   "trigger_area": {"poi": "shed"}, "depends_on": ["ev_a"],
+   "effects": [{"set_flag": "b"}, {"add_knowledge": {"npc": "gaffer", "knowledge_id": "k1"}}],
+   "rumour": {"id": "rum1", "origin_poi": "hobbiton", "strength": 3}},
+  {"id": "ev_c", "at": "3018-09-22T10:30", "type": "world_event", "depends_on": ["ev_b"], "effects": [{"set_flag": "c"}]},
+  {"id": "ev_d", "at": "3018-09-22T11:00", "type": "world_event", "depends_on": ["ev_c"], "effects": [{"set_flag": "d"}]},
+  {"id": "ev_e", "at": "3018-09-22T09:30", "type": "world_event", "effects": [{"give_item": {"item": "ale_mug", "from": "", "to": "player"}}]}
+]
