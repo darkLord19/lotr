@@ -135,7 +135,7 @@ func _seed_memories(known_by: Array, first_impression: int, start: int) -> void:
 	for raw: Variant in known_by:
 		var k: Dictionary = raw
 		var disposition: int = clampi(int(k.get("disposition", 0)) + first_impression, lo, hi)
-		var last_talk: int = start - int(k.get("days_ago", 0)) * WorldClock.MINUTES_PER_DAY
+		var last_talk: int = start - int(k.get("days_ago", 0)) * GameDate.MINUTES_PER_DAY
 		state.set_npc_memory(str(k["npc"]), str(k["memory"]), last_talk, disposition)
 
 

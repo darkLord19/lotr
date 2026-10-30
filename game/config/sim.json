@@ -1,0 +1,18 @@
+{
+  "sim": {
+    "speeds_m_per_min": {
+      "walk": {"max": 12.0, "run": 24.0},
+      "ride": {"max": 30.0, "run": 45.0}
+    },
+    "arrive_epsilon_m": 0.5,
+    "hold_points": {"bree": "bree_waiting_point"},
+    "villager_radius_m": 600.0,
+    "villager_transit_minutes": 20,
+    "villager_jitter_minutes": 30,
+    "villager_templates": {
+      "default": {"wake": 360, "work_start": 480, "work_end": 1020, "inn_start": 1080, "inn_end": 1260},
+      "shire": {"wake": 360, "work_start": 480, "work_end": 1020, "inn_start": 1080, "inn_end": 1230},
+      "bree": {"wake": 330, "work_start": 450, "work_end": 1050, "inn_start": 1110, "inn_end": 1320}
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "seed": 3018,
+  "height_min_m": 0.0,
+  "height_max_m": 320.0,
+  "base_level_m": 40.0,
+  "noise": {
+    "large_wavelength_m": [350.0, 1800.0],
+    "large_amp_m": 4.0,
+    "small_wavelength_m": [25.0, 140.0],
+    "small_amp_m": 0.7,
+    "barrow_amp_gain": 3.0,
+    "barrow_sigma_m": 1400.0
+  },
+  "rise": {"barrow_rise_m": 28.0, "barrow_sigma_m": 2200.0},
+  "hills": {"river_valley_inner_m": 60.0, "river_valley_outer_m": 300.0, "valley_noise_floor": 0.3},
+  "edge_ridge": {"width_m": 220.0, "height_m": 110.0, "noise_gain": 0.4},
+  "bench": {"core_frac": 0.35, "blend_frac": 0.9, "overrides": {"hobbiton": {"core_frac": 0.22, "blend_frac": 0.8}}},
+  "roads": {
+    "half_width_m": {"road": 4.0, "path": 2.0},
+    "shoulder_m": {"road": 6.0, "path": 4.0},
+    "sink_m": {"road": 0.3, "path": 0.15},
+    "smooth_sigma_m": 40.0
+  },
+  "rivers": {
+    "depth_per_width": 0.09,
+    "depth_min_m": 1.5,
+    "depth_max_m": 4.5,
+    "bank_m": 18.0,
+    "bank_per_width": 1.2,
+    "smooth_sigma_m": 60.0,
+    "water_fill": 0.6
+  },
+  "splat": {
+    "path_edge_m": 1.5,
+    "riverbank_m": 14.0,
+    "forest_feather_m": 14.0,
+    "field_noise_wavelength_m": [60.0, 260.0],
+    "field_farm_radius_m": 130.0,
+    "field_ring": [0.45, 1.0],
+    "rock_slope": [0.45, 0.9]
+  },
+  "preview": {"hillshade_step": 4, "vertical_exaggeration": 5.0}
+}

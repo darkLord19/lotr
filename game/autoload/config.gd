@@ -1,6 +1,6 @@
 extends Node
 
-const CONFIG_FILES: Array[String] = ["res://config/game.json", "res://config/llm.json", "res://config/npc.json", "res://config/riders.json"]
+const CONFIG_FILES: Array[String] = ["res://config/game.json", "res://config/llm.json", "res://config/npc.json", "res://config/riders.json", "res://config/survival.json", "res://config/sim.json"]
 
 var _data: Dictionary = {}
 

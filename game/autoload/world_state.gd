@@ -79,6 +79,16 @@ func move_entity(id: String, poi_or_pos: Variant) -> bool:
 	return true
 
 
+# Free-form per-entity data (e.g. the sim's abstract road position). Saved with the entity.
+func set_entity_data(id: String, key: String, value: Variant) -> void:
+	if entities.has(id):
+		((entities[id] as Dictionary)["data"] as Dictionary)[key] = value
+
+
+func get_entity_data(id: String, key: String, default: Variant = null) -> Variant:
+	return ((get_entity(id).get("data", {})) as Dictionary).get(key, default)
+
+
 func set_alive(id: String, alive: bool) -> void:
 	if entities.has(id):
 		(entities[id] as Dictionary)["alive"] = alive

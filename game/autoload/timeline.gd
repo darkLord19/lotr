@@ -27,6 +27,11 @@ var _held: Dictionary = {}
 # Unfired ids ordered by (due, index).
 var _pending: Array[String] = []
 var _processing: bool = false
+# character -> Array of itinerary step Dictionaries (each with a resolved "id"), in file order.
+var _itineraries: Dictionary = {}
+# External "not yet" predicates (Callable(event_id: String) -> bool), e.g. the off-screen sim
+# blocking an arrival step until its character has physically arrived. Apply in both modes.
+var _hold_guards: Array[Callable] = []
 
 
 func _ready() -> void:
@@ -80,8 +85,14 @@ func add_itinerary(it: Dictionary) -> void:
 		if str(step.get("action", "")) in ARRIVE_ACTIONS and dest != "":
 			for a: Variant in actors:
 				effects.append({"move_entity": {"id": a, "poi": dest}})
+		var step_id: String = str(step.get("id", "%s_%s" % [character, step.get("at", "")]))
+		var stored: Array = _itineraries.get(character, [])
+		var kept: Dictionary = step.duplicate(true)
+		kept["id"] = step_id
+		stored.append(kept)
+		_itineraries[character] = stored
 		var ev: Dictionary = {
-			"id": step.get("id", "%s_%s" % [character, step.get("at", "")]),
+			"id": step_id,
 			"at": step.get("at", ""),
 			"type": "itinerary_step",
 			"location": dest,
@@ -102,6 +113,7 @@ func clear() -> void:
 	_fired = {}
 	_held = {}
 	_pending = []
+	_itineraries = {}
 
 
 func _normalise(raw: Dictionary) -> Dictionary:
@@ -201,6 +213,42 @@ func upcoming_ids() -> Array[String]:
 	return _pending.duplicate()
 
 
+# Characters that have an itinerary, and their steps (copies; ids resolved).
+func itinerary_characters() -> Array[String]:
+	var out: Array[String] = []
+	for c: Variant in _itineraries:
+		out.append(str(c))
+	return out
+
+
+func itinerary_steps(character: String) -> Array:
+	return (_itineraries.get(character, []) as Array).duplicate(true)
+
+
+# Unfired waits_for_player events that involve `actor`.
+func waiting_event_ids(actor: String) -> Array[String]:
+	var out: Array[String] = []
+	for id in _pending:
+		var ev: Dictionary = _events[id]
+		if bool(ev["waits_for_player"]) and actor in (ev.get("actors", []) as Array):
+			out.append(id)
+	return out
+
+
+# Would this event be held for the player right now (mode B, player not in its area, window open)?
+func would_hold(id: String) -> bool:
+	return clock != null and _events.has(id) and not _fired.has(id) and _should_hold_for_player(id, int(clock.now))
+
+
+func add_hold_guard(guard: Callable) -> void:
+	if guard not in _hold_guards:
+		_hold_guards.append(guard)
+
+
+func remove_hold_guard(guard: Callable) -> void:
+	_hold_guards.erase(guard)
+
+
 func event_count() -> int:
 	return _events.size()
 
@@ -248,6 +296,13 @@ func _deps_done(id: String) -> bool:
 
 
 func _should_hold(id: String, now: int) -> bool:
+	for guard in _hold_guards:
+		if bool(guard.call(id)):
+			return true
+	return _should_hold_for_player(id, now)
+
+
+func _should_hold_for_player(id: String, now: int) -> bool:
 	var ev: Dictionary = _events[id]
 	if not bool(ev["waits_for_player"]) or clock == null or clock.mode != &"B":
 		return false

@@ -113,3 +113,8 @@ func _move_toward(dest: Vector3, speed: float, delta: float, stop_within: float)
 			var sign_y: float = signf(flat_facing.cross(dir).y)
 			facing = flat_facing.normalized().rotated(Vector3.UP, max_turn * (sign_y if sign_y != 0.0 else 1.0))
 	position += dir * minf(speed * delta, dist)
+
+
+## HUD eye icon data: hidden / seen / sniffed.
+func eye_state() -> RiderPerception.EyeState:
+	return last_result.eye
