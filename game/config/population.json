@@ -11,14 +11,14 @@
       "tier_ranges_m": [
         [
           0.0,
-          300.0
+          200.0
         ],
         [
-          250.0,
-          620.0
+          160.0,
+          440.0
         ],
         [
-          560.0,
+          400.0,
           900.0
         ]
       ],
@@ -69,7 +69,7 @@
     "budget": {
       "max_foliage_instances": 16000,
       "max_foliage_triangles": 2500000,
-      "max_multimeshes": 1000,
+      "max_multimeshes": 1200,
       "max_objects": 200,
       "grid_step_m": 256.0
     },

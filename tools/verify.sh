@@ -14,4 +14,5 @@ run() { echo "== $*"; "$@" || { echo "FAILED: $*"; fail=1; }; }
 [ -f tools/audio/test_audio_assets.py ] && run .venv/bin/python -m pytest -q tools/audio
 run bash -c 'godot --headless --path game --quit-after 300 2>&1 | grep -q BOOT_OK'
 [ -f tools/blender/check_budget.py ] && run .venv/bin/python tools/blender/check_budget.py
+[ -f tools/blender/characters/check_characters.py ] && run .venv/bin/python tools/blender/characters/check_characters.py
 exit $fail

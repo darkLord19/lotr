@@ -67,3 +67,12 @@
 - Player position sync clears the entity's POI (move_entity with Vector3), every 0.5 s when moved >=0.75 m and on about_to_save.
 - Debug console `speed <x>` scales the world clock (WorldClock.time_scale), not the player.
 - Capture: docs/reports/m1_player/player_behind_bag_end.png (hobbit from behind at Bag End; software render takes ~2.5 min).
+
+## M1-T07 characters (procedural fallback)
+- **📝 REVIEW ITEM:** docs/reports/m1_characters/contact_sheet.png (T-pose + walk frame 10, every NPC) and lineup.png (Godot, idle). Rebuild: `.venv/bin/python tools/blender/characters/build_bases.py` (~1.5 min incl. xvfb sheet; `--no-sheet` for glbs only). Looks are data: `tools/blender/characters/looks.json` (colours, hair, hats, pieces), proportions `races.json`; cheap to change.
+- Quaternius packs were not downloadable, so bodies, clothes and animations are procedural (PLAN §8 fallback). Look is blocky low-poly: faces are dark box eyes, no fingers, rigid-ish skin on cloaks/skirts (walk shows some stretching on breeches/skirts). A later Quaternius swap re-runs build_bases.py.
+- Hobbits are modelled at true size (1.08 m) with the same skeleton rather than a scaled rig; the player hook therefore skips the capsule-visual scaling when a glb is used. Foot sliding is controlled by a time scale from per-race natural speeds (hobbit walk cycle is ~2x sped up at the player's 1.8 m/s).
+- Animation names use snake_case (`talk_gesture`, `crouch_walk`, `pick_up`, `faint` = fall/faint). sit/sleep/faint are non-looping holds (last pose stays until `release_hold()`); no sit-transition onto actual furniture, no staff for Gandalf, no mounted riders (horses: IDEAS.md).
+- Villager glbs are one base per template; per-spawn variety is colour only (`NPCBody.roll_look`), plus hair style is fixed per base.
+- NPCBody reads `res://config/characters.json` directly (not through Config) to avoid touching the shared CONFIG_FILES list while other tasks edit it.
+- `tools/verify.sh` currently fails `validate.py`/pytest content tests because `game/content/regions/eriador_west_placements.json` (M1-T06 world population, other agent) lacks the region schema fields; unrelated to characters.

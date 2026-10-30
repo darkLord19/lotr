@@ -34,8 +34,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: 106 seeded assets (nature/shire/bree/props) -> game/assets/models/ (6.7 MB, plain git, no LFS); LOD0 tri counts well under budgets (BUDGET_OK in verify.sh); godot import 0 errors; lineup capture docs/reports/m1_style/asset_lineup.png viewed: cohesive, Shire warm thatch vs Bree slate/timber. Weak: LOD2 on thin-trunk trees crude; nature has no Bree-tinted variants. Rebuild: `.venv/bin/python tools/blender/build_all.py`. 📝 REVIEW ITEM: docs/reports/m1_style/ contact sheets. 
 - [ ] M1-T06 — World population
   - notes: 
-- [ ] M1-T07 — Characters
-  - notes: 
+- [x] M1-T07 — Characters (procedural fallback; Quaternius not downloadable)
+  - notes: `tools/blender/characters/build_bases.py` -> 20 glbs (17 named + 3 villager bases) in game/assets/characters/ (9.4 MB, max 3057 tris, 17-bone shared skeleton, 10 human clips / 3 rider clips as separate glTF animations: idle walk run sit talk_gesture crouch_walk sleep eat pick_up faint | idle walk sniff). NPCBody (game/npc/npc_body.gd) builds the AnimationTree in code; 8 GUT tests pass; contact sheet docs/reports/m1_characters/contact_sheet.png and lineup.png viewed. Player uses the glb through PlayerController._try_glb_visual. 📝 REVIEW ITEM: character lineup capture. 
 - [x] M1-T08 — Player controller and camera
   - notes: PlayerController/CameraRig/Interaction/InputSetup/DebugConsole/inventory panel/PlayerSession; scripted test on real terrain collision: W 3 s = 5.2 m, run 11.2 m, crouch 2.6 m (noise 0.15 vs 0.5); capture docs/reports/m1_player/player_behind_bag_end.png viewed (placeholder capsule; npc-stage capture not taken, ~2.5 min under software render). Walk 1.8 m/s tuned to pass the 3-6 m check; may feel slow on the 1:25 map - tune in config/player.json. 
 - [x] M1-T09 — Character creation and origins

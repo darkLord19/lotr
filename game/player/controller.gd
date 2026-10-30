@@ -31,6 +31,8 @@ var move_yaw: float = 0.0
 var ground_rescues: int = 0
 
 var _visual: Node3D
+## True when the visual is a character glb (NPCBody): it has its own true-size proportions and crouch animation, so no scaling here.
+var _glb_visual: bool = false
 var _body_mesh: MeshInstance3D
 var _collision: CollisionShape3D
 var _capsule: CapsuleShape3D
@@ -115,10 +117,13 @@ func _build_collision() -> void:
 func _build_visual(palette_id: String) -> void:
 	if _visual != null:
 		_visual.queue_free()
+	var palette: Dictionary = NewGame.find_by_id(_palettes(), palette_id)
+	if _try_glb_visual(palette):
+		return
+	_glb_visual = false
 	_visual = Node3D.new()
 	_visual.name = "Visual"
 	add_child(_visual)
-	var palette: Dictionary = NewGame.find_by_id(_palettes(), palette_id)
 	var outfit := Color.from_string(str(palette.get("outfit", cfg("body.fallback_color", "#8a7a55"))), Color.GRAY)
 	var skin := Color.from_string(str(palette.get("skin", cfg("body.fallback_skin", "#e6b48c"))), Color.WHEAT)
 	var radius: float = float(cfg("body.radius_m", 0.3))
@@ -155,6 +160,34 @@ func _build_visual(palette_id: String) -> void:
 	_visual.scale = Vector3.ONE * _scale
 
 
+## Hook for M1-T07 characters: race -> villager base glb, recoloured with the player's palette. Falls back to the capsule.
+func _try_glb_visual(palette: Dictionary) -> bool:
+	var base: String = NPCBody.resolve_model_id("player_" + race, race)
+	if base.is_empty():
+		return false
+	var nb := NPCBody.new()
+	nb.name = "Visual"
+	nb.collision_layer = 0
+	nb.collision_mask = 0
+	add_child(nb)
+	var skin: String = str(palette.get("skin", ""))
+	var hair: String = str(palette.get("hair", ""))
+	var outfit: String = str(palette.get("outfit", ""))
+	var look: Dictionary = {}
+	if not skin.is_empty():
+		look.merge({"skin": skin, "hand": skin})
+	if not hair.is_empty():
+		look.merge({"hair": hair, "brow": hair, "foot_hair": hair})
+	if not outfit.is_empty():
+		look.merge({"vest": outfit, "jerkin": outfit})
+	if not nb.setup(base, look):
+		nb.free()
+		return false
+	_visual = nb
+	_glb_visual = true
+	return true
+
+
 static func _flat(color: Color) -> StandardMaterial3D:
 	var m := StandardMaterial3D.new()
 	m.albedo_color = color
@@ -180,7 +213,7 @@ func _apply_stance() -> void:
 	_capsule.radius = float(cfg("body.radius_m", 0.3)) * _scale
 	_capsule.height = maxf(h, _capsule.radius * 2.0)
 	_collision.position.y = _capsule.height * 0.5
-	if _visual != null:
+	if _visual != null and not _glb_visual:
 		_visual.scale = Vector3(_scale, _scale * (h / full), _scale)
 
 
@@ -304,6 +337,10 @@ func _physics_process(delta: float) -> void:
 		var stamina: float = soft_failure.stamina_multiplier() if soft_failure != null else 1.0
 		# Real minutes of running; the debuff halves stamina, so the same run costs twice as much.
 		survival.add_exertion(delta / 60.0 / maxf(stamina, 0.01))
+	if _glb_visual:
+		var nb: NPCBody = _visual as NPCBody
+		nb.set_crouched(crouched)
+		nb.set_speed(Vector2(velocity.x, velocity.z).length())
 	_sync_to_state(delta)
 
 
