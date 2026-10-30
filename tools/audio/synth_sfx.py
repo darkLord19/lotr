@@ -24,10 +24,6 @@ AMBIENCE_LUFS = {"wind": -30.0, "birds_day": -32.0, "crickets_night": -34.0,
                  "rain": -28.0, "river": -29.0, "inn_murmur": -29.0}
 
 
-def _rng(*key: int | str) -> np.random.Generator:
-    return np.random.default_rng([SEED, *[abs(hash(k)) % 2**31 if isinstance(k, str) else k for k in key]])
-
-
 def _stable(name: str) -> int:
     # hash() of str is salted per process; use a stable checksum so renders are reproducible.
     return sum((i + 1) * ord(ch) for i, ch in enumerate(name))

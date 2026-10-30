@@ -167,7 +167,7 @@ class Builder:
 
     def blob(self, center, radii, mat=None, sub=1, jitter=0.15, rot=(0, 0, 0)):
         """Jittered icosphere (leaf clumps, boulders, bushes)."""
-        r = bmesh.ops.create_icosphere(self._target, subdivisions=sub, radius=1.0)
+        r = bmesh.ops.create_icosphere(self._target, subdivisions=sub + 1, radius=1.0)
         verts = r["verts"]
         for v in verts:
             f = 1.0 + self.rng.uniform(-jitter, jitter)
