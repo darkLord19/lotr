@@ -10,6 +10,9 @@ extends Node3D
 @onready var world_environment: WorldEnvironment = $WorldEnvironment
 @onready var camera: Camera3D = $Camera3D
 
+# Buildings, props, foliage, POIs: streamed per 256 m cell around the same focus as the terrain.
+var cells: CellStreamer
+
 # Focus override (e.g. the player body). Null = follow the active camera.
 var focus_node: Node3D
 
@@ -33,11 +36,20 @@ func _ready() -> void:
 	camera.far = float(cam.get("far", 6000.0))
 	terrain.set_focus(_focus_position())
 	terrain.build_all_sync()
+	if bool(Config.get_value("population.enabled", true)):
+		cells = CellStreamer.new()
+		cells.name = "Cells"
+		cells.heights = heights
+		add_child(cells)
+		cells.set_focus(_focus_position())
+		cells.build_all_sync()
 
 
 func _process(_delta: float) -> void:
 	var p: Vector3 = _focus_position()
 	terrain.set_focus(p)
+	if cells != null:
+		cells.set_focus(p)
 	var env: Environment = world_environment.environment
 	if env != null and env.fog_enabled:
 		env.fog_light_color = StyleMaterials.fog_color_at(p.x)
@@ -52,6 +64,9 @@ func height_at(x: float, z: float) -> float:
 func capture_prepare() -> void:
 	terrain.set_focus(_focus_position())
 	terrain.build_all_sync()
+	if cells != null:
+		cells.set_focus(_focus_position())
+		cells.build_all_sync()
 	await get_tree().process_frame
 
 
