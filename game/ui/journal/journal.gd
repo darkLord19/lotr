@@ -35,12 +35,19 @@ func _ready() -> void:
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	var key := event as InputEventKey
-	if key != null and key.pressed and not key.echo and key.keycode == KEY_J:
+	if key != null and key.pressed and not key.echo and _is_toggle_key(key):
 		toggle()
 		get_viewport().set_input_as_handled()
 	elif key != null and key.pressed and key.keycode == KEY_ESCAPE and visible:
 		close()
 		get_viewport().set_input_as_handled()
+
+
+# The binding lives in config/controls.json; KEY_J only stands in before InputSetup has run.
+func _is_toggle_key(key: InputEventKey) -> bool:
+	if InputMap.has_action(&"journal"):
+		return key.is_action(&"journal")
+	return key.keycode == KEY_J
 
 
 func toggle() -> void:

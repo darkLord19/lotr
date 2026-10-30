@@ -95,6 +95,8 @@ def compose(cat: str, lods: bool = False) -> str:
         assets = json.load(f)["assets"]
     if lods:
         assets = lod_sample(assets)
+    if not assets:
+        return ""
     cols_per_asset = 3 if lods else 1
     n = len(assets)
     cols = 2 if lods else 4
@@ -153,6 +155,7 @@ def main() -> int:
     for cat in only:
         outs.append(compose(cat))
         outs.append(compose(cat, lods=True))
+    outs = [o for o in outs if o]
     print("\n".join(outs))
     if "final" in a:
         dst = os.path.join(REPO, "docs", "reports", "m1_style")

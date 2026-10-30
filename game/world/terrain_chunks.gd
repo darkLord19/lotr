@@ -88,6 +88,12 @@ func collision_body_count() -> int:
 	return n
 
 
+# True once a collision body exists under p (the player waits for this before gravity applies).
+func has_collision_at(p: Vector3) -> bool:
+	var key := Vector2i(int(floor(p.x / _chunk_m)), int(floor(p.z / _chunk_m)))
+	return _chunks.has(key) and (_chunks[key] as Chunk).body != null
+
+
 func has_chunk(key: Vector2i) -> bool:
 	return _chunks.has(key)
 

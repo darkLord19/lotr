@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import math
 
-from lib import parts
+from lib import parts, style
 from lib.geo import m
 from . import Spec
 
@@ -13,7 +13,7 @@ PI = math.pi
 def house(b, R, w=7.0, d=5.2, floors=2, wall="stone", roof="slate", hobbit=False, jetty=False, wing=False, seed_tilt=0.0):
     fh = 2.1 if hobbit else 2.7
     wh = fh * floors
-    wallc = {"stone": R["rock_mid"], "timber": R["plaster"], "plaster": R["plaster"]}[wall]
+    wallc = {"stone": style.mix(R["rock_mid"], R["wood"], 0.4), "timber": R["plaster"], "plaster": R["plaster"]}[wall]
     roofc = {"slate": R["slate"], "thatch": R["thatch"], "tile": R["roof_tile"]}[roof]
     b.box((0, 0, 0.2), (w + 0.3, d + 0.3, 0.4), R["rock_dark"])
     z0 = 0.4

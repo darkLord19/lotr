@@ -21,6 +21,7 @@ var session: Node
 var _screen_node: Node
 var _sim: OffscreenSim
 var _weather: WeatherDayNight
+var _player: PlayerSession
 
 
 func _ready() -> void:
@@ -135,6 +136,10 @@ func _build_session() -> void:
 		if "world_environment" in world:
 			_weather.world_environment = world.get("world_environment")
 		session.add_child(_weather)
+		if WorldState.has_entity(WorldState.PLAYER_ID):
+			_player = PlayerSession.new()
+			_player.world = world as Node3D
+			session.add_child(_player)
 	var graph := RoadGraph.new()
 	graph.load_region()
 	_sim = OffscreenSim.new()
@@ -155,6 +160,7 @@ func _drop_session() -> void:
 		session = null
 		_sim = null
 		_weather = null
+		_player = null
 		pause_menu = null
 	if get_tree() != null and get_tree().paused:
 		get_tree().paused = false

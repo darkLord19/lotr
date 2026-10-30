@@ -52,3 +52,18 @@
 - Main adds WeatherDayNight on top of world_root's Sun/WorldEnvironment (untested visually; 3D capture too slow under software rendering). A new game keeps WeatherModel default seed 3018.
 - No player body exists yet (M1-T08): player transform is the WorldState entity (pos + data.yaw); bodies should write it on SaveSystem.about_to_save and read it on SaveSystem.loaded.
 - Char creation's time-mode default does not follow Settings yet.
+
+## M1-T05 Blender asset library
+- Generators: `tools/blender/{lib,gen}`; build `.venv/bin/python tools/blender/build_all.py` (~6 s, parallel Blender per category), previews `.venv/bin/python tools/blender/preview.py --final` (needs xvfb; ~6 min with software GL), budgets `.venv/bin/python tools/blender/check_budget.py` (in verify.sh). Sheets: `docs/reports/m1_style/*.png`, lineup `asset_lineup.png`.
+- LODs are separate files (`<name>_lod1.glb` 40%, `_lod2.glb` 15%) rather than child nodes; collision is `<name>_col-convcolonly`/`-colonly` child nodes. Each category has `manifest.json` (kinds, tris, sizes) used by the budget check and lineup scene.
+- Apt Blender has no numpy (glTF exporter needs it): `tools/blender/runner.py` pip-installs a cp312 wheel into `build/blender_pylib`. Not needed on the Mac.
+- Nature assets use the Shire palette only (no Bree-tinted variants); tint in the terrain/material shader by region if wanted. Colours come from style.json ramps + role defaults in `lib/style.py` (style.json may override via `style.assets.<region>.<role>`).
+- Cheap to change: edit palette/role defaults and re-run build_all. Props are drawn ~2.5x in the lineup scene only.
+
+## M1-T08 player controller
+- Walk 1.8 m/s, run 4.0, crouch 0.9 (config/player.json): chosen so 3 s of W gives 3-6 m per plan; feels slow at 1:25 map scale. Cheap to change. Speed is not scaled by race (hobbit is only visually 0.6).
+- Placeholder body = capsule + head + nose block; real characters in M1-T07. Crouch has no overhead check (can stand up inside a low ceiling).
+- Esc: PauseMenu still reads `ui_cancel`; controls.json rebinds `ui_cancel` itself. Journal now reads the `journal` action (KEY_J fallback before InputSetup runs).
+- Player position sync clears the entity's POI (move_entity with Vector3), every 0.5 s when moved >=0.75 m and on about_to_save.
+- Debug console `speed <x>` scales the world clock (WorldClock.time_scale), not the player.
+- Capture: docs/reports/m1_player/player_behind_bag_end.png (hobbit from behind at Bag End; software render takes ~2.5 min).

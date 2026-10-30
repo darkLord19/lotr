@@ -36,8 +36,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: 
 - [ ] M1-T07 — Characters
   - notes: 
-- [ ] M1-T08 — Player controller and camera
-  - notes: 
+- [x] M1-T08 — Player controller and camera
+  - notes: PlayerController/CameraRig/Interaction/InputSetup/DebugConsole/inventory panel/PlayerSession; scripted test on real terrain collision: W 3 s = 5.2 m, run 11.2 m, crouch 2.6 m (noise 0.15 vs 0.5); capture docs/reports/m1_player/player_behind_bag_end.png viewed (placeholder capsule; npc-stage capture not taken, ~2.5 min under software render). Walk 1.8 m/s tuned to pass the 3-6 m check; may feel slow on the 1:25 map - tune in config/player.json. 
 - [x] M1-T09 — Character creation and origins
   - notes: origins/m1.json (5), background_traits.json, appearance.json, core/new_game.gd, ui/char_creation/; test_new_game.gd 5/5 pass; capture docs/reports/m1_creation/creation_screen.png. First-play-frame captures for 2 origins pending (needs player/world scene, M1-T08).
 - [~] M1-T10 — Off-screen simulation and roster NPC bodies — headless logic + tests done; NPC body spawning, capture, autoload registration, SaveSystem wiring pending

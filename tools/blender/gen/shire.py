@@ -34,12 +34,12 @@ def hobbit_hole(b, R, hill_r=6.5, door="door_green", windows=2, chimney=True, fl
     dz = 1.05
     dy = _hill_y(rx, ry, h, 0, dz)
     # recessed door tube + door disc
-    b.cyl((0, dy + 0.9, dz), 1.12, 1.0, R["wood_dark"], 12, rot=(PI / 2, 0, 0))
-    b.cyl((0, dy + 0.3, dz), 1.0, 0.2, R[door], 12, rot=(PI / 2, 0, 0))
+    b.cyl((0, dy + 1.0, dz), 1.15, 1.0, R["wood_dark"], 12, rot=(PI / 2, 0, 0))
+    b.cyl((0, dy + 0.12, dz), 0.98, 0.2, R[door], 12, rot=(PI / 2, 0, 0))
     for k in range(3):
         a = k * math.tau / 3 + 0.5
-        b.box((math.cos(a) * 0.55, dy + 0.08, dz + math.sin(a) * 0.55), (0.35, 0.04, 0.05), R["metal"], rot=(0, -a, 0))
-    b.blob((0.32, dy + 0.06, dz - 0.05), (0.09, 0.09, 0.09), R["brass"], 1, 0)
+        b.box((math.cos(a) * 0.55, dy - 0.1, dz + math.sin(a) * 0.55), (0.35, 0.04, 0.05), R["metal"], rot=(0, -a, 0))
+    b.blob((0.32, dy - 0.12, dz - 0.05), (0.09, 0.09, 0.09), R["brass"], 1, 0)
     b.cyl((0, dy - 0.05, 0), 1.35, 0.1, R["rock_mid"], 12, top_r=1.45)  # threshold stone
     # side windows
     wx = rx * 0.4
