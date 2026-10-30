@@ -7,3 +7,6 @@ game/assets/**/*.r16 filter=lfs diff=lfs merge=lfs -text
 game/assets/**/*.ogg filter=lfs diff=lfs merge=lfs -text
 game/assets/**/*.wav filter=lfs diff=lfs merge=lfs -text
 game/assets/**/*.res filter=lfs diff=lfs merge=lfs -text
+
+# Cloud sandbox cannot reach the LFS server; these small engine terrain files are stored as plain git objects.
+game/assets/terrain/** -filter -diff -merge

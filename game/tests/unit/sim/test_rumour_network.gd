@@ -8,10 +8,10 @@ extends GutTest
 ##   Frogmorton -> Bree   4079 m  p = 0.49   (mean 2.04 days)
 ## The shortest settlement chain is 3 hops and a rumour moves one hop per day, so Bree can never
 ## hear it before day 3; the chain's mean is about 4.3 days (the Stock -> Buckland -> Bree
-## detour shaves a little off). So with a fixed seed we expect day 3-7, and over many seeds a
-## mean near 4-5 days with nearly all runs inside the 10-day window.
+## detour shaves it to about 4.1, which the 300-seed run measures). So with a fixed seed we
+## expect day 3-7, and over many seeds a mean near 4 days with nearly all runs inside the 10-day window.
 
-const RID: String = "test_strength5"
+const RUMOUR: String = "test_strength5"
 const BREE_HUB: String = "prancing_pony"
 const SEED_SAMPLES: int = 300
 const WINDOW_DAYS: int = 10
@@ -33,7 +33,7 @@ func before_each() -> void:
 	net.rebuild()
 	net.register_pois()
 	net.seed_rng(7)
-	add_child_autofree(net)
+	autofree(net)  # kept out of the tree so it does not listen to the live clock/bus
 
 
 func after_each() -> void:
@@ -43,8 +43,8 @@ func after_each() -> void:
 
 
 func _plant(strength: int, max_hops: int, origin: String = "bag_end") -> void:
-	WorldState.set_flag(RumourNetwork.DYNAMIC_FLAG, {RID: {"text": "A test rumour.", "origin_poi": origin, "strength": strength, "max_hops": max_hops}})
-	WorldState.spread_rumour(RID, origin)
+	WorldState.set_flag(RumourNetwork.DYNAMIC_FLAG, {RUMOUR: {"text": "A test rumour.", "origin_poi": origin, "strength": strength, "max_hops": max_hops}})
+	WorldState.spread_rumour(RUMOUR, origin)
 
 
 func test_settlement_graph_follows_the_road() -> void:
@@ -66,25 +66,25 @@ func test_probability_rises_with_strength_and_falls_with_distance() -> void:
 func test_one_hop_per_day() -> void:
 	_plant(5, 6)
 	net.step_day()
-	assert_false(WorldState.rumour_known_at(RID, "frogmorton"), "a rumour new to Bywater cannot also reach Frogmorton the same day")
+	assert_false(WorldState.rumour_known_at(RUMOUR, "frogmorton"), "a rumour new to Bywater cannot also reach Frogmorton the same day")
 
 
 func test_fixed_seed_reaches_bree_within_expected_days() -> void:
 	_plant(5, 6)
-	var day: int = net.simulate_days(RID, BREE_HUB, WINDOW_DAYS)
+	var day: int = net.simulate_days(RUMOUR, BREE_HUB, WINDOW_DAYS)
 	gut.p("seed 7: reached Bree on day %d" % day)
 	assert_gte(day, MIN_HOPS, "three settlement hops need at least three days")
 	assert_lte(day, 7)
-	assert_true(WorldState.rumour_known_at(RID, "bywater"))
+	assert_true(WorldState.rumour_known_at(RUMOUR, "bywater"))
 
 
 func test_same_seed_is_reproducible() -> void:
 	_plant(5, 6)
-	var first: int = net.simulate_days(RID, BREE_HUB, WINDOW_DAYS)
+	var first: int = net.simulate_days(RUMOUR, BREE_HUB, WINDOW_DAYS)
 	WorldState.rumours = {}
-	WorldState.spread_rumour(RID, "bag_end")
+	WorldState.spread_rumour(RUMOUR, "bag_end")
 	net.seed_rng(7)
-	assert_eq(net.simulate_days(RID, BREE_HUB, WINDOW_DAYS), first)
+	assert_eq(net.simulate_days(RUMOUR, BREE_HUB, WINDOW_DAYS), first)
 
 
 func test_many_seeds_match_the_expected_speed() -> void:
@@ -94,14 +94,14 @@ func test_many_seeds_match_the_expected_speed() -> void:
 		WorldState.rumours = {}
 		_plant(5, 6)
 		net.seed_rng(s + 1)
-		var day: int = net.simulate_days(RID, BREE_HUB, WINDOW_DAYS)
+		var day: int = net.simulate_days(RUMOUR, BREE_HUB, WINDOW_DAYS)
 		if day > 0:
 			within += 1
 			total += day
 			assert_gte(day, MIN_HOPS)
 	var mean: float = float(total) / float(maxi(within, 1))
 	gut.p("mean arrival %.2f days, %d/%d within %d days" % [mean, within, SEED_SAMPLES, WINDOW_DAYS])
-	assert_between(mean, 3.8, 5.2)
+	assert_between(mean, 3.6, 4.8)
 	assert_gte(float(within) / float(SEED_SAMPLES), 0.95)
 
 
@@ -113,7 +113,7 @@ func test_weak_rumours_are_slower_than_strong_ones() -> void:
 			WorldState.rumours = {}
 			_plant(int(st[0]), 6)
 			net.seed_rng(s + 1)
-			var reached: int = net.simulate_days(RID, BREE_HUB, WINDOW_DAYS)
+			var reached: int = net.simulate_days(RUMOUR, BREE_HUB, WINDOW_DAYS)
 			if reached > 0:
 				if st[1] == 0:
 					weak += 1
@@ -124,40 +124,40 @@ func test_weak_rumours_are_slower_than_strong_ones() -> void:
 
 func test_max_hops_limits_the_reach() -> void:
 	_plant(5, 1)
-	net.simulate_days(RID, BREE_HUB, 40)
-	assert_true(WorldState.rumour_known_at(RID, "bywater"))
-	assert_false(WorldState.rumour_known_at(RID, "frogmorton"), "max_hops 1 stops after the first neighbour")
+	net.simulate_days(RUMOUR, BREE_HUB, 40)
+	assert_true(WorldState.rumour_known_at(RUMOUR, "bywater"))
+	assert_false(WorldState.rumour_known_at(RUMOUR, "frogmorton"), "max_hops 1 stops after the first neighbour")
 
 
 func test_npc_in_destination_settlement_gets_it_in_the_prompt() -> void:
 	_plant(5, 6)
 	WorldState.spawn_entity("barliman_butterbur", "npc", "prancing_pony")
-	assert_false(RID in NPCFacts.heard_rumours("barliman_butterbur", {}))
-	WorldState.spread_rumour(RID, BREE_HUB)
-	assert_true(RID in NPCFacts.heard_rumours("barliman_butterbur", {}))
+	assert_false(RUMOUR in NPCFacts.heard_rumours("barliman_butterbur", {}))
+	WorldState.spread_rumour(RUMOUR, BREE_HUB)
+	assert_true(RUMOUR in NPCFacts.heard_rumours("barliman_butterbur", {}))
 	WorldState.spawn_entity("bill_ferny", "npc", "bill_ferny_house")
-	assert_true(RID in NPCFacts.heard_rumours("bill_ferny", {}), "same settlement, different POI")
+	assert_true(RUMOUR in NPCFacts.heard_rumours("bill_ferny", {}), "same settlement, different POI")
 
 
 func test_traveller_carries_rumour_between_settlements() -> void:
-	WorldState.set_flag(RumourNetwork.DYNAMIC_FLAG, {RID: {"text": "t", "origin_poi": "prancing_pony", "strength": 5, "max_hops": 6}})
-	WorldState.spread_rumour(RID, "prancing_pony")
+	WorldState.set_flag(RumourNetwork.DYNAMIC_FLAG, {RUMOUR: {"text": "t", "origin_poi": "prancing_pony", "strength": 5, "max_hops": 6}})
+	WorldState.spread_rumour(RUMOUR, "prancing_pony")
 	net.note_arrival("pedlar", "prancing_pony")
 	var got: bool = false
 	# 0.9 (capped) per arrival: a handful of trips is certain enough for a fixed seed.
 	for i in range(5):
-		if RID in net.note_arrival("pedlar", "staddle"):
+		if RUMOUR in net.note_arrival("pedlar", "staddle"):
 			got = true
 			break
 		net.note_arrival("pedlar", "prancing_pony")
 	assert_true(got)
-	assert_true(WorldState.rumour_known_at(RID, "staddle"))
-	assert_false(WorldState.rumour_known_at(RID, "bywater"))
+	assert_true(WorldState.rumour_known_at(RUMOUR, "staddle"))
+	assert_false(WorldState.rumour_known_at(RUMOUR, "bywater"))
 
 
 func test_traveller_outside_settlements_changes_nothing() -> void:
-	WorldState.set_flag(RumourNetwork.DYNAMIC_FLAG, {RID: {"text": "t", "origin_poi": "prancing_pony", "strength": 5, "max_hops": 6}})
-	WorldState.spread_rumour(RID, "prancing_pony")
+	WorldState.set_flag(RumourNetwork.DYNAMIC_FLAG, {RUMOUR: {"text": "t", "origin_poi": "prancing_pony", "strength": 5, "max_hops": 6}})
+	WorldState.spread_rumour(RUMOUR, "prancing_pony")
 	net.note_arrival("pedlar", "prancing_pony")
 	assert_eq(net.note_arrival("pedlar", "brandywine_bridge").size(), 0)
 
@@ -167,7 +167,7 @@ func test_learned_fact_becomes_rumour_at_npc_settlement() -> void:
 	WorldState.set_flag(NPCMemory.LEARNED_FLAG_PREFIX + "farmer_maggot", ["The stranger paid in old silver."])
 	var made: Array[String] = net.ingest_learned_facts()
 	assert_eq(made.size(), 1)
-	assert_true(WorldState.rumour_known_at(made[0], "maggots_farm"))
+	assert_true(WorldState.rumour_known_at(made[0], net.hub_of("marish")), str(WorldState.rumours))
 	assert_eq(RumourNetwork.resolve_text(made[0]), "The stranger paid in old silver.")
 	assert_eq(net.ingest_learned_facts().size(), 0, "idempotent")
 	# NPCs in the same settlement (another farm POI) hear it through the prompt path.
@@ -178,9 +178,8 @@ func test_learned_fact_becomes_rumour_at_npc_settlement() -> void:
 
 func test_learned_fact_ingested_when_flag_changes() -> void:
 	WorldState.spawn_entity("gaffer_gamgee", "npc", "bagshot_row")
-	EventBus.flag_changed.connect(net._on_flag_changed)
+	add_child(net)  # in the tree it listens to flag_changed like in the game
 	WorldState.set_flag(NPCMemory.LEARNED_FLAG_PREFIX + "gaffer_gamgee", ["A rider asked for Mr. Baggins."])
-	EventBus.flag_changed.disconnect(net._on_flag_changed)
 	var found: bool = false
 	for rid: String in WorldState.rumours:
 		found = found or rid.begins_with(RumourNetwork.LEARNED_ID_PREFIX + "gaffer_gamgee")

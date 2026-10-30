@@ -46,8 +46,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: RiderPerception (17 table cases), RiderAI state machine, SoftFailure (time 120-360, black_breath debuff 12h, rumour player_found_senseless, robbery), scripted interrogation JSON. 
 - [~] M1-T12 — Survival, skills, reputation, inventory, foraging — logic + tests done; Tab/inventory UI, trading UI, HUD capture, place_world forage-node placement pending
   - notes: Survival/Skills/Inventory/Foraging/Factions/Trading with config/survival.json; tests pass. 
-- [ ] M1-T13 — Dialogue UI, portraits, rumour network
-  - notes: 
+- [~] M1-T13 — Dialogue UI, portraits, rumour network — UI/network/journal done; mflux portraits + live probes DEFERRED
+  - notes: RumourNetwork (Hobbiton->Bree mean 4.06 days over 300 seeds, always <10), DialoguePanel (pauses clock, typewriter, options 1-4, offline badge, memory saved on close), Journal (J). Captures docs/reports/m1_dialogue/{mid,done,journal}.png viewed. Not yet instantiated by any world scene (no autoload). 
 - [ ] M1-T14 — Day/night, weather, streaming and performance pass
   - notes: 
 - [ ] M1-T15 — Audio

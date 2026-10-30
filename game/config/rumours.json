@@ -26,7 +26,14 @@
     "log_max_entries": 40,
     "font_size": 26,
     "option_font_size": 24,
-    "offline_text": "OFFLINE - authored lines"
+    "offline_text": "OFFLINE - authored lines",
+    "end_hold_s": 2.5,
+    "panel_height_ratio": 0.52,
+    "portrait_size": 320,
+    "say_something_else": "Say something else...",
+    "thinking_text": "thinking",
+    "panel_margin": 24,
+    "max_option_keys": 4
   },
   "journal": {
     "memory_max_chars": 140,

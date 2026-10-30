@@ -1,9 +1,11 @@
 extends Node
 
 # Agent-facing screenshot tool. Args after `--`: --capture=<abs png> --after=<sec> --scene=<res path>
-# --pos=x,y,z --look=yaw,pitch --date=<content date> --hide-ui
+# --pos=x,y,z --look=yaw,pitch --date=<content date> --hide-ui --preset=<name from config/capture_presets.json>
+# Explicit --pos/--look/--date/--scene beat the preset's values.
 
 const EXIT_SCENE_FAILED: int = 2
+const PRESETS_PATH: String = "res://config/capture_presets.json"
 
 var _out_path: String = ""
 var _after_frames: int = 0
@@ -31,6 +33,9 @@ func _parse(argv: PackedStringArray) -> Dictionary:
 
 
 func _start() -> void:
+	if not _apply_preset():
+		get_tree().quit(EXIT_SCENE_FAILED)
+		return
 	_apply_date()
 	if _args.has("scene"):
 		var packed: Resource = load(String(_args["scene"]))
@@ -42,6 +47,10 @@ func _start() -> void:
 		await get_tree().process_frame
 		await get_tree().process_frame
 	_place_camera()
+	# Streaming scenes build everything the new camera position needs before we shoot.
+	var root: Node = get_tree().current_scene
+	if root != null and root.has_method("capture_prepare"):
+		await root.call("capture_prepare")
 	if _args.has("hide-ui"):
 		for n in get_tree().get_nodes_in_group("ui"):
 			if n is CanvasItem:
@@ -53,6 +62,32 @@ func _start() -> void:
 	var err: Error = img.save_png(_out_path)
 	print("CAPTURE_SAVED %s %dx%d err=%d" % [_out_path, img.get_width(), img.get_height(), err])
 	get_tree().quit(0 if err == OK else 1)
+
+
+# Fills in scene/pos/look/date from a named preset without overriding explicit arguments.
+func _apply_preset() -> bool:
+	if not _args.has("preset"):
+		return true
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(PRESETS_PATH))
+	var presets: Dictionary = (parsed as Dictionary).get("presets", {}) if parsed is Dictionary else {}
+	var preset_name: String = String(_args["preset"])
+	if not presets.has(preset_name):
+		printerr("Capture: unknown preset '%s' (have: %s)" % [preset_name, ", ".join(presets.keys())])
+		return false
+	var p: Dictionary = presets[preset_name]
+	if not _args.has("scene"):
+		_args["scene"] = String(p.get("scene", (parsed as Dictionary).get("default_scene", "")))
+		if String(_args["scene"]).is_empty():
+			_args.erase("scene")
+	if not _args.has("pos") and p.has("pos"):
+		var v: Array = p["pos"]
+		_args["pos"] = "%s,%s,%s" % [v[0], v[1], v[2]]
+	if not _args.has("look") and p.has("look"):
+		var l: Array = p["look"]
+		_args["look"] = "%s,%s" % [l[0], l[1]]
+	if not _args.has("date") and p.has("date"):
+		_args["date"] = String(p["date"])
+	return true
 
 
 # Set before the scene loads so scenes read the requested time in _ready; the clock is

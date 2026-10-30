@@ -1,0 +1,40 @@
+{
+  "world": {
+    "terrain": {
+      "data_dir": "res://assets/terrain/eriador_west",
+      "height_file": "height_4m.r16",
+      "splat_file": "splat_4m.png",
+      "size_px": [2048, 1024],
+      "metres_per_px": 4.0,
+      "chunk_m": 256.0,
+      "lods": [
+        {"max_dist_m": 450.0, "step_m": 4.0},
+        {"max_dist_m": 900.0, "step_m": 8.0},
+        {"max_dist_m": 1500.0, "step_m": 16.0},
+        {"max_dist_m": 2200.0, "step_m": 32.0},
+        {"max_dist_m": 100000.0, "step_m": 64.0}
+      ],
+      "lod_hysteresis_m": 64.0,
+      "view_radius_m": 2500.0,
+      "unload_margin_m": 300.0,
+      "chunks_per_frame": 2,
+      "refocus_distance_m": 32.0,
+      "skirt_m": 24.0,
+      "collision_radius_m": 128.0,
+      "collision_refresh_m": 16.0
+    },
+    "water": {
+      "sample_spacing_m": 24.0,
+      "smooth_samples": 4,
+      "width_factor": 0.95,
+      "lift_m": 0.02
+    },
+    "camera": {
+      "default_pos": [900.0, 150.0, 2300.0],
+      "default_look": [-20.0, -18.0],
+      "fov": 70.0,
+      "near": 0.3,
+      "far": 6000.0
+    }
+  }
+}

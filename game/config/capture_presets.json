@@ -1,0 +1,9 @@
+{
+  "default_scene": "res://world/world_root.tscn",
+  "presets": {
+    "hobbiton_overview": {"pos": [560.0, 118.0, 2560.0], "look": [-52.0, -14.0]},
+    "brandywine_bridge": {"pos": [5230.0, 52.0, 2420.0], "look": [-70.0, -9.0]},
+    "east_road":        {"pos": [6150.0, 62.0, 2310.0], "look": [-86.0, -6.0]},
+    "bree_hill":        {"pos": [6980.0, 120.0, 2560.0], "look": [-52.0, -14.0]}
+  }
+}
