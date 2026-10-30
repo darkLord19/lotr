@@ -17,3 +17,8 @@ Also M1-T13 live probes (Gaffer 09-24, Butterbur 09-20, Maggot rumour, Strider 0
 
 ## M1-T03 Terrain3D (deferred)
 Terrain3D release binaries are not downloadable in the cloud container (GitHub release assets blocked) and building it from source was not done here. The cloud session used the PLAN §8 fallback: chunked MeshInstance3D terrain generated from the heightmap (`world/terrain_chunks.gd`). On the Mac: download the Terrain3D release matching your Godot into `game/addons/terrain_3d`, enable it, and import `build/terrain/*` (regenerate with `tools/terrain/build_heightmap.py`) if you prefer it over the fallback.
+
+## Scene/UI follow-ups from logic-only tasks
+- M1-T11: scene test (player 10 m off-road crouched in bushes vs on road), vegetation concealment volumes, HUD eye icon, rider screech/heartbeat audio hooks. The scene layer supplies has_line_of_sight, road_distance_m and concealment to RiderPerception.
+- M1-T12: Tab inventory UI, trading UI, HUD (hunger, fatigue, eye, date) capture; `place_world.py` must emit forage nodes ({id,item,pos,yield,zone}); wire `Skills.prompt_lines()` into prompt_builder; controller must call Survival.add_exertion and keep a ref to Survival (call detach() on discard).
+- Rumour network must resolve the `{player}` placeholder in rumour `player_found_senseless` from flag `rumour_subject.player_found_senseless`.

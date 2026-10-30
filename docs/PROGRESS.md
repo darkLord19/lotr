@@ -42,10 +42,10 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: 
 - [ ] M1-T10 — Off-screen simulation and roster NPC bodies
   - notes: 
-- [ ] M1-T11 — Black Riders, stealth and soft failure
-  - notes: 
-- [ ] M1-T12 — Survival, skills, reputation, inventory, foraging
-  - notes: 
+- [~] M1-T11 — Black Riders, stealth and soft failure — logic + tests done; scene test, vegetation volumes, HUD eye icon, rider screech audio pending (need terrain/rendering)
+  - notes: RiderPerception (17 table cases), RiderAI state machine, SoftFailure (time 120-360, black_breath debuff 12h, rumour player_found_senseless, robbery), scripted interrogation JSON. 
+- [~] M1-T12 — Survival, skills, reputation, inventory, foraging — logic + tests done; Tab/inventory UI, trading UI, HUD capture, place_world forage-node placement pending
+  - notes: Survival/Skills/Inventory/Foraging/Factions/Trading with config/survival.json; tests pass. 
 - [ ] M1-T13 — Dialogue UI, portraits, rumour network
   - notes: 
 - [ ] M1-T14 — Day/night, weather, streaming and performance pass
