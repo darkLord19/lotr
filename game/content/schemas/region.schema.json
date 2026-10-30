@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Region",
+  "$defs": {
+    "xz": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "items": false},
+    "xyz": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}], "items": false},
+    "xz_list": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/xz"}}
+  },
+  "type": "object",
+  "required": ["id", "size_m", "pois", "settlements", "road_graph"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"$ref": "_defs.json#/$defs/id"},
+    "size_m": {"type": "array", "prefixItems": [{"type": "number", "exclusiveMinimum": 0}, {"type": "number", "exclusiveMinimum": 0}], "items": false},
+    "scale_note": {"type": "string"},
+    "pois": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "pos", "kind"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "name": {"type": "string"},
+          "pos": {"$ref": "#/$defs/xyz"},
+          "kind": {"type": "string"},
+          "settlement": {"$ref": "_defs.json#/$defs/id"}
+        }
+      }
+    },
+    "settlements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "faction", "center", "radius"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "faction": {"type": "string"},
+          "center": {"$ref": "#/$defs/xz"},
+          "radius": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    },
+    "roads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "points"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "kind": {"type": "string"},
+          "points": {"$ref": "#/$defs/xz_list"}
+        }
+      }
+    },
+    "rivers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "width", "points"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "width": {"type": "number", "exclusiveMinimum": 0},
+          "points": {"$ref": "#/$defs/xz_list"}
+        }
+      }
+    },
+    "hills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "center", "radius", "height"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "center": {"$ref": "#/$defs/xz"},
+          "radius": {"type": "number", "exclusiveMinimum": 0},
+          "height": {"type": "number"}
+        }
+      }
+    },
+    "forests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "polygon"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "polygon": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/xz"}},
+          "density": {"type": "number", "minimum": 0},
+          "enterable": {"type": "boolean"}
+        }
+      }
+    },
+    "road_graph": {
+      "type": "object",
+      "required": ["nodes", "edges"],
+      "additionalProperties": false,
+      "properties": {
+        "nodes": {"$ref": "_defs.json#/$defs/id_list"},
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [{"$ref": "_defs.json#/$defs/id"}, {"$ref": "_defs.json#/$defs/id"}, {"type": "string"}],
+            "items": false
+          }
+        }
+      }
+    },
+    "verify": {"type": "boolean"}
+  }
+}

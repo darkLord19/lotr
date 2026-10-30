@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Template card (generic NPC with name/personality pools)",
+  "type": "object",
+  "required": ["id", "race", "faction", "tier", "voice", "name_pool", "personality_pool"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"$ref": "_defs.json#/$defs/id"},
+    "race": {"type": "string", "minLength": 1},
+    "faction": {"type": "string", "minLength": 1},
+    "tier": {"enum": ["key_figure", "standard", "summariser"]},
+    "voice": {"type": "string", "minLength": 1},
+    "name_pool": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "personality_pool": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "speech_samples": {"type": "array", "items": {"type": "string"}},
+    "knowledge": {"type": "array", "items": {"$ref": "_defs.json#/$defs/knowledge_entry"}},
+    "never_knows": {"type": "array", "items": {"type": "string"}},
+    "inventory_can_give": {"$ref": "_defs.json#/$defs/id_list"},
+    "portrait_pool": {"type": "array", "items": {"type": "string", "pattern": "^res://"}},
+    "verify": {"type": "boolean"}
+  }
+}

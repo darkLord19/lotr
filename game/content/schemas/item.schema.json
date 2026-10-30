@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Items file (array)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "kind", "description"],
+    "additionalProperties": false,
+    "properties": {
+      "id": {"$ref": "_defs.json#/$defs/id"},
+      "name": {"type": "string", "minLength": 1},
+      "kind": {"enum": ["food", "drink", "mount", "tool", "weapon", "clothing", "key", "misc"]},
+      "description": {"type": "string"},
+      "weight": {"type": "number", "minimum": 0},
+      "stackable": {"type": "boolean"},
+      "value": {"type": "integer", "minimum": 0},
+      "verify": {"type": "boolean"}
+    }
+  }
+}

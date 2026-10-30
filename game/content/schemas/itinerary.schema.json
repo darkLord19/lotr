@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character itinerary",
+  "type": "object",
+  "required": ["character", "steps"],
+  "additionalProperties": false,
+  "properties": {
+    "character": {"$ref": "_defs.json#/$defs/id"},
+    "verify": {"type": "boolean"},
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "at", "action"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "at": {"$ref": "_defs.json#/$defs/date"},
+          "action": {"enum": ["depart", "arrive", "camp", "stay"]},
+          "from": {"$ref": "_defs.json#/$defs/id"},
+          "to": {"$ref": "_defs.json#/$defs/id"},
+          "at_poi": {"$ref": "_defs.json#/$defs/id"},
+          "mode": {"enum": ["walk", "ride", "boat"]},
+          "companions": {"$ref": "_defs.json#/$defs/id_list"},
+          "depends_on": {"$ref": "_defs.json#/$defs/id_list"},
+          "verify": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Timeline events file (array)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "at", "type"],
+    "additionalProperties": false,
+    "properties": {
+      "id": {"$ref": "_defs.json#/$defs/id"},
+      "at": {"$ref": "_defs.json#/$defs/date"},
+      "type": {"enum": ["world_event", "itinerary_step", "anchor"]},
+      "location": {"$ref": "_defs.json#/$defs/id"},
+      "actors": {"$ref": "_defs.json#/$defs/id_list"},
+      "effects": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": false,
+          "properties": {
+            "set_flag": {"type": "string", "minLength": 1},
+            "clear_flag": {"type": "string", "minLength": 1},
+            "add_knowledge": {
+              "type": "object",
+              "required": ["npc", "knowledge_id"],
+              "additionalProperties": false,
+              "properties": {
+                "npc": {"$ref": "_defs.json#/$defs/id"},
+                "knowledge_id": {"$ref": "_defs.json#/$defs/id"}
+              }
+            }
+          }
+        }
+      },
+      "rumour": {
+        "type": "object",
+        "required": ["id", "origin_poi", "strength"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"$ref": "_defs.json#/$defs/id"},
+          "origin_poi": {"$ref": "_defs.json#/$defs/id"},
+          "strength": {"type": "integer", "minimum": 1}
+        }
+      },
+      "waits_for_player": {"type": "boolean"},
+      "trigger_area": {
+        "type": "object",
+        "minProperties": 1,
+        "additionalProperties": false,
+        "properties": {
+          "settlement": {"$ref": "_defs.json#/$defs/id"},
+          "poi": {"$ref": "_defs.json#/$defs/id"}
+        }
+      },
+      "window_end": {"anyOf": [{"$ref": "_defs.json#/$defs/date"}, {"type": "null"}]},
+      "depends_on": {"$ref": "_defs.json#/$defs/id_list"},
+      "verify": {"type": "boolean"}
+    }
+  }
+}

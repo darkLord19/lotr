@@ -1,0 +1,28 @@
+{
+  "comment": "Shire Reckoning (LOTR Appendix D). Every year has 365 days: 12 months of 30 days plus 5 intercalary days (1 Yule, 1 Lithe, Midyear's Day, 2 Lithe, 2 Yule). Lookup: days = floor(minutes / 1440) since 3018-01-01; take the Gregorian-equivalent calendar date (leap years included), doy0 = zero-based day of that Gregorian year (Jan 1 = 0). index = doy0 + shire_index_shift; in a leap year, Feb 29 is shown as leap_day_name and every later day uses doy0 - 1. If index >= year_rollover_index (Dec 31), then index -= days_in_year and the Shire year is one higher. S.R. year = Gregorian-equivalent T.A. year + sr_year_offset (+1 after the rollover). Find the period with first_index <= index < first_index + length; day-of-month = index - first_index + 1. Intercalary periods (length 1) display just their name, e.g. 'Midyear's Day, S.R. 1418'. Otherwise display '<name> <day>, S.R. <year>'. Check: 3018-09-22 -> Halimath 22, S.R. 1418. The Shire leap rule (Overlithe) is not modelled separately; the Gregorian leap day stands in for it (see docs/REVIEW.md).",
+  "epoch_ta_year": 3018,
+  "sr_year_offset": -1600,
+  "shire_index_shift": 1,
+  "year_rollover_index": 365,
+  "days_in_year": 365,
+  "leap_day_name": "Overlithe",
+  "periods": [
+    {"name": "1 Yule", "first_index": 0, "length": 1, "intercalary": true},
+    {"name": "Afteryule", "first_index": 1, "length": 30, "intercalary": false},
+    {"name": "Solmath", "first_index": 31, "length": 30, "intercalary": false},
+    {"name": "Rethe", "first_index": 61, "length": 30, "intercalary": false},
+    {"name": "Astron", "first_index": 91, "length": 30, "intercalary": false},
+    {"name": "Thrimidge", "first_index": 121, "length": 30, "intercalary": false},
+    {"name": "Forelithe", "first_index": 151, "length": 30, "intercalary": false},
+    {"name": "1 Lithe", "first_index": 181, "length": 1, "intercalary": true},
+    {"name": "Midyear's Day", "first_index": 182, "length": 1, "intercalary": true},
+    {"name": "2 Lithe", "first_index": 183, "length": 1, "intercalary": true},
+    {"name": "Afterlithe", "first_index": 184, "length": 30, "intercalary": false},
+    {"name": "Wedmath", "first_index": 214, "length": 30, "intercalary": false},
+    {"name": "Halimath", "first_index": 244, "length": 30, "intercalary": false},
+    {"name": "Winterfilth", "first_index": 274, "length": 30, "intercalary": false},
+    {"name": "Blotmath", "first_index": 304, "length": 30, "intercalary": false},
+    {"name": "Foreyule", "first_index": 334, "length": 30, "intercalary": false},
+    {"name": "2 Yule", "first_index": 364, "length": 1, "intercalary": true}
+  ]
+}
