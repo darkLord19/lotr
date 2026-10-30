@@ -1,0 +1,39 @@
+{
+  "rumours": {
+    "spread": {
+      "p_per_strength": 0.3,
+      "p_max": 0.95,
+      "distance_scale_m": 2000.0,
+      "default_strength": 2,
+      "default_max_hops": 4
+    },
+    "traveller": {
+      "carry_p_per_strength": 0.2,
+      "carry_p_max": 0.9,
+      "carry_max_rumours": 6
+    },
+    "learned": {
+      "strength": 2,
+      "max_hops": 3
+    },
+    "unknown_subject": "someone"
+  },
+  "dialogue": {
+    "chars_per_second": 70.0,
+    "thinking_dot_period_s": 0.4,
+    "thinking_dots": 3,
+    "portrait_dir": "res://assets/portraits",
+    "log_max_entries": 40,
+    "font_size": 26,
+    "option_font_size": 24,
+    "offline_text": "OFFLINE - authored lines"
+  },
+  "journal": {
+    "memory_max_chars": 140,
+    "font_size": 24,
+    "title_font_size": 40,
+    "empty_rumours": "You have not heard any rumours yet.",
+    "empty_people": "You have not spoken with anyone yet.",
+    "no_summary": "You spoke, but little was remembered."
+  }
+}

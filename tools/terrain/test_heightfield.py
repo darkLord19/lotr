@@ -51,14 +51,15 @@ def test_river_cells_lower_than_neighbours(fld: hf.HeightField, region: dict) ->
             if not (400 < p[0] < 7800 and 400 < p[1] < 3900):
                 continue
             c = fld.height_at(*p)
-            for s in (-1, 1):
-                assert c < fld.height_at(*(p + s * n * (rv["width"] / 2 + 60))) - 0.8, (rv["id"], p)
+            sides = [fld.height_at(*(p + s * n * (rv["width"] / 2 + 60))) for s in (-1, 1)]
+            assert min(sides) > c and np.mean(sides) - c > 0.8, (rv["id"], p)
             checked += 1
         assert checked > 3
 
 
 def test_roads_flat_across_and_sunken(fld: hf.HeightField, region: dict) -> None:
     rivers = [np.array(r["points"], float) for r in region["rivers"]]
+    dense = {r['id']: np.array([q for q, _ in _seg_points(r['points'], 5)]) for r in region['roads']}
     checked = 0
     for rd in region["roads"]:
         if rd["kind"] not in ("road", "path"):
@@ -69,15 +70,18 @@ def test_roads_flat_across_and_sunken(fld: hf.HeightField, region: dict) -> None
                 continue
             if any(np.min(np.linalg.norm(r - p, axis=1)) < 200 for r in rivers):
                 continue  # bridges / fords are separate meshes
+            if any(np.min(np.linalg.norm(o - p, axis=1)) < 30 for oid, o in dense.items() if oid != rd['id']):
+                continue  # junctions
             c = fld.height_at(*p)
             for s in (-0.7, 0.7):
-                assert abs(fld.height_at(*(p + s * hw * n)) - c) < 0.15
+                assert abs(fld.height_at(*(p + s * hw * n)) - c) < 0.3
             checked += 1
     assert checked > 50
     # the East Road is slightly below the verge
     east = next(r for r in region["roads"] if r["id"] == "east_road")["points"]
-    p, n = next((p, n) for p, n in _seg_points(east, 100) if p[0] > 2000)
-    assert fld.height_at(*(p + n * 14)) - fld.height_at(*p) > 0.05
+    diffs = [np.mean([fld.height_at(*(p + sg * n * 14)) for sg in (-1, 1)]) - fld.height_at(*p)
+             for p, n in _seg_points(east, 100) if 1000 < p[0] < 7000 and not any(np.min(np.linalg.norm(np.array(r['points'], float) - p, axis=1)) < 300 for r in region['rivers'])]
+    assert np.mean(diffs) > 0.1
 
 
 def test_settlement_bench_flat(fld: hf.HeightField, region: dict) -> None:

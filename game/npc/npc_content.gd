@@ -49,9 +49,9 @@ static func rumours() -> Dictionary:
 	return out
 
 
+# Delegates so learned (dynamic) rumours and the {player} placeholder resolve in one place.
 static func rumour_text(rumour_id: String) -> String:
-	var r: Dictionary = rumours().get(rumour_id, {})
-	return str(r.get("text", ""))
+	return RumourNetwork.resolve_text(rumour_id)
 
 
 static func prettify(id: String) -> String:

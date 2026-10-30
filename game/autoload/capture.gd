@@ -31,6 +31,7 @@ func _parse(argv: PackedStringArray) -> Dictionary:
 
 
 func _start() -> void:
+	_apply_date()
 	if _args.has("scene"):
 		var packed: Resource = load(String(_args["scene"]))
 		if not packed is PackedScene:
@@ -52,6 +53,19 @@ func _start() -> void:
 	var err: Error = img.save_png(_out_path)
 	print("CAPTURE_SAVED %s %dx%d err=%d" % [_out_path, img.get_width(), img.get_height(), err])
 	get_tree().quit(0 if err == OK else 1)
+
+
+# Set before the scene loads so scenes read the requested time in _ready; the clock is
+# frozen so a slow software-rendered capture does not drift off the requested minute.
+func _apply_date() -> void:
+	if not _args.has("date"):
+		return
+	var m: int = GameDate.parse(String(_args["date"]))
+	if m == GameDate.INVALID:
+		printerr("Capture: bad --date %s" % _args["date"])
+		return
+	WorldClock.now = m
+	WorldClock.pause(&"capture")
 
 
 func _place_camera() -> void:
