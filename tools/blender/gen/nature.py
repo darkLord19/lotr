@@ -87,7 +87,7 @@ def tree(b, R, species="oak", variant=0):
             r = rng.uniform(2.2, 2.9) * s
             ln = rng.uniform(2.0, 2.8) * s
             x, y = math.cos(a) * r, math.sin(a) * r
-            b.cyl((x, y, th + 1.0 * s - ln + 0.9), 0.04, ln, L[i % 3], 4, top_r=0.38 * s)
+            b.cyl((x, y, th + 0.7 * s - ln), 0.04, ln, L[i % 3], 4, top_r=0.38 * s)
         trunk_r, trunk_h = 0.4 * s, 2.5
     else:  # pine
         tiers = 5 + variant
