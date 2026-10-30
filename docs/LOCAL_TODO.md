@@ -54,3 +54,12 @@ objects because the sandbox cannot reach LFS; `.gitattributes` already exempts `
    Footstep/door/screech one-shots are not yet played by anything (player controller / door / rider nodes should pick `sfx/footstep_<surface>_<1-3>.ogg`).
    Create Music/Ambience audio buses if wanted (currently Master with a per-class dB offset in `config/audio.json` `bus_db`).
 5. Verify on the Mac that `AudioStreamSynchronized` stems stay loop-aligned and that the OGG loops are gap-free (Vorbis encoder padding).
+
+## M1-T06 benchmark
+- Run `tools/bench.sh flyover_full` (and walk routes) on the Mac with the populated world; check 60 fps avg / 45 fps 1% low / <6 GB. If heavy: lower `population.foliage.tier_ranges_m`, `load_radius_m`, tree density constants in tools/terrain/place_world.py, or shadow_kinds. Cloud only checked counters (test_cell_streamer budget sweep).
+
+## Recommended order for the local (Mac) session
+1. `brew install --cask godot blender`; symlink into tools/bin; `.venv` + `pip install -r tools/requirements.txt`; run `tools/verify.sh` (should pass; the Python terrain tests and Blender build need the venv/Blender).
+2. Regenerate terrain data: `.venv/bin/python tools/terrain/build_heightmap.py && .venv/bin/python tools/terrain/export_engine_terrain.py` (committed engine copy already exists).
+3. OPENROUTER_API_KEY live work (M0-T09/T10, M1-T13 probes). 4. Run the game windowed: `godot --path game`; judge captures/look; run benchmarks (write tools/bench.sh + bench_runner.gd) and tune population/quality.
+5. mflux portraits, MusicGen cues, CC0 audio; optional Terrain3D and Quaternius swap-in; NPC body spawner, rider scene, HUD/trading UI; write docs/plans/M2.md and start M2.

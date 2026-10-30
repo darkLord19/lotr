@@ -29,6 +29,7 @@ LOCATIONS: list[tuple[str, str]] = [
     ("lore_cards/templates/*.json", "template_card"),
     ("timeline/events/*.json", "timeline_event"),
     ("timeline/itineraries/*.json", "itinerary"),
+    ("regions/*_placements.json", "placements"),
     ("regions/*.json", "region"),
     ("items/*.json", "item"),
     ("rumours/*.json", "rumour"),

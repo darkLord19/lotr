@@ -632,7 +632,8 @@ def place_anchored(w: World) -> None:
         c = door - down * (ddoor if i != 2 else w.models.door_front(mid))
         w.place_building(f"bagshot_row_{i + 1}", mid, c[0], c[1], math.atan2(down[0], down[1]), "hobbiton", "bagshot_row" if i == 1 else None,
                         role="hole", slope_tol=HOLE_SLOPE_TOL * 1.3, check=True, allow_road=True) or \
-            w.place_building(f"bagshot_row_{i + 1}", mid, c[0], c[1], math.atan2(down[0], down[1]), "hobbiton", None, role="hole", check=False, allow_road=True)
+            w.place_building(f"bagshot_row_{i + 1}", mid, c[0], c[1], math.atan2(down[0], down[1]), "hobbiton", "bagshot_row" if i == 1 else None,
+                            role="hole", check=False, allow_road=True)
 
     anchored = [
         ("mill", "shire/mill_water", "hobbiton", 1.0, "mill"),
