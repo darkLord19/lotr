@@ -111,13 +111,16 @@ static func environment() -> Environment:
 	e.tonemap_mode = Environment.TONE_MAPPER_FILMIC if String(cfg.get("tonemap", "filmic")) == "filmic" else Environment.TONE_MAPPER_LINEAR
 	e.tonemap_exposure = float(cfg.get("exposure", 1.0))
 	e.fog_enabled = true
-	e.fog_mode = Environment.FOG_MODE_EXPONENTIAL
+	# Depth fog leaves the foreground clear and reaches full haze exactly where streaming stops,
+	# so the edge of the built terrain never shows.
+	e.fog_mode = Environment.FOG_MODE_DEPTH
+	e.fog_depth_begin = float(cfg.get("fog_depth_begin_m", 300.0))
+	e.fog_depth_end = float(cfg.get("fog_depth_end_m", 2400.0))
+	e.fog_depth_curve = float(cfg.get("fog_depth_curve", 1.5))
 	e.fog_light_color = lin_color(String(style("palettes.shire.fog", "#f3d9a8")))
 	e.fog_density = float(cfg.get("fog_density", 0.001))
 	e.fog_aerial_perspective = float(cfg.get("fog_aerial_perspective", 0.5))
 	e.fog_sky_affect = float(cfg.get("fog_sky_affect", 0.8))
-	e.fog_height = float(cfg.get("fog_height_m", 0.0))
-	e.fog_height_density = float(cfg.get("fog_height_density", 0.0))
 	return e
 
 

@@ -1,6 +1,7 @@
 shader_type spatial;
 // Stylized river water for ribbon meshes: UV.x runs 0..1 across the river, UV.y is metres along it.
-render_mode cull_disabled, depth_draw_opaque, specular_disabled;
+// Unshaded: the warm low sun would otherwise multiply the blue to grey; bands carry the depth cue.
+render_mode cull_disabled, depth_draw_opaque, unshaded;
 
 uniform vec3 shallow_color = vec3(0.37, 0.72, 0.69);
 uniform vec3 deep_color = vec3(0.16, 0.44, 0.57);
@@ -37,7 +38,7 @@ void fragment() {
 	// Foam: a ragged band along each bank plus sparse streaks in the current.
 	float edge_noise = vnoise(vec2(UV.y * 0.35, TIME * 0.4 + UV.x * 3.0));
 	float foam = smoothstep(1.0 - foam_width - 0.1 * edge_noise, 1.0 - foam_width * 0.5, across);
-	foam = max(foam, step(0.82, r) * 0.5);
+	foam = max(foam, step(0.9, r) * 0.35);
 	col = mix(col, foam_color, foam);
 	float fres = pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), 3.0);
 	col = mix(col, sky_color, fres * sky_reflect);

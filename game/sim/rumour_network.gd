@@ -15,6 +15,7 @@ const INGESTED_FLAG: String = "rumour_net.ingested"  ## rumour ids already made 
 const SUBJECT_FLAG_PREFIX: String = "rumour_subject."
 const SUBJECT_PLACEHOLDER: String = "{player}"
 const LEARNED_ID_PREFIX: String = "learned_"
+const SAVE_KEY: String = "rumour_network"
 const HASH_MASK: int = 0xffffff  ## keeps learned-rumour ids short; collisions only merge two identical-ish facts
 
 var graph: RoadGraph = null
@@ -40,10 +41,39 @@ func _ready() -> void:
 	WorldClock.day_passed.connect(_on_day_passed)
 	EventBus.entity_moved.connect(_on_entity_moved)
 	EventBus.flag_changed.connect(_on_flag_changed)
+	SaveSystem.register_participant(SAVE_KEY, serialise, deserialise)
+
+
+func _exit_tree() -> void:
+	SaveSystem.unregister_participant(SAVE_KEY, serialise)
 
 
 func seed_rng(value: int) -> void:
 	rng.seed = value
+
+
+# --- save/load -----------------------------------------------------------------
+
+## The rumours themselves live in WorldState; this adds what only the network remembers: who
+## carries what, and the RNG, so a reload continues the same spread instead of re-rolling it.
+## RNG values are strings because JSON numbers (doubles) cannot hold a full 64-bit state.
+func serialise() -> Dictionary:
+	return {"travellers": _travellers.duplicate(true), "rng_seed": str(rng.seed), "rng_state": str(rng.state)}
+
+
+func deserialise(d: Dictionary) -> void:
+	_travellers = {}
+	for id: String in (d.get("travellers", {}) as Dictionary):
+		var t: Dictionary = d["travellers"][id]
+		var carry: Array[String] = []
+		for r: Variant in t.get("carry", []):
+			carry.append(str(r))
+		_travellers[id] = {"settlement": str(t.get("settlement", "")), "carry": carry}
+	if d.has("rng_seed"):
+		rng.seed = str(d["rng_seed"]).to_int()
+		rng.state = str(d.get("rng_state", "0")).to_int()
+	else:
+		rng.randomize()
 
 
 # --- settlement graph --------------------------------------------------------

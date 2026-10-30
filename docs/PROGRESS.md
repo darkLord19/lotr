@@ -26,10 +26,10 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: 26 events, 12 itineraries, 15 rumours, 16 lore cards + 3 templates + black rider cards, 15 fallback files; CONTENT_OK; pytest 28 pass; docs/reports/timeline_m1.md (114 rows). I could not check against the book text offline: canon uncertainties are `verify: true` and listed in the report. Gandalf Sept 29-Oct 1 conflicts with my recollection of Appendix B (see REVIEW.md). 📝 REVIEW ITEM: timeline_m1.md verify section. 
 - [x] M1-T02 — Region layout (control map)
   - notes: region file 32 POIs/9 settlements/35 graph edges; check_region.py REGION_OK, Bag End -> Prancing Pony 7283 m = 86.7 min at 1.4 m/s; control map viewed (docs/reports/eriador_west_control.png): Brandywine N-S, East Road crosses at the Bridge, Old Forest east of Hedge, Bree far east. Coordinates: z=0 is NORTH edge, z increases south (PLAN's -Z north text was ambiguous), noted in scale_note. 
-- [~] M1-T03 — Terrain generation and Terrain3D import — Python heightmap/splats done; engine terrain via chunked-mesh fallback in progress; Terrain3D deferred (see LOCAL_TODO)
-  - notes: `.venv/bin/python tools/terrain/build_heightmap.py` (~85 s) -> build/terrain/*.r16 + splats; previews in docs/reports/m1_terrain/. 
-- [ ] M1-T04 — Style frame and art direction
-  - notes: 
+- [x] M1-T03 — Terrain generation and Terrain3D import — done with chunked-mesh fallback (PLAN §8); Terrain3D itself deferred (LOCAL_TODO)
+  - notes: TerrainChunks (256 m chunks, 5 LODs, skirts, collision <128 m), WaterRibbons, world_root.tscn, capture presets; 13 GUT tests; captures (2560x1440) docs/reports/m1_terrain/capture_*.png viewed: river in channel, roads as dirt, no holes. Capture tip: `tools/capture.sh - out.png --preset=east_road --after=0.05` (~12 s; the default --after=3 takes >10 min under software rendering). `.venv/bin/python tools/terrain/build_heightmap.py` (~85 s) -> build/terrain/*.r16 + splats; previews in docs/reports/m1_terrain/. 
+- [~] M1-T04 — Style frame and art direction — terrain/sky/fog/water style done (config/style.json); Blender set-dressing and 3 style captures wait on M1-T05 assets
+  - notes: toon terrain shader, banded clouds sky, golden-hour sun. 
 - [ ] M1-T05 — Blender procedural asset library
   - notes: 
 - [ ] M1-T06 — World population

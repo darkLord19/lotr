@@ -104,6 +104,7 @@ func sleep(hours: float, place: String = "bed") -> void:
 	_sleep_place = place
 	_clock.advance(int(hours * _clock.MINUTES_PER_HOUR))
 	_sleeping = false
+	EventBus.player_slept.emit(hours, place)
 
 
 # --- internals -------------------------------------------------------------

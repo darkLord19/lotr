@@ -24,6 +24,7 @@ const SUN_SHADOW_MAX_DISTANCE: float = 120.0
 const SKY_GROUND_DARKEN: float = 0.5
 const SKY_CURVE: float = 0.15
 const RAIN_AABB_HEIGHT: float = 30.0
+const SAVE_KEY: String = "weather"
 
 var model: WeatherModel
 var current: WeatherModel.Snapshot
@@ -40,6 +41,11 @@ func _ready() -> void:
 	_rain_cfg = model.cfg.get("rain", {}) as Dictionary
 	_ensure_nodes()
 	apply(_current_minute())
+	SaveSystem.register_participant(SAVE_KEY, serialise, deserialise)
+
+
+func _exit_tree() -> void:
+	SaveSystem.unregister_participant(SAVE_KEY, serialise)
 
 
 func _process(_delta: float) -> void:

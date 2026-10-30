@@ -52,9 +52,9 @@
           "#f2dc72"
         ],
         "path": [
-          "#5e4026",
-          "#9a6c3e",
-          "#c89a60"
+          "#5a4430",
+          "#8c6c48",
+          "#bc9a6c"
         ],
         "field": [
           "#7a7030",
@@ -62,9 +62,9 @@
           "#e0cc70"
         ],
         "riverbank": [
-          "#5c5836",
-          "#96925c",
-          "#cabe86"
+          "#4a5a30",
+          "#8a8e55",
+          "#c2bc84"
         ],
         "forest_floor": [
           "#1c4420",
@@ -122,8 +122,8 @@
     "sun": {
       "azimuth_deg": 255.0,
       "elevation_deg": 16.0,
-      "color": "#ffd9a0",
-      "energy": 1.25,
+      "color": "#ffead0",
+      "energy": 1.1,
       "shadow_max_distance_m": 600.0,
       "shadows": true
     },
@@ -145,24 +145,25 @@
     },
     "environment": {
       "ambient_energy": 0.3,
-      "fog_density": 0.00028,
-      "fog_aerial_perspective": 0.35,
+      "fog_density": 0.9,
+      "fog_aerial_perspective": 0.4,
       "fog_sky_affect": 0.6,
-      "fog_height_m": 60.0,
-      "fog_height_density": 0.0,
       "exposure": 1.0,
-      "tonemap": "filmic"
+      "tonemap": "filmic",
+      "fog_depth_begin_m": 350.0,
+      "fog_depth_end_m": 2450.0,
+      "fog_depth_curve": 1.6
     },
     "water": {
-      "shallow": "#5fb8b0",
-      "deep": "#2a6f92",
+      "shallow": "#4fb0b8",
+      "deep": "#1f5f94",
       "foam": "#f4f1e0",
       "alpha": 0.86,
       "bands": 3.0,
       "foam_width": 0.14,
       "ripple_scale": 0.045,
       "ripple_speed": 0.35,
-      "sky_reflect": 0.35
+      "sky_reflect": 0.15
     }
   }
 }

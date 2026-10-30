@@ -44,6 +44,20 @@ var _body_driven: Dictionary = {}
 var _arrived_this_tick: bool = false
 
 
+const SAVE_KEY: String = "offscreen_sim"
+
+
+# Registers on entering the tree only, so private instances built by unit tests stay out of the save.
+func _ready() -> void:
+	SaveSystem.register_participant(SAVE_KEY, serialise, deserialise)
+
+
+func _exit_tree() -> void:
+	SaveSystem.unregister_participant(SAVE_KEY, serialise)
+	if timeline != null:
+		timeline.remove_hold_guard(_is_blocked)
+
+
 # Wires to a clock/state/timeline; tests bind fresh instances instead of the autoloads.
 func bind(clock_node: Node, state_node: Node, timeline_node: Node, road_graph: RoadGraph) -> void:
 	clock = clock_node
@@ -403,7 +417,7 @@ func serialise() -> Dictionary:
 	var out: Dictionary = {}
 	for c: String in tracks:
 		out[c] = {"cursor": tracks[c]["cursor"], "leg": (tracks[c]["leg"] as Dictionary).duplicate(true)}
-	return {"tracks": out}
+	return {"tracks": out, "deviations": deviations.duplicate(true)}
 
 
 func deserialise(d: Dictionary) -> void:
@@ -413,3 +427,15 @@ func deserialise(d: Dictionary) -> void:
 		if tracks.has(c):
 			tracks[c]["cursor"] = int(saved[c].get("cursor", 0))
 			tracks[c]["leg"] = (saved[c].get("leg", {}) as Dictionary).duplicate(true)
+	deviations = []
+	for entry: Variant in d.get("deviations", []):
+		var e: Dictionary = (entry as Dictionary).duplicate()
+		# JSON hands integers back as floats; minutes must stay ints.
+		for k: String in ["at", "late_minutes"]:
+			if e.has(k):
+				e[k] = int(e[k])
+		deviations.append(e)
+	# Dialogue pauses and body ownership belong to live scenes, which re-announce themselves.
+	_in_dialogue = {}
+	_open_pauses = {}
+	_body_driven = {}

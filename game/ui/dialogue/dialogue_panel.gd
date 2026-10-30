@@ -279,7 +279,7 @@ func tick(delta: float) -> void:
 		var dots: int = int(_think_t / period) % int(Config.get_value("dialogue.thinking_dots", 3)) + 1
 		_thinking.text = str(Config.get_value("dialogue.thinking_text", "thinking")) + ".".repeat(dots)
 	if is_typing():
-		_typed = minf(_typed + float(Config.get_value("dialogue.chars_per_second", 70.0)) * delta, float(_target.length()))
+		_typed = minf(_typed + float(Config.get_value("dialogue.chars_per_second", 70.0)) * Settings.text_speed() * delta, float(_target.length()))
 		_speech.visible_characters = int(_typed)
 		if not is_typing():
 			_after_reveal()
