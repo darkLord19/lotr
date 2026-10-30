@@ -45,3 +45,10 @@
 - Design: music stems are one 24 s loop length played inside an `AudioStreamSynchronized`, so cue changes are volume crossfades. Rider proximity (<= 60 m) or SNIFF/SEEN -> danger cue; APPROACH/INTERROGATE/SNIFFED -> chase cue; danger holds 8 s after the rider lets go. Loudness: stems ~ -19 LUFS each (two or three summed ~ -16), ambience -28..-34 LUFS.
 - PLAN asks for MusicGen cues and CC0 packs plus a `--write-movie` recording; skipped here (see `docs/LOCAL_TODO.md`).
 - Observed once (passed on re-run, so intermittent): `tests/unit/flow/test_save_game_flow.gd` failed on a Black Rider track `leg/s` difference (1476.6 vs 1476.0) — not from audio work (menus/save area).
+
+## M1-T16 menus and save integration
+- Saves use full-precision JSON; JSON loses int/float distinction, so state is compared canonically (numbers by value). Some ints (flags, entity data) come back as floats; code reads them via int()/float().
+- project run/main_scene stays boot.tscn; boot.gd opens world/main.tscn only when not headless and no --scene/--capture/--preset args.
+- Main adds WeatherDayNight on top of world_root's Sun/WorldEnvironment (untested visually; 3D capture too slow under software rendering). A new game keeps WeatherModel default seed 3018.
+- No player body exists yet (M1-T08): player transform is the WorldState entity (pos + data.yaw); bodies should write it on SaveSystem.about_to_save and read it on SaveSystem.loaded.
+- Char creation's time-mode default does not follow Settings yet.

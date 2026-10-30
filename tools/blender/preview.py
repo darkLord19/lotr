@@ -97,10 +97,10 @@ def compose(cat: str, lods: bool = False) -> str:
         assets = lod_sample(assets)
     cols_per_asset = 3 if lods else 1
     n = len(assets)
-    cols = 2 if lods else min(6, max(1, math.ceil(math.sqrt(n * 1.5))))
+    cols = 2 if lods else 4
     rows = math.ceil(n / cols)
     tw, th = TILE // 2 if not lods else TILE // 2, TILE // 2
-    tw = th = int(TILE * (0.62 if not lods else 0.5))
+    tw = th = int(TILE * (0.78 if not lods else 0.55))
     W, H = cols * cols_per_asset * tw, rows * (th + 26)
     sheet = Image.new("RGB", (W, H), (30, 30, 34))
     dr = ImageDraw.Draw(sheet)
@@ -117,7 +117,7 @@ def compose(cat: str, lods: bool = False) -> str:
                 im = Image.open(p).convert("RGB").resize((tw, th), Image.LANCZOS)
                 sheet.paste(im, ((cx * cols_per_asset + l) * tw, cy * (th + 26) + 26))
         sx, sy, sz = a["size_m"]
-        label = f"{a['name']}  {sx:.1f}x{sy:.1f}x{sz:.1f}m  tris {'/'.join(str(t) for t in a['tris'])}"
+        label = f"{a['name']} {sx:.0f}x{sy:.0f}x{sz:.0f}m {'/'.join(str(t) for t in a['tris'])}"
         dr.text((cx * cols_per_asset * tw + 4, cy * (th + 26) + 5), label, fill=(235, 235, 220), font=font)
     out = os.path.join(OUT, f"{cat}{'_lods' if lods else ''}.png")
     sheet.save(out)

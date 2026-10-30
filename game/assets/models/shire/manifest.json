@@ -1,0 +1,527 @@
+{
+ "category": "shire",
+ "assets": [
+  {
+   "name": "bridge_brandywine",
+   "category": "shire",
+   "kind": "bigstructure",
+   "files": [
+    "bridge_brandywine.glb",
+    "bridge_brandywine_lod1.glb",
+    "bridge_brandywine_lod2.glb"
+   ],
+   "tris": [
+    1236,
+    466,
+    105
+   ],
+   "size_m": [
+    36.1,
+    8.4,
+    6.92
+   ],
+   "collision": "colonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bridge_small_stone",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "bridge_small_stone.glb",
+    "bridge_small_stone_lod1.glb",
+    "bridge_small_stone_lod2.glb"
+   ],
+   "tris": [
+    192,
+    70,
+    18
+   ],
+   "size_m": [
+    6.6,
+    2.02,
+    2.0
+   ],
+   "collision": "colonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bridge_small_wood",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "bridge_small_wood.glb",
+    "bridge_small_wood_lod1.glb",
+    "bridge_small_wood_lod2.glb"
+   ],
+   "tris": [
+    424,
+    168,
+    34
+   ],
+   "size_m": [
+    6.4,
+    2.02,
+    1.7
+   ],
+   "collision": "colonly",
+   "min_z": -0.6
+  },
+  {
+   "name": "fence_picket",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "fence_picket.glb"
+   ],
+   "tris": [
+    144
+   ],
+   "size_m": [
+    2.12,
+    0.16,
+    1.1
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "fence_rail",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "fence_rail.glb"
+   ],
+   "tris": [
+    48
+   ],
+   "size_m": [
+    2.14,
+    0.14,
+    1.05
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "fence_stone",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "fence_stone.glb"
+   ],
+   "tris": [
+    812
+   ],
+   "size_m": [
+    2.36,
+    0.72,
+    0.76
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.04
+  },
+  {
+   "name": "ferry_raft",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "ferry_raft.glb",
+    "ferry_raft_lod1.glb",
+    "ferry_raft_lod2.glb"
+   ],
+   "tris": [
+    428,
+    166,
+    38
+   ],
+   "size_m": [
+    5.2,
+    3.2,
+    1.5
+   ],
+   "collision": "colonly",
+   "min_z": -0.25
+  },
+  {
+   "name": "garden_plot_1",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "garden_plot_1.glb",
+    "garden_plot_1_lod1.glb",
+    "garden_plot_1_lod2.glb"
+   ],
+   "tris": [
+    676,
+    244,
+    63
+   ],
+   "size_m": [
+    4.12,
+    4.12,
+    0.53
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "garden_plot_2",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "garden_plot_2.glb",
+    "garden_plot_2_lod1.glb",
+    "garden_plot_2_lod2.glb"
+   ],
+   "tris": [
+    1164,
+    445,
+    146
+   ],
+   "size_m": [
+    4.12,
+    4.12,
+    1.5
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "garden_plot_3",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "garden_plot_3.glb",
+    "garden_plot_3_lod1.glb",
+    "garden_plot_3_lod2.glb"
+   ],
+   "tris": [
+    1596,
+    638,
+    219
+   ],
+   "size_m": [
+    4.12,
+    4.12,
+    0.56
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "gate_picket",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "gate_picket.glb"
+   ],
+   "tris": [
+    108
+   ],
+   "size_m": [
+    2.18,
+    0.23,
+    1.2
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "gate_rail",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "gate_rail.glb"
+   ],
+   "tris": [
+    108
+   ],
+   "size_m": [
+    2.18,
+    0.23,
+    1.2
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "hobbit_cottage_1",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "hobbit_cottage_1.glb",
+    "hobbit_cottage_1_lod1.glb",
+    "hobbit_cottage_1_lod2.glb"
+   ],
+   "tris": [
+    736,
+    284,
+    79
+   ],
+   "size_m": [
+    7.2,
+    6.1,
+    5.29
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "hobbit_cottage_2",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "hobbit_cottage_2.glb",
+    "hobbit_cottage_2_lod1.glb",
+    "hobbit_cottage_2_lod2.glb"
+   ],
+   "tris": [
+    788,
+    304,
+    84
+   ],
+   "size_m": [
+    8.0,
+    6.45,
+    5.36
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.07
+  },
+  {
+   "name": "hobbit_cottage_3",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "hobbit_cottage_3.glb",
+    "hobbit_cottage_3_lod1.glb",
+    "hobbit_cottage_3_lod2.glb"
+   ],
+   "tris": [
+    892,
+    343,
+    102
+   ],
+   "size_m": [
+    7.85,
+    5.92,
+    5.22
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.13
+  },
+  {
+   "name": "hobbit_hole_1",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "hobbit_hole_1.glb",
+    "hobbit_hole_1_lod1.glb",
+    "hobbit_hole_1_lod2.glb"
+   ],
+   "tris": [
+    1306,
+    507,
+    167
+   ],
+   "size_m": [
+    11.31,
+    15.93,
+    3.86
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "hobbit_hole_2",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "hobbit_hole_2.glb",
+    "hobbit_hole_2_lod1.glb",
+    "hobbit_hole_2_lod2.glb"
+   ],
+   "tris": [
+    1210,
+    471,
+    156
+   ],
+   "size_m": [
+    13.26,
+    17.73,
+    4.33
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "hobbit_hole_3",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "hobbit_hole_3.glb",
+    "hobbit_hole_3_lod1.glb",
+    "hobbit_hole_3_lod2.glb"
+   ],
+   "tris": [
+    1366,
+    529,
+    178
+   ],
+   "size_m": [
+    14.82,
+    19.06,
+    3.92
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "hobbit_hole_4",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "hobbit_hole_4.glb",
+    "hobbit_hole_4_lod1.glb",
+    "hobbit_hole_4_lod2.glb"
+   ],
+   "tris": [
+    1306,
+    507,
+    168
+   ],
+   "size_m": [
+    12.09,
+    16.61,
+    4.05
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "inn_golden_perch",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "inn_golden_perch.glb",
+    "inn_golden_perch_lod1.glb",
+    "inn_golden_perch_lod2.glb"
+   ],
+   "tris": [
+    1456,
+    563,
+    131
+   ],
+   "size_m": [
+    9.6,
+    8.84,
+    5.79
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "inn_green_dragon",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "inn_green_dragon.glb",
+    "inn_green_dragon_lod1.glb",
+    "inn_green_dragon_lod2.glb"
+   ],
+   "tris": [
+    1268,
+    491,
+    116
+   ],
+   "size_m": [
+    12.0,
+    7.84,
+    5.89
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "mill_water",
+   "category": "shire",
+   "kind": "house",
+   "files": [
+    "mill_water.glb",
+    "mill_water_lod1.glb",
+    "mill_water_lod2.glb"
+   ],
+   "tris": [
+    1056,
+    415,
+    164
+   ],
+   "size_m": [
+    8.2,
+    8.0,
+    7.52
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.12
+  },
+  {
+   "name": "three_farthing_stone",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "three_farthing_stone.glb",
+    "three_farthing_stone_lod1.glb",
+    "three_farthing_stone_lod2.glb"
+   ],
+   "tris": [
+    612,
+    242,
+    84
+   ],
+   "size_m": [
+    3.8,
+    3.8,
+    3.52
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.14
+  },
+  {
+   "name": "well_1",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "well_1.glb"
+   ],
+   "tris": [
+    336
+   ],
+   "size_m": [
+    3.0,
+    2.1,
+    3.01
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "well_2",
+   "category": "shire",
+   "kind": "structure",
+   "files": [
+    "well_2.glb"
+   ],
+   "tris": [
+    216
+   ],
+   "size_m": [
+    3.0,
+    2.1,
+    3.01
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  }
+ ]
+}

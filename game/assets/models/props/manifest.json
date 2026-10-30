@@ -1,0 +1,437 @@
+{
+ "category": "props",
+ "assets": [
+  {
+   "name": "barrel_1",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "barrel_1.glb"
+   ],
+   "tris": [
+    168
+   ],
+   "size_m": [
+    0.82,
+    0.82,
+    0.97
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "barrel_2",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "barrel_2.glb"
+   ],
+   "tris": [
+    504
+   ],
+   "size_m": [
+    1.72,
+    0.85,
+    1.87
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bench_1",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "bench_1.glb"
+   ],
+   "tris": [
+    36
+   ],
+   "size_m": [
+    1.8,
+    0.45,
+    0.49
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bench_2",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "bench_2.glb"
+   ],
+   "tris": [
+    72
+   ],
+   "size_m": [
+    1.8,
+    0.47,
+    1.05
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "cart_1",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "cart_1.glb"
+   ],
+   "tris": [
+    468
+   ],
+   "size_m": [
+    4.21,
+    1.81,
+    1.47
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "cart_2",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "cart_2.glb"
+   ],
+   "tris": [
+    396
+   ],
+   "size_m": [
+    5.21,
+    2.21,
+    2.0
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "crate",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "crate.glb"
+   ],
+   "tris": [
+    72
+   ],
+   "size_m": [
+    0.76,
+    0.76,
+    0.72
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.01
+  },
+  {
+   "name": "food_apple_basket",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "food_apple_basket.glb"
+   ],
+   "tris": [
+    588
+   ],
+   "size_m": [
+    0.52,
+    0.52,
+    0.28
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "food_bread",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "food_bread.glb"
+   ],
+   "tris": [
+    172
+   ],
+   "size_m": [
+    0.5,
+    0.3,
+    0.16
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "food_cheese",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "food_cheese.glb"
+   ],
+   "tris": [
+    44
+   ],
+   "size_m": [
+    0.54,
+    0.32,
+    0.1
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "food_mushrooms",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "food_mushrooms.glb"
+   ],
+   "tris": [
+    148
+   ],
+   "size_m": [
+    0.26,
+    0.3,
+    0.13
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "food_pie",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "food_pie.glb"
+   ],
+   "tris": [
+    72
+   ],
+   "size_m": [
+    0.27,
+    0.28,
+    0.1
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "hay_bale",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "hay_bale.glb"
+   ],
+   "tris": [
+    36
+   ],
+   "size_m": [
+    0.92,
+    0.47,
+    0.5
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "lantern_hand",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "lantern_hand.glb"
+   ],
+   "tris": [
+    140
+   ],
+   "size_m": [
+    0.25,
+    0.29,
+    0.51
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "lantern_post",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "lantern_post.glb"
+   ],
+   "tris": [
+    180
+   ],
+   "size_m": [
+    0.8,
+    0.4,
+    2.72
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "mug_1",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "mug_1.glb"
+   ],
+   "tris": [
+    96
+   ],
+   "size_m": [
+    0.15,
+    0.12,
+    0.12
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "mug_2",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "mug_2.glb"
+   ],
+   "tris": [
+    96
+   ],
+   "size_m": [
+    0.15,
+    0.12,
+    0.12
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "sack_1",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "sack_1.glb"
+   ],
+   "tris": [
+    100
+   ],
+   "size_m": [
+    0.57,
+    0.47,
+    0.71
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.04
+  },
+  {
+   "name": "sack_2",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "sack_2.glb"
+   ],
+   "tris": [
+    100
+   ],
+   "size_m": [
+    0.53,
+    0.46,
+    0.7
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.03
+  },
+  {
+   "name": "signpost_1",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "signpost_1.glb"
+   ],
+   "tris": [
+    96
+   ],
+   "size_m": [
+    1.23,
+    0.95,
+    2.5
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "signpost_2",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "signpost_2.glb"
+   ],
+   "tris": [
+    132
+   ],
+   "size_m": [
+    1.41,
+    1.43,
+    2.5
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "stool",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "stool.glb"
+   ],
+   "tris": [
+    64
+   ],
+   "size_m": [
+    0.43,
+    0.4,
+    0.47
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.01
+  },
+  {
+   "name": "table_1",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "table_1.glb"
+   ],
+   "tris": [
+    72
+   ],
+   "size_m": [
+    1.4,
+    0.8,
+    0.81
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "table_2",
+   "category": "props",
+   "kind": "prop",
+   "files": [
+    "table_2.glb"
+   ],
+   "tris": [
+    72
+   ],
+   "size_m": [
+    2.8,
+    0.9,
+    0.81
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  }
+ ]
+}

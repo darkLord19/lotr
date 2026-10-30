@@ -1,0 +1,291 @@
+{
+ "category": "bree",
+ "assets": [
+  {
+   "name": "bill_ferny_house",
+   "category": "bree",
+   "kind": "house",
+   "files": [
+    "bill_ferny_house.glb",
+    "bill_ferny_house_lod1.glb",
+    "bill_ferny_house_lod2.glb"
+   ],
+   "tris": [
+    1056,
+    407,
+    114
+   ],
+   "size_m": [
+    11.15,
+    7.56,
+    7.35
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.07
+  },
+  {
+   "name": "bree_dike",
+   "category": "bree",
+   "kind": "structure",
+   "files": [
+    "bree_dike.glb",
+    "bree_dike_lod1.glb",
+    "bree_dike_lod2.glb"
+   ],
+   "tris": [
+    40,
+    16,
+    5
+   ],
+   "size_m": [
+    6.0,
+    4.0,
+    2.45
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.8
+  },
+  {
+   "name": "bree_dike_hedge",
+   "category": "bree",
+   "kind": "structure",
+   "files": [
+    "bree_dike_hedge.glb",
+    "bree_dike_hedge_lod1.glb",
+    "bree_dike_hedge_lod2.glb"
+   ],
+   "tris": [
+    712,
+    276,
+    97
+   ],
+   "size_m": [
+    6.0,
+    4.69,
+    4.19
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.8
+  },
+  {
+   "name": "bree_gate_stone",
+   "category": "bree",
+   "kind": "structure",
+   "files": [
+    "bree_gate_stone.glb",
+    "bree_gate_stone_lod1.glb",
+    "bree_gate_stone_lod2.glb"
+   ],
+   "tris": [
+    520,
+    194,
+    41
+   ],
+   "size_m": [
+    13.6,
+    3.03,
+    5.0
+   ],
+   "collision": "colonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bree_gate_watch",
+   "category": "bree",
+   "kind": "structure",
+   "files": [
+    "bree_gate_watch.glb",
+    "bree_gate_watch_lod1.glb",
+    "bree_gate_watch_lod2.glb"
+   ],
+   "tris": [
+    688,
+    255,
+    51
+   ],
+   "size_m": [
+    11.7,
+    4.41,
+    5.0
+   ],
+   "collision": "colonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bree_hedge",
+   "category": "bree",
+   "kind": "structure",
+   "files": [
+    "bree_hedge.glb",
+    "bree_hedge_lod1.glb",
+    "bree_hedge_lod2.glb"
+   ],
+   "tris": [
+    672,
+    260,
+    92
+   ],
+   "size_m": [
+    1.71,
+    4.65,
+    2.0
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.11
+  },
+  {
+   "name": "bree_house_hobbit_1",
+   "category": "bree",
+   "kind": "house",
+   "files": [
+    "bree_house_hobbit_1.glb",
+    "bree_house_hobbit_1_lod1.glb",
+    "bree_house_hobbit_1_lod2.glb"
+   ],
+   "tris": [
+    808,
+    312,
+    81
+   ],
+   "size_m": [
+    6.4,
+    5.81,
+    4.37
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bree_house_hobbit_2",
+   "category": "bree",
+   "kind": "house",
+   "files": [
+    "bree_house_hobbit_2.glb",
+    "bree_house_hobbit_2_lod1.glb",
+    "bree_house_hobbit_2_lod2.glb"
+   ],
+   "tris": [
+    616,
+    240,
+    71
+   ],
+   "size_m": [
+    7.0,
+    6.01,
+    4.37
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bree_house_stone_1",
+   "category": "bree",
+   "kind": "house",
+   "files": [
+    "bree_house_stone_1.glb",
+    "bree_house_stone_1_lod1.glb",
+    "bree_house_stone_1_lod2.glb"
+   ],
+   "tris": [
+    984,
+    374,
+    76
+   ],
+   "size_m": [
+    7.8,
+    6.81,
+    8.51
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bree_house_stone_2",
+   "category": "bree",
+   "kind": "house",
+   "files": [
+    "bree_house_stone_2.glb",
+    "bree_house_stone_2_lod1.glb",
+    "bree_house_stone_2_lod2.glb"
+   ],
+   "tris": [
+    1108,
+    419,
+    83
+   ],
+   "size_m": [
+    7.2,
+    10.61,
+    8.51
+   ],
+   "collision": "colonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bree_house_timber_1",
+   "category": "bree",
+   "kind": "house",
+   "files": [
+    "bree_house_timber_1.glb",
+    "bree_house_timber_1_lod1.glb",
+    "bree_house_timber_1_lod2.glb"
+   ],
+   "tris": [
+    1604,
+    621,
+    194
+   ],
+   "size_m": [
+    8.2,
+    7.01,
+    8.51
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "bree_house_timber_2",
+   "category": "bree",
+   "kind": "house",
+   "files": [
+    "bree_house_timber_2.glb",
+    "bree_house_timber_2_lod1.glb",
+    "bree_house_timber_2_lod2.glb"
+   ],
+   "tris": [
+    1526,
+    579,
+    265
+   ],
+   "size_m": [
+    9.2,
+    6.61,
+    8.51
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "prancing_pony",
+   "category": "bree",
+   "kind": "bighouse",
+   "files": [
+    "prancing_pony.glb",
+    "prancing_pony_lod1.glb",
+    "prancing_pony_lod2.glb"
+   ],
+   "tris": [
+    4308,
+    1652,
+    421
+   ],
+   "size_m": [
+    18.2,
+    22.0,
+    9.5
+   ],
+   "collision": "colonly",
+   "min_z": -0.01
+  }
+ ]
+}
