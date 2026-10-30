@@ -1,0 +1,13 @@
+{
+  "character": "strider",
+  "steps": [
+    {"id": "strider_watches_bree", "at": "3018-09-20T00:00", "action": "stay", "at_poi": "bree_hill", "verify": true},
+    {"id": "strider_at_pony", "at": "3018-09-29T17:30", "action": "arrive", "at_poi": "prancing_pony", "verify": true},
+    {"id": "strider_leaves_bree", "at": "3018-09-30T09:30", "action": "depart", "from": "prancing_pony", "to": "staddle", "mode": "walk", "companions": ["frodo", "sam", "pippin", "merry"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "strider_at_staddle", "at": "3018-09-30T12:00", "action": "arrive", "at_poi": "staddle", "companions": ["frodo", "sam", "pippin", "merry"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "strider_leaves_staddle", "at": "3018-09-30T12:30", "action": "depart", "from": "staddle", "to": "combe", "mode": "walk", "companions": ["frodo", "sam", "pippin", "merry"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "strider_at_combe", "at": "3018-09-30T14:30", "action": "arrive", "at_poi": "combe", "companions": ["frodo", "sam", "pippin", "merry"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "strider_leaves_combe", "at": "3018-09-30T15:00", "action": "depart", "from": "combe", "to": "east_map_edge", "mode": "walk", "companions": ["frodo", "sam", "pippin", "merry"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "strider_off_map", "at": "3018-10-01T06:00", "action": "arrive", "at_poi": "east_map_edge", "companions": ["frodo", "sam", "pippin", "merry"], "depends_on": ["party_arrives_pony"], "verify": true}
+  ]
+}

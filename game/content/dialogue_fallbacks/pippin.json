@@ -1,0 +1,65 @@
+{
+  "npc": "pippin",
+  "greetings": [
+    {
+      "text": "Hullo! You haven't any food on you, by any chance? I'm half-starved.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "I say, what a lovely morning. Are you coming to the party? What party? Oh, never mind.",
+      "from": "3018-09-15",
+      "until": "3018-09-23"
+    },
+    {
+      "text": "There you are! We've been having a rare time of it.",
+      "from": "3018-09-24"
+    },
+    {
+      "text": "Hullo! Come and sit down, we're having a lovely evening. Have you got any beer?",
+      "from": "3018-09-29T19:00",
+      "requires_flag": "frodo_party_at_bree"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Cheerio! Mind how you go.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Right, I'd better see if Frodo's finished fussing.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "I'm a Took, you know. Tooks have adventures. Or so everyone says.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "A song? Of course. Which one? The one about the Man in the Moon, I should think.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Is it dinner time? It always seems to be a bit before dinner time.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Frodo's keeping something from us. Not that I'm asking. I'm very good at not asking.",
+      "from": "3018-09-15"
+    }
+  ],
+  "rumour_lines": {
+    "black_rider_in_hobbiton": [
+      {
+        "text": "A black rider in the lane? Honestly, it sent a shiver through me. I wasn't going to say, but I'm not sorry you asked.",
+        "from": "3018-09-24"
+      }
+    ],
+    "maggot_dogs_and_rider": [
+      {
+        "text": "Farmer Maggot's dogs! He gave us a fright, but it turned out he was kindness itself. Mushrooms, mind you. A whole basket.",
+        "from": "3018-09-25T12:00"
+      }
+    ]
+  }
+}

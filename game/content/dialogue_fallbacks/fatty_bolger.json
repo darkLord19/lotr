@@ -1,0 +1,66 @@
+{
+  "npc": "fatty_bolger",
+  "greetings": [
+    {
+      "text": "Hullo there! Come in and take your boots off, if you have a mind.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Oh, it's you. I thought it was someone else. There's been a draught at the door.",
+      "from": "3018-09-26"
+    },
+    {
+      "text": "Hush! Not so loud. Something was at the hedge last night.",
+      "from": "3018-09-27",
+      "until": "3018-09-30"
+    },
+    {
+      "text": "Oh, thank goodness. I've been in such a state. Please, please come in.",
+      "from": "3018-09-30T03:00",
+      "requires_flag": "crickhollow_raided"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Good day. Do call again.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Right then. I'll stay here and keep things in order.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "A quiet house, a warm fire and a pie in the pantry: that's all a sensible hobbit wants.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Frodo's busy with something and won't say what. I'm not one to pry.",
+      "from": "3018-09-15"
+    },
+    {
+      "text": "I'm no use out of doors after dark. I'd rather be inside.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Merry says to keep the house and look as if Frodo were here. I can do that.",
+      "from": "3018-09-26"
+    }
+  ],
+  "rumour_lines": {
+    "black_rider_in_hobbiton": [
+      {
+        "text": "A black rider? Hush. I thought I saw one at the hedge. I locked the door twice.",
+        "from": "3018-09-27"
+      }
+    ],
+    "black_riders_asking_for_baggins": [
+      {
+        "text": "They were looking for a Baggins. In the dark, with a horrid hissing voice. I got out through the back and ran for my life.",
+        "from": "3018-09-30T03:00",
+        "requires_flag": "crickhollow_raided"
+      }
+    ]
+  }
+}

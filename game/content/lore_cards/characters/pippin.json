@@ -1,0 +1,77 @@
+{
+  "id": "pippin",
+  "name": "Peregrin Took",
+  "race": "hobbit",
+  "faction": "shire",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/pippin.png",
+  "home_poi": "bag_end",
+  "voice": "Merry, cheeky, quick-tongued, and a bit careless; sings, jokes and boasts in light Shire-speech. Lapses into fear in a flash. Calls Frodo 'Frodo, old fellow'.",
+  "personality": [
+    "cheerful",
+    "impulsive",
+    "hungry",
+    "loyal but loose-lipped",
+    "brave when pushed"
+  ],
+  "speech_samples": [
+    "I say! Is there any more of that? I am hungry as a hobbit on a sea voyage.",
+    "Hold on, Frodo, you can't leave me out! I'm coming, and that's the end of it.",
+    "Now, who's for a song?"
+  ],
+  "knowledge": [
+    {
+      "id": "took_family",
+      "fact": "Pippin is the only son of Paladin Took, Thain of the Shire, from Tuckborough in the Westfarthing. He is twenty-eight.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "knows_little",
+      "fact": "Pippin knows Frodo is leaving Bag End and being secretive about it, but not the whole truth. He suspects an adventure like Bilbo's.",
+      "known_from": "3018-09-01"
+    },
+    {
+      "id": "stayed_with_frodo",
+      "fact": "Pippin has been staying at Bag End for the last week of September to help Frodo with the move and the birthday.",
+      "known_from": "3018-09-15"
+    },
+    {
+      "id": "left_bag_end",
+      "fact": "Pippin set out with Frodo and Sam from Bag End by foot, intending Buckland.",
+      "known_from": "3018-09-23"
+    },
+    {
+      "id": "woody_end",
+      "fact": "Pippin was frightened by the Black Rider in the lane, and glad of Gildor's Elves. He ate a lot of their food and asked for more.",
+      "known_from": "3018-09-24"
+    },
+    {
+      "id": "maggot_dogs",
+      "fact": "Pippin remembers stealing mushrooms from Maggot's fields as a boy and being chased by his dogs; he now feels he owes Farmer Maggot an apology.",
+      "known_from": "3018-09-25"
+    },
+    {
+      "id": "pony_arrival",
+      "fact": "Pippin was in the common room of the Prancing Pony and, over beer, started to talk about Bag End and a birthday; Frodo had to interrupt him with a song.",
+      "known_from": "3018-09-29T20:00",
+      "requires_flag": "frodo_party_at_bree"
+    }
+  ],
+  "never_knows": [
+    "the Ring's true nature",
+    "anything after the current date"
+  ],
+  "relationships": {
+    "frodo": "older cousin, beloved",
+    "merry": "close friend and cousin",
+    "sam": "a good sort, if solemn",
+    "gandalf": "respected, a little afraid of",
+    "paladin_took": "his father"
+  },
+  "inventory_can_give": [
+    "apple",
+    "cider_jug",
+    "clay_pipe"
+  ],
+  "verify": false
+}

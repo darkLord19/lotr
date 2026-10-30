@@ -4,14 +4,32 @@
   "type": "array",
   "items": {
     "type": "object",
-    "required": ["id", "at", "type"],
+    "required": [
+      "id",
+      "at",
+      "type"
+    ],
     "additionalProperties": false,
     "properties": {
-      "id": {"$ref": "_defs.json#/$defs/id"},
-      "at": {"$ref": "_defs.json#/$defs/date"},
-      "type": {"enum": ["world_event", "itinerary_step", "anchor"]},
-      "location": {"$ref": "_defs.json#/$defs/id"},
-      "actors": {"$ref": "_defs.json#/$defs/id_list"},
+      "id": {
+        "$ref": "_defs.json#/$defs/id"
+      },
+      "at": {
+        "$ref": "_defs.json#/$defs/date"
+      },
+      "type": {
+        "enum": [
+          "world_event",
+          "itinerary_step",
+          "anchor"
+        ]
+      },
+      "location": {
+        "$ref": "_defs.json#/$defs/id"
+      },
+      "actors": {
+        "$ref": "_defs.json#/$defs/id_list"
+      },
       "effects": {
         "type": "array",
         "items": {
@@ -19,15 +37,135 @@
           "minProperties": 1,
           "additionalProperties": false,
           "properties": {
-            "set_flag": {"type": "string", "minLength": 1},
-            "clear_flag": {"type": "string", "minLength": 1},
+            "set_flag": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "flag"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "flag": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "value": {}
+                  }
+                }
+              ]
+            },
+            "clear_flag": {
+              "type": "string",
+              "minLength": 1
+            },
             "add_knowledge": {
               "type": "object",
-              "required": ["npc", "knowledge_id"],
+              "required": [
+                "npc",
+                "knowledge_id"
+              ],
               "additionalProperties": false,
               "properties": {
-                "npc": {"$ref": "_defs.json#/$defs/id"},
-                "knowledge_id": {"$ref": "_defs.json#/$defs/id"}
+                "npc": {
+                  "$ref": "_defs.json#/$defs/id"
+                },
+                "knowledge_id": {
+                  "$ref": "_defs.json#/$defs/id"
+                }
+              }
+            },
+            "move_entity": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "poi": {
+                  "$ref": "_defs.json#/$defs/id"
+                },
+                "to": {
+                  "$ref": "_defs.json#/$defs/id"
+                },
+                "pos": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "kind": {
+                  "type": "string"
+                }
+              },
+              "anyOf": [
+                {
+                  "required": [
+                    "poi"
+                  ]
+                },
+                {
+                  "required": [
+                    "to"
+                  ]
+                },
+                {
+                  "required": [
+                    "pos"
+                  ]
+                }
+              ]
+            },
+            "give_item": {
+              "type": "object",
+              "required": [
+                "item",
+                "from",
+                "to"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "item": {
+                  "$ref": "_defs.json#/$defs/id"
+                },
+                "from": {
+                  "type": "string",
+                  "description": "owner id; empty string creates the item"
+                },
+                "to": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "spread_rumour": {
+              "type": "object",
+              "required": [
+                "rumour_id",
+                "poi"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "rumour_id": {
+                  "$ref": "_defs.json#/$defs/id"
+                },
+                "poi": {
+                  "$ref": "_defs.json#/$defs/id"
+                }
               }
             }
           }
@@ -35,27 +173,57 @@
       },
       "rumour": {
         "type": "object",
-        "required": ["id", "origin_poi", "strength"],
+        "required": [
+          "id",
+          "origin_poi",
+          "strength"
+        ],
         "additionalProperties": false,
         "properties": {
-          "id": {"$ref": "_defs.json#/$defs/id"},
-          "origin_poi": {"$ref": "_defs.json#/$defs/id"},
-          "strength": {"type": "integer", "minimum": 1}
+          "id": {
+            "$ref": "_defs.json#/$defs/id"
+          },
+          "origin_poi": {
+            "$ref": "_defs.json#/$defs/id"
+          },
+          "strength": {
+            "type": "integer",
+            "minimum": 1
+          }
         }
       },
-      "waits_for_player": {"type": "boolean"},
+      "waits_for_player": {
+        "type": "boolean"
+      },
       "trigger_area": {
         "type": "object",
         "minProperties": 1,
         "additionalProperties": false,
         "properties": {
-          "settlement": {"$ref": "_defs.json#/$defs/id"},
-          "poi": {"$ref": "_defs.json#/$defs/id"}
+          "settlement": {
+            "$ref": "_defs.json#/$defs/id"
+          },
+          "poi": {
+            "$ref": "_defs.json#/$defs/id"
+          }
         }
       },
-      "window_end": {"anyOf": [{"$ref": "_defs.json#/$defs/date"}, {"type": "null"}]},
-      "depends_on": {"$ref": "_defs.json#/$defs/id_list"},
-      "verify": {"type": "boolean"}
+      "window_end": {
+        "anyOf": [
+          {
+            "$ref": "_defs.json#/$defs/date"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "depends_on": {
+        "$ref": "_defs.json#/$defs/id_list"
+      },
+      "verify": {
+        "type": "boolean"
+      }
     }
   }
 }

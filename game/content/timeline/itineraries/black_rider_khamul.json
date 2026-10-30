@@ -1,0 +1,22 @@
+{
+  "character": "black_rider_khamul",
+  "steps": [
+    {"id": "khamul_enters_shire", "at": "3018-09-23T04:00", "action": "stay", "at_poi": "three_farthing_stone", "verify": true},
+    {"id": "khamul_to_bagshot_row", "at": "3018-09-23T16:30", "action": "depart", "from": "three_farthing_stone", "to": "bagshot_row", "mode": "ride"},
+    {"id": "khamul_at_bagshot_row", "at": "3018-09-23T18:30", "action": "arrive", "at_poi": "bagshot_row"},
+    {"id": "khamul_to_bag_end", "at": "3018-09-23T22:00", "action": "depart", "from": "bagshot_row", "to": "bag_end", "mode": "ride"},
+    {"id": "khamul_at_bag_end", "at": "3018-09-23T22:40", "action": "arrive", "at_poi": "bag_end"},
+    {"id": "khamul_to_woody_end", "at": "3018-09-24T01:00", "action": "depart", "from": "bag_end", "to": "woody_end_camp", "mode": "ride", "verify": true},
+    {"id": "khamul_at_woody_end", "at": "3018-09-24T04:00", "action": "arrive", "at_poi": "woody_end_camp", "verify": true},
+    {"id": "khamul_leaves_woody_end", "at": "3018-09-24T18:30", "action": "depart", "from": "woody_end_camp", "to": "maggots_farm", "mode": "ride", "verify": true},
+    {"id": "khamul_at_maggots", "at": "3018-09-25T09:30", "action": "arrive", "at_poi": "maggots_farm", "verify": true},
+    {"id": "khamul_leaves_maggots", "at": "3018-09-25T10:30", "action": "depart", "from": "maggots_farm", "to": "bucklebury_ferry", "mode": "ride", "verify": true},
+    {"id": "khamul_at_ferry", "at": "3018-09-25T21:00", "action": "arrive", "at_poi": "bucklebury_ferry", "verify": true},
+    {"id": "khamul_leaves_ferry", "at": "3018-09-26T06:00", "action": "depart", "from": "bucklebury_ferry", "to": "bree_west_gate", "mode": "ride", "verify": true},
+    {"id": "khamul_at_west_gate", "at": "3018-09-29T17:00", "action": "arrive", "at_poi": "bree_west_gate", "verify": true},
+    {"id": "khamul_to_pony", "at": "3018-09-30T00:30", "action": "depart", "from": "bree_west_gate", "to": "prancing_pony", "mode": "ride", "depends_on": ["party_arrives_pony"]},
+    {"id": "khamul_at_pony", "at": "3018-09-30T01:00", "action": "arrive", "at_poi": "prancing_pony", "depends_on": ["party_arrives_pony"]},
+    {"id": "khamul_pursues", "at": "3018-09-30T03:00", "action": "depart", "from": "prancing_pony", "to": "east_map_edge", "mode": "ride", "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "khamul_off_map", "at": "3018-10-01T12:00", "action": "arrive", "at_poi": "east_map_edge", "depends_on": ["party_arrives_pony"], "verify": true}
+  ]
+}

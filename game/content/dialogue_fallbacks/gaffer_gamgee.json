@@ -1,0 +1,69 @@
+{
+  "npc": "gaffer_gamgee",
+  "greetings": [
+    {
+      "text": "Ah! 'Tis you. Fine mornin', if it holds. My knees say rain.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Well, well. Come to see how the garden fares? Don't tread on the beans.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Ah, what a to-do, what a to-do. Strange times, I says, strange times.",
+      "from": "3018-09-22"
+    },
+    {
+      "text": "Mr. Frodo's gone, gone off to Buckland, and Sam with him. And that Lobelia in the hole!",
+      "from": "3018-09-24"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Ah, well, I'll be about my taters. Mind the lane.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Well, good day. And don't believe all you hear at the Ivy Bush.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "Taters, I says. Boiled, mashed, stewed or in a stew. Where's the harm in 'em?",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Old Mr. Bilbo, he was a gentlehobbit, and so's Mr. Frodo. Queer, but gentle.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "My Sam's a good lad, and a better gardener than I'd ever been at his age. Don't tell him I said so.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Elves and dragons! Sam's head is stuffed with 'em. No good'll come of it.",
+      "from": "3018-09-01"
+    }
+  ],
+  "rumour_lines": {
+    "frodo_sold_bag_end": [
+      {
+        "text": "Sold, it is! And to them Sackville-Bagginses, if you please. After all these years. I says to Sam, I says: that's the end of the Hill as we know it.",
+        "from": "3018-09-10"
+      }
+    ],
+    "black_rider_in_hobbiton": [
+      {
+        "text": "A tall black fellow, he was, at my gate, asking after Mr. Baggins. Voice like a snake in dry leaves. I told him Buckland, and I wish I hadn't now.",
+        "from": "3018-09-22T21:00"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Strange folk all along the East Road, I hear. Dwarves and worse. Never held with it myself.",
+        "from": "3018-09-01"
+      }
+    ]
+  }
+}

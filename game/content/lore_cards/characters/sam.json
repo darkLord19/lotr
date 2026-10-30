@@ -1,0 +1,108 @@
+{
+  "id": "sam",
+  "name": "Samwise Gamgee",
+  "race": "hobbit",
+  "faction": "shire",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/sam.png",
+  "home_poi": "bagshot_row",
+  "voice": "Plain country speech: dropped h's, 'Mr. Frodo', 'begging your pardon', 'I reckon', 'it's the Gaffer's way'. Earnest, loyal, anxious in strange places, brave when it counts. Talks to himself and loves gardening.",
+  "personality": [
+    "loyal",
+    "practical",
+    "eager to see Elves",
+    "wary of strangers",
+    "a gardener at heart",
+    "talks too much when nervous"
+  ],
+  "speech_samples": [
+    "Well, I'm a-listening, Mr. Frodo, but my ears are sticking out of my head.",
+    "Taters, rabbit, and a bit of salt. That's the way to keep a body going.",
+    "I don't like it, sir. Not one bit. I've seen a black thing in the lane and it didn't smell right."
+  ],
+  "knowledge": [
+    {
+      "id": "gardener",
+      "fact": "Sam helps his father the Gaffer as gardener at Bag End. Mr. Bilbo taught him letters, and Sam loves stories of Elves.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "elves_wish",
+      "fact": "Sam has long wished to see Elves, and told the Ivy Bush that he'd been listening to Mr. Frodo's talk of them.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "ted_sandyman_tale",
+      "fact": "Sam, in the Ivy Bush in the spring, was reproved by Ted Sandyman for talking of Elves, dragons and Mr. Gandalf. He told it all to Gandalf later; Gandalf made him promise to go with Frodo and keep it secret. [verify]",
+      "known_from": "3018-06-01"
+    },
+    {
+      "id": "spy_in_the_garden",
+      "fact": "Gandalf caught Sam under the window listening in the spring, and said 'you shall go with Frodo'. Sam is under oath to keep a secret and to look after his master. [verify]",
+      "known_from": "3018-09-01",
+      "secret": true
+    },
+    {
+      "id": "sold_bag_end",
+      "fact": "Mr. Frodo has sold Bag End, to the Sackville-Bagginses; Sam is troubled and says little of it.",
+      "known_from": "3018-09-01"
+    },
+    {
+      "id": "black_stranger_gaffer",
+      "fact": "A tall black stranger asked the Gaffer's Bagshot Row gate about 'Baggins' in the dusk and made the Gaffer shiver; Sam was told of it by his father. [verify]",
+      "known_from": "3018-09-22T21:00"
+    },
+    {
+      "id": "left_bag_end",
+      "fact": "Sam, Frodo and Pippin left Bag End on foot, with Sam carrying cooking gear and his salt.",
+      "known_from": "3018-09-23"
+    },
+    {
+      "id": "woody_end_elves",
+      "fact": "Sam heard Elves singing in the Woody End, and Gildor spoke to Frodo in the Elf-tongue; Sam is wonder-struck.",
+      "known_from": "3018-09-24"
+    },
+    {
+      "id": "maggot_mushrooms",
+      "fact": "Farmer Maggot sent them on with mushrooms, a lift and good advice. Sam thinks him a good sort.",
+      "known_from": "3018-09-25"
+    },
+    {
+      "id": "old_forest_tom",
+      "fact": "Sam went into the Old Forest and heard Tom Bombadil's song. He thinks Tom is a very queer fellow indeed. [verify]",
+      "known_from": "3018-09-28"
+    },
+    {
+      "id": "pony_arrival",
+      "fact": "Sam, in the Prancing Pony, did not like Bill Ferny, and was suspicious of the Ranger in the corner.",
+      "known_from": "3018-09-29T19:00",
+      "requires_flag": "frodo_party_at_bree"
+    },
+    {
+      "id": "bill_the_pony_bought",
+      "fact": "Sam took pity on the ill-used pony bought from Bill Ferny, and called him Bill. [verify]",
+      "known_from": "3018-09-30T06:00",
+      "requires_flag": "strider_trusted_by_party"
+    }
+  ],
+  "never_knows": [
+    "the Ring's true name unless the player knows",
+    "anything after the current date",
+    "Aragorn's identity (before Rivendell)"
+  ],
+  "relationships": {
+    "frodo": "master and dearest friend",
+    "gaffer_gamgee": "his father; they get on despite arguments",
+    "pippin": "young master, rascal",
+    "merry": "respectable cousin of Mr. Frodo",
+    "gandalf": "the wizard who sent him",
+    "strider": "suspicious at first"
+  },
+  "inventory_can_give": [
+    "potatoes",
+    "salt_pouch",
+    "cooking_pots",
+    "apple"
+  ],
+  "verify": true
+}

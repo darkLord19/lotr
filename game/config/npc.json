@@ -1,0 +1,41 @@
+{
+  "npc": {
+    "max_options": 4,
+    "max_intents_per_turn": 4,
+    "disposition_delta_max": 2,
+    "disposition_min": -10,
+    "disposition_max": 10,
+    "memory_summary_max_words": 120,
+    "memory_max_learned": 8,
+    "learned_facts_cap": 20,
+    "history_turn_limit": 16,
+    "max_reveal_pois": 12,
+    "fallback_options": ["Ask about news", "Trade", "Farewell"],
+    "no_fallback_line": "They nod to you, but have nothing to say just now.",
+    "farewell_words": ["farewell", "goodbye", "good-bye", "leave", "bye"],
+    "news_words": ["news", "rumour", "rumor", "heard", "gossip"],
+    "time_of_day": [
+      {"until_hour": 5, "name": "deep night"},
+      {"until_hour": 11, "name": "morning"},
+      {"until_hour": 17, "name": "afternoon"},
+      {"until_hour": 21, "name": "evening"},
+      {"until_hour": 24, "name": "night"}
+    ],
+    "reputation_bands": [
+      {"min": -100, "name": "despised"},
+      {"min": -50, "name": "distrusted"},
+      {"min": -10, "name": "unwelcome"},
+      {"min": 10, "name": "unknown to them"},
+      {"min": 30, "name": "well regarded"},
+      {"min": 70, "name": "honoured"}
+    ],
+    "disposition_words": [
+      {"min": -10, "name": "hostile"},
+      {"min": -5, "name": "cold"},
+      {"min": -2, "name": "wary"},
+      {"min": 0, "name": "neutral"},
+      {"min": 3, "name": "friendly"},
+      {"min": 7, "name": "fond"}
+    ]
+  }
+}

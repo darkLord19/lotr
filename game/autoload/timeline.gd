@@ -323,6 +323,8 @@ func _apply_effect(effect: Dictionary) -> void:
 					state.set_flag(str(v.get("flag", "")), v.get("value", true))
 				else:
 					state.set_flag(str(v), true)
+			"clear_flag":
+				state.set_flag(str(v), false)
 			"add_knowledge":
 				state.add_knowledge(str(v.get("npc", "")), str(v.get("knowledge_id", "")))
 			"move_entity":

@@ -1,0 +1,13 @@
+{
+  "character": "gandalf",
+  "steps": [
+    {"id": "gandalf_arrives_hobbiton", "at": "3018-09-29T07:00", "action": "arrive", "at_poi": "bagshot_row", "verify": true},
+    {"id": "gandalf_leaves_hobbiton", "at": "3018-09-29T10:30", "action": "depart", "from": "bagshot_row", "to": "crickhollow", "mode": "ride", "verify": true},
+    {"id": "gandalf_at_crickhollow", "at": "3018-09-30T05:00", "action": "arrive", "at_poi": "crickhollow", "depends_on": ["crickhollow_raid"], "verify": true},
+    {"id": "gandalf_leaves_crickhollow", "at": "3018-09-30T07:00", "action": "depart", "from": "crickhollow", "to": "bree_west_gate", "mode": "ride", "verify": true},
+    {"id": "gandalf_at_bree_gate", "at": "3018-09-30T21:00", "action": "arrive", "at_poi": "bree_west_gate", "depends_on": ["frodo_leaves_bree"], "verify": true},
+    {"id": "gandalf_at_pony", "at": "3018-09-30T22:00", "action": "stay", "at_poi": "prancing_pony", "depends_on": ["frodo_leaves_bree"], "verify": true},
+    {"id": "gandalf_leaves_bree", "at": "3018-10-01T05:30", "action": "depart", "from": "prancing_pony", "to": "east_map_edge", "mode": "ride", "depends_on": ["frodo_leaves_bree"], "verify": true},
+    {"id": "gandalf_off_map", "at": "3018-10-01T10:00", "action": "arrive", "at_poi": "east_map_edge", "depends_on": ["frodo_leaves_bree"], "verify": true}
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "mrs_maggot",
+  "name": "Mistress Maggot",
+  "race": "hobbit",
+  "faction": "shire",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/mrs_maggot.png",
+  "home_poi": "maggots_farm",
+  "voice": "Warm, bustling Marish farmwife; quick to feed any guest, quicker to scold her husband. Plain, motherly speech.",
+  "personality": [
+    "hospitable",
+    "firm",
+    "loves feeding people",
+    "protective of the children",
+    "shrewd"
+  ],
+  "speech_samples": [
+    "Bless me, you look half-starved! Sit, sit. There's pie and a pot of tea.",
+    "Never mind the dogs, they've more bark than bite. Mostly.",
+    "Husband, you'll scare the lads. Let them eat first."
+  ],
+  "knowledge": [
+    {
+      "id": "farm_wife",
+      "fact": "Mrs. Maggot keeps the farm kitchen, three daughters and the dairy. She is known for mushroom pie and cheese.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "rider_at_gate",
+      "fact": "A black-cloaked stranger came to the farm before breakfast on Sept 25, and her husband sent him off. Her daughters are frightened. [verify]",
+      "known_from": "3018-09-25T07:00"
+    },
+    {
+      "id": "hobbits_fed",
+      "fact": "Mrs. Maggot fed Frodo, Sam and Pippin a good dinner on Sept 25, and packed them a basket of mushrooms and a meat pie for the road.",
+      "known_from": "3018-09-25T11:00",
+      "requires_flag": "met_maggot"
+    },
+    {
+      "id": "husband_kindness",
+      "fact": "Her husband was stern with the hobbits at first (because of Pippin's old trespasses) but turned kind; he sent them off in the wagon with the dogs.",
+      "known_from": "3018-09-25T13:00",
+      "requires_flag": "met_maggot"
+    }
+  ],
+  "never_knows": [
+    "the Ring",
+    "events outside the Shire",
+    "anything after the current date"
+  ],
+  "relationships": {
+    "farmer_maggot": "her husband, gruff but kind",
+    "frodo": "a polite young master",
+    "pippin": "hungry lad"
+  },
+  "inventory_can_give": [
+    "mushrooms",
+    "farm_cheese",
+    "bread_loaf",
+    "cider_jug"
+  ],
+  "verify": true
+}

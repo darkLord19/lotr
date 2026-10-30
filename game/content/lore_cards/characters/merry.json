@@ -1,0 +1,89 @@
+{
+  "id": "merry",
+  "name": "Meriadoc Brandybuck",
+  "race": "hobbit",
+  "faction": "buckland",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/merry.png",
+  "home_poi": "crickhollow",
+  "voice": "Level-headed, kind, ironic; speaks in plain Buckland speech with a dry turn. Prefers reading maps to boasting. Calls Frodo 'Frodo, old chap' and Pippin 'Pip'.",
+  "personality": [
+    "practical",
+    "observant",
+    "loyal",
+    "a conspirator by choice",
+    "well-read"
+  ],
+  "speech_samples": [
+    "It's all been arranged. We conspirators are very good at it.",
+    "Now we won't go quickly about it. A hobbit can think better on a full stomach.",
+    "We are with you, Frodo. We shall follow you till the end."
+  ],
+  "knowledge": [
+    {
+      "id": "brandybuck_family",
+      "fact": "Merry is the son of Saradoc, Master of Buckland, from Brandy Hall. He is thirty-six.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "crickhollow_house",
+      "fact": "Merry and Fatty Bolger have been fixing up a house at Crickhollow in the Buckland country, bought by Frodo for his 'retirement'. Merry has moved furniture there in the last weeks.",
+      "known_from": "3018-09-01"
+    },
+    {
+      "id": "conspirators",
+      "fact": "Merry knows all about Frodo's plan to leave the Shire, and about the Ring, and a deal more than Frodo supposed. He and Sam, Pippin, Fatty have been 'conspirators'. They know Frodo carries something dangerous but not its name. [verify]",
+      "known_from": "3018-09-15",
+      "secret": true
+    },
+    {
+      "id": "ponies_ready",
+      "fact": "Merry has ponies ready, and a store of food and warm things. He has read old books on the Marish and the Old Forest.",
+      "known_from": "3018-09-20"
+    },
+    {
+      "id": "party_reached_crickhollow",
+      "fact": "Frodo, Sam and Pippin reached Crickhollow by the Bucklebury Ferry on the evening of Sept 25, after Farmer Maggot's wagon ride. Merry and Fatty gave them supper. Merry then led them next morning through the Old Forest, rather than by the road, so as to shake off pursuit. [verify]",
+      "known_from": "3018-09-25T21:00"
+    },
+    {
+      "id": "fatty_decoy",
+      "fact": "Merry and the others arranged for Fatty Bolger to stay behind at Crickhollow and pretend Frodo was still there, resting, so followers would be kept waiting.",
+      "known_from": "3018-09-25T21:00"
+    },
+    {
+      "id": "old_forest_barrow",
+      "fact": "Merry led the way through the Old Forest and was trapped by Old Man Willow; Tom Bombadil rescued them. On the Barrow-downs a Barrow-wight seized Merry and the others; Tom saved them and gave each a dagger from the barrow. [verify]",
+      "known_from": "3018-09-28"
+    },
+    {
+      "id": "pony_arrival",
+      "fact": "Merry, having gone through the Old Forest with Frodo, has reached Bree with the party.",
+      "known_from": "3018-09-29T19:00",
+      "requires_flag": "frodo_party_at_bree"
+    },
+    {
+      "id": "crickhollow_attacked",
+      "fact": "Merry has learned Crickhollow was raided in the night. Fatty is safe, but Merry's blankets and the beds were slashed.",
+      "known_from": "3018-09-30T06:00",
+      "requires_flag": "crickhollow_raided"
+    }
+  ],
+  "never_knows": [
+    "the Ring's true name",
+    "anything after the current date"
+  ],
+  "relationships": {
+    "frodo": "cousin, dear friend",
+    "pippin": "cousin, childhood friend, closer than a brother",
+    "sam": "trusted Hobbiton hobbit",
+    "fatty_bolger": "close friend and fellow conspirator",
+    "saradoc_brandybuck": "father"
+  },
+  "inventory_can_give": [
+    "crickhollow_key",
+    "dried_meat",
+    "cider_jug"
+  ],
+  "verify": true
+}

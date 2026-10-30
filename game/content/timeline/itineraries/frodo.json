@@ -1,0 +1,28 @@
+{
+  "character": "frodo",
+  "steps": [
+    {"id": "frodo_stays_bag_end", "at": "3018-09-20T00:00", "action": "stay", "at_poi": "bag_end"},
+    {"id": "frodo_leaves_bag_end", "at": "3018-09-23T20:00", "action": "depart", "from": "bag_end", "to": "woody_end_camp", "mode": "walk", "companions": ["sam", "pippin"]},
+    {"id": "frodo_camps_woody_end", "at": "3018-09-24T02:00", "action": "camp", "at_poi": "woody_end_camp", "companions": ["sam", "pippin"]},
+    {"id": "frodo_leaves_woody_end", "at": "3018-09-24T19:30", "action": "depart", "from": "woody_end_camp", "to": "gildor_camp", "mode": "walk", "companions": ["sam", "pippin"]},
+    {"id": "frodo_meets_gildor", "at": "3018-09-24T21:00", "action": "camp", "at_poi": "gildor_camp", "companions": ["sam", "pippin"]},
+    {"id": "frodo_leaves_gildor", "at": "3018-09-25T07:00", "action": "depart", "from": "gildor_camp", "to": "maggots_farm", "mode": "walk", "companions": ["sam", "pippin"]},
+    {"id": "frodo_at_maggots", "at": "3018-09-25T11:00", "action": "stay", "at_poi": "maggots_farm", "companions": ["sam", "pippin"]},
+    {"id": "frodo_leaves_maggots", "at": "3018-09-25T14:30", "action": "depart", "from": "maggots_farm", "to": "bucklebury_ferry", "mode": "ride", "companions": ["sam", "pippin", "farmer_maggot"]},
+    {"id": "frodo_at_ferry", "at": "3018-09-25T19:00", "action": "arrive", "at_poi": "bucklebury_ferry", "companions": ["sam", "pippin", "farmer_maggot"]},
+    {"id": "frodo_leaves_ferry", "at": "3018-09-25T19:30", "action": "depart", "from": "bucklebury_ferry", "to": "crickhollow", "mode": "walk", "companions": ["sam", "pippin"]},
+    {"id": "frodo_at_crickhollow", "at": "3018-09-25T21:00", "action": "stay", "at_poi": "crickhollow", "companions": ["sam", "pippin"]},
+    {"id": "frodo_leaves_crickhollow", "at": "3018-09-26T06:00", "action": "depart", "from": "crickhollow", "to": "hedge_gate", "mode": "walk", "companions": ["sam", "pippin", "merry"]},
+    {"id": "frodo_at_hedge_gate", "at": "3018-09-26T07:30", "action": "arrive", "at_poi": "hedge_gate", "companions": ["sam", "pippin", "merry"]},
+    {"id": "frodo_in_old_forest", "at": "3018-09-26T09:00", "action": "stay", "at_poi": "old_forest_edge", "companions": ["sam", "pippin", "merry"], "abstract": true, "verify": true},
+    {"id": "frodo_at_bombadil", "at": "3018-09-27T18:00", "action": "stay", "at_poi": "bombadil_house", "companions": ["sam", "pippin", "merry"], "abstract": true, "verify": true},
+    {"id": "frodo_leaves_bombadil", "at": "3018-09-28T08:30", "action": "depart", "from": "bombadil_house", "to": "bree_west_gate", "mode": "walk", "companions": ["sam", "pippin", "merry"], "abstract": true, "verify": true},
+    {"id": "frodo_at_bree_west_gate", "at": "3018-09-29T19:30", "action": "arrive", "at_poi": "bree_west_gate", "companions": ["sam", "pippin", "merry"], "verify": true},
+    {"id": "frodo_leaves_bree", "at": "3018-09-30T09:30", "action": "depart", "from": "prancing_pony", "to": "staddle", "mode": "walk", "companions": ["sam", "pippin", "merry", "strider"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "frodo_at_staddle", "at": "3018-09-30T12:00", "action": "arrive", "at_poi": "staddle", "companions": ["sam", "pippin", "merry", "strider"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "frodo_leaves_staddle", "at": "3018-09-30T12:30", "action": "depart", "from": "staddle", "to": "combe", "mode": "walk", "companions": ["sam", "pippin", "merry", "strider"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "frodo_at_combe", "at": "3018-09-30T14:30", "action": "arrive", "at_poi": "combe", "companions": ["sam", "pippin", "merry", "strider"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "frodo_leaves_combe", "at": "3018-09-30T15:00", "action": "depart", "from": "combe", "to": "east_map_edge", "mode": "walk", "companions": ["sam", "pippin", "merry", "strider"], "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "frodo_off_map", "at": "3018-10-01T06:00", "action": "arrive", "at_poi": "east_map_edge", "companions": ["sam", "pippin", "merry", "strider"], "depends_on": ["party_arrives_pony"], "verify": true}
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "character": "merry",
+  "steps": [
+    {"id": "merry_stays_crickhollow", "at": "3018-09-20T00:00", "action": "stay", "at_poi": "crickhollow"}
+  ]
+}

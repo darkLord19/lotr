@@ -1,0 +1,66 @@
+{
+  "npc": "farmer_maggot",
+  "greetings": [
+    {
+      "text": "Now then! What's this? Ye'll not be wanting anything on my land without a by-your-leave.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Mind the dogs. They'll not harm ye if ye keep your hands to yourself.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Eh? Friends, are ye? Well, come in then. Kettle's on.",
+      "from": "3018-09-25T10:00",
+      "requires_flag": "met_maggot"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Off ye go, then. Mind the road.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Good day. And tell your folk to knock first.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "Best mushrooms in the Shire, I grow. Folks used to creep in and steal 'em. Not much of that now, with the dogs about.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Strangers, strangers. 'Tain't right, I says.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "The Marish is a good country. A bit damp, mind, but good.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Time was, nobody locked a door in the Shire. Now I'd bar the barn if I could.",
+      "from": "3018-09-25"
+    }
+  ],
+  "rumour_lines": {
+    "maggot_dogs_and_rider": [
+      {
+        "text": "A black rider came to my gate this very morning, asking for Baggins in a voice like a dry hinge. Sent him packing. The dogs wouldn't stop howling till noon.",
+        "from": "3018-09-25T06:00"
+      }
+    ],
+    "frodo_sold_bag_end": [
+      {
+        "text": "Mr. Baggins selling Bag End? Well, I never. Not my business. But I'd not like to be a Gamgee this week.",
+        "from": "3018-09-18"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Strange folk come and go on the East Road these years. I keep to my own field and my own gate.",
+        "from": "3018-09-01"
+      }
+    ]
+  }
+}

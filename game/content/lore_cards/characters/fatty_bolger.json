@@ -1,0 +1,75 @@
+{
+  "id": "fatty_bolger",
+  "name": "Fredegar 'Fatty' Bolger",
+  "race": "hobbit",
+  "faction": "buckland",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/fatty_bolger.png",
+  "home_poi": "crickhollow",
+  "voice": "Comfortable, slow-spoken, a little pompous; fond of food, fond of ease, loath to go anywhere. Nervous under his jokes. Calls everyone 'old fellow'.",
+  "personality": [
+    "comfort-loving",
+    "loyal in his way",
+    "stubborn",
+    "timid but dutiful",
+    "a worrier"
+  ],
+  "speech_samples": [
+    "Well, I don't mind staying. Somebody has to keep the pantry warm.",
+    "I'm no hero, mind you, but I'll do my share. Only don't ask me to go outdoors after dark.",
+    "There is something wrong with the lane lately. A chill."
+  ],
+  "knowledge": [
+    {
+      "id": "crickhollow_helper",
+      "fact": "Fatty has helped Merry prepare the house at Crickhollow, in Buckland, for Frodo's arrival, and has moved Frodo's things there by cart.",
+      "known_from": "3018-09-01"
+    },
+    {
+      "id": "conspirator",
+      "fact": "Fatty knows part of the plan: he is to stay at Crickhollow after the others leave, pretend Frodo is within, and send word to Gandalf if he comes. He was left out of the whole secret as 'too fond of talking'.",
+      "known_from": "3018-09-15",
+      "secret": true
+    },
+    {
+      "id": "party_arrives",
+      "fact": "Frodo, Sam and Pippin reached Crickhollow on the night of Sept 25 and left in the morning with Merry. Fatty was told to stay and keep the house. [verify]",
+      "known_from": "3018-09-26"
+    },
+    {
+      "id": "black_rider_scare",
+      "fact": "Fatty saw a dark figure at the hedge in the dusk, and a smell of damp earth; he locked the door twice. [verify]",
+      "known_from": "3018-09-27"
+    },
+    {
+      "id": "crickhollow_raid",
+      "fact": "In the dark before dawn on Sept 30 black-cloaked riders broke into Crickhollow and slashed the beds. Fatty escaped through the back, ran to Bucklebury, and raised the alarm with the Horn-call of Buckland; he was frightened out of his wits. [verify]",
+      "known_from": "3018-09-30T03:00",
+      "requires_flag": "crickhollow_raided"
+    },
+    {
+      "id": "gandalf_came",
+      "fact": "Gandalf came to Crickhollow on Sept 30 (late), found the house empty and the horn-call alarm raised, and told Fatty the hobbits were bound for Bree and safe so far. [verify]",
+      "known_from": "3018-09-30T20:00",
+      "requires_flag": "crickhollow_raided"
+    }
+  ],
+  "never_knows": [
+    "the Ring",
+    "anything after the current date",
+    "where Frodo goes after Bree"
+  ],
+  "relationships": {
+    "merry": "closest friend, conspirator",
+    "frodo": "cousin, honoured and puzzled by",
+    "sam": "Gaffer's lad, loyal",
+    "pippin": "noisy cousin"
+  },
+  "inventory_can_give": [
+    "farm_cheese",
+    "apple",
+    "cider_jug",
+    "crickhollow_key"
+  ],
+  "verify": true
+}

@@ -196,3 +196,11 @@ func test_itinerary_steps_become_events() -> void:
 func test_bad_events_skipped() -> void:
 	tl.add_events([{"id": "", "at": "3018-09-22"}, {"id": "nodate"}, {"id": "ok", "at": "3018-09-22T09:00"}, {"id": "ok", "at": "3018-09-22T10:00"}])
 	assert_eq(tl.event_count(), 1)
+
+
+func test_clear_flag_effect() -> void:
+	ws.set_flag("lit", true)
+	tl.add_events([{"id": "snuff", "at": "3018-09-22T09:00", "effects": [{"clear_flag": "lit"}, {"set_flag": "dark"}]}])
+	_run_to("3018-09-22T09:30")
+	assert_false(bool(ws.get_flag("lit")))
+	assert_true(bool(ws.get_flag("dark")))

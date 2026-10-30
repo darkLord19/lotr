@@ -1,0 +1,59 @@
+{
+  "npc": "gildor_inglorion",
+  "greetings": [
+    {
+      "text": "Elen síla lúmenn' omentielvo. A star shines on the hour of our meeting.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Well met, traveller. You are far from your hearth, and a long way from any safe road.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Be welcome. We are passing out of the world, but we have time for a guest.",
+      "from": "3018-09-01"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Go in peace. May the stars watch over your road.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Farewell. Elbereth Gilthoniel guard you.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "Our people sing of lands you cannot see, and of a Light beyond the Sea.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "The Shire is a small country, but quietly a most beloved one. Take care that it stays so.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Do not meddle in the affairs of Elves, for they are subtle and quick to anger. But I find hobbits to be an exception.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Advice is a dangerous gift, even from the wise to the wise. But I will give you a little.",
+      "from": "3018-09-01"
+    }
+  ],
+  "rumour_lines": {
+    "black_rider_in_hobbiton": [
+      {
+        "text": "Black Riders in the Shire. Yes. We have seen them. They are hunting, though not for us.",
+        "from": "3018-09-24"
+      }
+    ],
+    "black_riders_asking_for_baggins": [
+      {
+        "text": "They ask for a Baggins. It is not for me to say what that means, but you would do well to heed it.",
+        "from": "3018-09-24"
+      }
+    ]
+  }
+}

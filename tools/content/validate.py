@@ -33,6 +33,7 @@ LOCATIONS: list[tuple[str, str]] = [
     ("items/*.json", "item"),
     ("rumours/*.json", "rumour"),
     ("origins/*.json", "origin"),
+    ("dialogue_fallbacks/*.json", "dialogue_fallback"),
 ]
 
 DATE_MIN = dt.datetime(3018, 1, 1)
@@ -134,6 +135,15 @@ def check_dates(rep: Report, file: str, doc: Any, kind: str) -> None:
     elif kind == "origin":
         for i, o in enumerate(doc):
             chk(f"$[{i}].start_date", o.get("start_date"))
+    elif kind == "dialogue_fallback":
+        groups = {k: doc.get(k, []) for k in ("greetings", "farewells", "smalltalk")}
+        for rid, lines in doc.get("rumour_lines", {}).items():
+            groups[f"rumour_lines.{rid}"] = lines
+        for name, lines in groups.items():
+            for i, ln in enumerate(lines):
+                if isinstance(ln, dict):
+                    chk(f"$.{name}[{i}].from", ln.get("from"))
+                    chk(f"$.{name}[{i}].until", ln.get("until"))
 
 
 def check_calendar(rep: Report, file: str, cal: dict[str, Any]) -> None:
@@ -245,7 +255,14 @@ def cross_refs(rep: Report, root: Path, docs: dict[str, tuple[str, Any]]) -> Non
 
     deps: dict[str, list[str]] = {}
     for file, (kind, data) in docs.items():
-        if kind in ("lore_card", "template_card"):
+        if kind == "dialogue_fallback":
+            need(file, "$.npc", data["npc"], set(npcs), "npc")
+            if Path(file).stem != data["npc"]:
+                rep.error(file, "$.npc", f"file name must match npc id '{data['npc']}'")
+            for rid in data["rumour_lines"]:
+                if rumours and rid not in rumours:
+                    rep.warn(file, f"$.rumour_lines.{rid}", f"unknown rumour '{rid}'")
+        elif kind in ("lore_card", "template_card"):
             for i, it in enumerate(data.get("inventory_can_give", [])):
                 need(file, f"$.inventory_can_give[{i}]", it, items, "item")
             if kind == "lore_card":
@@ -290,6 +307,20 @@ def cross_refs(rep: Report, root: Path, docs: dict[str, tuple[str, Any]]) -> Non
                         elif ak["knowledge_id"] not in npcs[npc]:
                             rep.error(file, f"{base}.effects[{j}].add_knowledge.knowledge_id",
                                       f"unknown knowledge '{ak['knowledge_id']}' on '{npc}'")
+                    mv = fx.get("move_entity")
+                    if mv:
+                        if mv["id"] != "player":
+                            need(file, f"{base}.effects[{j}].move_entity.id", mv["id"], set(npcs), "npc")
+                        for key in ("poi", "to"):
+                            if key in mv:
+                                need_place(file, f"{base}.effects[{j}].move_entity.{key}", mv[key])
+                    gi = fx.get("give_item")
+                    if gi:
+                        need(file, f"{base}.effects[{j}].give_item.item", gi["item"], items, "item")
+                    sr = fx.get("spread_rumour")
+                    if sr:
+                        need(file, f"{base}.effects[{j}].spread_rumour.rumour_id", sr["rumour_id"], rumours, "rumour")
+                        need_poi(file, f"{base}.effects[{j}].spread_rumour.poi", sr["poi"])
                 r = e.get("rumour")
                 if r:
                     need(file, f"{base}.rumour.id", r["id"], rumours, "rumour")

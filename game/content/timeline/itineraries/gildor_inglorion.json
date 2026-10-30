@@ -1,0 +1,8 @@
+{
+  "character": "gildor_inglorion",
+  "steps": [
+    {"id": "gildor_at_camp", "at": "3018-09-24T19:30", "action": "camp", "at_poi": "gildor_camp"},
+    {"id": "gildor_moves_on", "at": "3018-09-25T07:00", "action": "depart", "from": "gildor_camp", "to": "woody_end_camp", "mode": "walk", "verify": true},
+    {"id": "gildor_at_woody_end", "at": "3018-09-25T10:00", "action": "arrive", "at_poi": "woody_end_camp", "verify": true}
+  ]
+}

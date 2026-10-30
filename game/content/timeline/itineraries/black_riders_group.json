@@ -1,0 +1,16 @@
+{
+  "character": "black_riders_group",
+  "steps": [
+    {"id": "group_enters_shire", "at": "3018-09-23T04:00", "action": "stay", "at_poi": "three_farthing_stone", "verify": true},
+    {"id": "group_to_stock", "at": "3018-09-23T08:00", "action": "depart", "from": "three_farthing_stone", "to": "stock", "mode": "ride", "verify": true},
+    {"id": "group_at_stock", "at": "3018-09-24T08:00", "action": "arrive", "at_poi": "stock", "verify": true},
+    {"id": "group_to_crickhollow", "at": "3018-09-30T00:30", "action": "depart", "from": "stock", "to": "crickhollow", "mode": "ride", "verify": true},
+    {"id": "group_at_crickhollow", "at": "3018-09-30T01:30", "action": "arrive", "at_poi": "crickhollow", "verify": true},
+    {"id": "group_flees_crickhollow", "at": "3018-09-30T02:45", "action": "depart", "from": "crickhollow", "to": "brandywine_bridge", "mode": "ride", "verify": true},
+    {"id": "group_at_bridge", "at": "3018-09-30T09:00", "action": "arrive", "at_poi": "brandywine_bridge", "verify": true},
+    {"id": "group_to_bree", "at": "3018-09-30T09:30", "action": "depart", "from": "brandywine_bridge", "to": "bree_south_gate", "mode": "ride", "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "group_at_bree_south_gate", "at": "3018-09-30T14:00", "action": "arrive", "at_poi": "bree_south_gate", "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "group_pursues", "at": "3018-09-30T15:00", "action": "depart", "from": "bree_south_gate", "to": "east_map_edge", "mode": "ride", "depends_on": ["party_arrives_pony"], "verify": true},
+    {"id": "group_off_map", "at": "3018-10-01T22:00", "action": "arrive", "at_poi": "east_map_edge", "depends_on": ["party_arrives_pony"], "verify": true}
+  ]
+}

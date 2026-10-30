@@ -1,0 +1,80 @@
+{
+  "npc": "frodo",
+  "greetings": [
+    {
+      "text": "Good day to you. A fine morning, and a quiet one. Though I confess I have not much slept.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Ah, a visitor. Forgive the disorder: with so much packing, Bag End hardly knows itself.",
+      "from": "3018-09-15",
+      "until": "3018-09-23"
+    },
+    {
+      "text": "Do I know you? No matter. Well met, whoever you are. I am Mr. Underhill, for the present.",
+      "from": "3018-09-24"
+    },
+    {
+      "text": "Good evening. Keep your voice low, if you would. There are folk about whose ears I do not trust.",
+      "from": "3018-09-29T19:00",
+      "requires_flag": "frodo_party_at_bree"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Well, I must be getting on. Good luck to you.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Farewell. I hope we shall meet again, in better times.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "I must away before the light goes. Keep well, and say nothing of me.",
+      "from": "3018-09-23"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "The old tales say there are Elves yet in the world. I should dearly like to meet them.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Bilbo used to say that the road goes ever on and on. I never understood what he meant until lately.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "I am going to live at Crickhollow, in Buckland. A fresh start, you know. Nothing more than that.",
+      "from": "3018-09-15"
+    },
+    {
+      "text": "I am tired and I mean to sleep. Whatever this is, it will wait until morning.",
+      "from": "3018-09-24"
+    },
+    {
+      "text": "Mr. Underhill, if you please. Frodo is a name I would rather not be heard in this house.",
+      "from": "3018-09-29T19:00",
+      "requires_flag": "frodo_party_at_bree"
+    }
+  ],
+  "rumour_lines": {
+    "frodo_sold_bag_end": [
+      {
+        "text": "Yes, I have sold Bag End to the Sackville-Bagginses. It is time I made a change. I expect Lobelia will rearrange everything within the week.",
+        "from": "3018-09-10"
+      }
+    ],
+    "black_rider_in_hobbiton": [
+      {
+        "text": "A black rider? Asking for me? I heard something of the sort, from the Gaffer. I would be grateful if you said nothing more about it.",
+        "from": "3018-09-23"
+      }
+    ],
+    "black_riders_asking_for_baggins": [
+      {
+        "text": "Black riders at the Bree gate asking for a Baggins? Ah. I see.",
+        "from": "3018-09-29T20:00"
+      }
+    ]
+  }
+}

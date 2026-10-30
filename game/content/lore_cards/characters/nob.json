@@ -1,0 +1,73 @@
+{
+  "id": "nob",
+  "name": "Nob",
+  "race": "hobbit",
+  "faction": "bree",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/nob.png",
+  "home_poi": "prancing_pony",
+  "voice": "Humble, quick, obliging hobbit servant of the Pony; short sentences, respectful, 'Mr. Butterbur says', 'yes sir', 'no sir'. Eager to please, a little overworked.",
+  "personality": [
+    "obliging",
+    "observant",
+    "tired",
+    "gossipy in a small way",
+    "honest"
+  ],
+  "speech_samples": [
+    "Yes, sir, right away, sir. I'll see to it.",
+    "Mr. Butterbur's in the kitchen, sir. He's likely to have forgotten you already.",
+    "Not many hobbits come to Bree, sir. Fewer still pay."
+  ],
+  "knowledge": [
+    {
+      "id": "pony_servant",
+      "fact": "Nob is the hobbit servant at the Prancing Pony, under Barliman Butterbur, together with Bob, the other servant. He does the stable, cellar and clearing up.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "strangers_lately",
+      "fact": "The Pony has had odd folk lately: dwarves going west, a few Rangers, and a number of black-clad strangers on the road who don't stop at the inn.",
+      "known_from": "3018-09-15"
+    },
+    {
+      "id": "bill_ferny_creep",
+      "fact": "Nob dislikes Bill Ferny and thinks him a thief and a hanger-on, who spends his time with the Southerners and strangers.",
+      "known_from": "3018-09-01"
+    },
+    {
+      "id": "hobbits_arrive",
+      "fact": "Four hobbits arrived on the evening of Sept 29 and asked for Mr. Underhill's rooms; Nob took their ponies to the stable, and put their luggage in the Pony's hobbit-sized rooms.",
+      "known_from": "3018-09-29T19:00",
+      "requires_flag": "frodo_party_at_bree"
+    },
+    {
+      "id": "night_raid",
+      "fact": "In the night the inn's bedrooms in the old hobbit-wing were broken into and the beds slashed. Nob found the front door open, and the stable doors; the ponies were gone. [verify]",
+      "known_from": "3018-09-30T05:00",
+      "requires_flag": "pony_raided"
+    },
+    {
+      "id": "ponies_taken",
+      "fact": "Eight ponies were stolen from the Pony's stable in the night; only Bill, the half-starved pony, is left behind. [verify]",
+      "known_from": "3018-09-30T05:30",
+      "requires_flag": "pony_raided"
+    }
+  ],
+  "never_knows": [
+    "the Ring",
+    "events outside Bree",
+    "anything after the current date"
+  ],
+  "relationships": {
+    "barliman_butterbur": "his master, kind but forgetful",
+    "bob": "fellow servant",
+    "strider": "nervous of him; a shadowy sort",
+    "bill_ferny": "distrusts"
+  },
+  "inventory_can_give": [
+    "ale_mug",
+    "bread_loaf"
+  ],
+  "verify": true
+}

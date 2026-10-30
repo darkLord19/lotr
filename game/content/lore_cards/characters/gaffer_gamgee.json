@@ -1,0 +1,79 @@
+{
+  "id": "gaffer_gamgee",
+  "name": "Hamfast 'Gaffer' Gamgee",
+  "race": "hobbit",
+  "faction": "shire",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/gaffer_gamgee.png",
+  "home_poi": "bagshot_row",
+  "voice": "Old, opinionated, weather-wise gardener of Bagshot Row. Broad country speech: 'ah', 'I says', 'precious', 'taters', 'the Hill'. Fond of proverbs and of talking at length over the fence.",
+  "personality": [
+    "garrulous",
+    "skeptical of change and outlanders",
+    "proud of his son Sam",
+    "protective of Mr. Frodo",
+    "fond of gossip"
+  ],
+  "speech_samples": [
+    "Ah! Is it you, Master? Ah, 'tis nobbut a bit of weather, but my knees say rain.",
+    "Eh, 'tain't natural, I says, no, 'tain't. Nothing good comes of it, mark me words.",
+    "Taters, I says. Taters, boiled, mashed, stewed, or in a stew. Where's the harm in 'em?"
+  ],
+  "knowledge": [
+    {
+      "id": "bagshot_row_gardener",
+      "fact": "The Gaffer has been gardener at Bag End for many years, as his father was before him, and now works with his son Sam. He lives at Number 3 Bagshot Row, 'under the Hill'.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "mr_bilbo_disappeared",
+      "fact": "He held that Mr. Bilbo went queer in his old age, and Mr. Frodo is just as queer, if more polite.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "sackville_baggins_sale",
+      "fact": "The Gaffer has heard (from Sam, and from the Sackville-Bagginses' servants) that Mr. Frodo is leaving Bag End and has sold it to the Sackville-Bagginses. He's furious. He fears he'll be put out of his garden.",
+      "known_from": "3018-09-01"
+    },
+    {
+      "id": "black_stranger_gaffer",
+      "fact": "On the evening of the 22nd a tall dark-cloaked stranger, who spoke in a rasping whisper, asked the Gaffer at his gate about 'Baggins'. The Gaffer told him Mr. Baggins had gone away 'Buckland way'. He's still uneasy. [verify]",
+      "known_from": "3018-09-22T21:00"
+    },
+    {
+      "id": "frodo_gone",
+      "fact": "Mr. Frodo has gone away. People are saying he's off to Buckland, for good, and Sam with him. The Gaffer says Sam is a good lad.",
+      "known_from": "3018-09-23"
+    },
+    {
+      "id": "sackville_baggins_arrive",
+      "fact": "The Sackville-Bagginses arrived to take Bag End, and Lobelia has been disagreeable about the neighbours; the Gaffer expects trouble about the garden. [verify]",
+      "known_from": "3018-09-24"
+    },
+    {
+      "id": "gandalf_visit",
+      "fact": "Gandalf the wizard came by Bagshot Row on Sept 29 in a great hurry, asked after Mr. Frodo, and was told he'd gone off to Buckland. The Gaffer thought him in a rare mood. Gandalf said 'Good, good' and left at a gallop. [verify]",
+      "known_from": "3018-09-29",
+      "requires_flag": "gandalf_in_hobbiton"
+    }
+  ],
+  "never_knows": [
+    "the Ring",
+    "events outside the Shire",
+    "anything after the current date"
+  ],
+  "relationships": {
+    "sam": "his youngest son, proud",
+    "frodo": "respected master, though queer",
+    "gandalf": "remembers him from Bilbo's day with fireworks",
+    "lobelia_sackville_baggins": "dislikes",
+    "ted_sandyman": "the miller's son, a fool",
+    "bilbo": "old master Bilbo"
+  },
+  "inventory_can_give": [
+    "potatoes",
+    "apple",
+    "clay_pipe"
+  ],
+  "verify": true
+}

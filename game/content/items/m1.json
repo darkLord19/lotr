@@ -1,0 +1,157 @@
+[
+  {
+    "id": "mushrooms",
+    "name": "Farmer Maggot's Mushrooms",
+    "kind": "food",
+    "description": "A basket of fat, white field mushrooms, the best in the Shire.",
+    "weight": 1.0,
+    "stackable": true,
+    "value": 3
+  },
+  {
+    "id": "potatoes",
+    "name": "Potatoes",
+    "kind": "food",
+    "description": "Good Bagshot Row potatoes. 'Taters, as the Gaffer says.",
+    "weight": 1.0,
+    "stackable": true,
+    "value": 1
+  },
+  {
+    "id": "apple",
+    "name": "Apple",
+    "kind": "food",
+    "description": "A red Shire apple.",
+    "weight": 0.2,
+    "stackable": true,
+    "value": 1
+  },
+  {
+    "id": "farm_cheese",
+    "name": "Farmhouse Cheese",
+    "kind": "food",
+    "description": "A wedge of hard, sharp cheese from the Marish.",
+    "weight": 0.5,
+    "stackable": true,
+    "value": 2
+  },
+  {
+    "id": "cider_jug",
+    "name": "Jug of Cider",
+    "kind": "drink",
+    "description": "Cloudy apple cider from the Eastfarthing.",
+    "weight": 1.0,
+    "stackable": true,
+    "value": 2
+  },
+  {
+    "id": "elven_bread",
+    "name": "Elven Waybread",
+    "kind": "food",
+    "description": "Thin cakes of fine white bread that fill the belly more than they seem to promise.",
+    "weight": 0.2,
+    "stackable": true,
+    "value": 8,
+    "verify": true
+  },
+  {
+    "id": "elven_draught",
+    "name": "Elven Draught",
+    "kind": "drink",
+    "description": "A fragrant, cool, pale-gold drink in a small cup; it warms like wine and refreshes like spring water.",
+    "weight": 0.4,
+    "stackable": true,
+    "value": 6
+  },
+  {
+    "id": "longbottom_leaf",
+    "name": "Longbottom Leaf",
+    "kind": "misc",
+    "description": "A pouch of fine pipe-weed from the Southfarthing.",
+    "weight": 0.2,
+    "stackable": true,
+    "value": 4
+  },
+  {
+    "id": "clay_pipe",
+    "name": "Clay Pipe",
+    "kind": "tool",
+    "description": "A little hobbit pipe, well-seasoned.",
+    "weight": 0.1,
+    "stackable": false,
+    "value": 3
+  },
+  {
+    "id": "lobelia_umbrella",
+    "name": "Lobelia's Umbrella",
+    "kind": "weapon",
+    "description": "A stout umbrella, much used for emphasis and occasionally for thumping.",
+    "weight": 0.8,
+    "stackable": false,
+    "value": 5
+  },
+  {
+    "id": "athelas",
+    "name": "Athelas",
+    "kind": "misc",
+    "description": "A pale, leafy weed that Rangers call kingsfoil; sweet and pungent when bruised.",
+    "weight": 0.1,
+    "stackable": true,
+    "value": 6,
+    "verify": true
+  },
+  {
+    "id": "crickhollow_key",
+    "name": "Crickhollow Key",
+    "kind": "key",
+    "description": "The front-door key of the new house at Crickhollow.",
+    "weight": 0.05,
+    "stackable": false,
+    "value": 0
+  },
+  {
+    "id": "bag_end_key",
+    "name": "Bag End Key",
+    "kind": "key",
+    "description": "The round green door's key. Frodo means to leave it for the Sackville-Bagginses.",
+    "weight": 0.05,
+    "stackable": false,
+    "value": 0
+  },
+  {
+    "id": "salt_pouch",
+    "name": "Pouch of Salt",
+    "kind": "misc",
+    "description": "Sam's salt. 'Taters and rabbit want salt.",
+    "weight": 0.3,
+    "stackable": true,
+    "value": 2
+  },
+  {
+    "id": "cooking_pots",
+    "name": "Cooking Gear",
+    "kind": "tool",
+    "description": "Pots and a pan, tied together with string.",
+    "weight": 2.0,
+    "stackable": false,
+    "value": 6
+  },
+  {
+    "id": "travelling_cloak",
+    "name": "Hooded Cloak",
+    "kind": "clothing",
+    "description": "A weatherworn green-brown cloak, good for hiding in shadow.",
+    "weight": 1.0,
+    "stackable": false,
+    "value": 8
+  },
+  {
+    "id": "dried_meat",
+    "name": "Dried Meat",
+    "kind": "food",
+    "description": "Strips of salted, smoked meat. Plain fare for the road.",
+    "weight": 0.3,
+    "stackable": true,
+    "value": 2
+  }
+]
