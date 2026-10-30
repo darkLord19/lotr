@@ -10,8 +10,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: GUT 9.6.1 (copied from bitwes/Gut via git proxy). `tools/test.sh` 2/2 pass; broken test -> exit 1; boot prints BOOT_OK, no ERROR. Autoload scripts have NO class_name (Godot errors when a class_name hides an autoload) - logged in REVIEW.md.
 - [x] M0-T04 — Capture tool (how the agent sees the game)
   - notes: `tools/capture.sh res://tests/scenes/capture_test.tscn build/cap_test.png` exit 0, 2560x1440, cube visible and lit (viewed). In the Linux cloud it runs under xvfb + mesa lavapipe (software Vulkan, `apt install mesa-vulkan-drivers xvfb`); on the Mac it runs windowed with Metal. Software rendering is slow, so performance work can't be judged here.
-- [ ] M0-T05 — Content schemas and validator
-  - notes: 
+- [x] M0-T05 — Content schemas and validator
+  - notes: validate.py prints CONTENT_OK (1 expected portrait WARN); 22 pytest cases pass (17 bad fixtures); calendar 3018-09-22 -> Halimath 22, S.R. 1418. Event effects schema is narrow (set_flag/clear_flag/add_knowledge) - must be widened to move_entity/give_item/spread_rumour for M0-T08/M1-T01.
 - [ ] M0-T06 — GameDate and WorldClock
   - notes: 
 - [ ] M0-T07 — EventBus, WorldState, SaveSystem
