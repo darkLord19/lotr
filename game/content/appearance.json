@@ -1,0 +1,17 @@
+{
+  "palettes": [
+    {"id": "fair_meadow", "name": "Fair Meadow", "skin": "#f1d3b3", "hair": "#d9b36a", "eyes": "#5b8fb9", "outfit": "#6b8e4e"},
+    {"id": "ruddy_farmer", "name": "Ruddy Farmer", "skin": "#e6b48c", "hair": "#8b5a2b", "eyes": "#6d4c2f", "outfit": "#8a5a3c"},
+    {"id": "brown_earth", "name": "Brown Earth", "skin": "#c68e5f", "hair": "#4a3020", "eyes": "#3d2a1a", "outfit": "#7a6a45"},
+    {"id": "dark_loam", "name": "Dark Loam", "skin": "#8d5a3b", "hair": "#1f1612", "eyes": "#2a1c12", "outfit": "#4b5d44"},
+    {"id": "silver_dawn", "name": "Silver Dawn", "skin": "#efd9c4", "hair": "#b8b8b0", "eyes": "#7a8fa0", "outfit": "#5a6f8a"},
+    {"id": "copper_hearth", "name": "Copper Hearth", "skin": "#e8bf9e", "hair": "#a8481f", "eyes": "#4d7a4a", "outfit": "#9a4a32"}
+  ],
+  "hair_styles": [
+    {"id": "curly", "name": "Curly", "races": ["hobbit", "man"]},
+    {"id": "short", "name": "Short and neat", "races": ["hobbit", "man"]},
+    {"id": "long", "name": "Long", "races": ["man"]},
+    {"id": "braided", "name": "Braided", "races": ["hobbit", "man"]},
+    {"id": "tousled", "name": "Tousled", "races": ["hobbit", "man"]}
+  ]
+}

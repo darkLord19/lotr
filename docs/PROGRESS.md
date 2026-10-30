@@ -24,8 +24,8 @@ Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blend
   - notes: tools/verify.sh: GUT 105 pass + 1 pending, CONTENT_OK, pytest pass. `tools/talk.sh --npc=barliman_butterbur --date=3018-09-29T21:00 --say=... [--mock]` works offline (fallback) and with --mock. Live probes + docs/reports/m0_dialogue.md need the key (see LOCAL_TODO). 
 - [x] M1-T01 — Canon content pass: timeline and cast
   - notes: 26 events, 12 itineraries, 15 rumours, 16 lore cards + 3 templates + black rider cards, 15 fallback files; CONTENT_OK; pytest 28 pass; docs/reports/timeline_m1.md (114 rows). I could not check against the book text offline: canon uncertainties are `verify: true` and listed in the report. Gandalf Sept 29-Oct 1 conflicts with my recollection of Appendix B (see REVIEW.md). 📝 REVIEW ITEM: timeline_m1.md verify section. 
-- [ ] M1-T02 — Region layout (control map)
-  - notes: 
+- [x] M1-T02 — Region layout (control map)
+  - notes: region file 32 POIs/9 settlements/35 graph edges; check_region.py REGION_OK, Bag End -> Prancing Pony 7283 m = 86.7 min at 1.4 m/s; control map viewed (docs/reports/eriador_west_control.png): Brandywine N-S, East Road crosses at the Bridge, Old Forest east of Hedge, Bree far east. Coordinates: z=0 is NORTH edge, z increases south (PLAN's -Z north text was ambiguous), noted in scale_note. 
 - [ ] M1-T03 — Terrain generation and Terrain3D import
   - notes: 
 - [ ] M1-T04 — Style frame and art direction

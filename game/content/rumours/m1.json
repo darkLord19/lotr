@@ -13,5 +13,6 @@
   {"id": "horn_of_buckland", "text": "The Horn of Buckland was blown in the night! Black riders came to Crickhollow and Fatty Bolger fled them.", "origin_poi": "crickhollow", "start": "3018-09-30T02:30", "strength": 5, "max_hops": 6, "hours_per_hop": 2, "verify": true},
   {"id": "hobbits_left_with_strider", "text": "Four hobbits left Bree this morning in the company of that Ranger, Strider, and a poor old pony from Bill Ferny.", "origin_poi": "prancing_pony", "start": "3018-09-30T09:30", "strength": 3, "max_hops": 5, "hours_per_hop": 4, "verify": true},
   {"id": "lobelia_moved_into_bag_end", "text": "Lobelia Sackville-Baggins has moved into Bag End at last and is counting the spoons.", "origin_poi": "bag_end", "start": "3018-10-02T11:00", "strength": 4, "max_hops": 5, "hours_per_hop": 5, "verify": true},
-  {"id": "weathertop_attack", "text": "They say fire was seen on Weathertop by night, and a cold cry that carried for leagues.", "origin_poi": "east_map_edge", "start": "3018-10-06T23:00", "strength": 1, "max_hops": 2, "hours_per_hop": 12, "verify": true}
+  {"id": "weathertop_attack", "text": "They say fire was seen on Weathertop by night, and a cold cry that carried for leagues.", "origin_poi": "east_map_edge", "start": "3018-10-06T23:00", "strength": 1, "max_hops": 2, "hours_per_hop": 12, "verify": true},
+  {"id": "player_found_senseless", "text": "{player} was found senseless on the road, cold as a stone and talking of black riders.", "origin_poi": "bywater", "start": "3018-09-22T08:00", "strength": 3, "max_hops": 4, "hours_per_hop": 6}
 ]

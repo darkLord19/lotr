@@ -30,7 +30,7 @@
         "type": "object",
         "required": ["skill", "amount"],
         "additionalProperties": false,
-        "properties": {"skill": {"type": "string"}, "amount": {"type": "number"}}
+        "properties": {"skill": {"$ref": "_defs.json#/$defs/id"}, "amount": {"type": "number"}}
       },
       "known_by": {
         "type": "array",
@@ -38,7 +38,12 @@
           "type": "object",
           "required": ["npc", "memory"],
           "additionalProperties": false,
-          "properties": {"npc": {"$ref": "_defs.json#/$defs/id"}, "memory": {"type": "string"}}
+          "properties": {
+            "npc": {"$ref": "_defs.json#/$defs/id"},
+            "memory": {"type": "string", "minLength": 1},
+            "disposition": {"type": "integer", "minimum": -10, "maximum": 10},
+            "days_ago": {"type": "integer", "minimum": 0}
+          }
         }
       },
       "verify": {"type": "boolean"}

@@ -33,6 +33,8 @@ LOCATIONS: list[tuple[str, str]] = [
     ("items/*.json", "item"),
     ("rumours/*.json", "rumour"),
     ("origins/*.json", "origin"),
+    ("background_traits.json", "background_trait"),
+    ("appearance.json", "appearance"),
     ("dialogue_fallbacks/*.json", "dialogue_fallback"),
 ]
 
@@ -196,6 +198,7 @@ def cross_refs(rep: Report, root: Path, docs: dict[str, tuple[str, Any]]) -> Non
     settlements: set[str] = set()
     ids: dict[str, str] = {}             # events + itinerary steps share one namespace
     have_region = False
+    factions: set[str] = set()
 
     def dup(kind: str, ident: str, file: str, path: str, seen: dict[str, str]) -> None:
         key = f"{kind}:{ident}"
@@ -214,6 +217,8 @@ def cross_refs(rep: Report, root: Path, docs: dict[str, tuple[str, Any]]) -> Non
                 if kids.count(k) > 1:
                     rep.error(file, f"$.knowledge[{i}].id", f"duplicate knowledge id '{k}'")
             npcs[data["id"]] = set(kids)
+            if data.get("faction"):
+                factions.add(data["faction"])
         elif kind == "item":
             for i, it in enumerate(data):
                 dup("item", it["id"], file, f"$[{i}].id", seen)
@@ -292,6 +297,12 @@ def cross_refs(rep: Report, root: Path, docs: dict[str, tuple[str, Any]]) -> Non
                     need(file, f"$[{i}].items[{j}].item", it["item"], items, "item")
                 for j, k in enumerate(o["known_by"]):
                     need(file, f"$[{i}].known_by[{j}].npc", k["npc"], set(npcs), "npc")
+                for fac in o["reputation_offset"]:
+                    need(file, f"$[{i}].reputation_offset.{fac}", fac, factions, "faction")
+        elif kind == "background_trait":
+            for i, t in enumerate(data):
+                for fac in t["effects"]["reputation"]:
+                    need(file, f"$[{i}].effects.reputation.{fac}", fac, factions, "faction")
         elif kind == "timeline_event":
             for i, e in enumerate(data):
                 base = f"$[{i}]"

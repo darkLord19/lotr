@@ -1,0 +1,20 @@
+{
+  "opening": [
+    {"speaker": "rider", "text": "The black hood leans down towards you, and a breath like cold water on a grave drags at your lungs. 'Shhhire... Bagggins...'"}
+  ],
+  "baggins_default": [
+    {"speaker": "rider", "text": "'Where... is... Baggins? Where... is... the Shire-folk? Speak!'"},
+    {"speaker": "player", "text": "(You shake your head. Your tongue will not move.)"},
+    {"speaker": "rider", "text": "'You smell of the road. You have seen him. Tell me... where is the Ring?'"}
+  ],
+  "baggins_hobbit": [
+    {"speaker": "rider", "text": "'Shire-folk! Small one... you reek of the Shire. You are of his kind. Where is Baggins?'"},
+    {"speaker": "player", "text": "(You try to cry out, but your breath is stolen from you.)"},
+    {"speaker": "rider", "text": "'Baggins! Baggins! The Ring was in the Shire. Your master's thief has fled. Tell me his road, little thing, and live!'"},
+    {"speaker": "player", "text": "(Cold iron fear locks your knees; the hood bends closer still.)"},
+    {"speaker": "rider", "text": "'The Shire... Baggins... Baggins...'"}
+  ],
+  "closing": [
+    {"speaker": "narrator", "text": "The dark shape swells and the world goes out like a snuffed candle. You fall."}
+  ]
+}

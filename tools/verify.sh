@@ -8,4 +8,6 @@ run() { echo "== $*"; "$@" || { echo "FAILED: $*"; fail=1; }; }
 [ -x tools/test.sh ] && run tools/test.sh
 [ -f tools/content/validate.py ] && run .venv/bin/python tools/content/validate.py
 [ -f tools/content/test_validate.py ] && run .venv/bin/python -m pytest -q tools/content
+[ -f tools/terrain/check_region.py ] && run .venv/bin/python tools/terrain/check_region.py
+[ -f tools/terrain/test_check_region.py ] && run .venv/bin/python -m pytest -q tools/terrain
 exit $fail
