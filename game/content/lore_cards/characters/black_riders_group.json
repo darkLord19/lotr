@@ -1,0 +1,33 @@
+{
+  "id": "black_riders_group",
+  "name": "The Black Riders",
+  "race": "wraith",
+  "faction": "shadow",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/black_riders_group.png",
+  "voice": "A chorus of cold whispers and screeches; menacing and featureless. Scripted, never LLM-driven.",
+  "personality": [
+    "relentless",
+    "cold",
+    "hungering for the Ring",
+    "speaks in whispers"
+  ],
+  "speech_samples": [
+    "Baggins...",
+    "It is near."
+  ],
+  "knowledge": [
+    {
+      "id": "seek_baggins",
+      "fact": "The Nine hunt a Baggins of the Shire for their Master.",
+      "known_from": "3018-09-01"
+    }
+  ],
+  "never_knows": [
+    "where the Ring is exactly",
+    "events after the current date"
+  ],
+  "relationships": {},
+  "inventory_can_give": [],
+  "verify": true
+}

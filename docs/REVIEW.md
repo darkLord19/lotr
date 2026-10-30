@@ -15,3 +15,9 @@
 - **M0-T05 rumour schema:** plan gave no rumour format; invented `id,text,origin_poi,start,strength,max_hops,hours_per_hop`.
 - **M1-T01 canon concern (Gandalf):** PLAN §5 has Gandalf visiting the Gaffer on Sept 29, Crickhollow Sept 30 and leaving Bree Oct 1. Per my recollection of Appendix B (Tale of Years) he is Saruman's prisoner at Orthanc from ~Sept 18 until Oct 3 (and in the book he never appears in the Shire/Bree in this window). Followed the plan as instructed; his cards/events are marked `verify: true`. Suggest checking Appendix B and probably removing or reframing his appearance (e.g. a letter or rumour only).
 - **M1-T01 verify markers:** the schema forbids `verify` on a single knowledge entry, so uncertain facts carry a trailing " [verify]" in the fact text plus `verify: true` on the whole card.
+
+## M1-T01 timeline content (events, itineraries, rumours)
+- Canon concern: Appendix B has Gandalf imprisoned in Orthanc from Sept 18 until his escape on Oct 3, which conflicts with the PLAN canon note (Gaffer Sept 29, Crickhollow Sept 30, Bree Oct 1). Followed the plan; every Gandalf step/event is `verify: true`. Cheap fix: delete `gandalf.json` itinerary and the `gandalf_visits_gaffer` event.
+- Dwarves rumour: plan says "going east"; the book (FotR I.2) may say west. `dwarves_going_east` is `verify: true`.
+- No west-edge POI exists for Gildor's company to leave the map; they walk to `woody_end_camp` and stay (`gildor_moves_on`, verify).
+- Mode B: the party idles at `bree_west_gate` (step `frodo_at_bree_west_gate`) until `party_arrives_pony` fires; riders and Bill Ferny steps in Bree depend on it.

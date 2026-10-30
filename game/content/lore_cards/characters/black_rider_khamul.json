@@ -1,0 +1,33 @@
+{
+  "id": "black_rider_khamul",
+  "name": "The Black Rider (Khamûl)",
+  "race": "wraith",
+  "faction": "shadow",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/black_rider_khamul.png",
+  "voice": "A dry, hissing whisper without warmth; short questions repeated. Never lengthy. Dialogue with riders is scripted in-game, not LLM-driven.",
+  "personality": [
+    "relentless",
+    "cold",
+    "hungering for the Ring",
+    "speaks in whispers"
+  ],
+  "speech_samples": [
+    "Baggins... Shire...",
+    "Where is it? Where is Baggins?"
+  ],
+  "knowledge": [
+    {
+      "id": "seek_baggins",
+      "fact": "Seeks a Baggins of the Shire who bears the Ring, and sniffs it out by scent.",
+      "known_from": "3018-09-01"
+    }
+  ],
+  "never_knows": [
+    "where the Ring is exactly",
+    "events after the current date"
+  ],
+  "relationships": {},
+  "inventory_can_give": [],
+  "verify": true
+}
