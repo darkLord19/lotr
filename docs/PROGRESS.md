@@ -1,0 +1,58 @@
+# Progress
+
+Environment: cloud Linux x86_64 container (Godot 4.7.2 at tools/bin/godot, Blender 4.0.2 via apt). Free disk at start: 31G.
+
+- [x] M0-T01 — Toolchain
+  - notes: Godot 4.7.2.stable (tools/bin/godot, Linux build, git-ignored); Blender 4.0.2 (apt); git-lfs 3.4.1; .venv with numpy/pillow/jsonschema/opensimplex/scipy/requests/pytest OK. On the Mac: `brew install --cask godot blender`, then symlink into tools/bin.
+- [x] M0-T02 — Repository scaffold
+  - notes: layout, .gitignore, .gitattributes (LFS patterns listed by `git lfs track`), verify.sh exits 0.
+- [ ] M0-T03 — Godot project and test framework
+  - notes: 
+- [ ] M0-T04 — Capture tool (how the agent sees the game)
+  - notes: 
+- [ ] M0-T05 — Content schemas and validator
+  - notes: 
+- [ ] M0-T06 — GameDate and WorldClock
+  - notes: 
+- [ ] M0-T07 — EventBus, WorldState, SaveSystem
+  - notes: 
+- [ ] M0-T08 — Timeline engine
+  - notes: 
+- [ ] M0-T09 — LLM gateway (OpenRouter)
+  - notes: 
+- [ ] M0-T10 — NPC mind (prompt → reply → intents → memory)
+  - notes: 
+- [ ] M1-T01 — Canon content pass: timeline and cast
+  - notes: 
+- [ ] M1-T02 — Region layout (control map)
+  - notes: 
+- [ ] M1-T03 — Terrain generation and Terrain3D import
+  - notes: 
+- [ ] M1-T04 — Style frame and art direction
+  - notes: 
+- [ ] M1-T05 — Blender procedural asset library
+  - notes: 
+- [ ] M1-T06 — World population
+  - notes: 
+- [ ] M1-T07 — Characters
+  - notes: 
+- [ ] M1-T08 — Player controller and camera
+  - notes: 
+- [ ] M1-T09 — Character creation and origins
+  - notes: 
+- [ ] M1-T10 — Off-screen simulation and roster NPC bodies
+  - notes: 
+- [ ] M1-T11 — Black Riders, stealth and soft failure
+  - notes: 
+- [ ] M1-T12 — Survival, skills, reputation, inventory, foraging
+  - notes: 
+- [ ] M1-T13 — Dialogue UI, portraits, rumour network
+  - notes: 
+- [ ] M1-T14 — Day/night, weather, streaming and performance pass
+  - notes: 
+- [ ] M1-T15 — Audio
+  - notes: 
+- [ ] M1-T16 — Menus, save/load integration
+  - notes: 
+- [ ] M1-T17 — M1 acceptance
+  - notes: 
