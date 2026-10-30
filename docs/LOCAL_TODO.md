@@ -33,3 +33,6 @@ Register OffscreenSim as an autoload (bind(WorldClock, WorldState, Timeline, gra
 
 ## Git LFS note
 The cloud sandbox cannot reach the Git LFS server, so `game/assets/terrain/**` is exempted from LFS in `.gitattributes` (small files committed as plain objects). Any further generated assets committed from the cloud (models, portraits) need the same treatment or must be generated on the Mac. When ready, remove that line and run `git lfs migrate import --include="game/assets/**"`.
+
+## M1-T14 remaining
+Profiling (Godot profiler/monitors on the M5), occlusion culling bakes, shadow cascade tuning, foliage density scaling, impostors for far trees, quality presets in config/game.json, benchmarks `tools/bench.sh flyover_full | walk_hobbiton_to_bree | night_rain_bree` (avg >= 60 fps, 1% low >= 45, mem < 6 GB; write tools/bench.sh + game/tools/bench_runner.gd first), lanterns/inn window glow at night, river mist volumes (WeatherModel.river_mist), wire WeatherDayNight.serialise into SaveSystem and its concealment/fear multipliers into RiderPerception callers. Re-run final daynight captures at 2560x1440.
