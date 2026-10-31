@@ -1,0 +1,8 @@
+{
+  "character": "sam",
+  "steps": [
+    {"id": "sam_stays_bagshot_row", "at": "3018-09-20T00:00", "action": "stay", "at_poi": "bagshot_row"},
+    {"id": "sam_to_bag_end", "at": "3018-09-23T19:00", "action": "depart", "from": "bagshot_row", "to": "bag_end", "mode": "walk"},
+    {"id": "sam_at_bag_end", "at": "3018-09-23T19:30", "action": "arrive", "at_poi": "bag_end"}
+  ]
+}

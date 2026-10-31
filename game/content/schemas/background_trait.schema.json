@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Background traits file (array)",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "description",
+      "effects"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "$ref": "_defs.json#/$defs/id"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": {
+        "type": "string"
+      },
+      "effects": {
+        "type": "object",
+        "required": [
+          "skills",
+          "reputation",
+          "first_impression",
+          "option_tags"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "skills": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "reputation": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          },
+          "first_impression": {
+            "type": "integer",
+            "minimum": -10,
+            "maximum": 10
+          },
+          "option_tags": {
+            "$ref": "_defs.json#/$defs/id_list"
+          }
+        }
+      }
+    }
+  }
+}

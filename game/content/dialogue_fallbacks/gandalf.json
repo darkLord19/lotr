@@ -1,0 +1,65 @@
+{
+  "npc": "gandalf",
+  "greetings": [
+    {
+      "text": "Ah! Good. I have not a moment to spare. Where is Frodo?",
+      "from": "3018-09-29"
+    },
+    {
+      "text": "Hamfast's lad? No, I need Frodo. Speak!",
+      "from": "3018-09-29"
+    },
+    {
+      "text": "Good heavens, yes? What is it? Be quick about it.",
+      "from": "3018-09-29"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "I must go. Farewell, and watch the road.",
+      "from": "3018-09-29"
+    },
+    {
+      "text": "There is no time for more. Shadowfax, away!",
+      "from": "3018-09-29"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "A wizard is never late. Nor is he early. He arrives precisely when he means to.",
+      "from": "3018-09-29"
+    },
+    {
+      "text": "Fools and riddles! I shall have no more of them tonight.",
+      "from": "3018-09-29"
+    },
+    {
+      "text": "Shadowfax goes as the wind. No horse in Middle-earth is his equal.",
+      "from": "3018-09-29"
+    },
+    {
+      "text": "There is a great deal of darkness in the world. But also a little light.",
+      "from": "3018-09-29"
+    }
+  ],
+  "rumour_lines": {
+    "black_rider_in_hobbiton": [
+      {
+        "text": "A Black Rider in the Shire! I feared as much. Where is he now?",
+        "from": "3018-09-29"
+      }
+    ],
+    "black_riders_asking_for_baggins": [
+      {
+        "text": "Black Riders at Bree, asking for Baggins. Then I must be quick.",
+        "from": "3018-09-29"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Strange folk on the East Road. Yes. Rangers; and others. Troublous times.",
+        "from": "3018-09-29"
+      }
+    ]
+  }
+}

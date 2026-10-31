@@ -1,0 +1,11 @@
+[
+  {
+    "id": "rum",
+    "text": "t",
+    "origin_poi": "inn",
+    "start": "3018-09-20",
+    "strength": 1,
+    "max_hops": 3,
+    "hours_per_hop": 6
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "character": "bill_ferny",
+  "steps": [
+    {"id": "ferny_at_home", "at": "3018-09-20T00:00", "action": "stay", "at_poi": "bill_ferny_house"},
+    {"id": "ferny_to_pony", "at": "3018-09-29T19:00", "action": "depart", "from": "bill_ferny_house", "to": "prancing_pony", "mode": "walk"},
+    {"id": "ferny_at_pony", "at": "3018-09-29T19:40", "action": "arrive", "at_poi": "prancing_pony"},
+    {"id": "ferny_leaves_pony", "at": "3018-09-30T10:00", "action": "depart", "from": "prancing_pony", "to": "bill_ferny_house", "mode": "walk", "depends_on": ["party_arrives_pony"]},
+    {"id": "ferny_home", "at": "3018-09-30T10:30", "action": "arrive", "at_poi": "bill_ferny_house", "depends_on": ["party_arrives_pony"]}
+  ]
+}

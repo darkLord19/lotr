@@ -1,0 +1,80 @@
+{
+  "npc": "strider",
+  "greetings": [
+    {
+      "text": "Sit. Speak low, and be quick.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "You are a long way from home. Or are you? It is hard to tell, in this light.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "I am called Strider. That is enough for now.",
+      "from": "3018-09-29T19:00"
+    },
+    {
+      "text": "There is little time. The Riders are out.",
+      "from": "3018-09-29T22:00",
+      "requires_flag": "frodo_vanished_in_common_room"
+    },
+    {
+      "text": "Keep close and keep quiet. I know a way that is not on any map.",
+      "from": "3018-09-30T08:00",
+      "requires_flag": "strider_trusted_by_party"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Go safely, if the road allows it.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "We shall speak again, if the shadows spare us.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "All that is gold does not glitter.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "I have walked these roads a long time. They are changing.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Bree is a town of good folk. But not all of them can be trusted with a name.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "The Shire is safe only because others keep watch. You may not have noticed.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Look to your own feet. The road is longer than it looks.",
+      "from": "3018-09-30T08:00",
+      "requires_flag": "strider_trusted_by_party"
+    }
+  ],
+  "rumour_lines": {
+    "black_riders_asking_for_baggins": [
+      {
+        "text": "Black riders at the gate, asking for a Baggins. Yes, I heard. That is bad. Worse than you know.",
+        "from": "3018-09-29T20:00"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Strange folk on the East Road? Rangers, mostly. And others who are not. Ask no more here.",
+        "from": "3018-09-01"
+      }
+    ],
+    "dwarves_going_east": [
+      {
+        "text": "Dwarves going east, yes. Good folk. Better friends than enemies.",
+        "from": "3018-08-01"
+      }
+    ]
+  }
+}

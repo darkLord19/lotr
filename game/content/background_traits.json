@@ -1,0 +1,10 @@
+[
+  {"id": "curious", "name": "Curious", "description": "You ask questions others avoid. Strangers tell you more, and the careful find you a nuisance.",
+   "effects": {"skills": {"lore": 5}, "reputation": {}, "first_impression": 1, "option_tags": ["ask_about_news", "ask_about_secrets"]}},
+  {"id": "cautious", "name": "Cautious", "description": "You look before you leap and keep an eye on the road behind you.",
+   "effects": {"skills": {"stealth": 5}, "reputation": {}, "first_impression": 0, "option_tags": ["decline_politely", "ask_for_safe_route"]}},
+  {"id": "kind", "name": "Kind", "description": "You are quick with a helping hand, and folk warm to you.",
+   "effects": {"skills": {}, "reputation": {"shire": 2, "bree": 2}, "first_impression": 2, "option_tags": ["offer_help", "share_food"]}},
+  {"id": "proud", "name": "Proud", "description": "You hold your head high; some admire it, and others take offence.",
+   "effects": {"skills": {"persuasion": 5}, "reputation": {}, "first_impression": -1, "option_tags": ["assert_status", "refuse_insult"]}}
+]

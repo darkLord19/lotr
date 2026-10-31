@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character appearance options",
+  "type": "object",
+  "required": [
+    "palettes",
+    "hair_styles"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "palettes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "skin",
+          "hair",
+          "eyes",
+          "outfit"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "_defs.json#/$defs/id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "skin": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "hair": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "eyes": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "outfit": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          }
+        }
+      }
+    },
+    "hair_styles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "races"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "_defs.json#/$defs/id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "races": {
+            "$ref": "_defs.json#/$defs/id_list"
+          }
+        }
+      }
+    }
+  }
+}

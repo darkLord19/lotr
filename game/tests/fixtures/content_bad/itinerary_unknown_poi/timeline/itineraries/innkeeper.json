@@ -1,0 +1,11 @@
+{
+  "character": "innkeeper",
+  "steps": [
+    {
+      "id": "s1",
+      "at": "3018-09-25T10:00",
+      "action": "stay",
+      "at_poi": "mordor"
+    }
+  ]
+}

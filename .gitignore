@@ -1,0 +1,13 @@
+# downloaded engine binaries, not source
+tools/bin/godot
+tools/bin/blender
+game/.godot/
+.venv/
+build/
+assets_src/**
+!assets_src/MANIFEST.md
+.DS_Store
+__pycache__/
+*.pyc
+.venv-art/
+.venv-music/

@@ -1,0 +1,81 @@
+{
+  "population": {
+    "enabled": true,
+    "placements_path": "res://content/regions/eriador_west_placements.json",
+    "models_root": "res://assets/models",
+    "load_radius_m": 768.0,
+    "unload_margin_m": 128.0,
+    "cells_per_frame": 1,
+    "refocus_distance_m": 24.0,
+    "foliage": {
+      "tier_ranges_m": [
+        [
+          0.0,
+          200.0
+        ],
+        [
+          160.0,
+          440.0
+        ],
+        [
+          400.0,
+          900.0
+        ]
+      ],
+      "fade_margin_m": 40.0,
+      "single_lod_range_m": {
+        "default": 240.0,
+        "tree": 600.0,
+        "hedge": 520.0,
+        "rock": 420.0,
+        "bush": 300.0,
+        "field": 300.0,
+        "plant": 160.0
+      },
+      "shadow_tiers": 1,
+      "shadow_kinds": [
+        "tree"
+      ]
+    },
+    "objects": {
+      "tier_ranges_m": [
+        [
+          0.0,
+          170.0
+        ],
+        [
+          140.0,
+          420.0
+        ],
+        [
+          380.0,
+          1000.0
+        ]
+      ],
+      "fade_margin_m": 24.0,
+      "single_lod_range_m": {
+        "default": 300.0,
+        "bridge": 900.0,
+        "landmark": 700.0
+      },
+      "forage_range_m": 120.0
+    },
+    "collision": {
+      "radius_m": 128.0,
+      "hysteresis_m": 16.0,
+      "refresh_distance_m": 12.0,
+      "barrier_thickness_m": 3.0
+    },
+    "budget": {
+      "max_foliage_instances": 16000,
+      "max_foliage_triangles": 2500000,
+      "max_multimeshes": 1200,
+      "max_objects": 200,
+      "grid_step_m": 256.0
+    },
+    "poi": {
+      "volume_radius_m": 14.0,
+      "player_group": "player"
+    }
+  }
+}

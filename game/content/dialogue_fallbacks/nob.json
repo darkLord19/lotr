@@ -1,0 +1,66 @@
+{
+  "npc": "nob",
+  "greetings": [
+    {
+      "text": "Welcome to the Prancing Pony, sir. Mind the step.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Evening, sir. We're near full tonight, but I'll see what Mr. Butterbur can do.",
+      "from": "3018-09-29T18:00"
+    },
+    {
+      "text": "Yes, sir? Sorry, sir, it's been a night. A terrible night.",
+      "from": "3018-09-30T05:00",
+      "requires_flag": "pony_raided"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Yes, sir. Thank you, sir.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Mind how you go, sir. Roads are not what they were.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "Mr. Butterbur's ale is the best in Bree, sir. If I may say so.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Hobbits and Men both stop here, sir. We've rooms for each kind.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Mr. Butterbur's a good master, but he forgets his own name some days.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Strange folk about, lately, sir. Some of them don't even eat. Funny, that.",
+      "from": "3018-09-15"
+    }
+  ],
+  "rumour_lines": {
+    "black_riders_asking_for_baggins": [
+      {
+        "text": "Black-cloaked folk at the West-gate asking for a Baggins, sir? Aye, I heard. Gave me a chill.",
+        "from": "3018-09-29T20:00"
+      }
+    ],
+    "dwarves_going_east": [
+      {
+        "text": "Dwarves, sir? Aye, they go by regular, heading east. Good tippers, mostly.",
+        "from": "3018-08-01"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Odd folk on the Road, yes, sir. Not all of them stop at the Pony.",
+        "from": "3018-09-01"
+      }
+    ]
+  }
+}

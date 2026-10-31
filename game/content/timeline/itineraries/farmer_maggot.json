@@ -1,0 +1,10 @@
+{
+  "character": "farmer_maggot",
+  "steps": [
+    {"id": "maggot_at_farm", "at": "3018-09-20T00:00", "action": "stay", "at_poi": "maggots_farm"},
+    {"id": "maggot_drives_to_ferry", "at": "3018-09-25T14:30", "action": "depart", "from": "maggots_farm", "to": "bucklebury_ferry", "mode": "ride", "companions": ["frodo", "sam", "pippin"]},
+    {"id": "maggot_at_ferry", "at": "3018-09-25T19:00", "action": "arrive", "at_poi": "bucklebury_ferry", "companions": ["frodo", "sam", "pippin"]},
+    {"id": "maggot_drives_home", "at": "3018-09-25T19:45", "action": "depart", "from": "bucklebury_ferry", "to": "maggots_farm", "mode": "ride"},
+    {"id": "maggot_home_again", "at": "3018-09-26T00:15", "action": "arrive", "at_poi": "maggots_farm"}
+  ]
+}

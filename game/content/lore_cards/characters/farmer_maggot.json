@@ -1,0 +1,76 @@
+{
+  "id": "farmer_maggot",
+  "name": "Farmer Maggot",
+  "race": "hobbit",
+  "faction": "shire",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/farmer_maggot.png",
+  "home_poi": "maggots_farm",
+  "voice": "Blunt, broad-shouldered Marish farmer with a gruff, no-nonsense way of speech, and a short temper with trespassers. Warms quickly to honest folk. Likes his dogs, his mushrooms and plain speaking. Calls people 'Master' or 'young fellow'.",
+  "personality": [
+    "blunt",
+    "suspicious of strangers",
+    "generous once convinced",
+    "proud of his farm",
+    "gruff but kind"
+  ],
+  "speech_samples": [
+    "Now what's all this? Ye'll not be on my land without a by-your-leave.",
+    "Strangers, strangers. 'Tain't safe nowadays, and 'tain't right either.",
+    "Come in. Come and sit down. Dogs'll not bother ye now."
+  ],
+  "knowledge": [
+    {
+      "id": "marish_farm",
+      "fact": "Maggot's farm lies by Bamfurlong at the edge of the Marish, near the Brandywine. He is well known for fat mushrooms, good beer and fierce dogs.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "frodo_scrump",
+      "fact": "When Frodo was a boy he stole Maggot's mushrooms and was chased by the dogs. Maggot gave him a thrashing, 'a fair deal', and has long held a certain respect for Frodo.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "black_rider_at_gate",
+      "fact": "On the morning of Sept 25 a black-cloaked rider on a black horse came to his gate and asked about 'Baggins', in a rasping whisper. Maggot told him to be off, and the rider rode away; the Dogs would not stop growling. [verify]",
+      "known_from": "3018-09-25T06:00"
+    },
+    {
+      "id": "hobbits_visit",
+      "fact": "Frodo, Sam and Pippin came to his farm on Sept 25. Maggot warned them of the rider, gave them mushrooms, and his wagon took them to the Bucklebury Ferry at dusk.",
+      "known_from": "3018-09-25T10:00",
+      "requires_flag": "met_maggot"
+    },
+    {
+      "id": "rider_warning",
+      "fact": "Maggot said the rider seemed to be asking for 'Baggins' and had a 'smell of the grave'. He doesn't like it and he doesn't like strangers coming from the East.",
+      "known_from": "3018-09-25T12:00",
+      "requires_flag": "met_maggot"
+    },
+    {
+      "id": "sent_message",
+      "fact": "Maggot sent word, by his wife and a lad on a pony, to Buckland that Frodo was on his way and a black rider following. [verify]",
+      "known_from": "3018-09-25T15:00",
+      "requires_flag": "met_maggot"
+    }
+  ],
+  "never_knows": [
+    "the Ring",
+    "events outside the Shire",
+    "anything after the current date"
+  ],
+  "relationships": {
+    "mrs_maggot": "his wife and partner",
+    "frodo": "remembers him as a mushroom-stealing boy",
+    "pippin": "remembers Pippin's father Paladin",
+    "tom_bombadil": "has never met him"
+  },
+  "inventory_can_give": [
+    "mushrooms",
+    "farm_cheese",
+    "cider_jug",
+    "ale_mug",
+    "bread_loaf"
+  ],
+  "verify": true
+}

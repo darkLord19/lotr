@@ -1,0 +1,1386 @@
+{
+ "id": "eriador_west",
+ "size_m": [
+  8192,
+  4096
+ ],
+ "scale_note": "\u22481:25 compression of canon distances. Plan view with north up: x runs east, z runs south (z=0 is the northern edge); all [x,z] pairs in metres.",
+ "pois": [
+  {
+   "id": "bag_end",
+   "name": "Bag End",
+   "pos": [
+    900,
+    0,
+    2110
+   ],
+   "kind": "dwelling",
+   "settlement": "hobbiton"
+  },
+  {
+   "id": "bagshot_row",
+   "name": "Bagshot Row",
+   "pos": [
+    780,
+    0,
+    2200
+   ],
+   "kind": "dwelling",
+   "settlement": "hobbiton"
+  },
+  {
+   "id": "hobbiton_hill",
+   "name": "The Hill",
+   "pos": [
+    880,
+    0,
+    1990
+   ],
+   "kind": "landmark",
+   "settlement": "hobbiton"
+  },
+  {
+   "id": "party_field",
+   "name": "Party Field",
+   "pos": [
+    1060,
+    0,
+    2250
+   ],
+   "kind": "field",
+   "settlement": "hobbiton"
+  },
+  {
+   "id": "mill",
+   "name": "Hobbiton Mill",
+   "pos": [
+    1200,
+    0,
+    2380
+   ],
+   "kind": "building",
+   "settlement": "hobbiton"
+  },
+  {
+   "id": "bywater",
+   "name": "Bywater",
+   "pos": [
+    1620,
+    0,
+    2330
+   ],
+   "kind": "village",
+   "settlement": "bywater"
+  },
+  {
+   "id": "green_dragon",
+   "name": "The Green Dragon",
+   "pos": [
+    1700,
+    0,
+    2390
+   ],
+   "kind": "inn",
+   "settlement": "bywater"
+  },
+  {
+   "id": "three_farthing_stone",
+   "name": "Three-Farthing Stone",
+   "pos": [
+    2450,
+    0,
+    2270
+   ],
+   "kind": "landmark"
+  },
+  {
+   "id": "frogmorton",
+   "name": "Frogmorton",
+   "pos": [
+    3350,
+    0,
+    2420
+   ],
+   "kind": "village",
+   "settlement": "frogmorton"
+  },
+  {
+   "id": "floating_log",
+   "name": "The Floating Log",
+   "pos": [
+    3420,
+    0,
+    2470
+   ],
+   "kind": "inn",
+   "settlement": "frogmorton"
+  },
+  {
+   "id": "woody_end_camp",
+   "name": "Woody End camp",
+   "pos": [
+    2700,
+    0,
+    2950
+   ],
+   "kind": "camp"
+  },
+  {
+   "id": "gildor_camp",
+   "name": "Gildor's camp",
+   "pos": [
+    3100,
+    0,
+    3080
+   ],
+   "kind": "camp"
+  },
+  {
+   "id": "maggots_farm",
+   "name": "Maggot's Farm",
+   "pos": [
+    4150,
+    0,
+    2900
+   ],
+   "kind": "farm",
+   "settlement": "marish"
+  },
+  {
+   "id": "bamfurlong",
+   "name": "Bamfurlong",
+   "pos": [
+    4450,
+    0,
+    2780
+   ],
+   "kind": "farm",
+   "settlement": "marish"
+  },
+  {
+   "id": "stock",
+   "name": "Stock",
+   "pos": [
+    4850,
+    0,
+    2650
+   ],
+   "kind": "village",
+   "settlement": "stock"
+  },
+  {
+   "id": "golden_perch",
+   "name": "The Golden Perch",
+   "pos": [
+    4920,
+    0,
+    2700
+   ],
+   "kind": "inn",
+   "settlement": "stock"
+  },
+  {
+   "id": "bucklebury_ferry",
+   "name": "Bucklebury Ferry",
+   "pos": [
+    5260,
+    0,
+    2860
+   ],
+   "kind": "ferry",
+   "settlement": "stock"
+  },
+  {
+   "id": "brandy_hall",
+   "name": "Brandy Hall",
+   "pos": [
+    5800,
+    0,
+    2930
+   ],
+   "kind": "hall",
+   "settlement": "buckland"
+  },
+  {
+   "id": "crickhollow",
+   "name": "Crickhollow",
+   "pos": [
+    5760,
+    0,
+    3280
+   ],
+   "kind": "dwelling",
+   "settlement": "buckland"
+  },
+  {
+   "id": "hedge_gate",
+   "name": "The Hedge gate",
+   "pos": [
+    6030,
+    0,
+    2760
+   ],
+   "kind": "gate",
+   "settlement": "buckland"
+  },
+  {
+   "id": "old_forest_edge",
+   "name": "Old Forest edge",
+   "pos": [
+    6150,
+    0,
+    2840
+   ],
+   "kind": "landmark"
+  },
+  {
+   "id": "bombadil_house",
+   "name": "Bombadil's house",
+   "pos": [
+    6800,
+    0,
+    3250
+   ],
+   "kind": "dwelling",
+   "abstract": true
+  },
+  {
+   "id": "brandywine_bridge",
+   "name": "Brandywine Bridge",
+   "pos": [
+    5380,
+    0,
+    2320
+   ],
+   "kind": "bridge"
+  },
+  {
+   "id": "bree_waiting_point",
+   "name": "Road west of Bree",
+   "pos": [
+    7100,
+    0,
+    2310
+   ],
+   "kind": "waypoint"
+  },
+  {
+   "id": "bree_west_gate",
+   "name": "Bree West-gate",
+   "pos": [
+    7290,
+    0,
+    2300
+   ],
+   "kind": "gate",
+   "settlement": "bree"
+  },
+  {
+   "id": "bree_south_gate",
+   "name": "Bree South-gate",
+   "pos": [
+    7490,
+    0,
+    2500
+   ],
+   "kind": "gate",
+   "settlement": "bree"
+  },
+  {
+   "id": "prancing_pony",
+   "name": "The Prancing Pony",
+   "pos": [
+    7420,
+    0,
+    2340
+   ],
+   "kind": "inn",
+   "settlement": "bree"
+  },
+  {
+   "id": "bill_ferny_house",
+   "name": "Bill Ferny's house",
+   "pos": [
+    7560,
+    0,
+    2600
+   ],
+   "kind": "dwelling",
+   "settlement": "bree"
+  },
+  {
+   "id": "bree_hill",
+   "name": "Bree-hill",
+   "pos": [
+    7520,
+    0,
+    2210
+   ],
+   "kind": "landmark",
+   "settlement": "bree"
+  },
+  {
+   "id": "staddle",
+   "name": "Staddle",
+   "pos": [
+    7780,
+    0,
+    2480
+   ],
+   "kind": "village",
+   "settlement": "staddle"
+  },
+  {
+   "id": "combe",
+   "name": "Combe",
+   "pos": [
+    7950,
+    0,
+    2280
+   ],
+   "kind": "village",
+   "settlement": "combe"
+  },
+  {
+   "id": "east_map_edge",
+   "name": "East map edge",
+   "pos": [
+    8150,
+    0,
+    2300
+   ],
+   "kind": "edge"
+  }
+ ],
+ "settlements": [
+  {
+   "id": "hobbiton",
+   "faction": "shire",
+   "center": [
+    950,
+    2200
+   ],
+   "radius": 300
+  },
+  {
+   "id": "bywater",
+   "faction": "shire",
+   "center": [
+    1650,
+    2350
+   ],
+   "radius": 200
+  },
+  {
+   "id": "frogmorton",
+   "faction": "shire",
+   "center": [
+    3380,
+    2440
+   ],
+   "radius": 200
+  },
+  {
+   "id": "marish",
+   "faction": "shire",
+   "center": [
+    4300,
+    2840
+   ],
+   "radius": 400
+  },
+  {
+   "id": "stock",
+   "faction": "shire",
+   "center": [
+    4880,
+    2670
+   ],
+   "radius": 200
+  },
+  {
+   "id": "buckland",
+   "faction": "buckland",
+   "center": [
+    5850,
+    3000
+   ],
+   "radius": 550
+  },
+  {
+   "id": "bree",
+   "faction": "bree",
+   "center": [
+    7420,
+    2350
+   ],
+   "radius": 300
+  },
+  {
+   "id": "staddle",
+   "faction": "bree",
+   "center": [
+    7780,
+    2480
+   ],
+   "radius": 130
+  },
+  {
+   "id": "combe",
+   "faction": "bree",
+   "center": [
+    7950,
+    2280
+   ],
+   "radius": 130
+  }
+ ],
+ "roads": [
+  {
+   "id": "east_road",
+   "kind": "road",
+   "points": [
+    [
+     0,
+     2420
+    ],
+    [
+     500,
+     2330
+    ],
+    [
+     1060,
+     2250
+    ],
+    [
+     1620,
+     2330
+    ],
+    [
+     2000,
+     2280
+    ],
+    [
+     2450,
+     2270
+    ],
+    [
+     2900,
+     2340
+    ],
+    [
+     3350,
+     2420
+    ],
+    [
+     4000,
+     2380
+    ],
+    [
+     4700,
+     2300
+    ],
+    [
+     5380,
+     2320
+    ],
+    [
+     5900,
+     2260
+    ],
+    [
+     6500,
+     2250
+    ],
+    [
+     6800,
+     2290
+    ],
+    [
+     7100,
+     2310
+    ],
+    [
+     7290,
+     2300
+    ],
+    [
+     7420,
+     2340
+    ],
+    [
+     7950,
+     2280
+    ],
+    [
+     8150,
+     2300
+    ]
+   ]
+  },
+  {
+   "id": "hill_lane",
+   "kind": "path",
+   "points": [
+    [
+     900,
+     2110
+    ],
+    [
+     780,
+     2200
+    ]
+   ]
+  },
+  {
+   "id": "hill_path",
+   "kind": "path",
+   "points": [
+    [
+     880,
+     1990
+    ],
+    [
+     900,
+     2110
+    ],
+    [
+     1060,
+     2250
+    ]
+   ]
+  },
+  {
+   "id": "mill_lane",
+   "kind": "road",
+   "points": [
+    [
+     1060,
+     2250
+    ],
+    [
+     1200,
+     2380
+    ],
+    [
+     1620,
+     2330
+    ]
+   ]
+  },
+  {
+   "id": "green_dragon_lane",
+   "kind": "path",
+   "points": [
+    [
+     1620,
+     2330
+    ],
+    [
+     1700,
+     2390
+    ]
+   ]
+  },
+  {
+   "id": "woody_end_track",
+   "kind": "path",
+   "points": [
+    [
+     2450,
+     2270
+    ],
+    [
+     2550,
+     2600
+    ],
+    [
+     2700,
+     2950
+    ],
+    [
+     3100,
+     3080
+    ]
+   ]
+  },
+  {
+   "id": "marish_lane",
+   "kind": "path",
+   "points": [
+    [
+     3350,
+     2420
+    ],
+    [
+     3500,
+     2700
+    ],
+    [
+     3700,
+     2900
+    ],
+    [
+     4150,
+     2900
+    ],
+    [
+     4450,
+     2780
+    ],
+    [
+     4850,
+     2650
+    ],
+    [
+     4920,
+     2700
+    ]
+   ]
+  },
+  {
+   "id": "gildor_path",
+   "kind": "path",
+   "points": [
+    [
+     3100,
+     3080
+    ],
+    [
+     3600,
+     3100
+    ],
+    [
+     4150,
+     2900
+    ]
+   ]
+  },
+  {
+   "id": "stock_road",
+   "kind": "road",
+   "points": [
+    [
+     3350,
+     2420
+    ],
+    [
+     4100,
+     2500
+    ],
+    [
+     4500,
+     2560
+    ],
+    [
+     4850,
+     2650
+    ]
+   ]
+  },
+  {
+   "id": "ferry_lane",
+   "kind": "path",
+   "points": [
+    [
+     4850,
+     2650
+    ],
+    [
+     5260,
+     2860
+    ]
+   ]
+  },
+  {
+   "id": "ferry_crossing",
+   "kind": "ferry",
+   "points": [
+    [
+     5260,
+     2860
+    ],
+    [
+     5530,
+     2880
+    ],
+    [
+     5800,
+     2930
+    ]
+   ]
+  },
+  {
+   "id": "buckland_road",
+   "kind": "road",
+   "points": [
+    [
+     5380,
+     2320
+    ],
+    [
+     5560,
+     2330
+    ],
+    [
+     5700,
+     2600
+    ],
+    [
+     5800,
+     2930
+    ]
+   ]
+  },
+  {
+   "id": "buckland_lane",
+   "kind": "path",
+   "points": [
+    [
+     5800,
+     2930
+    ],
+    [
+     5760,
+     3280
+    ],
+    [
+     6030,
+     2760
+    ],
+    [
+     6150,
+     2840
+    ]
+   ]
+  },
+  {
+   "id": "tom_path",
+   "kind": "path",
+   "points": [
+    [
+     6150,
+     2840
+    ],
+    [
+     6400,
+     3000
+    ],
+    [
+     6600,
+     3150
+    ],
+    [
+     6800,
+     3250
+    ]
+   ]
+  },
+  {
+   "id": "bree_south_road",
+   "kind": "road",
+   "points": [
+    [
+     7420,
+     2340
+    ],
+    [
+     7490,
+     2500
+    ],
+    [
+     7780,
+     2480
+    ],
+    [
+     7950,
+     2280
+    ]
+   ]
+  },
+  {
+   "id": "ferny_lane",
+   "kind": "path",
+   "points": [
+    [
+     7490,
+     2500
+    ],
+    [
+     7560,
+     2600
+    ]
+   ]
+  },
+  {
+   "id": "bree_hill_path",
+   "kind": "path",
+   "points": [
+    [
+     7420,
+     2340
+    ],
+    [
+     7520,
+     2210
+    ]
+   ]
+  }
+ ],
+ "rivers": [
+  {
+   "id": "brandywine",
+   "width": 50,
+   "points": [
+    [
+     5450,
+     0
+    ],
+    [
+     5300,
+     500
+    ],
+    [
+     5420,
+     1100
+    ],
+    [
+     5250,
+     1650
+    ],
+    [
+     5420,
+     2320
+    ],
+    [
+     5330,
+     2860
+    ],
+    [
+     5220,
+     3300
+    ],
+    [
+     5340,
+     3800
+    ],
+    [
+     5300,
+     4096
+    ]
+   ]
+  },
+  {
+   "id": "the_water",
+   "width": 14,
+   "points": [
+    [
+     150,
+     1500
+    ],
+    [
+     500,
+     1900
+    ],
+    [
+     800,
+     2330
+    ],
+    [
+     1200,
+     2420
+    ],
+    [
+     1620,
+     2380
+    ],
+    [
+     2000,
+     2150
+    ],
+    [
+     2900,
+     1950
+    ],
+    [
+     3800,
+     1850
+    ],
+    [
+     4600,
+     1700
+    ],
+    [
+     5250,
+     1650
+    ]
+   ]
+  }
+ ],
+ "hills": [
+  {
+   "id": "hobbiton_hill",
+   "center": [
+    880,
+    2050
+   ],
+   "radius": 220,
+   "height": 40
+  },
+  {
+   "id": "green_hill_country",
+   "center": [
+    2200,
+    1700
+   ],
+   "radius": 500,
+   "height": 25
+  },
+  {
+   "id": "tuckborough_downs",
+   "center": [
+    3000,
+    1500
+   ],
+   "radius": 600,
+   "height": 30
+  },
+  {
+   "id": "bree_hill",
+   "center": [
+    7520,
+    2250
+   ],
+   "radius": 300,
+   "height": 80
+  },
+  {
+   "id": "barrow_downs",
+   "center": [
+    6900,
+    3700
+   ],
+   "radius": 600,
+   "height": 70,
+   "enterable": false
+  },
+  {
+   "id": "barrow_downs_north",
+   "center": [
+    6300,
+    3950
+   ],
+   "radius": 400,
+   "height": 55,
+   "enterable": false
+  },
+  {
+   "id": "north_ridge",
+   "center": [
+    4096,
+    150
+   ],
+   "radius": 900,
+   "height": 60
+  }
+ ],
+ "forests": [
+  {
+   "id": "woody_end",
+   "polygon": [
+    [
+     2300,
+     2750
+    ],
+    [
+     3000,
+     2700
+    ],
+    [
+     3500,
+     2950
+    ],
+    [
+     3400,
+     3400
+    ],
+    [
+     2800,
+     3500
+    ],
+    [
+     2300,
+     3250
+    ]
+   ],
+   "density": 0.9,
+   "enterable": true
+  },
+  {
+   "id": "old_forest",
+   "polygon": [
+    [
+     6130,
+     2600
+    ],
+    [
+     6700,
+     2550
+    ],
+    [
+     7100,
+     2800
+    ],
+    [
+     7200,
+     3350
+    ],
+    [
+     6700,
+     3650
+    ],
+    [
+     6150,
+     3600
+    ]
+   ],
+   "density": 1.0,
+   "enterable": false
+  },
+  {
+   "id": "chetwood",
+   "polygon": [
+    [
+     7500,
+     1500
+    ],
+    [
+     8192,
+     1400
+    ],
+    [
+     8192,
+     2050
+    ],
+    [
+     7800,
+     2050
+    ],
+    [
+     7600,
+     1900
+    ]
+   ],
+   "density": 0.9,
+   "enterable": true
+  },
+  {
+   "id": "buckland_woods",
+   "polygon": [
+    [
+     5700,
+     3450
+    ],
+    [
+     6050,
+     3400
+    ],
+    [
+     6100,
+     3900
+    ],
+    [
+     5700,
+     3950
+    ]
+   ],
+   "density": 0.6,
+   "enterable": true
+  }
+ ],
+ "walls": [
+  {
+   "id": "high_hay",
+   "kind": "hedge",
+   "points": [
+    [
+     6020,
+     1950
+    ],
+    [
+     6040,
+     2400
+    ],
+    [
+     6030,
+     2740
+    ],
+    [
+     6030,
+     2780
+    ],
+    [
+     6050,
+     3300
+    ],
+    [
+     6000,
+     3700
+    ]
+   ]
+  },
+  {
+   "id": "bree_dyke",
+   "kind": "hedge",
+   "closed": true,
+   "points": [
+    [
+     7290,
+     2300
+    ],
+    [
+     7330,
+     2100
+    ],
+    [
+     7520,
+     2060
+    ],
+    [
+     7690,
+     2170
+    ],
+    [
+     7700,
+     2450
+    ],
+    [
+     7490,
+     2500
+    ],
+    [
+     7320,
+     2450
+    ]
+   ]
+  }
+ ],
+ "road_graph": {
+  "nodes": [
+   "bag_end",
+   "bagshot_row",
+   "hobbiton_hill",
+   "party_field",
+   "mill",
+   "bywater",
+   "green_dragon",
+   "three_farthing_stone",
+   "frogmorton",
+   "floating_log",
+   "woody_end_camp",
+   "gildor_camp",
+   "maggots_farm",
+   "bamfurlong",
+   "stock",
+   "golden_perch",
+   "bucklebury_ferry",
+   "brandy_hall",
+   "crickhollow",
+   "hedge_gate",
+   "old_forest_edge",
+   "bombadil_house",
+   "brandywine_bridge",
+   "bree_waiting_point",
+   "bree_west_gate",
+   "bree_south_gate",
+   "prancing_pony",
+   "bill_ferny_house",
+   "bree_hill",
+   "staddle",
+   "combe",
+   "east_map_edge"
+  ],
+  "edges": [
+   [
+    "bag_end",
+    "hobbiton_hill",
+    "path"
+   ],
+   [
+    "bag_end",
+    "bagshot_row",
+    "path"
+   ],
+   [
+    "bag_end",
+    "party_field",
+    "path"
+   ],
+   [
+    "party_field",
+    "mill",
+    "road"
+   ],
+   [
+    "party_field",
+    "bywater",
+    "road"
+   ],
+   [
+    "mill",
+    "bywater",
+    "road"
+   ],
+   [
+    "bywater",
+    "green_dragon",
+    "path"
+   ],
+   [
+    "bywater",
+    "three_farthing_stone",
+    "road"
+   ],
+   [
+    "three_farthing_stone",
+    "frogmorton",
+    "road"
+   ],
+   [
+    "frogmorton",
+    "floating_log",
+    "path"
+   ],
+   [
+    "three_farthing_stone",
+    "woody_end_camp",
+    "path"
+   ],
+   [
+    "woody_end_camp",
+    "gildor_camp",
+    "path"
+   ],
+   [
+    "gildor_camp",
+    "maggots_farm",
+    "path"
+   ],
+   [
+    "frogmorton",
+    "woody_end_camp",
+    "path"
+   ],
+   [
+    "maggots_farm",
+    "bamfurlong",
+    "path"
+   ],
+   [
+    "bamfurlong",
+    "stock",
+    "path"
+   ],
+   [
+    "frogmorton",
+    "stock",
+    "road"
+   ],
+   [
+    "stock",
+    "golden_perch",
+    "path"
+   ],
+   [
+    "stock",
+    "bucklebury_ferry",
+    "path"
+   ],
+   [
+    "bucklebury_ferry",
+    "brandy_hall",
+    "ferry"
+   ],
+   [
+    "frogmorton",
+    "brandywine_bridge",
+    "road"
+   ],
+   [
+    "brandywine_bridge",
+    "brandy_hall",
+    "bridge"
+   ],
+   [
+    "brandy_hall",
+    "crickhollow",
+    "path"
+   ],
+   [
+    "brandy_hall",
+    "hedge_gate",
+    "path"
+   ],
+   [
+    "crickhollow",
+    "hedge_gate",
+    "path"
+   ],
+   [
+    "hedge_gate",
+    "old_forest_edge",
+    "path"
+   ],
+   [
+    "brandywine_bridge",
+    "bree_waiting_point",
+    "road"
+   ],
+   [
+    "bree_waiting_point",
+    "bree_west_gate",
+    "road"
+   ],
+   [
+    "bree_west_gate",
+    "prancing_pony",
+    "road"
+   ],
+   [
+    "prancing_pony",
+    "bree_hill",
+    "path"
+   ],
+   [
+    "prancing_pony",
+    "bree_south_gate",
+    "road"
+   ],
+   [
+    "bree_south_gate",
+    "bill_ferny_house",
+    "path"
+   ],
+   [
+    "bree_south_gate",
+    "staddle",
+    "road"
+   ],
+   [
+    "staddle",
+    "combe",
+    "road"
+   ],
+   [
+    "prancing_pony",
+    "combe",
+    "road"
+   ],
+   [
+    "combe",
+    "east_map_edge",
+    "road"
+   ]
+  ]
+ }
+}

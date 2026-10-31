@@ -1,0 +1,17 @@
+{
+  "_comment": "Max triangles for LOD0 per asset kind (collision meshes excluded). LOD ratios are upper bounds relative to LOD0.",
+  "kinds": {
+    "tree": 3000,
+    "bush": 1500,
+    "rock": 1500,
+    "plant": 1500,
+    "house": 8000,
+    "bighouse": 8000,
+    "structure": 4000,
+    "bigstructure": 8000,
+    "prop": 1000
+  },
+  "lod_max_ratio": {"1": 0.55, "2": 0.30},
+  "lod_min_tris_checked": 250,
+  "total_size_mb": 40
+}

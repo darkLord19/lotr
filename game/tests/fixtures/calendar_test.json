@@ -1,0 +1,113 @@
+{
+ "comment": "Test fixture: same shape as content/calendar.json with renamed periods.",
+ "epoch_ta_year": 3018,
+ "sr_year_offset": -1600,
+ "shire_index_shift": 1,
+ "year_rollover_index": 365,
+ "days_in_year": 365,
+ "leap_day_name": "TestLeapDay",
+ "periods": [
+  {
+   "name": "TestYuleA",
+   "first_index": 0,
+   "length": 1,
+   "intercalary": true
+  },
+  {
+   "name": "TestMonth1",
+   "first_index": 1,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth2",
+   "first_index": 31,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth3",
+   "first_index": 61,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth4",
+   "first_index": 91,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth5",
+   "first_index": 121,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth6",
+   "first_index": 151,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "1 Lithe",
+   "first_index": 181,
+   "length": 1,
+   "intercalary": true
+  },
+  {
+   "name": "Midyear's Day",
+   "first_index": 182,
+   "length": 1,
+   "intercalary": true
+  },
+  {
+   "name": "2 Lithe",
+   "first_index": 183,
+   "length": 1,
+   "intercalary": true
+  },
+  {
+   "name": "TestMonth7",
+   "first_index": 184,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth8",
+   "first_index": 214,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth9",
+   "first_index": 244,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth10",
+   "first_index": 274,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth11",
+   "first_index": 304,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestMonth12",
+   "first_index": 334,
+   "length": 30,
+   "intercalary": false
+  },
+  {
+   "name": "TestYuleB",
+   "first_index": 364,
+   "length": 1,
+   "intercalary": true
+  }
+ ]
+}

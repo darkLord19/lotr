@@ -1,0 +1,63 @@
+{
+  "npc": "lobelia_sackville_baggins",
+  "greetings": [
+    {
+      "text": "Oh. It's you. What do you want?",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Do mind the carpets. They are new. Well, newish. Well, they will be.",
+      "from": "3018-09-24"
+    },
+    {
+      "text": "Yes? I am extremely busy. Make it quick.",
+      "from": "3018-09-01"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Good day to you. Mind the step. And do not touch that.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Well, I never. Good day.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "I always said Bag End was too good for that Frodo. I always did.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "There is a great deal to be done to this house. It has been shockingly neglected.",
+      "from": "3018-09-24"
+    },
+    {
+      "text": "My Lotho has a head for business. He will go far. Further than certain Bagginses.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Nobody ever listens to me, and I am always proved right. Always!",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "It is a scandal, those Gamgees and their potatoes.",
+      "from": "3018-09-01"
+    }
+  ],
+  "rumour_lines": {
+    "frodo_sold_bag_end": [
+      {
+        "text": "Of course I bought Bag End. I paid a perfectly proper price. Whatever anyone says.",
+        "from": "3018-09-18"
+      }
+    ],
+    "black_rider_in_hobbiton": [
+      {
+        "text": "A black rider? Nonsense. Trespassers, probably, who have no business in the Shire. I shall write to the Mayor.",
+        "from": "3018-09-23"
+      }
+    ]
+  }
+}

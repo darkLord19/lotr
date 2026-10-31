@@ -1,0 +1,102 @@
+[
+  {
+    "id": "hobbiton_gardener",
+    "name": "Hobbiton gardener",
+    "race": "hobbit",
+    "description": "You work the gardens under the Hill alongside the Gaffer, and know every turnip patch from Bagshot Row to the Mill.",
+    "start_poi": "bagshot_row",
+    "start_date": "3018-09-20T08:00",
+    "items": [
+      {"item": "garden_trowel", "count": 1},
+      {"item": "potatoes", "count": 4},
+      {"item": "bread_loaf", "count": 1},
+      {"item": "copper_pennies", "count": 12}
+    ],
+    "reputation_offset": {"shire": 8},
+    "skill_bonus": {"skill": "woodcraft", "amount": 10},
+    "known_by": [
+      {"npc": "gaffer_gamgee", "memory": "A Hobbiton lad who has helped in the Bag End gardens. The Gaffer thinks him sound, if a bit lax with the hoe.", "disposition": 4, "days_ago": 2},
+      {"npc": "sam", "memory": "Sam has worked beside you in the Bag End garden for years and counts you a friend.", "disposition": 5, "days_ago": 1}
+    ]
+  },
+  {
+    "id": "bucklander",
+    "name": "Bucklander",
+    "race": "hobbit",
+    "description": "You grew up in Buckland by the Hedge, wary of the Old Forest and used to boats and the Brandywine.",
+    "start_poi": "crickhollow",
+    "start_date": "3018-09-20T08:00",
+    "items": [
+      {"item": "buckland_horn", "count": 1},
+      {"item": "apple", "count": 3},
+      {"item": "farm_cheese", "count": 1},
+      {"item": "copper_pennies", "count": 15}
+    ],
+    "reputation_offset": {"buckland": 8, "shire": 2},
+    "skill_bonus": {"skill": "stealth", "amount": 10},
+    "known_by": [
+      {"npc": "merry", "memory": "A Buckland neighbour Merry has known since boyhood, handy on the river and in the Hedge's shadow.", "disposition": 4, "days_ago": 3},
+      {"npc": "fatty_bolger", "memory": "Fatty knows you from Brandy Hall suppers and trusts you to keep your head when the Old Forest is mentioned.", "disposition": 3, "days_ago": 4}
+    ]
+  },
+  {
+    "id": "tookland_youth",
+    "name": "Tookland lad or lass",
+    "race": "hobbit",
+    "description": "You are a young Took of the Tookland, newly come along the East Road to Bywater with news and an appetite for adventure.",
+    "start_poi": "bywater",
+    "start_date": "3018-09-20T08:00",
+    "items": [
+      {"item": "travelling_cloak", "count": 1},
+      {"item": "dried_meat", "count": 2},
+      {"item": "clay_pipe", "count": 1},
+      {"item": "copper_pennies", "count": 20}
+    ],
+    "reputation_offset": {"shire": 4},
+    "skill_bonus": {"skill": "persuasion", "amount": 10},
+    "known_by": [
+      {"npc": "pippin", "memory": "A Took cousin Pippin has often dragged along on his wilder schemes.", "disposition": 5, "days_ago": 5},
+      {"npc": "lobelia_sackville_baggins", "memory": "A Took relation Lobelia regards as flighty and over-fond of Bag End hospitality.", "disposition": -3, "days_ago": 30}
+    ]
+  },
+  {
+    "id": "bree_ostler",
+    "name": "Bree-lander, ostler at the Prancing Pony",
+    "race": "man",
+    "description": "You tend the ponies in the yard of the Prancing Pony and hear every traveller's tale before the ale is poured.",
+    "start_poi": "prancing_pony",
+    "start_date": "3018-09-20T08:00",
+    "items": [
+      {"item": "curry_comb", "count": 1},
+      {"item": "ale_mug", "count": 1},
+      {"item": "bread_loaf", "count": 2},
+      {"item": "copper_pennies", "count": 18}
+    ],
+    "reputation_offset": {"bree": 8},
+    "skill_bonus": {"skill": "woodcraft", "amount": 10},
+    "known_by": [
+      {"npc": "barliman_butterbur", "memory": "Barliman's hired hand in the Pony's yard. Reliable with the beasts, though his mind wanders from errands.", "disposition": 3, "days_ago": 0},
+      {"npc": "nob", "memory": "Nob works the Pony's doors and shares the yard with you; the two of you swap gossip over the evening chores.", "disposition": 5, "days_ago": 0}
+    ]
+  },
+  {
+    "id": "staddle_farmer",
+    "name": "Staddle farmer",
+    "race": "man",
+    "description": "You farm a few fields at Staddle, on the quiet side of Bree-hill, and carry produce to the Pony when the roads allow.",
+    "start_poi": "staddle",
+    "start_date": "3018-09-20T08:00",
+    "items": [
+      {"item": "hay_fork", "count": 1},
+      {"item": "potatoes", "count": 5},
+      {"item": "cider_jug", "count": 1},
+      {"item": "copper_pennies", "count": 14}
+    ],
+    "reputation_offset": {"bree": 5},
+    "skill_bonus": {"skill": "woodcraft", "amount": 10},
+    "known_by": [
+      {"npc": "barliman_butterbur", "memory": "A Staddle farmer who sells Barliman roots and cider when the harvest is good.", "disposition": 2, "days_ago": 6},
+      {"npc": "bill_ferny", "memory": "Bill Ferny has tried to cheat you in a horse-trade and thinks you a soft touch.", "disposition": -3, "days_ago": 10}
+    ]
+  }
+]

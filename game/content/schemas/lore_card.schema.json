@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lore card (named character)",
+  "type": "object",
+  "required": ["id", "name", "race", "faction", "tier", "voice", "personality", "knowledge"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"$ref": "_defs.json#/$defs/id"},
+    "name": {"type": "string", "minLength": 1},
+    "race": {"type": "string", "minLength": 1},
+    "faction": {"type": "string", "minLength": 1},
+    "tier": {"enum": ["key_figure", "standard", "summariser"]},
+    "portrait": {"type": "string", "pattern": "^res://"},
+    "home_poi": {"$ref": "_defs.json#/$defs/id"},
+    "voice": {"type": "string", "minLength": 1},
+    "personality": {"type": "array", "items": {"type": "string"}},
+    "speech_samples": {"type": "array", "items": {"type": "string"}},
+    "knowledge": {"type": "array", "items": {"$ref": "_defs.json#/$defs/knowledge_entry"}},
+    "never_knows": {"type": "array", "items": {"type": "string"}},
+    "relationships": {"type": "object", "additionalProperties": {"type": "string"}},
+    "inventory_can_give": {"$ref": "_defs.json#/$defs/id_list"},
+    "verify": {"type": "boolean"}
+  }
+}

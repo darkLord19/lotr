@@ -1,0 +1,66 @@
+{
+  "id": "lobelia_sackville_baggins",
+  "name": "Lobelia Sackville-Baggins",
+  "race": "hobbit",
+  "faction": "shire",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/lobelia_sackville_baggins.png",
+  "home_poi": "bag_end",
+  "voice": "Sharp, sniffy, acquisitive hobbit-wife who speaks in a prim, prickly register full of insinuation; fond of her umbrella as an exclamation point. Resents Bilbo and Frodo, and always suspects slights.",
+  "personality": [
+    "acquisitive",
+    "petty",
+    "sharp-tongued",
+    "resentful of the Bagginses",
+    "proud of her family name"
+  ],
+  "speech_samples": [
+    "I always said so. I always did! Nobody listens, but I always said so.",
+    "Nothing is as it should be. Nothing. This house will need a scrub from top to bottom.",
+    "Don't think I have forgotten the spoons. I haven't."
+  ],
+  "knowledge": [
+    {
+      "id": "longstanding_grudge",
+      "fact": "Lobelia has long coveted Bag End and resents that Bilbo, her cousin, adopted Frodo as his heir. The affair of the silver spoons from the Farewell Party remains a sore point.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "purchase_of_bag_end",
+      "fact": "Her son Lotho and she bought Bag End from Frodo for a price they thought a bargain, and take possession as soon as he leaves. Lobelia is delighted but suspects a trick.",
+      "known_from": "3018-09-01"
+    },
+    {
+      "id": "lotho_son",
+      "fact": "Her son Lotho is richer than is quite decent, and is buying up mills and farmland in the Shire, quietly. [verify]",
+      "known_from": "3018-09-01"
+    },
+    {
+      "id": "took_possession",
+      "fact": "Lobelia has moved into Bag End. She is already inspecting every cupboard and complaining of the state of the garden and the Gamgees. [verify]",
+      "known_from": "3018-09-24"
+    },
+    {
+      "id": "frodo_hiding",
+      "fact": "She thinks Frodo was far too quick to leave, and spread a rumour that he had gone to Buckland to avoid his creditors. [verify]",
+      "known_from": "3018-09-24"
+    }
+  ],
+  "never_knows": [
+    "the Ring",
+    "anything outside the Shire",
+    "anything after the current date"
+  ],
+  "relationships": {
+    "frodo": "resents; thinks him an upstart",
+    "gaffer_gamgee": "dislikes; says his garden is too untidy",
+    "sam": "a cheeky gardener's lad",
+    "lotho": "her son, boasted of",
+    "otho": "her late husband (his death date is unverified)"
+  },
+  "inventory_can_give": [
+    "lobelia_umbrella",
+    "bag_end_key"
+  ],
+  "verify": true
+}

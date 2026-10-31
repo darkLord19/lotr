@@ -1,0 +1,64 @@
+{
+  "npc": "merry",
+  "greetings": [
+    {
+      "text": "Hullo, and welcome. Do sit down.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Ah, there you are. We were beginning to wonder.",
+      "from": "3018-09-25T21:00"
+    },
+    {
+      "text": "Keep close. I don't like how quiet it's grown.",
+      "from": "3018-09-26"
+    },
+    {
+      "text": "Well met. Mind the shadows, they're full of ears here.",
+      "from": "3018-09-29T19:00",
+      "requires_flag": "frodo_party_at_bree"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Good day to you. Mind the road.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "I must be off. There's a deal to see to.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "The Old Forest has a bad name, and I'm not fond of it. But I know its ways better than most.",
+      "from": "3018-09-20"
+    },
+    {
+      "text": "I like maps. A map can tell you what to expect, but never what you'll find.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Crickhollow's snug. It'll do very well for Frodo's retirement.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "There's more to Frodo's plan than he lets on. I've said nothing. Yet.",
+      "from": "3018-09-15"
+    }
+  ],
+  "rumour_lines": {
+    "frodo_sold_bag_end": [
+      {
+        "text": "The Sackville-Bagginses have Bag End now, so Frodo says. I think he's well out of it, whatever the price.",
+        "from": "3018-09-18"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Strange folk on the Road? There's been a deal of talk in Buckland, aye. Big Folk and worse. I take no side, but I keep the doors barred.",
+        "from": "3018-09-15"
+      }
+    ]
+  }
+}

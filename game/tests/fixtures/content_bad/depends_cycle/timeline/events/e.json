@@ -1,0 +1,18 @@
+[
+  {
+    "id": "e1",
+    "at": "3018-09-23T19:00",
+    "type": "world_event",
+    "depends_on": [
+      "e2"
+    ]
+  },
+  {
+    "id": "e2",
+    "at": "3018-09-23T19:00",
+    "type": "world_event",
+    "depends_on": [
+      "e1"
+    ]
+  }
+]

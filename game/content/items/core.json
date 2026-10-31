@@ -1,0 +1,6 @@
+[
+  {"id": "ale_mug", "name": "Mug of Ale", "kind": "drink", "description": "A mug of Butterbur's famous ale.", "weight": 0.5, "stackable": true, "value": 1},
+  {"id": "bread_loaf", "name": "Loaf of Bread", "kind": "food", "description": "A crusty loaf, still faintly warm.", "weight": 0.4, "stackable": true, "value": 1},
+  {"id": "bill_the_pony", "name": "Bill the Pony", "kind": "mount", "description": "A sturdy, ill-used pony from Bree, later to carry the hobbits' burdens.", "weight": 0, "stackable": false, "value": 30, "verify": true},
+  {"id": "silver_penny", "name": "Silver Penny", "kind": "misc", "description": "The common coin of the Shire and Bree.", "weight": 0.01, "stackable": true, "value": 1}
+]

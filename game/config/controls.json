@@ -1,0 +1,21 @@
+{
+  "controls": {
+    "_doc": "Action -> list of bindings. 'phys:W' = physical key (layout independent), 'W' = key by label, 'mouse:left|right|middle|wheel_up|wheel_down'. Listing a built-in action such as ui_cancel replaces its default events.",
+    "bindings": {
+      "move_forward": ["phys:W"],
+      "move_back": ["phys:S"],
+      "move_left": ["phys:A"],
+      "move_right": ["phys:D"],
+      "run": ["Shift"],
+      "crouch": ["C"],
+      "jump": ["Space"],
+      "interact": ["E"],
+      "inventory": ["Tab"],
+      "journal": ["J"],
+      "ui_cancel": ["Escape"],
+      "zoom_in": ["mouse:wheel_up"],
+      "zoom_out": ["mouse:wheel_down"],
+      "debug_console": ["QuoteLeft"]
+    }
+  }
+}

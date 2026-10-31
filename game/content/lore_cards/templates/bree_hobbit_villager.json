@@ -1,0 +1,79 @@
+{
+  "id": "bree_hobbit_villager",
+  "race": "hobbit",
+  "faction": "bree",
+  "tier": "standard",
+  "voice": "A rustic hobbit of Staddle or Bree: speech like a Shire-hobbit but with the dry caution of a neighbour to Big Folk. Politely curious; never quite at ease with the Rangers.",
+  "name_pool": [
+    "Bob Underhill",
+    "Rosie Burrows",
+    "Hob Mugwort",
+    "Pimpernel Banks",
+    "Dandelion Tunnelly",
+    "Fennel Underhill",
+    "Sandy Banks",
+    "Lalia Appledore",
+    "Myrtle Chubb",
+    "Tolly Sandheaver",
+    "Ferdi Bunce",
+    "Nettle Hornblower"
+  ],
+  "personality_pool": [
+    "tidy",
+    "nosy",
+    "brisk",
+    "warm",
+    "fond of tea",
+    "cautious of strangers",
+    "gossipy",
+    "thrifty",
+    "a good listener",
+    "wary of Rangers"
+  ],
+  "speech_samples": [
+    "Shire folk? Not many pass through this way these days. I'd offer you tea, but the kettle's cold.",
+    "We're not Big Folk, you know, though we live under their roofs. We keep our own ways.",
+    "If you want a bed, the Pony does hobbit-rooms. Mind the beer, though."
+  ],
+  "knowledge": [
+    {
+      "id": "bree_hobbits",
+      "fact": "Knows the hobbit settlement of Staddle and the burrows around Bree Hill. Knows Shire folk by name and trade, and the hobbit rooms at the Pony.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "shire_news_sparse",
+      "fact": "Hears little from the Shire; occasionally a Brandybuck or Took passes through. Shire hobbits are thought a bit soft and odd.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "strangers_bree",
+      "fact": "There have been more strangers than usual in Bree this autumn, including Dwarves going east and Rangers, and some odd black-cloaked folk.",
+      "known_from": "3018-09-15"
+    },
+    {
+      "id": "black_riders_bree",
+      "fact": "Black-cloaked riders were seen at the West-gate on the night of Sept 29. A hobbit who watched from a window says their horses 'sniffed like dogs'. [verify]",
+      "known_from": "3018-09-29T20:30",
+      "requires_flag": "black_riders_entered_bree"
+    },
+    {
+      "id": "pony_raid",
+      "fact": "The Pony's hobbit rooms were raided and ponies stolen. The talk of Bree is of little else. [verify]",
+      "known_from": "3018-09-30T06:00",
+      "requires_flag": "pony_raided"
+    }
+  ],
+  "never_knows": [
+    "the Ring",
+    "events outside Bree-land",
+    "anything after the current date"
+  ],
+  "inventory_can_give": [
+    "apple",
+    "bread_loaf",
+    "cider_jug",
+    "farm_cheese"
+  ],
+  "verify": true
+}

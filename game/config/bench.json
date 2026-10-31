@@ -1,0 +1,36 @@
+{
+  "bench": {
+    "warmup_seconds": 5.0,
+    "targets": {
+      "avg_fps": 60.0,
+      "p1_low_fps": 45.0,
+      "peak_mem_gb": 6.0
+    },
+    "routes": {
+      "flyover_full": {
+        "description": "Walking-height camera along the whole region, Bag End to Bree through the farms and Buckland.",
+        "waypoints": ["bag_end", "bywater", "three_farthing_stone", "frogmorton", "stock", "bucklebury_ferry", "brandy_hall", "hedge_gate", "bree_waiting_point", "prancing_pony"],
+        "speed_mps": 18.0,
+        "eye_height_m": 1.7,
+        "date": "3018-09-22T12:00",
+        "weather": "clear"
+      },
+      "walk_hobbiton_to_bree": {
+        "description": "Accelerated (4x) walk along the East Road, Bag End to the Prancing Pony.",
+        "waypoints": ["bag_end", [1060, 2250], [1620, 2330], [2000, 2280], [2450, 2270], [2900, 2340], [3350, 2420], [4000, 2380], [4700, 2300], [5380, 2320], [5900, 2260], [6500, 2250], [6800, 2290], [7100, 2310], [7290, 2300], "prancing_pony"],
+        "speed_mps": 5.6,
+        "eye_height_m": 1.7,
+        "date": "3018-09-22T09:00",
+        "weather": "clear"
+      },
+      "night_rain_bree": {
+        "description": "Slow loop through Bree at night in rain.",
+        "waypoints": ["bree_west_gate", "prancing_pony", "bree_south_gate", "bill_ferny_house", "bree_hill", "bree_west_gate"],
+        "speed_mps": 3.0,
+        "eye_height_m": 1.7,
+        "date": "3018-09-29T23:00",
+        "weather": "light_rain"
+      }
+    }
+  }
+}

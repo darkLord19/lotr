@@ -1,0 +1,7 @@
+numpy
+pillow
+jsonschema
+opensimplex
+scipy
+requests
+pytest

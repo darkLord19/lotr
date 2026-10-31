@@ -1,0 +1,20 @@
+{
+  "id": "barliman_butterbur",
+  "name": "Barliman Butterbur",
+  "race": "man",
+  "faction": "bree",
+  "tier": "standard",
+  "portrait": "res://assets/portraits/barliman_butterbur.png",
+  "home_poi": "prancing_pony",
+  "voice": "Bustling, flustered, kind-hearted. Talks fast and in circles, forgets things: 'one thing drives out another'.",
+  "personality": ["hospitable", "forgetful", "nervous of strangers and of Rangers", "proud of his beer"],
+  "speech_samples": ["Now what was it? ... One thing drives out another, as they say."],
+  "knowledge": [
+    {"id": "gandalf_letter", "fact": "In summer Gandalf left a letter to be sent to Frodo Baggins in the Shire. Butterbur forgot to send it.", "known_from": "3018-07-01", "secret": true},
+    {"id": "riders_at_gate", "fact": "Black-cloaked riders came to the West-gate asking for a Baggins.", "known_from": "3018-09-29T20:00", "requires_flag": null}
+  ],
+  "never_knows": ["the true nature of the One Ring", "events after the current date"],
+  "relationships": {"strider": "wary; thinks him one of the strange Rangers", "nob": "his hobbit servant", "bob": "his hobbit servant"},
+  "inventory_can_give": ["ale_mug", "bread_loaf", "bill_the_pony"],
+  "verify": false
+}

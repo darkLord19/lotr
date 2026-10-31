@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Origins file (array)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "race", "description", "start_poi", "start_date", "items", "reputation_offset", "skill_bonus", "known_by"],
+    "additionalProperties": false,
+    "properties": {
+      "id": {"$ref": "_defs.json#/$defs/id"},
+      "name": {"type": "string", "minLength": 1},
+      "race": {"type": "string", "minLength": 1},
+      "description": {"type": "string"},
+      "start_poi": {"$ref": "_defs.json#/$defs/id"},
+      "start_date": {"$ref": "_defs.json#/$defs/date"},
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["item", "count"],
+          "additionalProperties": false,
+          "properties": {
+            "item": {"$ref": "_defs.json#/$defs/id"},
+            "count": {"type": "integer", "minimum": 1}
+          }
+        }
+      },
+      "reputation_offset": {"type": "object", "additionalProperties": {"type": "integer"}},
+      "skill_bonus": {
+        "type": "object",
+        "required": ["skill", "amount"],
+        "additionalProperties": false,
+        "properties": {"skill": {"$ref": "_defs.json#/$defs/id"}, "amount": {"type": "number"}}
+      },
+      "known_by": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["npc", "memory"],
+          "additionalProperties": false,
+          "properties": {
+            "npc": {"$ref": "_defs.json#/$defs/id"},
+            "memory": {"type": "string", "minLength": 1},
+            "disposition": {"type": "integer", "minimum": -10, "maximum": 10},
+            "days_ago": {"type": "integer", "minimum": 0}
+          }
+        }
+      },
+      "verify": {"type": "boolean"}
+    }
+  }
+}

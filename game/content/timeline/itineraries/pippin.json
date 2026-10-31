@@ -1,0 +1,6 @@
+{
+  "character": "pippin",
+  "steps": [
+    {"id": "pippin_stays_bag_end", "at": "3018-09-20T00:00", "action": "stay", "at_poi": "bag_end", "verify": true}
+  ]
+}

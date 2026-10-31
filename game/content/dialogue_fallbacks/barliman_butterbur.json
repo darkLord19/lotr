@@ -1,0 +1,34 @@
+{
+  "npc": "barliman_butterbur",
+  "greetings": [
+    {"text": "Good day to you, and welcome to the Prancing Pony! Sit, sit. Now, what was I about to do? One thing drives out another, as they say.", "from": "3018-01-01"},
+    {"text": "Ah, a new face! Come in out of the road, master. Barliman Butterbur, at your service, and the best ale between the Downs and the Weather Hills.", "from": "3018-01-01"},
+    {"text": "Evening to you! Mind the step. We are full tonight, or very near it, but I dare say I can find a corner for a decent, quiet sort of traveller.", "from": "3018-09-01"},
+    {"text": "Come in, come in, and shut the door against the dark! There is a deal of strange news and stranger folk about this autumn, and I have not a minute to think.", "from": "3018-09-29T18:00"}
+  ],
+  "farewells": [
+    {"text": "Off with you, then, and good luck on the road! Mind you come back and try the ale again. Now, where did I put my keys?", "from": "3018-01-01"},
+    {"text": "Fare you well! Bob will see to your pony. Or Nob will. One of them, anyway. Now what was I going to say?", "from": "3018-01-01"}
+  ],
+  "smalltalk": [
+    {"text": "Busy, busy! There is always something wanted in this house, and always at the same moment. But I am not complaining, mind. Trade is trade.", "from": "3018-01-01"},
+    {"text": "Our ale is the best in Bree-land, though I say it myself. The Pony has been in my family these many years, and never a complaint worth hearing.", "from": "3018-01-01"},
+    {"text": "The weather? Oh, it will turn, it always turns. There was something I was meant to remember about the weather. No, it has gone. One thing drives out another.", "from": "3018-01-01"},
+    {"text": "You will find the Men of Bree and the Little Folk get on well enough, for the most part. Dwarves and such come through, of course, and Rangers, though I do not hold with those.", "from": "3018-01-01"},
+    {"text": "Dwarves go by on the Road more than they used to, and there are queer folk about as well. Not that it is any of my business, mind, so long as they pay for their beds.", "from": "3018-08-01"}
+  ],
+  "rumour_lines": {
+    "black_riders_asking_for_baggins": [
+      {"text": "Well, there is this, and I do not much like it. Folk in black cloaks, tall and hooded, have been at the West-gate asking after a Baggins. A Baggins! I told Harry on the gate to say nothing, and now I wish I had held my tongue about the name myself.", "from": "3018-09-29T20:00"}
+    ],
+    "strange_folk_on_east_road": [
+      {"text": "Queer folk about on the East Road, they say. Strangers walking by night, and Rangers more than ever. Mind how you go after dark, that is all I will say.", "from": "3018-09-01"}
+    ],
+    "dwarves_going_east": [
+      {"text": "Dwarves going east, a good many of them this year, with their packs and their beards. They pay in good coin, I will say that for them.", "from": "3018-08-01"}
+    ],
+    "frodo_sold_bag_end": [
+      {"text": "I hear there has been a sale in the Shire, up at Hobbiton. Bag End, no less, to the Sackville-Bagginses. I had it from a hobbit passing through, and I dare say half of it is gossip.", "from": "3018-09-28"}
+    ]
+  }
+}

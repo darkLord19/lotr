@@ -1,0 +1,84 @@
+{
+  "audio": {
+    "dirs": {
+      "music": "res://assets/audio/music/",
+      "ambience": "res://assets/audio/ambience/",
+      "sfx": "res://assets/audio/sfx/"
+    },
+    "bus_db": { "music": -4.0, "ambience": -6.0 },
+    "silent_db": -60.0,
+    "silent_linear": 0.001,
+
+    "ambience": {
+      "files": {
+        "wind": "wind.ogg", "birds": "birds_day.ogg", "crickets": "crickets_night.ogg",
+        "rain": "rain.ogg", "river": "river.ogg", "inn": "inn_murmur.ogg"
+      },
+      "heartbeat_file": "res://assets/audio/sfx/heartbeat.ogg",
+      "fade_seconds": 4.0,
+      "daylight": { "dawn_start_hour": 5.0, "day_start_hour": 7.0, "dusk_start_hour": 18.5, "night_start_hour": 20.5 },
+      "dawn_chorus": { "start_hour": 5.0, "end_hour": 8.0, "bonus": 0.25 },
+      "rain_by_state": { "clear": 0.0, "overcast": 0.0, "light_rain": 0.6, "fog": 0.0 },
+      "weather_scale": {
+        "clear":      { "wind": 0.7, "birds": 1.0,  "crickets": 1.0 },
+        "overcast":   { "wind": 1.0, "birds": 0.7,  "crickets": 0.9 },
+        "light_rain": { "wind": 0.9, "birds": 0.1,  "crickets": 0.15 },
+        "fog":        { "wind": 0.35, "birds": 0.45, "crickets": 0.6 }
+      },
+      "rain_gain": 1.0,
+      "locations": {
+        "settlement":  { "wind": 0.30, "birds": 0.65, "crickets": 0.6, "river": 0.0, "inn": 0.0, "rain": 0.8 },
+        "field":       { "wind": 0.75, "birds": 0.8,  "crickets": 0.8, "river": 0.0, "inn": 0.0, "rain": 1.0 },
+        "river":       { "wind": 0.35, "birds": 0.5,  "crickets": 0.6, "river": 1.0, "inn": 0.0, "rain": 0.9 },
+        "forest_edge": { "wind": 0.55, "birds": 1.0,  "crickets": 0.9, "river": 0.0, "inn": 0.0, "rain": 1.0 },
+        "inn_interior": { "wind": 0.05, "birds": 0.0, "crickets": 0.0, "river": 0.0, "inn": 1.0, "rain": 0.2 }
+      },
+      "default_location": "field",
+      "heartbeat": { "min_threat": 3, "gain": 0.9, "alert_gain": 0.0 }
+    },
+
+    "music": {
+      "stems": {
+        "pad": "pad_d.ogg", "harp": "harp_day.ogg", "harp_night": "harp_night.ogg",
+        "flute": "flute_day.ogg", "fiddle": "fiddle_inn.ogg", "strings": "strings_danger.ogg"
+      },
+      "cues": {
+        "pastoral_day":   { "pad": 0.55, "harp": 0.85, "flute": 0.75 },
+        "pastoral_grey":  { "pad": 0.70, "harp": 0.70, "flute": 0.30 },
+        "pastoral_dusk":  { "pad": 0.70, "harp": 0.60, "flute": 0.35 },
+        "town_day":       { "pad": 0.60, "harp": 0.85, "flute": 0.0 },
+        "town_dusk":      { "pad": 0.70, "harp": 0.55, "flute": 0.0 },
+        "wild_day":       { "pad": 0.80, "harp": 0.0,  "flute": 0.60 },
+        "wild_dusk":      { "pad": 0.85, "harp": 0.0,  "flute": 0.30 },
+        "night":          { "pad": 0.65, "harp_night": 0.70 },
+        "inn":            { "fiddle": 1.0, "pad": 0.20 },
+        "danger":         { "strings": 0.85, "pad": 0.35 },
+        "danger_chase":   { "strings": 1.0, "pad": 0.20 }
+      },
+      "characters": {
+        "pastoral": { "day": "pastoral_day", "grey": "pastoral_grey", "dusk": "pastoral_dusk", "night": "night" },
+        "town":     { "day": "town_day",     "grey": "town_dusk",     "dusk": "town_dusk",     "night": "night" },
+        "wild":     { "day": "wild_day",     "grey": "wild_dusk",     "dusk": "wild_dusk",     "night": "night" }
+      },
+      "default_character": "pastoral",
+      "region_character": { "eriador_west": "pastoral" },
+      "settlement_character": {
+        "hobbiton": "pastoral", "bywater": "pastoral", "frogmorton": "pastoral", "marish": "pastoral",
+        "stock": "pastoral", "buckland": "pastoral", "bree": "town", "staddle": "town", "combe": "town"
+      },
+      "area_character": { "old_forest": "wild", "woody_end": "wild", "chetwood": "wild", "buckland_woods": "wild" },
+      "grey_weather_states": ["light_rain", "fog"],
+      "periods": { "dawn_start_hour": 5.0, "day_start_hour": 7.0, "dusk_start_hour": 18.5, "night_start_hour": 21.0 },
+      "dawn_period": "dusk",
+      "threat": {
+        "unease_distance_m": 150.0,
+        "danger_distance_m": 60.0,
+        "unease_duck": 0.7,
+        "unease_strings_gain": 0.3,
+        "danger_hold_seconds": 8.0,
+        "min_cue_seconds": 12.0
+      },
+      "fade": { "default_seconds": 6.0, "danger_in_seconds": 1.5, "danger_out_seconds": 7.0 }
+    }
+  }
+}

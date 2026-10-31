@@ -1,0 +1,941 @@
+{
+ "category": "nature",
+ "assets": [
+  {
+   "name": "bush_1",
+   "category": "nature",
+   "kind": "bush",
+   "files": [
+    "bush_1.glb",
+    "bush_1_lod1.glb",
+    "bush_1_lod2.glb"
+   ],
+   "tris": [
+    320,
+    128,
+    48
+   ],
+   "size_m": [
+    1.78,
+    1.81,
+    1.21
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.12
+  },
+  {
+   "name": "bush_2",
+   "category": "nature",
+   "kind": "bush",
+   "files": [
+    "bush_2.glb",
+    "bush_2_lod1.glb",
+    "bush_2_lod2.glb"
+   ],
+   "tris": [
+    540,
+    209,
+    73
+   ],
+   "size_m": [
+    2.0,
+    1.88,
+    1.34
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.17
+  },
+  {
+   "name": "bush_3",
+   "category": "nature",
+   "kind": "bush",
+   "files": [
+    "bush_3.glb",
+    "bush_3_lod1.glb",
+    "bush_3_lod2.glb"
+   ],
+   "tris": [
+    640,
+    248,
+    88
+   ],
+   "size_m": [
+    2.03,
+    2.04,
+    1.25
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.18
+  },
+  {
+   "name": "bush_4",
+   "category": "nature",
+   "kind": "bush",
+   "files": [
+    "bush_4.glb",
+    "bush_4_lod1.glb",
+    "bush_4_lod2.glb"
+   ],
+   "tris": [
+    320,
+    128,
+    48
+   ],
+   "size_m": [
+    1.71,
+    2.13,
+    1.22
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "flower_patch_1",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "flower_patch_1.glb"
+   ],
+   "tris": [
+    270
+   ],
+   "size_m": [
+    0.61,
+    0.67,
+    0.64
+   ],
+   "collision": null,
+   "min_z": -0.0
+  },
+  {
+   "name": "flower_patch_2",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "flower_patch_2.glb"
+   ],
+   "tris": [
+    270
+   ],
+   "size_m": [
+    0.58,
+    0.52,
+    0.65
+   ],
+   "collision": null,
+   "min_z": -0.0
+  },
+  {
+   "name": "flower_patch_3",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "flower_patch_3.glb"
+   ],
+   "tris": [
+    270
+   ],
+   "size_m": [
+    0.73,
+    0.48,
+    0.72
+   ],
+   "collision": null,
+   "min_z": -0.0
+  },
+  {
+   "name": "flower_patch_4",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "flower_patch_4.glb"
+   ],
+   "tris": [
+    270
+   ],
+   "size_m": [
+    0.51,
+    0.43,
+    0.71
+   ],
+   "collision": null,
+   "min_z": -0.0
+  },
+  {
+   "name": "grass_tuft_1",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "grass_tuft_1.glb"
+   ],
+   "tris": [
+    9
+   ],
+   "size_m": [
+    0.69,
+    0.5,
+    0.82
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "grass_tuft_2",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "grass_tuft_2.glb"
+   ],
+   "tris": [
+    9
+   ],
+   "size_m": [
+    0.63,
+    0.62,
+    0.83
+   ],
+   "collision": null,
+   "min_z": 0.0
+  },
+  {
+   "name": "hedge_end_1",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "hedge_end_1.glb",
+    "hedge_end_1_lod1.glb",
+    "hedge_end_1_lod2.glb"
+   ],
+   "tris": [
+    480,
+    192,
+    72
+   ],
+   "size_m": [
+    2.31,
+    1.28,
+    1.48
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "hedge_straight_1",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "hedge_straight_1.glb",
+    "hedge_straight_1_lod1.glb",
+    "hedge_straight_1_lod2.glb"
+   ],
+   "tris": [
+    480,
+    192,
+    72
+   ],
+   "size_m": [
+    4.79,
+    1.3,
+    1.52
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.04
+  },
+  {
+   "name": "hedge_straight_2",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "hedge_straight_2.glb",
+    "hedge_straight_2_lod1.glb",
+    "hedge_straight_2_lod2.glb"
+   ],
+   "tris": [
+    480,
+    192,
+    72
+   ],
+   "size_m": [
+    4.7,
+    1.33,
+    1.52
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.08
+  },
+  {
+   "name": "log_pile",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "log_pile.glb",
+    "log_pile_lod1.glb",
+    "log_pile_lod2.glb"
+   ],
+   "tris": [
+    184,
+    82,
+    82
+   ],
+   "size_m": [
+    1.83,
+    1.72,
+    0.74
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.03
+  },
+  {
+   "name": "log_single",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "log_single.glb",
+    "log_single_lod1.glb",
+    "log_single_lod2.glb"
+   ],
+   "tris": [
+    76,
+    30,
+    8
+   ],
+   "size_m": [
+    2.24,
+    0.73,
+    0.73
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.01
+  },
+  {
+   "name": "log_stump",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "log_stump.glb",
+    "log_stump_lod1.glb",
+    "log_stump_lod2.glb"
+   ],
+   "tris": [
+    79,
+    28,
+    26
+   ],
+   "size_m": [
+    1.23,
+    1.23,
+    0.58
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.09
+  },
+  {
+   "name": "reeds_1",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "reeds_1.glb"
+   ],
+   "tris": [
+    44
+   ],
+   "size_m": [
+    0.57,
+    0.84,
+    1.81
+   ],
+   "collision": null,
+   "min_z": -0.01
+  },
+  {
+   "name": "reeds_2",
+   "category": "nature",
+   "kind": "plant",
+   "files": [
+    "reeds_2.glb"
+   ],
+   "tris": [
+    236
+   ],
+   "size_m": [
+    0.81,
+    0.84,
+    2.06
+   ],
+   "collision": null,
+   "min_z": -0.01
+  },
+  {
+   "name": "rock_1",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "rock_1.glb",
+    "rock_1_lod1.glb",
+    "rock_1_lod2.glb"
+   ],
+   "tris": [
+    200,
+    80,
+    28
+   ],
+   "size_m": [
+    2.12,
+    1.96,
+    1.56
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.44
+  },
+  {
+   "name": "rock_2",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "rock_2.glb",
+    "rock_2_lod1.glb",
+    "rock_2_lod2.glb"
+   ],
+   "tris": [
+    200,
+    80,
+    28
+   ],
+   "size_m": [
+    1.86,
+    1.7,
+    2.3
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.81
+  },
+  {
+   "name": "rock_3",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "rock_3.glb",
+    "rock_3_lod1.glb",
+    "rock_3_lod2.glb"
+   ],
+   "tris": [
+    200,
+    80,
+    29
+   ],
+   "size_m": [
+    2.81,
+    2.1,
+    1.08
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.27
+  },
+  {
+   "name": "rock_4",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "rock_4.glb",
+    "rock_4_lod1.glb",
+    "rock_4_lod2.glb"
+   ],
+   "tris": [
+    320,
+    128,
+    48
+   ],
+   "size_m": [
+    1.62,
+    1.79,
+    0.84
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.21
+  },
+  {
+   "name": "rock_5",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "rock_5.glb",
+    "rock_5_lod1.glb",
+    "rock_5_lod2.glb"
+   ],
+   "tris": [
+    92,
+    36,
+    12
+   ],
+   "size_m": [
+    1.83,
+    1.34,
+    1.72
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.08
+  },
+  {
+   "name": "rock_6",
+   "category": "nature",
+   "kind": "rock",
+   "files": [
+    "rock_6.glb",
+    "rock_6_lod1.glb",
+    "rock_6_lod2.glb"
+   ],
+   "tris": [
+    60,
+    24,
+    6
+   ],
+   "size_m": [
+    2.55,
+    0.87,
+    0.18
+   ],
+   "collision": "convcolonly",
+   "min_z": 0.0
+  },
+  {
+   "name": "tree_beech_1",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_beech_1.glb",
+    "tree_beech_1_lod1.glb",
+    "tree_beech_1_lod2.glb"
+   ],
+   "tris": [
+    776,
+    310,
+    114
+   ],
+   "size_m": [
+    6.13,
+    6.27,
+    10.34
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_beech_2",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_beech_2.glb",
+    "tree_beech_2_lod1.glb",
+    "tree_beech_2_lod2.glb"
+   ],
+   "tris": [
+    776,
+    310,
+    114
+   ],
+   "size_m": [
+    6.45,
+    6.5,
+    10.58
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_beech_3",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_beech_3.glb",
+    "tree_beech_3_lod1.glb",
+    "tree_beech_3_lod2.glb"
+   ],
+   "tris": [
+    776,
+    310,
+    114
+   ],
+   "size_m": [
+    6.78,
+    6.9,
+    10.81
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_beech_4",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_beech_4.glb",
+    "tree_beech_4_lod1.glb",
+    "tree_beech_4_lod2.glb"
+   ],
+   "tris": [
+    776,
+    310,
+    114
+   ],
+   "size_m": [
+    6.05,
+    5.6,
+    10.05
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_birch_1",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_birch_1.glb",
+    "tree_birch_1_lod1.glb",
+    "tree_birch_1_lod2.glb"
+   ],
+   "tris": [
+    732,
+    282,
+    97
+   ],
+   "size_m": [
+    3.65,
+    3.67,
+    6.95
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.01
+  },
+  {
+   "name": "tree_birch_2",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_birch_2.glb",
+    "tree_birch_2_lod1.glb",
+    "tree_birch_2_lod2.glb"
+   ],
+   "tris": [
+    732,
+    282,
+    97
+   ],
+   "size_m": [
+    3.62,
+    3.48,
+    7.37
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.01
+  },
+  {
+   "name": "tree_birch_3",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_birch_3.glb",
+    "tree_birch_3_lod1.glb",
+    "tree_birch_3_lod2.glb"
+   ],
+   "tris": [
+    732,
+    282,
+    97
+   ],
+   "size_m": [
+    3.84,
+    3.52,
+    7.11
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.0
+  },
+  {
+   "name": "tree_birch_4",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_birch_4.glb",
+    "tree_birch_4_lod1.glb",
+    "tree_birch_4_lod2.glb"
+   ],
+   "tris": [
+    732,
+    282,
+    97
+   ],
+   "size_m": [
+    4.84,
+    4.04,
+    7.94
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.01
+  },
+  {
+   "name": "tree_oak_1",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_oak_1.glb",
+    "tree_oak_1_lod1.glb",
+    "tree_oak_1_lod2.glb"
+   ],
+   "tris": [
+    800,
+    313,
+    111
+   ],
+   "size_m": [
+    8.8,
+    8.39,
+    7.49
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_oak_2",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_oak_2.glb",
+    "tree_oak_2_lod1.glb",
+    "tree_oak_2_lod2.glb"
+   ],
+   "tris": [
+    896,
+    350,
+    124
+   ],
+   "size_m": [
+    8.19,
+    7.84,
+    7.12
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_oak_3",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_oak_3.glb",
+    "tree_oak_3_lod1.glb",
+    "tree_oak_3_lod2.glb"
+   ],
+   "tris": [
+    800,
+    313,
+    111
+   ],
+   "size_m": [
+    8.06,
+    8.2,
+    7.1
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_oak_4",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_oak_4.glb",
+    "tree_oak_4_lod1.glb",
+    "tree_oak_4_lod2.glb"
+   ],
+   "tris": [
+    896,
+    350,
+    124
+   ],
+   "size_m": [
+    8.07,
+    7.92,
+    7.0
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_pine_1",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_pine_1.glb",
+    "tree_pine_1_lod1.glb",
+    "tree_pine_1_lod2.glb"
+   ],
+   "tris": [
+    160,
+    64,
+    21
+   ],
+   "size_m": [
+    4.73,
+    4.73,
+    7.48
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_pine_2",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_pine_2.glb",
+    "tree_pine_2_lod1.glb",
+    "tree_pine_2_lod2.glb"
+   ],
+   "tris": [
+    188,
+    74,
+    25
+   ],
+   "size_m": [
+    5.41,
+    5.41,
+    9.46
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_pine_3",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_pine_3.glb",
+    "tree_pine_3_lod1.glb",
+    "tree_pine_3_lod2.glb"
+   ],
+   "tris": [
+    216,
+    86,
+    28
+   ],
+   "size_m": [
+    4.9,
+    4.9,
+    9.41
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_pine_4",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_pine_4.glb",
+    "tree_pine_4_lod1.glb",
+    "tree_pine_4_lod2.glb"
+   ],
+   "tris": [
+    244,
+    96,
+    32
+   ],
+   "size_m": [
+    5.29,
+    5.29,
+    11.85
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_willow_1",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_willow_1.glb",
+    "tree_willow_1_lod1.glb",
+    "tree_willow_1_lod2.glb"
+   ],
+   "tris": [
+    201,
+    72,
+    19
+   ],
+   "size_m": [
+    6.35,
+    6.81,
+    4.92
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_willow_2",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_willow_2.glb",
+    "tree_willow_2_lod1.glb",
+    "tree_willow_2_lod2.glb"
+   ],
+   "tris": [
+    213,
+    79,
+    19
+   ],
+   "size_m": [
+    6.13,
+    6.33,
+    4.32
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_willow_3",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_willow_3.glb",
+    "tree_willow_3_lod1.glb",
+    "tree_willow_3_lod2.glb"
+   ],
+   "tris": [
+    225,
+    84,
+    20
+   ],
+   "size_m": [
+    5.92,
+    6.2,
+    4.5
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  },
+  {
+   "name": "tree_willow_4",
+   "category": "nature",
+   "kind": "tree",
+   "files": [
+    "tree_willow_4.glb",
+    "tree_willow_4_lod1.glb",
+    "tree_willow_4_lod2.glb"
+   ],
+   "tris": [
+    237,
+    85,
+    21
+   ],
+   "size_m": [
+    6.04,
+    6.61,
+    4.69
+   ],
+   "collision": "convcolonly",
+   "min_z": -0.1
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+  "background": {
+    "shire": "warm golden-green background",
+    "bree": "cooler dusky blue-brown background",
+    "dark": "very dark background"
+  },
+  "named": {
+    "frodo": ["shire", "a young-looking hobbit with dark curly hair, bright thoughtful blue eyes and a gentle face, in a green-brown waistcoat and travelling cloak"],
+    "sam": ["shire", "a sturdy young hobbit gardener with sandy curly hair, a round honest freckled face and earnest eyes, in a brown jerkin"],
+    "merry": ["shire", "a cheerful hobbit with fair brown hair and a mischievous smile, in a bottle-green jacket"],
+    "pippin": ["shire", "a young hobbit with golden-brown curls, bright eyes and an impish grin, in a red waistcoat"],
+    "fatty_bolger": ["shire", "a plump cheerful hobbit with a round rosy face, thinning light hair and a nervous smile, in a yellow waistcoat"],
+    "gaffer_gamgee": ["shire", "a very old hobbit gardener with white hair, a weathered wrinkled face and a stubborn expression, in a patched brown jacket, holding a clay pipe"],
+    "farmer_maggot": ["shire", "a stout ruddy hobbit farmer with a broad weathered face, brown whiskers and a wide-brimmed hat, with a suspicious scowl"],
+    "mrs_maggot": ["shire", "a motherly hobbit woman with a round kind face, hair in a bun and a flour-dusted white apron"],
+    "lobelia_sackville_baggins": ["shire", "a sour pinched hobbit woman with a sharp nose and a disapproving look, in a green bonnet and dress"],
+    "nob": ["bree", "a shy young hobbit servant with tousled hair, wearing a plain apron, eager to please"],
+    "barliman_butterbur": ["bree", "a portly Man innkeeper of Bree with a balding head, a red face, side-whiskers and a harried kindly look, in a stained apron"],
+    "bill_ferny": ["bree", "a sallow sly Man of Bree with a squint, a crooked grin and greasy dark hair, in a shabby cloak"],
+    "strider": ["bree", "a weathered Ranger of the North with dark hair, grey eyes and stubble, hood up, in a patched green-brown cloak, guarded and stern"],
+    "gandalf": ["shire", "an old wizard with a long grey beard, bushy eyebrows, piercing eyes and a tall pointed grey hat, in a grey cloak"],
+    "gildor_inglorion": ["dark", "a High Elf with an ageless fair face, long dark hair and silver-grey robes, faint starlight glow, serene"],
+    "black_rider_khamul": ["dark", "an empty black cloak standing upright with its hood up, the hood is an empty hollow opening of pure black darkness with nothing inside, no person visible, no skin, no eyes, ghostly pale mist at the hem"],
+    "black_riders_group": ["dark", "three tall wraiths in heavy black cloaks side by side, every deep hood is filled with solid pure black shadow, empty voids where faces would be, completely faceless, pale cold mist"]
+  },
+  "villagers": {
+    "shire_hobbit_villager": ["shire", [
+      "a middle-aged hobbit farmer with a ruddy round face and a straw hat",
+      "an old hobbit woman with white hair and a lace cap, smiling",
+      "a young hobbit with messy red hair and freckles, in a blue waistcoat",
+      "a stout hobbit miller with flour on a bald head and a big moustache",
+      "a hobbit lass with a long brown braid and a flowered dress",
+      "a thin elderly hobbit with spectacles and a green coat"]],
+    "bree_hobbit_villager": ["bree", [
+      "a hobbit tradesman with a neat beard and a leather apron",
+      "a hobbit woman with dark hair under a head scarf and a worried look",
+      "a young hobbit stable-lad with a cap and a cheeky grin",
+      "an old hobbit with a grey beard and a long pipe",
+      "a plump hobbit cook with rosy cheeks and a white cap",
+      "a hobbit carter in a brown hooded coat"]],
+    "bree_villager": ["bree", [
+      "a bearded Man of Bree in a slate-grey coat, wary",
+      "a Bree woman with auburn hair and a shawl, tired but kind",
+      "a young Man with a lantern and a woollen cap",
+      "an old weathered Man with a bald head and a long white moustache",
+      "a stout Bree smith with a leather apron and heavy brow",
+      "a Bree woman with grey hair in a bun and a stern face"]]
+  }
+}

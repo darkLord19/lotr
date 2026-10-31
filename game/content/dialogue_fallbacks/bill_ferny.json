@@ -1,0 +1,65 @@
+{
+  "npc": "bill_ferny",
+  "greetings": [
+    {
+      "text": "Hmph. What do you want?",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Looking to buy a pony? I've a few going cheap.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Strangers, strangers. Did I ask you to come in?",
+      "from": "3018-09-01"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Off you go, then. Don't let the gate hit you.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Come back when you've got coin.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "Rangers! A lot of vagabonds. Nobody asked them to watch our roads.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Hobbits are good for two things: ale and gossip. Bree'd be poorer without 'em, I'll grant.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Plenty of folk passing through. Plenty of coin, too, for them that knows how to talk.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Don't look at me like that. I'm an honest pony-dealer.",
+      "from": "3018-09-01"
+    }
+  ],
+  "rumour_lines": {
+    "black_riders_asking_for_baggins": [
+      {
+        "text": "Black cloaks at the West-gate? Aye, so they say. I wouldn't know. Not my business.",
+        "from": "3018-09-29T20:00"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Aye, strange folk on the East Road. Some of them pay well, if you keep your mouth shut.",
+        "from": "3018-09-01"
+      }
+    ],
+    "dwarves_going_east": [
+      {
+        "text": "Dwarves go east, aye. Good for trade. Never stop long.",
+        "from": "3018-08-01"
+      }
+    ]
+  }
+}

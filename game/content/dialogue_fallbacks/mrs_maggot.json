@@ -1,0 +1,60 @@
+{
+  "npc": "mrs_maggot",
+  "greetings": [
+    {
+      "text": "Bless me, you look half-starved! Sit, sit. There's a pie in the oven and tea in the pot.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Oh, hullo. Wipe your boots. Don't mind the dogs.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Come in, come in, my dears. Have you eaten? You look done in.",
+      "from": "3018-09-25T10:00",
+      "requires_flag": "met_maggot"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Take care of yourself, now. And mind the road.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Come back and see us again, dears. There's always a bite here.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "Husband's gruff, but he's a good man, underneath it.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Mushrooms, cheese, and a pie. That's what the farm gives, and it's plenty.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "My girls are afraid to go to the well alone, since the strange rider came by.",
+      "from": "3018-09-25T07:00"
+    },
+    {
+      "text": "Hobbits oughtn't to be out on the roads these days. But there, who listens to me?",
+      "from": "3018-09-01"
+    }
+  ],
+  "rumour_lines": {
+    "maggot_dogs_and_rider": [
+      {
+        "text": "Black as a hole in the night, he was, and the dogs fair frantic. The girls haven't stopped shaking.",
+        "from": "3018-09-25T07:00"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Strange folk? Aye, there's strange folk everywhere, if you ask me. Dwarves and worse.",
+        "from": "3018-09-01"
+      }
+    ]
+  }
+}

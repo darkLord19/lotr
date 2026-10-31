@@ -1,0 +1,653 @@
+{
+ "characters": [
+  {
+   "id": "barliman_butterbur",
+   "file": "barliman_butterbur.glb",
+   "race": "man_bree",
+   "villager": false,
+   "tris": 1826,
+   "height_m": 1.634,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 444960,
+   "natural_speed": {
+    "walk": 1.45,
+    "run": 3.47,
+    "crouch_walk": 0.55
+   },
+   "foot_to_hip_m": 0.851
+  },
+  {
+   "id": "bill_ferny",
+   "file": "bill_ferny.glb",
+   "race": "man_bree",
+   "villager": false,
+   "tris": 1998,
+   "height_m": 1.703,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 463596,
+   "natural_speed": {
+    "walk": 1.51,
+    "run": 3.62,
+    "crouch_walk": 0.58
+   },
+   "foot_to_hip_m": 0.887
+  },
+  {
+   "id": "black_rider_khamul",
+   "file": "black_rider_khamul.glb",
+   "race": "black_rider",
+   "villager": false,
+   "tris": 1672,
+   "height_m": 2.15,
+   "anims": [
+    "idle",
+    "walk",
+    "sniff"
+   ],
+   "bytes": 256240,
+   "natural_speed": {
+    "walk": 1.06,
+    "run": 4.63,
+    "crouch_walk": 0.74
+   },
+   "foot_to_hip_m": 1.129
+  },
+  {
+   "id": "black_riders_group",
+   "file": "black_riders_group.glb",
+   "race": "black_rider",
+   "villager": false,
+   "tris": 1672,
+   "height_m": 2.085,
+   "anims": [
+    "idle",
+    "walk",
+    "sniff"
+   ],
+   "bytes": 254596,
+   "natural_speed": {
+    "walk": 1.03,
+    "run": 4.49,
+    "crouch_walk": 0.72
+   },
+   "foot_to_hip_m": 1.095
+  },
+  {
+   "id": "bree_hobbit_villager",
+   "file": "bree_hobbit_villager.glb",
+   "race": "hobbit",
+   "villager": true,
+   "tris": 2444,
+   "height_m": 1.08,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 529380,
+   "natural_speed": {
+    "walk": 0.92,
+    "run": 2.13,
+    "crouch_walk": 0.36
+   },
+   "foot_to_hip_m": 0.479
+  },
+  {
+   "id": "bree_villager",
+   "file": "bree_villager.glb",
+   "race": "man_bree",
+   "villager": true,
+   "tris": 1856,
+   "height_m": 1.72,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 449376,
+   "natural_speed": {
+    "walk": 1.52,
+    "run": 3.65,
+    "crouch_walk": 0.58
+   },
+   "foot_to_hip_m": 0.896
+  },
+  {
+   "id": "farmer_maggot",
+   "file": "farmer_maggot.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2440,
+   "height_m": 1.123,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 525996,
+   "natural_speed": {
+    "walk": 0.96,
+    "run": 2.21,
+    "crouch_walk": 0.37
+   },
+   "foot_to_hip_m": 0.498
+  },
+  {
+   "id": "fatty_bolger",
+   "file": "fatty_bolger.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2304,
+   "height_m": 1.102,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 512368,
+   "natural_speed": {
+    "walk": 0.94,
+    "run": 2.17,
+    "crouch_walk": 0.36
+   },
+   "foot_to_hip_m": 0.489
+  },
+  {
+   "id": "frodo",
+   "file": "frodo.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 3057,
+   "height_m": 1.08,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 613944,
+   "natural_speed": {
+    "walk": 0.92,
+    "run": 2.13,
+    "crouch_walk": 0.36
+   },
+   "foot_to_hip_m": 0.479
+  },
+  {
+   "id": "gaffer_gamgee",
+   "file": "gaffer_gamgee.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2494,
+   "height_m": 1.026,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 530352,
+   "natural_speed": {
+    "walk": 0.88,
+    "run": 2.02,
+    "crouch_walk": 0.34
+   },
+   "foot_to_hip_m": 0.455
+  },
+  {
+   "id": "gandalf",
+   "file": "gandalf.glb",
+   "race": "dunedain",
+   "villager": false,
+   "tris": 2307,
+   "height_m": 1.862,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 506372,
+   "natural_speed": {
+    "walk": 1.69,
+    "run": 4.05,
+    "crouch_walk": 0.65
+   },
+   "foot_to_hip_m": 0.988
+  },
+  {
+   "id": "gildor_inglorion",
+   "file": "gildor_inglorion.glb",
+   "race": "dunedain",
+   "villager": false,
+   "tris": 1822,
+   "height_m": 1.92,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 445724,
+   "natural_speed": {
+    "walk": 1.74,
+    "run": 4.18,
+    "crouch_walk": 0.67
+   },
+   "foot_to_hip_m": 1.019
+  },
+  {
+   "id": "lobelia_sackville_baggins",
+   "file": "lobelia_sackville_baggins.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2070,
+   "height_m": 1.058,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 485144,
+   "natural_speed": {
+    "walk": 0.9,
+    "run": 2.09,
+    "crouch_walk": 0.35
+   },
+   "foot_to_hip_m": 0.469
+  },
+  {
+   "id": "merry",
+   "file": "merry.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2997,
+   "height_m": 1.134,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 604852,
+   "natural_speed": {
+    "walk": 0.97,
+    "run": 2.24,
+    "crouch_walk": 0.37
+   },
+   "foot_to_hip_m": 0.503
+  },
+  {
+   "id": "mrs_maggot",
+   "file": "mrs_maggot.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2082,
+   "height_m": 1.037,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 487664,
+   "natural_speed": {
+    "walk": 0.88,
+    "run": 2.04,
+    "crouch_walk": 0.34
+   },
+   "foot_to_hip_m": 0.46
+  },
+  {
+   "id": "nob",
+   "file": "nob.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2368,
+   "height_m": 1.048,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 522592,
+   "natural_speed": {
+    "walk": 0.89,
+    "run": 2.07,
+    "crouch_walk": 0.35
+   },
+   "foot_to_hip_m": 0.465
+  },
+  {
+   "id": "pippin",
+   "file": "pippin.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2801,
+   "height_m": 1.145,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 577760,
+   "natural_speed": {
+    "walk": 0.98,
+    "run": 2.26,
+    "crouch_walk": 0.38
+   },
+   "foot_to_hip_m": 0.508
+  },
+  {
+   "id": "sam",
+   "file": "sam.glb",
+   "race": "hobbit",
+   "villager": false,
+   "tris": 2841,
+   "height_m": 1.048,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 583840,
+   "natural_speed": {
+    "walk": 0.89,
+    "run": 2.07,
+    "crouch_walk": 0.35
+   },
+   "foot_to_hip_m": 0.465
+  },
+  {
+   "id": "shire_hobbit_villager",
+   "file": "shire_hobbit_villager.glb",
+   "race": "hobbit",
+   "villager": true,
+   "tris": 2841,
+   "height_m": 1.08,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 583380,
+   "natural_speed": {
+    "walk": 0.92,
+    "run": 2.13,
+    "crouch_walk": 0.36
+   },
+   "foot_to_hip_m": 0.479
+  },
+  {
+   "id": "strider",
+   "file": "strider.glb",
+   "race": "dunedain",
+   "villager": false,
+   "tris": 2388,
+   "height_m": 1.882,
+   "anims": [
+    "idle",
+    "walk",
+    "run",
+    "sit",
+    "talk_gesture",
+    "crouch_walk",
+    "sleep",
+    "eat",
+    "pick_up",
+    "faint"
+   ],
+   "bytes": 522676,
+   "natural_speed": {
+    "walk": 1.71,
+    "run": 4.1,
+    "crouch_walk": 0.65
+   },
+   "foot_to_hip_m": 0.998
+  }
+ ],
+ "villager_palettes": {
+  "shire_hobbit_villager": {
+   "skin": [
+    "#efcaa2",
+    "#e8b98e",
+    "#d9a37a",
+    "#f1d3b3",
+    "#c98f63"
+   ],
+   "hair": [
+    "#2f1f14",
+    "#6a4426",
+    "#8a5a30",
+    "#a87838",
+    "#b8602a",
+    "#c9b58a"
+   ],
+   "shirt": [
+    "#ece4cc",
+    "#dfd8b8",
+    "#d8cfa8",
+    "#e8dcc0"
+   ],
+   "vest": [
+    "#2f5d8a",
+    "#3d6a48",
+    "#b8452e",
+    "#d8a830",
+    "#7a4a2a",
+    "#6a3a5a"
+   ],
+   "pants": [
+    "#6a5636",
+    "#4f5a34",
+    "#5a4a30",
+    "#4a4a5a"
+   ],
+   "trim": [
+    "#d8b040",
+    "#c8a038"
+   ]
+  },
+  "bree_hobbit_villager": {
+   "skin": [
+    "#e8b98e",
+    "#d9a37a",
+    "#efcaa2",
+    "#c98f63"
+   ],
+   "hair": [
+    "#4a3220",
+    "#6a4426",
+    "#8a5a30",
+    "#2a2018",
+    "#a89060"
+   ],
+   "shirt": [
+    "#d8cfb0",
+    "#cbbf9a",
+    "#b8a888"
+   ],
+   "jerkin": [
+    "#5a4a2e",
+    "#4a5a3a",
+    "#6a4a38",
+    "#4a4a58",
+    "#7a5a34"
+   ],
+   "pants": [
+    "#4a3e30",
+    "#5a4a34",
+    "#3e4634"
+   ],
+   "trim": [
+    "#9a7a30",
+    "#7a6a3a"
+   ]
+  },
+  "bree_villager": {
+   "skin": [
+    "#e2b690",
+    "#c9a67c",
+    "#d9a37a",
+    "#b8865c",
+    "#efcaa2"
+   ],
+   "hair": [
+    "#2a2218",
+    "#4a3220",
+    "#6a4a2a",
+    "#8a6a3a",
+    "#a89060",
+    "#b8b0a0"
+   ],
+   "shirt": [
+    "#cbbf9a",
+    "#b8a888",
+    "#d8cfb0",
+    "#9a8a68"
+   ],
+   "jerkin": [
+    "#5a4a2e",
+    "#4a5a3a",
+    "#6a3a34",
+    "#46586e",
+    "#7a6a48"
+   ],
+   "pants": [
+    "#4a3e30",
+    "#3e3a34",
+    "#5a4a34",
+    "#4a4a40"
+   ],
+   "shoe": [
+    "#2a2018",
+    "#3a2c20"
+   ],
+   "trim": [
+    "#7a6a3a",
+    "#9a7a30"
+   ]
+  }
+ }
+}

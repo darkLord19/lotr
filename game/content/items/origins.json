@@ -1,0 +1,7 @@
+[
+  {"id": "garden_trowel", "name": "Garden Trowel", "kind": "tool", "description": "A well-worn trowel with a handle polished by years of Bagshot Row soil.", "weight": 0.5, "stackable": false, "value": 2},
+  {"id": "curry_comb", "name": "Curry Comb", "kind": "tool", "description": "An ostler's iron comb for ponies, a little bent at one corner.", "weight": 0.3, "stackable": false, "value": 2},
+  {"id": "hay_fork", "name": "Hay Fork", "kind": "tool", "description": "A three-tined fork from a Staddle farmyard.", "weight": 2.0, "stackable": false, "value": 3},
+  {"id": "copper_pennies", "name": "Copper Pennies", "kind": "misc", "description": "Small coins good for ale and bread from the Shire to Bree.", "weight": 0.01, "stackable": true, "value": 1},
+  {"id": "buckland_horn", "name": "Buckland Horn", "kind": "tool", "description": "A battered signal horn of the kind Bucklanders blow when trouble comes over the Hedge.", "weight": 0.6, "stackable": false, "value": 4}
+]

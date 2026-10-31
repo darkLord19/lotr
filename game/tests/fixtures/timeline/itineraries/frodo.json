@@ -1,0 +1,7 @@
+{
+  "character": "frodo",
+  "steps": [
+    {"at": "3018-09-22T12:00", "action": "depart", "from": "bag_end", "to": "woody_end_camp", "mode": "walk", "companions": ["sam"], "id": "frodo_leaves"},
+    {"at": "3018-09-22T20:00", "action": "camp", "at_poi": "woody_end_camp", "companions": ["sam"], "id": "frodo_camps", "depends_on": ["frodo_leaves"]}
+  ]
+}

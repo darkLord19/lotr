@@ -1,0 +1,36 @@
+{
+  "riders": {
+    "vision_range_m": 40.0,
+    "vision_half_angle_deg": 45.0,
+    "night_vision_range_factor": 0.5,
+    "night_vision_angle_factor": 0.6,
+    "sniff_radius_m": 15.0,
+    "sniff_reduced_factor": 0.5,
+    "sniff_off_road_m": 6.0,
+    "crouch_concealment_bonus": 0.25,
+    "fear_radius_m": 8.0,
+    "fear_min_move_factor": 0.5,
+    "fear_max_desaturation": 0.8,
+    "sniff_duration_s": 6.0,
+    "sniff_scan_half_angle_deg": 60.0,
+    "sniff_scan_period_s": 3.0,
+    "patrol_speed_mps": 2.5,
+    "approach_speed_mps": 5.0,
+    "turn_speed_rad_s": 3.0,
+    "patrol_arrive_m": 3.0,
+    "interrogate_distance_m": 2.5,
+    "lose_track_s": 8.0,
+    "interrogation_content": "res://content/riders/interrogation.json"
+  },
+  "soft_failure": {
+    "faint_min_minutes": 120,
+    "faint_max_minutes": 360,
+    "black_breath_hours": 12,
+    "black_breath_stamina_factor": 0.5,
+    "robbery_chance": 0.15,
+    "robbery_max_stacks": 1,
+    "hobbit_race": "hobbit",
+    "shire_rumour_poi": "bywater",
+    "rumour_id": "player_found_senseless"
+  }
+}

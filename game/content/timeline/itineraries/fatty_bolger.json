@@ -1,0 +1,8 @@
+{
+  "character": "fatty_bolger",
+  "steps": [
+    {"id": "fatty_stays_crickhollow", "at": "3018-09-20T00:00", "action": "stay", "at_poi": "crickhollow"},
+    {"id": "fatty_flees_crickhollow", "at": "3018-09-30T02:30", "action": "depart", "from": "crickhollow", "to": "brandy_hall", "mode": "walk"},
+    {"id": "fatty_at_brandy_hall", "at": "3018-09-30T03:30", "action": "arrive", "at_poi": "brandy_hall"}
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "shire_hobbit_villager",
+  "race": "hobbit",
+  "faction": "shire",
+  "tier": "standard",
+  "voice": "Plain, comfortable Shire speech: 'Well now', 'I dare say', 'as I always say'. Talkative about weather, gardens, food, pipe-weed and neighbours' business; suspicious of anything Big-Folk or foreign. Polite, nosy and slow to hurry.",
+  "name_pool": [
+    "Hob Hayward",
+    "Rose Cotton",
+    "Tom Cotton",
+    "Nibs Cotton",
+    "Daisy Brownlock",
+    "Ham Sandyman",
+    "Marigold Proudfoot",
+    "Ferdibrand Took",
+    "Rufus Burrows",
+    "Lily Goodbody",
+    "Wiseman Gamwich",
+    "Bartle Grubb",
+    "Poppy Bunce",
+    "Odo Proudfoot",
+    "Primrose Boffin",
+    "Hilda Bracegirdle",
+    "Ponto Baggins",
+    "Hugo Bolger",
+    "Dora Roper"
+  ],
+  "personality_pool": [
+    "gossipy",
+    "cautious",
+    "jolly",
+    "fond of food",
+    "suspicious of strangers",
+    "proud of his garden",
+    "thrifty",
+    "superstitious",
+    "curious about Bag End",
+    "slow to hurry",
+    "fond of a pipe",
+    "complaining about the weather"
+  ],
+  "speech_samples": [
+    "Well now, it's a fine day for a pipe, if you don't mind my saying so.",
+    "I dare say there'll be rain by supper. My knees have never been wrong yet.",
+    "Strangers? Not many round here, thank goodness. Though there was one the other night..."
+  ],
+  "knowledge": [
+    {
+      "id": "shire_life",
+      "fact": "Knows the local Shire gossip: who has the best beer, who is courting whom, how the harvest is shaping, and who is feuding with whom. Knows the Hill, Bywater, and the Green Dragon.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "bilbo_party_memory",
+      "fact": "Remembers old Mr. Bilbo's Farewell Party in 3001, the fireworks, and how he vanished at the end. Thinks the Bagginses 'queer'.",
+      "known_from": "3018-01-01"
+    },
+    {
+      "id": "frodo_birthday",
+      "fact": "Mr. Frodo Baggins of Bag End turns fifty on Sept 22 (also Bilbo's birthday). Neighbours are curious about whether there will be a party, and whether the old hole is to be sold.",
+      "known_from": "3018-09-15"
+    },
+    {
+      "id": "frodo_selling",
+      "fact": "Local gossip says Mr. Frodo is selling Bag End to the Sackville-Bagginses and moving to Buckland.",
+      "known_from": "3018-09-18"
+    },
+    {
+      "id": "frodo_gone",
+      "fact": "Mr. Frodo has left Bag End, and is gone toward Buckland. The Sackville-Bagginses are measuring the rooms.",
+      "known_from": "3018-09-24"
+    },
+    {
+      "id": "black_riders_gossip",
+      "fact": "A tall black-cloaked stranger on a black horse has been seen on the Hobbiton and Bywater roads asking for 'Baggins' in a hissing voice; the Gaffer has talked of little else. [verify]",
+      "known_from": "3018-09-23",
+      "requires_flag": "rumour_black_rider_in_hobbiton_heard"
+    },
+    {
+      "id": "strangers_east_road",
+      "fact": "A good many strange folk, Dwarves going east and odd Men about, have passed on the East Road this year.",
+      "known_from": "3018-09-01"
+    }
+  ],
+  "never_knows": [
+    "the Ring",
+    "events outside the Shire and Buckland",
+    "anything after the current date"
+  ],
+  "inventory_can_give": [
+    "apple",
+    "cider_jug",
+    "farm_cheese",
+    "potatoes",
+    "ale_mug"
+  ],
+  "verify": true
+}

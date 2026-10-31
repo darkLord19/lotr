@@ -1,0 +1,57 @@
+{
+  "player": {
+    "default_race": "man",
+    "races": {
+      "hobbit": {"scale": 0.6},
+      "man": {"scale": 1.0},
+      "elf": {"scale": 1.05},
+      "dwarf": {"scale": 0.8}
+    },
+    "body": {
+      "radius_m": 0.3,
+      "height_m": 1.8,
+      "head_radius_m": 0.13,
+      "crouch_height_factor": 0.6,
+      "fallback_color": "#8a7a55",
+      "fallback_skin": "#e6b48c"
+    },
+    "speed": {"walk": 1.8, "run": 4.0, "crouch": 0.9, "acceleration": 14.0, "deceleration": 18.0, "turn_rate": 10.0},
+    "black_breath_speed_factor": 0.85,
+    "crouch_toggle": true,
+    "jump_velocity": 3.2,
+    "gravity": 14.0,
+    "max_slope_deg": 55.0,
+    "floor_snap_m": 0.5,
+    "noise": {"idle": 0.0, "crouch": 0.15, "walk": 0.5, "run": 1.0},
+    "spawn": {"margin_m": 1.5, "settle_physics_frames": 2, "below_ground_rescue_m": 1.0},
+    "sync": {"interval_s": 0.5, "min_move_m": 0.75},
+    "interaction": {
+      "range_m": 2.5,
+      "sleep_hours": 8.0,
+      "prompt_font_size": 28,
+      "prompt_bottom_margin_px": 120,
+      "verbs": {"npc": "Talk to", "door": "Open", "door_open": "Close", "well": "Drink from", "bed": "Sleep in", "food": "Take"},
+      "unnamed": "it",
+      "well_message": "You drink deeply. The water is cold and clean."
+    },
+    "camera": {
+      "zoom_min_m": 1.5,
+      "zoom_max_m": 8.0,
+      "zoom_default_m": 4.0,
+      "zoom_step_m": 0.5,
+      "zoom_smooth": 10.0,
+      "pitch_min_deg": -75.0,
+      "pitch_max_deg": 55.0,
+      "pitch_default_deg": -15.0,
+      "pivot_height_factor": 0.85,
+      "collision_radius_m": 0.2,
+      "mouse_radians_per_px": 0.0025,
+      "follow_smooth": 14.0,
+      "shoulder_offset_m": 0.6,
+      "shoulder_zoom_m": 2.6,
+      "shoulder_blend_speed": 4.0,
+      "conversation_yaw_speed": 3.0
+    },
+    "ui": {"inventory_width": 640.0, "console_height_px": 44, "console_font_size": 22, "console_log_lines": 8}
+  }
+}

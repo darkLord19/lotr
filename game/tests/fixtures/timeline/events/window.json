@@ -1,0 +1,5 @@
+[
+  {"id": "ev_w", "at": "3018-09-22T10:15", "type": "anchor", "waits_for_player": true,
+   "trigger_area": {"poi": "nowhere"}, "window_end": "3018-09-22T11:15", "effects": [{"set_flag": "w"}]},
+  {"id": "ev_after_w", "at": "3018-09-22T10:45", "type": "world_event", "depends_on": ["ev_w"], "effects": [{"set_flag": "after_w"}]}
+]

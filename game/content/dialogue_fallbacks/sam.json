@@ -1,0 +1,71 @@
+{
+  "npc": "sam",
+  "greetings": [
+    {
+      "text": "Morning, sir. Or is it afternoon? I lose track in the garden.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Begging your pardon, but you'd best mind the roses. Mr. Frodo's particular.",
+      "from": "3018-09-01",
+      "until": "3018-09-23"
+    },
+    {
+      "text": "Well, here we are. I don't mind saying my feet ache, but I'm game.",
+      "from": "3018-09-24"
+    },
+    {
+      "text": "Keep your voice down, sir. I don't like the look of that fellow in the corner.",
+      "from": "3018-09-29T19:00",
+      "requires_flag": "frodo_party_at_bree"
+    }
+  ],
+  "farewells": [
+    {
+      "text": "Well, good day to you. Mind how you go.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "I'd best be off. Mr. Frodo will be wanting me.",
+      "from": "3018-09-01"
+    }
+  ],
+  "smalltalk": [
+    {
+      "text": "There's naught like a bit of garden to set a body right. I could do with a turn at the hedge.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "I've always wanted to see Elves, I have. Mr. Frodo says there's a few left yet.",
+      "from": "3018-09-01"
+    },
+    {
+      "text": "Taters, rabbit and a bit of salt. That's all a hobbit wants on the road.",
+      "from": "3018-09-23"
+    },
+    {
+      "text": "The Gaffer'll be worried sick. I told him I was only going to Buckland. It's not a lie, strictly speaking.",
+      "from": "3018-09-23"
+    }
+  ],
+  "rumour_lines": {
+    "frodo_sold_bag_end": [
+      {
+        "text": "Mr. Frodo selling Bag End to them Sackville-Bagginses! My old dad took it hard, begging your pardon. But it's Mr. Frodo's own affair.",
+        "from": "3018-09-10"
+      }
+    ],
+    "black_rider_in_hobbiton": [
+      {
+        "text": "A black thing at the Gaffer's gate? Aye, Dad told me. Gave him a turn. I don't like it, not one bit.",
+        "from": "3018-09-22T21:00"
+      }
+    ],
+    "strange_folk_on_east_road": [
+      {
+        "text": "Strange folk on the East Road? I wouldn't know, sir. Never been farther than Whitwell myself, before now.",
+        "from": "3018-09-01"
+      }
+    ]
+  }
+}
