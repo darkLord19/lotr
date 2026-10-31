@@ -37,6 +37,7 @@ LOCATIONS: list[tuple[str, str]] = [
     ("background_traits.json", "background_trait"),
     ("appearance.json", "appearance"),
     ("dialogue_fallbacks/*.json", "dialogue_fallback"),
+    ("villagers.json", "villagers"),
 ]
 
 DATE_MIN = dt.datetime(3018, 1, 1)
@@ -239,6 +240,9 @@ def cross_refs(rep: Report, root: Path, docs: dict[str, tuple[str, Any]]) -> Non
             for i, e in enumerate(data):
                 dup("event", e["id"], file, f"$[{i}].id", seen)
                 ids[e["id"]] = file
+        elif kind == "villagers":
+            for i, v in enumerate(data):
+                dup("npc", v["id"], file, f"$[{i}].id", seen)
         elif kind == "itinerary":
             for i, s in enumerate(data["steps"]):
                 dup("event", s["id"], file, f"$.steps[{i}].id", seen)
@@ -304,6 +308,15 @@ def cross_refs(rep: Report, root: Path, docs: dict[str, tuple[str, Any]]) -> Non
             for i, t in enumerate(data):
                 for fac in t["effects"]["reputation"]:
                     need(file, f"$[{i}].effects.reputation.{fac}", fac, factions, "faction")
+        elif kind == "villagers":
+            for i, v in enumerate(data):
+                need(file, f"$[{i}].settlement", v["settlement"], settlements, "settlement")
+                need(file, f"$[{i}].template", v["template"], set(npcs), "template")
+                need_place(file, f"$[{i}].home", v["home"])
+                if v.get("work"):
+                    need_place(file, f"$[{i}].work", v["work"])
+                if v.get("inn"):
+                    need_place(file, f"$[{i}].inn", v["inn"])
         elif kind == "timeline_event":
             for i, e in enumerate(data):
                 base = f"$[{i}]"

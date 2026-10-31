@@ -99,3 +99,29 @@
 
 - **📝 REVIEW ITEM (look): portraits** docs/reports/m1_portraits/contact_sheet.png. Consistent gouache storybook style. Weak spots: Gildor reads feminine; Mrs Maggot and Nob are very similar plain faces; Frodo looks young (canon: 50 but unageing). Regenerate any one with `.venv-art/bin/python tools/art/portraits.py --retry <id>` after editing tools/art/looks.json.
 - FLUX.1-schnell is gated on Hugging Face and the owner has no account, so the ungated Z-Image-Turbo is used (Apache-2.0, 6B).
+
+## Cloud session (Audio, World & UI Integration, Traversal & Atmosphere Fixes)
+- **Spawn Origin Fix**: In `Main._build_session`, `RoadGraph` is now loaded and registers all POIs into `WorldState.poi_info` *before* `PlayerSession` is instantiated. Previously, `PlayerController.read_state()` found empty `poi_info`, left `pos` as null, and defaulted to `(0, 0, 0)` at the far northwest corner of the map. The player now correctly spawns at their starting POI (e.g., Bagshot Row, Hobbiton).
+- **Arrow Keys & Input**: Added `"Up"`, `"Down"`, `"Left"`, `"Right"` bindings in `game/config/controls.json` alongside WASD, plus added the `"map": ["M"]` binding.
+- **Player Speed & Traversal**: Increased walk speed from 1.8 m/s to 2.8 m/s, run speed from 4.0 m/s to 6.5 m/s, crouch to 1.4 m/s in `game/config/player.json`. Animation cycle speed dynamically scales with stride velocity via `_time_scale`, making movement feel brisk and responsive across the 1:25 scale landscape.
+- **Visual Realism & Fantasy Atmosphere**:
+  - `game/world/shaders/terrain_toon.gdshader`: Added high-frequency organic microdetail noise (`n_micro`) to break up flat uniform ground with natural soil/grass tuft grain.
+  - `game/config/style.json`: Softer toon lighting band transitions (`band_softness`: 0.38), warm golden rim highlights (`rim_strength`: 0.18, `rim_color`: `[1.0, 0.88, 0.68]`), richer sun energy (1.25, golden elevation), deeper aerial perspective fog (0.52), and sky reflection on water bodies.
+- **Audio Integration**:
+  - `AudioSession` (`game/audio/audio_session.gd`) classifies terrain (inn POI, settlement radius, river channel, forest polygon, field) and drives `Ambience` and `MusicDirector`.
+  - SFX: Added footsteps tied to splat map surface detection (`dirt`, `grass`, `stone`, `wood`), door opening SFX on door interaction, rider screech on SNIFF -> APPROACH.
+  - Music: Integrated dual-player crossfade path (`use_whole_cues` in `MusicDirector`) for whole-cue MusicGen files.
+- **Villagers & Portraits**:
+  - `game/content/villagers.json` defines 24 villagers across 9 settlements (Hobbiton, Bywater, Frogmorton, Marish, Stock, Buckland, Bree, Staddle, Combe).
+  - `VillagerSpawner` (`game/npc/villager_spawner.gd`) spawns/despawns villagers dynamically within 600m/700m using `VillagerSchedule` and randomized palette overrides.
+  - `DialoguePanel` resolves portrait paths with `<template>_<1 + hash(id) % 6>.png` for villager templates.
+- **Black Riders Scene Layer**:
+  - `RiderManager` (`game/npc/rider_manager.gd`) manages active riders (`black_rider_khamul`, `black_riders_group`), computes distance, raycast LOS, vegetation and weather concealment, drives fear aura, audio threat levels, and triggers interrogation dialogues.
+  - `ConcealmentVolume` (`game/world/concealment_volume.gd`) and `HUD` (`game/ui/hud/hud.gd`) with eye awareness (`HIDDEN`, `SEEN`, `SNIFFED`), Shire calendar time, and survival bars.
+- **UI Textures, Map Screen & Skills**:
+  - Applied `parchment.png` and `journal_page.png` backdrops to `Journal`.
+  - Applied `inventory_panel.png` backdrop to `InventoryPanel`.
+  - Created `MapScreen` (`game/ui/map/map_screen.gd`) on M key / action map: displays Western Eriador parchment map, overlays all POI markers, live pulsing player marker, and pauses the world clock while open.
+  - Created `TradingPanel` (`game/ui/trading/trading_panel.gd`): buy/sell merchant UI with faction reputation price multipliers, stock, and weight/capacity tracking.
+  - Wired `Skills.prompt_lines()` into `PromptBuilder.dynamic_block`.
+- **Verification**: 380/380 GUT tests passing across 50 scripts (6,734 asserts), Python content/terrain/audio checks green, and headless boot confirmed with `BOOT_OK`.

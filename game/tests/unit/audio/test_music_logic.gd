@@ -154,6 +154,8 @@ func test_every_cue_only_names_known_stems_and_characters_name_known_cues() -> v
 	var cues: Dictionary = cfg["cues"] as Dictionary
 	for cue: String in cues:
 		for stem: String in (cues[cue] as Dictionary):
+			if stem == "file":
+				continue
 			assert_true(stems.has(stem), "%s uses unknown stem %s" % [cue, stem])
 	for ch: String in (cfg["characters"] as Dictionary):
 		for period: String in ((cfg["characters"] as Dictionary)[ch] as Dictionary):

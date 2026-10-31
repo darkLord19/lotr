@@ -99,6 +99,7 @@ func apply(item: Interactable) -> void:
 			message.emit(str(Config.get_value("player.interaction.well_message", "")))
 		Interactable.KIND_DOOR:
 			item.is_open = not item.is_open
+			AudioFade.play_one_shot_3d(item, "res://assets/audio/sfx/door.ogg", item.global_position)
 	item.activated.emit(body)
 	interacted.emit(item)
 	_refresh_label()
@@ -111,7 +112,8 @@ func _talk(item: Interactable) -> void:
 		camera_rig.frame_conversation(item.global_position)
 		if not dialogue_panel.closed.is_connected(_on_dialogue_closed):
 			dialogue_panel.closed.connect(_on_dialogue_closed)
-	dialogue_panel.open(item.target_id)
+	var card_override: Dictionary = item.payload.get("card", {}) as Dictionary if item.payload != null else {}
+	dialogue_panel.open(item.target_id, card_override)
 
 
 func _on_dialogue_closed(_npc: String) -> void:

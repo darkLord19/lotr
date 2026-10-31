@@ -6,17 +6,17 @@
     },
     "shader": {
       "bands": 4,
-      "band_softness": 0.25,
+      "band_softness": 0.38,
       "light_wrap": 0.2,
       "rim_color": [
         1.0,
-        0.82,
-        0.6
+        0.88,
+        0.68
       ],
-      "rim_strength": 0.12,
+      "rim_strength": 0.18,
       "rim_power": 3.0,
       "detail_wavelength_m": 70.0,
-      "detail_strength": 0.22,
+      "detail_strength": 0.26,
       "breakup": 0.55,
       "breakup_edge": 0.14,
       "gold_wavelength_m": 520.0,
@@ -121,19 +121,19 @@
     },
     "sun": {
       "azimuth_deg": 255.0,
-      "elevation_deg": 16.0,
-      "color": "#ffead0",
-      "energy": 1.1,
+      "elevation_deg": 18.0,
+      "color": "#fff2dc",
+      "energy": 1.25,
       "shadow_max_distance_m": 600.0,
       "shadows": true
     },
     "sky": {
-      "zenith": "#3f78c8",
-      "horizon": "#f6cf9c",
+      "zenith": "#2d68bd",
+      "horizon": "#fedaa4",
       "ground": "#b59a78",
       "horizon_curve": 0.45,
-      "sun_glow": "#ffb868",
-      "sun_glow_power": 14.0,
+      "sun_glow": "#ffbe6e",
+      "sun_glow_power": 16.0,
       "sun_disc_size": 0.012,
       "cloud_color_lit": "#fff0d4",
       "cloud_color_shade": "#a7a9c8",
@@ -144,9 +144,9 @@
       "cloud_bands": 3.0
     },
     "environment": {
-      "ambient_energy": 0.3,
+      "ambient_energy": 0.36,
       "fog_density": 0.9,
-      "fog_aerial_perspective": 0.4,
+      "fog_aerial_perspective": 0.52,
       "fog_sky_affect": 0.6,
       "exposure": 1.0,
       "tonemap": "filmic",
@@ -155,15 +155,15 @@
       "fog_depth_curve": 1.6
     },
     "water": {
-      "shallow": "#4fb0b8",
-      "deep": "#1f5f94",
+      "shallow": "#42b8c4",
+      "deep": "#1c5a96",
       "foam": "#f4f1e0",
       "alpha": 0.86,
       "bands": 3.0,
       "foam_width": 0.14,
       "ripple_scale": 0.045,
       "ripple_speed": 0.35,
-      "sky_reflect": 0.15
+      "sky_reflect": 0.22
     }
   }
 }

@@ -15,7 +15,7 @@
       "fallback_color": "#8a7a55",
       "fallback_skin": "#e6b48c"
     },
-    "speed": {"walk": 1.8, "run": 4.0, "crouch": 0.9, "acceleration": 14.0, "deceleration": 18.0, "turn_rate": 10.0},
+    "speed": {"walk": 2.8, "run": 6.5, "crouch": 1.4, "acceleration": 18.0, "deceleration": 22.0, "turn_rate": 12.0},
     "black_breath_speed_factor": 0.85,
     "crouch_toggle": true,
     "jump_velocity": 3.2,

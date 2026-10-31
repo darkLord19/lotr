@@ -1,0 +1,227 @@
+[
+  {
+    "id": "hobbiton_hob",
+    "name": "Hob Hayward",
+    "settlement": "hobbiton",
+    "template": "shire_hobbit_villager",
+    "home": "bagshot_row",
+    "work": "mill",
+    "inn": "green_dragon"
+  },
+  {
+    "id": "hobbiton_daisy",
+    "name": "Daisy Brownlock",
+    "settlement": "hobbiton",
+    "template": "shire_hobbit_villager",
+    "home": "hobbiton_hill",
+    "work": "party_field",
+    "inn": "green_dragon"
+  },
+  {
+    "id": "hobbiton_rufus",
+    "name": "Rufus Burrows",
+    "settlement": "hobbiton",
+    "template": "shire_hobbit_villager",
+    "home": "bagshot_row",
+    "work": "party_field",
+    "inn": "green_dragon"
+  },
+  {
+    "id": "hobbiton_primrose",
+    "name": "Primrose Boffin",
+    "settlement": "hobbiton",
+    "template": "shire_hobbit_villager",
+    "home": "hobbiton_hill",
+    "work": "bag_end",
+    "inn": "green_dragon"
+  },
+  {
+    "id": "bywater_ham",
+    "name": "Ham Sandyman",
+    "settlement": "bywater",
+    "template": "shire_hobbit_villager",
+    "home": "bywater",
+    "work": "mill",
+    "inn": "green_dragon"
+  },
+  {
+    "id": "bywater_lily",
+    "name": "Lily Goodbody",
+    "settlement": "bywater",
+    "template": "shire_hobbit_villager",
+    "home": "bywater",
+    "work": "bywater",
+    "inn": "green_dragon"
+  },
+  {
+    "id": "bywater_bartle",
+    "name": "Bartle Grubb",
+    "settlement": "bywater",
+    "template": "shire_hobbit_villager",
+    "home": "bywater",
+    "work": "green_dragon",
+    "inn": "green_dragon"
+  },
+  {
+    "id": "frogmorton_dora",
+    "name": "Dora Roper",
+    "settlement": "frogmorton",
+    "template": "shire_hobbit_villager",
+    "home": "frogmorton",
+    "work": "floating_log",
+    "inn": "floating_log"
+  },
+  {
+    "id": "frogmorton_ponto",
+    "name": "Ponto Baggins",
+    "settlement": "frogmorton",
+    "template": "shire_hobbit_villager",
+    "home": "frogmorton",
+    "work": "frogmorton",
+    "inn": "floating_log"
+  },
+  {
+    "id": "marish_nibs",
+    "name": "Nibs Cotton",
+    "settlement": "marish",
+    "template": "shire_hobbit_villager",
+    "home": "maggots_farm",
+    "work": "bamfurlong",
+    "inn": "golden_perch"
+  },
+  {
+    "id": "marish_poppy",
+    "name": "Poppy Bunce",
+    "settlement": "marish",
+    "template": "shire_hobbit_villager",
+    "home": "bamfurlong",
+    "work": "maggots_farm",
+    "inn": "golden_perch"
+  },
+  {
+    "id": "stock_odo",
+    "name": "Odo Proudfoot",
+    "settlement": "stock",
+    "template": "shire_hobbit_villager",
+    "home": "stock",
+    "work": "bucklebury_ferry",
+    "inn": "golden_perch"
+  },
+  {
+    "id": "stock_marigold",
+    "name": "Marigold Proudfoot",
+    "settlement": "stock",
+    "template": "shire_hobbit_villager",
+    "home": "stock",
+    "work": "stock",
+    "inn": "golden_perch"
+  },
+  {
+    "id": "buckland_ferdibrand",
+    "name": "Ferdibrand Took",
+    "settlement": "buckland",
+    "template": "shire_hobbit_villager",
+    "home": "brandy_hall",
+    "work": "hedge_gate",
+    "inn": "golden_perch"
+  },
+  {
+    "id": "buckland_hilda",
+    "name": "Hilda Bracegirdle",
+    "settlement": "buckland",
+    "template": "shire_hobbit_villager",
+    "home": "crickhollow",
+    "work": "brandy_hall",
+    "inn": "golden_perch"
+  },
+  {
+    "id": "bree_tom",
+    "name": "Tom Appledore",
+    "settlement": "bree",
+    "template": "bree_villager",
+    "home": "bree_west_gate",
+    "work": "bree_south_gate",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "bree_rowan",
+    "name": "Rowan Thistlewood",
+    "settlement": "bree",
+    "template": "bree_villager",
+    "home": "bree_hill",
+    "work": "bree_west_gate",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "bree_matthew",
+    "name": "Matthew Mugwort",
+    "settlement": "bree",
+    "template": "bree_villager",
+    "home": "bill_ferny_house",
+    "work": "bree_south_gate",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "bree_alder",
+    "name": "Alder Heathertoes",
+    "settlement": "bree",
+    "template": "bree_villager",
+    "home": "bree_hill",
+    "work": "prancing_pony",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "bree_hobbit_bob",
+    "name": "Bob Underhill",
+    "settlement": "bree",
+    "template": "bree_hobbit_villager",
+    "home": "bree_west_gate",
+    "work": "prancing_pony",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "bree_hobbit_willy",
+    "name": "Willy Banks",
+    "settlement": "bree",
+    "template": "bree_hobbit_villager",
+    "home": "bree_hill",
+    "work": "bree_west_gate",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "staddle_oswald",
+    "name": "Oswald Chubb",
+    "settlement": "staddle",
+    "template": "bree_hobbit_villager",
+    "home": "staddle",
+    "work": "staddle",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "staddle_daisy",
+    "name": "Daisy Appledore",
+    "settlement": "staddle",
+    "template": "bree_hobbit_villager",
+    "home": "staddle",
+    "work": "staddle",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "combe_edward",
+    "name": "Edward Rushlight",
+    "settlement": "combe",
+    "template": "bree_villager",
+    "home": "combe",
+    "work": "combe",
+    "inn": "prancing_pony"
+  },
+  {
+    "id": "combe_sarah",
+    "name": "Sarah Pickthorn",
+    "settlement": "combe",
+    "template": "bree_villager",
+    "home": "combe",
+    "work": "combe",
+    "inn": "prancing_pony"
+  }
+]

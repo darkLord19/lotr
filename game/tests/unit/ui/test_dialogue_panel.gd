@@ -61,6 +61,19 @@ func _on_ended(id: String) -> void:
 	ended.append(id)
 
 
+func test_villager_portrait_resolution() -> void:
+	var path_named: String = DialoguePanel.portrait_path_for("frodo")
+	assert_true(path_named.ends_with("frodo.png"))
+	assert_true(ResourceLoader.exists(path_named))
+
+	var v_id: String = "villager_tom_01"
+	var path_v: String = DialoguePanel.portrait_path_for(v_id, "shire_hobbit_villager")
+	var expected_variant: int = 1 + posmod(v_id.hash(), 6)
+	assert_true(path_v.ends_with("shire_hobbit_villager_%d.png" % expected_variant))
+	assert_true(ResourceLoader.exists(path_v))
+
+
+
 func _make() -> LLMTransport:
 	var m := MockTransport.new()
 	var idx: int = mocks.size()

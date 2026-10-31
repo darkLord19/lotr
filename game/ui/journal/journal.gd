@@ -169,11 +169,25 @@ func _build() -> void:
 	page.anchor_right = 1.0 - page.anchor_left
 	page.anchor_top = (1.0 - PAGE_HEIGHT_RATIO) / 2.0
 	page.anchor_bottom = 1.0 - page.anchor_top
-	var style := StyleBoxFlat.new()
-	style.bg_color = PAGE_COLOR
-	style.set_content_margin_all(MARGIN)
-	style.set_corner_radius_all(6)
-	page.add_theme_stylebox_override("panel", style)
+	if ResourceLoader.exists("res://assets/ui/parchment.png"):
+		var tex: Texture2D = load("res://assets/ui/parchment.png") as Texture2D
+		if tex != null:
+			var style_tex := StyleBoxTexture.new()
+			style_tex.texture = tex
+			style_tex.set_content_margin_all(MARGIN)
+			page.add_theme_stylebox_override("panel", style_tex)
+		else:
+			var style := StyleBoxFlat.new()
+			style.bg_color = PAGE_COLOR
+			style.set_content_margin_all(MARGIN)
+			style.set_corner_radius_all(6)
+			page.add_theme_stylebox_override("panel", style)
+	else:
+		var style := StyleBoxFlat.new()
+		style.bg_color = PAGE_COLOR
+		style.set_content_margin_all(MARGIN)
+		style.set_corner_radius_all(6)
+		page.add_theme_stylebox_override("panel", style)
 	add_child(page)
 	var col := VBoxContainer.new()
 	col.add_theme_constant_override("separation", SEPARATION)
@@ -190,10 +204,21 @@ func _build() -> void:
 
 
 func _section(parent: Control, title: String, fs: int) -> VBoxContainer:
+	var section_panel := PanelContainer.new()
+	section_panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	section_panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	if ResourceLoader.exists("res://assets/ui/journal_page.png"):
+		var ptex: Texture2D = load("res://assets/ui/journal_page.png") as Texture2D
+		if ptex != null:
+			var pst := StyleBoxTexture.new()
+			pst.texture = ptex
+			pst.set_content_margin_all(MARGIN / 2)
+			section_panel.add_theme_stylebox_override("panel", pst)
+	parent.add_child(section_panel)
 	var box := VBoxContainer.new()
 	box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	box.add_theme_constant_override("separation", SEPARATION)
-	parent.add_child(box)
+	section_panel.add_child(box)
 	box.add_child(_label(title, fs + 4, INK_COLOR))
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL

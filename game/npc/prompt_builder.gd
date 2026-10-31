@@ -58,6 +58,9 @@ static func dynamic_block(npc_id: String, card: Dictionary, now: int, opts: Dict
 	lines.append("Location: %s" % NPCContent.prettify(NPCFacts.location(npc_id, card)))
 	lines.append("Others present: %s" % _present(npc_id, opts))
 	lines.append("The player: %s" % _player_traits(card))
+	var sk := Skills.new(WorldState)
+	for sline in sk.prompt_lines():
+		lines.append(sline)
 
 	lines.append("")
 	lines.append("YOUR KNOWLEDGE (all you know right now; nothing else):")

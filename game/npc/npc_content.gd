@@ -21,6 +21,23 @@ static func load_fallbacks(npc_id: String) -> Dictionary:
 	return d if d is Dictionary else {}
 
 
+static func load_template(template_id: String) -> Dictionary:
+	var d: Variant = _json("%s/lore_cards/templates/%s.json" % [root, template_id])
+	return d if d is Dictionary else {}
+
+
+static func villager_card(villager: Dictionary) -> Dictionary:
+	var tpl_id: String = str(villager.get("template", "shire_hobbit_villager"))
+	var tpl: Dictionary = load_template(tpl_id)
+	var card: Dictionary = tpl.duplicate(true)
+	card["id"] = villager.get("id", "")
+	card["name"] = villager.get("name", prettify(str(villager.get("id", ""))))
+	card["template"] = tpl_id
+	card["home_poi"] = villager.get("home", "")
+	card["settlement"] = villager.get("settlement", "")
+	return card
+
+
 static func prompt_text(name: String) -> String:
 	var path: String = "%s/prompts/%s.md" % [root, name]
 	if not FileAccess.file_exists(path):

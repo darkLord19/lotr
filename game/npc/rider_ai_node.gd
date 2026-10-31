@@ -18,6 +18,12 @@ var soft_failure: SoftFailure
 func _ready() -> void:
 	ai.position = global_position
 	ai.caught.connect(_on_caught)
+	ai.state_changed.connect(_on_state_changed)
+
+
+func _on_state_changed(old_state: RiderAI.State, new_state: RiderAI.State) -> void:
+	if old_state == RiderAI.State.SNIFF and new_state == RiderAI.State.APPROACH:
+		AudioFade.play_one_shot_3d(self, "res://assets/audio/sfx/rider_screech.ogg", global_position)
 
 
 func _physics_process(delta: float) -> void:

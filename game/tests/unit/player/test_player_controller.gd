@@ -6,7 +6,7 @@ const START_X: float = 900.0
 const START_Z: float = 2110.0  # Bag End
 const HOLD_SECONDS: float = 3.0
 const WALK_MIN_M: float = 3.0
-const WALK_MAX_M: float = 6.0
+const WALK_MAX_M: float = 10.0
 const GROUND_TOLERANCE_M: float = 0.4
 const TEST_VIEW_RADIUS_M: float = 300.0
 

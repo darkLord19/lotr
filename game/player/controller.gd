@@ -41,6 +41,8 @@ var _ground_ready: bool = false
 var _settle_frames: int = 0
 var _sync_timer: float = 0.0
 var _last_synced: Vector3 = Vector3(INF, INF, INF)
+var _step_distance: float = 0.0
+var _last_step_variant: int = 0
 
 
 static func cfg(key: String, default: Variant) -> Variant:
@@ -239,9 +241,30 @@ func is_ground_ready() -> bool:
 	return _ground_ready
 
 
+var _concealment_sources: Array = []
+
+
+func add_concealment_source(source: Variant) -> void:
+	if source not in _concealment_sources:
+		_concealment_sources.append(source)
+
+
+func remove_concealment_source(source: Variant) -> void:
+	_concealment_sources.erase(source)
+
+
+func get_vegetation_concealment() -> float:
+	var vals: Array[float] = []
+	for src in _concealment_sources:
+		if is_instance_valid(src) and "concealment" in src:
+			vals.append(float(src.concealment))
+	return RiderPerception.combine_concealment(vals)
+
+
 ## Perception input for the Black Riders: the same flags RiderPerception.Target uses.
-func perception_target(concealment: float = 0.0, off_road_m: float = 0.0) -> RiderPerception.Target:
-	return RiderPerception.Target.make(global_position, crouched, concealment, off_road_m)
+func perception_target(concealment: float = -1.0, off_road_m: float = 0.0) -> RiderPerception.Target:
+	var c: float = get_vegetation_concealment() if concealment < 0.0 else concealment
+	return RiderPerception.Target.make(global_position, crouched, c, off_road_m)
 
 
 ## Puts the body on the ground at x,z and waits for collision again (used by spawn, tp, load).
@@ -331,6 +354,10 @@ func _physics_process(delta: float) -> void:
 	_rescue_if_below_ground()
 	var moving: bool = Vector2(velocity.x, velocity.z).length() > 0.1
 	noise = noise_for(gait, moving)
+	if is_on_floor() and moving:
+		_process_footsteps(delta)
+	else:
+		_step_distance = 0.0
 	if has_input and moving:
 		_turn_towards(dir, delta)
 	if gait == Gait.RUN and moving and survival != null:
@@ -400,3 +427,56 @@ func _sync_to_state(delta: float) -> void:
 	_sync_timer = 0.0
 	if global_position.distance_to(_last_synced) >= float(cfg("sync.min_move_m", 0.75)):
 		_write_state()
+
+
+func get_surface_type() -> String:
+	if not is_inside_tree():
+		return "grass"
+	var pos_2d := Vector2(global_position.x, global_position.z)
+	var inn_positions: Array[Vector2] = [
+		Vector2(1700, 2390),
+		Vector2(3420, 2470),
+		Vector2(4920, 2700),
+		Vector2(7420, 2340)
+	]
+	for inn_pos: Vector2 in inn_positions:
+		if pos_2d.distance_to(inn_pos) <= 12.0:
+			return "wood"
+	if terrain != null and terrain.heights != null and terrain.heights.splat != null:
+		var s: Color = terrain.heights.splat_at(global_position.x, global_position.z)
+		if pos_2d.distance_to(Vector2(7400, 2300)) < 400.0 and s.r > 0.15:
+			return "stone"
+		if s.r > 0.35 or s.g > 0.35 or s.b > 0.35:
+			return "dirt"
+	return "grass"
+
+
+func _process_footsteps(delta: float) -> void:
+	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
+	_step_distance += horizontal_speed * delta
+	var stride: float = 0.65
+	if gait == Gait.RUN:
+		stride = 0.95
+	elif gait == Gait.CROUCH:
+		stride = 0.50
+	if _step_distance >= stride:
+		_step_distance -= stride
+		play_footstep()
+
+
+func play_footstep() -> void:
+	if not is_inside_tree():
+		return
+	var surface: String = get_surface_type()
+	var variant: int = randi_range(1, 3)
+	if variant == _last_step_variant:
+		variant = (variant % 3) + 1
+	_last_step_variant = variant
+	var path: String = "res://assets/audio/sfx/footstep_%s_%d.ogg" % [surface, variant]
+	var vol: float = 0.0
+	if crouched:
+		vol = -10.0
+	elif gait == Gait.RUN:
+		vol = 2.0
+	AudioFade.play_one_shot_3d(self, path, global_position, &"sfx", vol)
+

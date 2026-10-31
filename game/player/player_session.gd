@@ -19,7 +19,10 @@ var soft_failure: SoftFailure
 var inventory_panel: InventoryPanel
 var journal: Journal
 var dialogue: DialoguePanel
+var map_screen: MapScreen
+var trading_panel: TradingPanel
 var console: DebugConsole
+var hud: HUD
 var layer: CanvasLayer
 
 var _message: Label
@@ -75,12 +78,19 @@ func _build_hud() -> void:
 	_message.position.y = 80.0
 	_message.hide()
 	layer.add_child(_message)
+	hud = HUD.new()
+	hud.survival = survival
+	layer.add_child(hud)
 	inventory_panel = InventoryPanel.new()
 	layer.add_child(inventory_panel)
 	journal = JOURNAL_SCENE.instantiate()
 	layer.add_child(journal)
 	dialogue = DIALOGUE_SCENE.instantiate()
 	layer.add_child(dialogue)
+	map_screen = MapScreen.new()
+	layer.add_child(map_screen)
+	trading_panel = TradingPanel.new()
+	layer.add_child(trading_panel)
 	if DebugConsole.available():
 		console = DebugConsole.new()
 		console.player = controller
@@ -114,6 +124,8 @@ func show_message(text: String) -> void:
 ## True while a menu, panel or dialogue owns the mouse and keyboard.
 func ui_blocking() -> bool:
 	return dialogue.is_open() or journal.visible or inventory_panel.visible \
+			or (map_screen != null and map_screen.visible) \
+			or (trading_panel != null and trading_panel.visible) \
 			or (console != null and console.visible) or get_tree().paused
 
 

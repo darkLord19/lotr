@@ -405,8 +405,30 @@ static func _esc(s: String) -> String:
 	return s.replace("[", "[lb]")
 
 
+static func portrait_path_for(id: String, template_id: String = "") -> String:
+	var dir: String = str(Config.get_value("dialogue.portrait_dir", "res://assets/portraits"))
+	var path: String = "%s/%s%s" % [dir, id, PORTRAIT_EXT]
+	if ResourceLoader.exists(path):
+		return path
+	var t: String = template_id
+	if t.is_empty():
+		for known in ["shire_hobbit_villager", "bree_hobbit_villager", "bree_villager"]:
+			if id.begins_with(known):
+				t = known
+				break
+	if not t.is_empty():
+		var variant: int = 1 + posmod(id.hash(), 6)
+		var vpath: String = "%s/%s_%d%s" % [dir, t, variant, PORTRAIT_EXT]
+		if ResourceLoader.exists(vpath):
+			return vpath
+	return path
+
+
 func _set_portrait() -> void:
-	var path: String = "%s/%s%s" % [str(Config.get_value("dialogue.portrait_dir", "res://assets/portraits")), npc_id, PORTRAIT_EXT]
+	var t: String = ""
+	if mind != null and not mind.card.is_empty():
+		t = str(mind.card.get("template", mind.card.get("template_id", "")))
+	var path: String = portrait_path_for(npc_id, t)
 	var tex: Texture2D = null
 	if ResourceLoader.exists(path):
 		tex = load(path) as Texture2D

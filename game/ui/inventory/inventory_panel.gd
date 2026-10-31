@@ -68,6 +68,15 @@ func _build() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	MenuKit.backdrop(self, MenuKit.SCRIM_COLOR)
 	var box: VBoxContainer = MenuKit.panel(self, float(Config.get_value("player.ui.inventory_width", 640.0)))
+	if ResourceLoader.exists("res://assets/ui/inventory_panel.png"):
+		var tex: Texture2D = load("res://assets/ui/inventory_panel.png") as Texture2D
+		if tex != null:
+			var pc: PanelContainer = box.get_parent() as PanelContainer
+			if pc != null:
+				var st := StyleBoxTexture.new()
+				st.texture = tex
+				st.set_content_margin_all(MenuKit.PANEL_MARGIN)
+				pc.add_theme_stylebox_override("panel", st)
 	box.add_child(MenuKit.heading("Inventory"))
 	_list = VBoxContainer.new()
 	box.add_child(_list)

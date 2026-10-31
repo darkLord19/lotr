@@ -23,6 +23,9 @@ var _sim: OffscreenSim
 var _weather: WeatherDayNight
 var _player: PlayerSession
 var _spawner: NPCSpawner
+var _villager_spawner: VillagerSpawner
+var _riders: RiderManager
+var _audio: AudioSession
 
 
 func _ready() -> void:
@@ -127,6 +130,10 @@ func _build_session() -> void:
 	session = Node.new()
 	session.name = "Session"
 	add_child(session)
+	var graph := RoadGraph.new()
+	graph.load_region()
+	for poi in graph.poi_ids():
+		WorldState.register_poi(poi, graph.poi_pos(poi), graph.settlement_of(poi))
 	var world: Node
 	if ResourceLoader.exists(world_scene_path):
 		world = (load(world_scene_path) as PackedScene).instantiate()
@@ -142,8 +149,11 @@ func _build_session() -> void:
 			_player = PlayerSession.new()
 			_player.world = world as Node3D
 			session.add_child(_player)
-	var graph := RoadGraph.new()
-	graph.load_region()
+		_audio = AudioSession.new()
+		_audio.weather = _weather
+		if _player != null:
+			_audio.viewer = _player.controller
+		session.add_child(_audio)
 	_sim = OffscreenSim.new()
 	_sim.bind(WorldClock, WorldState, Timeline, graph)
 	_sim.load_tracks()
@@ -158,6 +168,19 @@ func _build_session() -> void:
 		if world.has_method("height_at"):
 			_spawner.height_provider = Callable(world, "height_at")
 		session.add_child(_spawner)
+		_villager_spawner = VillagerSpawner.new()
+		_villager_spawner.graph = graph
+		_villager_spawner.viewer = _player.controller
+		if world.has_method("height_at"):
+			_villager_spawner.height_provider = Callable(world, "height_at")
+		session.add_child(_villager_spawner)
+		_riders = RiderManager.new()
+		_riders.viewer = _player.controller
+		_riders.weather = _weather
+		_riders.audio = _audio
+		if _player.hud != null:
+			_riders.hud = _player.hud
+		session.add_child(_riders)
 
 
 func _drop_session() -> void:
@@ -171,6 +194,9 @@ func _drop_session() -> void:
 		_weather = null
 		_player = null
 		_spawner = null
+		_villager_spawner = null
+		_riders = null
+		_audio = null
 		pause_menu = null
 	if get_tree() != null and get_tree().paused:
 		get_tree().paused = false

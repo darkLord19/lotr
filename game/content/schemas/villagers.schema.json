@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "villagers",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "settlement", "template", "home"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+      "name": { "type": "string", "minLength": 1 },
+      "settlement": { "type": "string", "minLength": 1 },
+      "template": { "type": "string", "minLength": 1 },
+      "home": { "type": "string", "minLength": 1 },
+      "work": { "type": "string" },
+      "inn": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}

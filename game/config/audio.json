@@ -3,9 +3,10 @@
     "dirs": {
       "music": "res://assets/audio/music/",
       "ambience": "res://assets/audio/ambience/",
-      "sfx": "res://assets/audio/sfx/"
+      "sfx": "res://assets/audio/sfx/",
+      "cues": "res://assets/audio/music/cues/"
     },
-    "bus_db": { "music": -4.0, "ambience": -6.0 },
+    "bus_db": { "music": -4.0, "ambience": -6.0, "sfx": -2.0 },
     "silent_db": -60.0,
     "silent_linear": 0.001,
 
@@ -43,17 +44,31 @@
         "flute": "flute_day.ogg", "fiddle": "fiddle_inn.ogg", "strings": "strings_danger.ogg"
       },
       "cues": {
-        "pastoral_day":   { "pad": 0.55, "harp": 0.85, "flute": 0.75 },
-        "pastoral_grey":  { "pad": 0.70, "harp": 0.70, "flute": 0.30 },
-        "pastoral_dusk":  { "pad": 0.70, "harp": 0.60, "flute": 0.35 },
-        "town_day":       { "pad": 0.60, "harp": 0.85, "flute": 0.0 },
-        "town_dusk":      { "pad": 0.70, "harp": 0.55, "flute": 0.0 },
-        "wild_day":       { "pad": 0.80, "harp": 0.0,  "flute": 0.60 },
-        "wild_dusk":      { "pad": 0.85, "harp": 0.0,  "flute": 0.30 },
-        "night":          { "pad": 0.65, "harp_night": 0.70 },
-        "inn":            { "fiddle": 1.0, "pad": 0.20 },
-        "danger":         { "strings": 0.85, "pad": 0.35 },
-        "danger_chase":   { "strings": 1.0, "pad": 0.20 }
+        "pastoral_day":   { "pad": 0.55, "harp": 0.85, "flute": 0.75, "file": "shire_day.ogg" },
+        "pastoral_grey":  { "pad": 0.70, "harp": 0.70, "flute": 0.30, "file": "rain_melancholy.ogg" },
+        "pastoral_dusk":  { "pad": 0.70, "harp": 0.60, "flute": 0.35, "file": "dusk_reflective.ogg" },
+        "town_day":       { "pad": 0.60, "harp": 0.85, "flute": 0.0,  "file": "road_travel.ogg" },
+        "town_dusk":      { "pad": 0.70, "harp": 0.55, "flute": 0.0,  "file": "bree_evening.ogg" },
+        "wild_day":       { "pad": 0.80, "harp": 0.0,  "flute": 0.60, "file": "road_travel.ogg" },
+        "wild_dusk":      { "pad": 0.85, "harp": 0.0,  "flute": 0.30, "file": "dusk_reflective.ogg" },
+        "night":          { "pad": 0.65, "harp_night": 0.70,          "file": "night_lullaby.ogg" },
+        "inn":            { "fiddle": 1.0, "pad": 0.20,               "file": "tavern_jig.ogg" },
+        "danger":         { "strings": 0.85, "pad": 0.35,             "file": "tension_low.ogg" },
+        "danger_chase":   { "strings": 1.0, "pad": 0.20,              "file": "rider_dread.ogg" }
+      },
+      "whole_cues": {
+        "pastoral_day":   "shire_day.ogg",
+        "pastoral_grey":  "rain_melancholy.ogg",
+        "pastoral_dusk":  "dusk_reflective.ogg",
+        "town_day":       "road_travel.ogg",
+        "town_dusk":      "bree_evening.ogg",
+        "wild_day":       "road_travel.ogg",
+        "wild_dusk":      "dusk_reflective.ogg",
+        "night":          "night_lullaby.ogg",
+        "inn":            "tavern_jig.ogg",
+        "danger":         "tension_low.ogg",
+        "danger_chase":   "rider_dread.ogg",
+        "shire_morning":  "shire_morning.ogg"
       },
       "characters": {
         "pastoral": { "day": "pastoral_day", "grey": "pastoral_grey", "dusk": "pastoral_dusk", "night": "night" },

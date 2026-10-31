@@ -59,7 +59,8 @@ void fragment() {
 	vec4 s = texture(splat, world_pos.xz / region_size);
 	float n_mid = vnoise(world_pos.xz / detail_wavelength);
 	float n_fine = vnoise(world_pos.xz / (detail_wavelength * 0.23));
-	float n = n_mid * 0.65 + n_fine * 0.35;
+	float n_micro = vnoise(world_pos.xz * 0.8);
+	float n = n_mid * 0.55 + n_fine * 0.30 + n_micro * 0.15;
 
 	float slope = sqrt(max(1.0 - world_normal.y * world_normal.y, 0.0)) / max(world_normal.y, 0.05);
 	float rock = smoothstep(rock_slope.x, rock_slope.y, slope);
