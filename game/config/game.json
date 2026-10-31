@@ -18,7 +18,8 @@
       "time_mode": "A",
       "quality": "high",
       "mouse_sensitivity": 1.0,
-      "text_speed": 1.0
+      "text_speed": 1.0,
+      "master_volume": 1.0
     },
     "ranges": {
       "clock_speed": [
@@ -32,6 +33,10 @@
       "text_speed": [
         0.25,
         4.0
+      ],
+      "master_volume": [
+        0.0,
+        1.0
       ]
     },
     "quality_presets": {

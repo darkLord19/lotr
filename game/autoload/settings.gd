@@ -8,7 +8,7 @@ extends Node
 
 signal changed(key: String, value: Variant)
 
-const KEYS: Array[String] = ["time_mode", "clock_speed", "quality", "mouse_sensitivity", "text_speed"]
+const KEYS: Array[String] = ["time_mode", "clock_speed", "quality", "mouse_sensitivity", "text_speed", "master_volume"]
 
 var path: String = ""
 var values: Dictionary = {}
@@ -118,7 +118,7 @@ func _validated(key: String, value: Variant) -> Variant:
 		"quality":
 			var q: String = str(value)
 			return q if (Config.get_value("settings.quality_presets", {}) as Dictionary).has(q) else null
-		"clock_speed", "mouse_sensitivity", "text_speed":
+		"clock_speed", "mouse_sensitivity", "text_speed", "master_volume":
 			if not (value is float or value is int):
 				return null
 			var r: Vector2 = range_of(key)
@@ -134,6 +134,18 @@ func _apply(key: String) -> void:
 			WorldClock.time_scale = float(values[key])
 		"quality":
 			_apply_quality(str(values[key]))
+		"master_volume":
+			_apply_master_volume(float(values[key]))
+
+
+func _apply_master_volume(vol: float) -> void:
+	var bus_idx: int = AudioServer.get_bus_index("Master")
+	if bus_idx >= 0:
+		if vol <= 0.001:
+			AudioServer.set_bus_mute(bus_idx, true)
+		else:
+			AudioServer.set_bus_mute(bus_idx, false)
+			AudioServer.set_bus_volume_db(bus_idx, linear_to_db(vol))
 
 
 func _apply_quality(preset: String) -> void:

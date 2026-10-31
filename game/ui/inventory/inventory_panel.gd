@@ -1,13 +1,15 @@
 class_name InventoryPanel
 extends Control
-## Simple inventory list (Tab). Reads the player's stacks through Inventory; changes nothing.
+## Inventory pack display (toggle with Tab). Reads the player's stacks through Inventory; changes nothing.
 
-const TEXT_COLOR: Color = Color(0.93, 0.9, 0.8)
+const TEXT_COLOR: Color = Color(0.94, 0.91, 0.82)
+const ROW_BG_COLOR: Color = Color(0.12, 0.14, 0.10, 0.6)
 
 var inventory: Inventory
 
 var _list: VBoxContainer
 var _footer: Label
+var _scroll: ScrollContainer
 
 
 func _ready() -> void:
@@ -57,10 +59,22 @@ func refresh() -> void:
 		c.queue_free()
 	var rows_: Array[String] = rows()
 	if rows_.is_empty():
-		_list.add_child(_label("You are carrying nothing.", MenuKit.DIM_COLOR))
+		_list.add_child(_label("Your pack is empty.", MenuKit.DIM_COLOR))
 	for r: String in rows_:
-		_list.add_child(_label(r, TEXT_COLOR))
-	_footer.text = "Weight %.1f / %.1f   Pennies %d" % [inventory.total_weight(), inventory.capacity(), inventory.money()]
+		var row_panel := PanelContainer.new()
+		var r_st := StyleBoxFlat.new()
+		r_st.bg_color = ROW_BG_COLOR
+		r_st.border_color = Color(0.38, 0.35, 0.25, 0.5)
+		r_st.border_width_bottom = 1
+		r_st.content_margin_left = 12
+		r_st.content_margin_right = 12
+		r_st.content_margin_top = 6
+		r_st.content_margin_bottom = 6
+		r_st.set_corner_radius_all(4)
+		row_panel.add_theme_stylebox_override("panel", r_st)
+		row_panel.add_child(_label(r, TEXT_COLOR))
+		_list.add_child(row_panel)
+	_footer.text = "Pennies: %d  •  Weight: %.1f / %.1f" % [inventory.money(), inventory.total_weight(), inventory.capacity()]
 
 
 func _build() -> void:
@@ -77,11 +91,27 @@ func _build() -> void:
 				st.texture = tex
 				st.set_content_margin_all(MenuKit.PANEL_MARGIN)
 				pc.add_theme_stylebox_override("panel", st)
-	box.add_child(MenuKit.heading("Inventory"))
+	box.add_child(MenuKit.heading("Pack & Inventory"))
+	MenuKit.divider(box)
+
+	_scroll = ScrollContainer.new()
+	_scroll.custom_minimum_size = Vector2(0, 320)
+	_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	_list = VBoxContainer.new()
-	box.add_child(_list)
+	_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_list.add_theme_constant_override("separation", 6)
+	_scroll.add_child(_list)
+	box.add_child(_scroll)
+
+	MenuKit.divider(box)
 	_footer = _label("", MenuKit.ACCENT_COLOR)
+	_footer.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	box.add_child(_footer)
+
+	var hint := _label("Press [Tab] or [Esc] to close", MenuKit.DIM_COLOR)
+	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	hint.add_theme_font_size_override("font_size", 16)
+	box.add_child(hint)
 
 
 func _label(text: String, color: Color) -> Label:

@@ -206,10 +206,7 @@ func _build() -> void:
 	_style(_status)
 	box.add_child(_status)
 
-	_begin = Button.new()
-	_begin.text = "Begin"
-	_style(_begin)
-	_begin.pressed.connect(_on_begin_pressed)
+	_begin = MenuKit.button("Begin", _on_begin_pressed)
 	box.add_child(_begin)
 	choose_palette(0)
 

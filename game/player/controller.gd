@@ -43,6 +43,8 @@ var _sync_timer: float = 0.0
 var _last_synced: Vector3 = Vector3(INF, INF, INF)
 var _step_distance: float = 0.0
 var _last_step_variant: int = 0
+var _coyote_timer: float = 0.0
+var _jump_buffer_timer: float = 0.0
 
 
 static func cfg(key: String, default: Variant) -> Variant:
@@ -346,10 +348,20 @@ func _physics_process(delta: float) -> void:
 	velocity.z = horizontal.z
 	if is_on_floor():
 		velocity.y = 0.0
-		if input_enabled and not crouched and Input.is_action_just_pressed(&"jump"):
-			velocity.y = float(cfg("jump_velocity", 3.2))
+		_coyote_timer = 0.12
 	else:
+		_coyote_timer = maxf(0.0, _coyote_timer - delta)
 		velocity.y -= float(cfg("gravity", 14.0)) * delta
+
+	if input_enabled and not crouched and Input.is_action_just_pressed(&"jump"):
+		_jump_buffer_timer = 0.15
+	else:
+		_jump_buffer_timer = maxf(0.0, _jump_buffer_timer - delta)
+
+	if _jump_buffer_timer > 0.0 and _coyote_timer > 0.0:
+		velocity.y = float(cfg("jump_velocity", 3.2))
+		_jump_buffer_timer = 0.0
+		_coyote_timer = 0.0
 	move_and_slide()
 	_rescue_if_below_ground()
 	var moving: bool = Vector2(velocity.x, velocity.z).length() > 0.1

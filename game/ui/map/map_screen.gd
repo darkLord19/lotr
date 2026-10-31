@@ -199,9 +199,12 @@ func _on_overlay_draw() -> void:
 		var screen_pt := Vector2(u * rect_size.x, v * rect_size.y)
 		var kind: String = str(p.get("kind", ""))
 		var is_major: bool = kind in ["landmark", "settlement", "inn"]
-		var r: float = 4.0 if is_major else 2.5
+		var r: float = 4.5 if is_major else 2.5
 		var col: Color = COLOR_POI_MAJOR if is_major else COLOR_POI
 		_overlay.draw_circle(screen_pt, r, col)
+		if is_major and ThemeDB.fallback_font != null:
+			var name_str: String = str(p.get("name", NPCContent.prettify(str(p.get("id", "")))))
+			_overlay.draw_string(ThemeDB.fallback_font, screen_pt + Vector2(7, 4), name_str, HORIZONTAL_ALIGNMENT_LEFT, -1, 12, COLOR_POI_MAJOR)
 
 	# Draw player position marker
 	var loc: Dictionary = WorldState.entity_location(WorldState.PLAYER_ID)
@@ -218,3 +221,5 @@ func _on_overlay_draw() -> void:
 		_overlay.draw_arc(player_pt, ring_r, 0.0, TAU, 16, COLOR_PLAYER_RING, 2.0)
 		_overlay.draw_circle(player_pt, 5.0, COLOR_PLAYER)
 		_overlay.draw_circle(player_pt, 2.0, Color.WHITE)
+		if ThemeDB.fallback_font != null:
+			_overlay.draw_string(ThemeDB.fallback_font, player_pt + Vector2(10, 4), "You", HORIZONTAL_ALIGNMENT_LEFT, -1, 13, Color(1.0, 0.95, 0.7))
