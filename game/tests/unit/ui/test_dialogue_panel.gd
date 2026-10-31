@@ -45,6 +45,12 @@ func after_each() -> void:
 	WorldState.reset()
 	WorldState.poi_info = {}
 	WorldClock.now = saved_now
+	Config.reload()
+
+
+## Points the panel at an empty portrait folder so placeholder behaviour does not depend on the shipped art.
+func _hide_portraits() -> void:
+	Config._data["dialogue"]["portrait_dir"] = "res://assets/__no_portraits__"
 
 
 func _on_started(id: String) -> void:
@@ -80,6 +86,7 @@ static func summary(text: String, learned: Array = []) -> Array[String]:
 
 
 func test_open_pauses_clock_and_announces() -> void:
+	_hide_portraits()
 	scripts = [reply("Evening, Master!", {"options": ["Ask about riders", "Order a pint"], "intents": []})]
 	panel.open(NPC)
 	assert_true(WorldClock.is_paused())
@@ -87,7 +94,7 @@ func test_open_pauses_clock_and_announces() -> void:
 	assert_eq(started, [NPC])
 	assert_true(panel.is_open())
 	assert_false(panel.is_offline_badge_visible())
-	assert_false(panel.has_portrait(), "no portrait file yet: the placeholder panel is shown")
+	assert_false(panel.has_portrait(), "no portrait file: the placeholder panel is shown")
 	assert_eq(panel.speech_text(), "Evening, Master!", "META never reaches the speech")
 	assert_false(panel.is_thinking())
 
@@ -213,7 +220,15 @@ func test_offline_badge_and_fallback_lines() -> void:
 	assert_false(panel.is_offline_badge_visible(), "badge follows availability")
 
 
+func test_shipped_portrait_is_shown() -> void:
+	scripts = [reply("Hi.", {"options": [], "intents": []})]
+	panel.open(NPC)
+	assert_true(panel.has_portrait(), "game/assets/portraits/%s.png exists" % NPC)
+	assert_false(panel._placeholder.visible)
+
+
 func test_placeholder_portrait_shows_name() -> void:
+	_hide_portraits()
 	scripts = [reply("Hi.", {"options": [], "intents": []})]
 	panel.open(NPC)
 	assert_true(panel._placeholder.visible)
