@@ -22,6 +22,7 @@ var _screen_node: Node
 var _sim: OffscreenSim
 var _weather: WeatherDayNight
 var _player: PlayerSession
+var _spawner: NPCSpawner
 
 
 func _ready() -> void:
@@ -126,8 +127,9 @@ func _build_session() -> void:
 	session = Node.new()
 	session.name = "Session"
 	add_child(session)
+	var world: Node
 	if ResourceLoader.exists(world_scene_path):
-		var world: Node = (load(world_scene_path) as PackedScene).instantiate()
+		world = (load(world_scene_path) as PackedScene).instantiate()
 		session.add_child(world)
 		_weather = WeatherDayNight.new()
 		# Take over the world's own sun and sky rather than creating a second set.
@@ -149,6 +151,13 @@ func _build_session() -> void:
 	var rumours := RumourNetwork.new()
 	rumours.graph = graph
 	session.add_child(rumours)
+	if _player != null:
+		_spawner = NPCSpawner.new()
+		_spawner.graph = graph
+		_spawner.viewer = _player.controller
+		if world.has_method("height_at"):
+			_spawner.height_provider = Callable(world, "height_at")
+		session.add_child(_spawner)
 
 
 func _drop_session() -> void:
@@ -161,6 +170,7 @@ func _drop_session() -> void:
 		_sim = null
 		_weather = null
 		_player = null
+		_spawner = null
 		pause_menu = null
 	if get_tree() != null and get_tree().paused:
 		get_tree().paused = false

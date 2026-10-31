@@ -12,9 +12,44 @@
     "oneshot_fade_s": 0.2,
     "report_interval_s": 0.5,
     "arrive_radius_m": 0.15,
-    "loop_anims": ["idle", "walk", "run", "crouch_walk", "sniff"],
-    "hold_anims": ["sit", "sleep", "faint"],
-    "oneshot_anims": ["talk_gesture", "eat", "pick_up", "sniff"],
-    "villager_fallbacks": {"hobbit": "shire_hobbit_villager", "man": "bree_villager", "man_bree": "bree_villager"}
+    "loop_anims": [
+      "idle",
+      "walk",
+      "run",
+      "crouch_walk",
+      "sniff"
+    ],
+    "hold_anims": [
+      "sit",
+      "sleep",
+      "faint"
+    ],
+    "oneshot_anims": [
+      "talk_gesture",
+      "eat",
+      "pick_up",
+      "sniff"
+    ],
+    "villager_fallbacks": {
+      "hobbit": "shire_hobbit_villager",
+      "man": "bree_villager",
+      "man_bree": "bree_villager"
+    },
+    "spawner": {
+      "spawn_radius_m": 600.0,
+      "despawn_radius_m": 700.0,
+      "scan_interval_s": 0.25,
+      "rest_offset_m": [
+        2.5,
+        6.0
+      ],
+      "teleport_m": 60.0,
+      "max_chase_speed": 7.0,
+      "chase_time_s": 1.0,
+      "stop_distance_m": 0.3,
+      "skip_races": [
+        "wraith"
+      ]
+    }
   }
 }
