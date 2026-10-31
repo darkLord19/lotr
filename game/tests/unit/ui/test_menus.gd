@@ -186,3 +186,12 @@ func test_pause_menu_load_request_is_forwarded() -> void:
 	assert_eq(asked, ["slot_3"])
 	pm.close()
 	assert_false(WorldClock.is_paused())
+
+
+func test_pause_menu_frees_the_cursor_when_it_opens() -> void:
+	var pm := PauseMenu.new()
+	add_child_autofree(pm)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	pm.open()
+	assert_eq(Input.mouse_mode, Input.MOUSE_MODE_VISIBLE, "PlayerSession does not run while paused, so the menu must release the mouse itself")
+	pm.close()

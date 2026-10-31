@@ -52,6 +52,8 @@ func open() -> void:
 	WorldClock.pause(PAUSE_REASON)
 	if is_inside_tree():
 		get_tree().paused = true
+	# PlayerSession stops processing while the tree is paused, so it cannot free the cursor; it re-captures it after close().
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	show()
 
 
