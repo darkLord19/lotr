@@ -1,0 +1,142 @@
+{
+ "barliman_butterbur": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a portly Man innkeeper of Bree with a balding head, a red face, side-whiskers and a harried kindly look, in a stained apron",
+  "seed": 960133
+ },
+ "bill_ferny": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a sallow sly Man of Bree with a squint, a crooked grin and greasy dark hair, in a shabby cloak",
+  "seed": 320272
+ },
+ "black_rider_khamul": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, very dark background, an empty black cloak standing upright with its hood up, the hood is an empty hollow opening of pure black darkness with nothing inside, no person visible, no skin, no eyes, ghostly pale mist at the hem",
+  "seed": 747815
+ },
+ "black_riders_group": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, very dark background, three tall wraiths in heavy black cloaks side by side, every deep hood is filled with solid pure black shadow, empty voids where faces would be, completely faceless, pale cold mist",
+  "seed": 48010
+ },
+ "bree_hobbit_villager_1": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a hobbit tradesman with a neat beard and a leather apron",
+  "seed": 503237
+ },
+ "bree_hobbit_villager_2": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a hobbit woman with dark hair under a head scarf and a worried look",
+  "seed": 970687
+ },
+ "bree_hobbit_villager_3": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a young hobbit stable-lad with a cap and a cheeky grin",
+  "seed": 886057
+ },
+ "bree_hobbit_villager_4": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, an old hobbit with a grey beard and a long pipe",
+  "seed": 269322
+ },
+ "bree_hobbit_villager_5": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a plump hobbit cook with rosy cheeks and a white cap",
+  "seed": 857820
+ },
+ "bree_hobbit_villager_6": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a hobbit carter in a brown hooded coat",
+  "seed": 721062
+ },
+ "bree_villager_1": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a bearded Man of Bree in a slate-grey coat, wary",
+  "seed": 309379
+ },
+ "bree_villager_2": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a Bree woman with auburn hair and a shawl, tired but kind",
+  "seed": 230393
+ },
+ "bree_villager_3": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a young Man with a lantern and a woollen cap",
+  "seed": 168175
+ },
+ "bree_villager_4": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, an old weathered Man with a bald head and a long white moustache",
+  "seed": 828492
+ },
+ "bree_villager_5": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a stout Bree smith with a leather apron and heavy brow",
+  "seed": 814170
+ },
+ "bree_villager_6": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a Bree woman with grey hair in a bun and a stern face",
+  "seed": 174304
+ },
+ "farmer_maggot": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a stout ruddy hobbit farmer with a broad weathered face, brown whiskers and a wide-brimmed hat, with a suspicious scowl",
+  "seed": 407463
+ },
+ "fatty_bolger": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a plump cheerful hobbit with a round rosy face, thinning light hair and a nervous smile, in a yellow waistcoat",
+  "seed": 481472
+ },
+ "frodo": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a young-looking hobbit with dark curly hair, bright thoughtful blue eyes and a gentle face, in a green-brown waistcoat and travelling cloak",
+  "seed": 787536
+ },
+ "gaffer_gamgee": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a very old hobbit gardener with white hair, a weathered wrinkled face and a stubborn expression, in a patched brown jacket, holding a clay pipe",
+  "seed": 248550
+ },
+ "gandalf": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, an old wizard with a long grey beard, bushy eyebrows, piercing eyes and a tall pointed grey hat, in a grey cloak",
+  "seed": 88707
+ },
+ "gildor_inglorion": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, very dark background, a High Elf with an ageless fair face, long dark hair and silver-grey robes, faint starlight glow, serene",
+  "seed": 310022
+ },
+ "lobelia_sackville_baggins": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a sour pinched hobbit woman with a sharp nose and a disapproving look, in a green bonnet and dress",
+  "seed": 503607
+ },
+ "merry": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a cheerful hobbit with fair brown hair and a mischievous smile, in a bottle-green jacket",
+  "seed": 938178
+ },
+ "mrs_maggot": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a motherly hobbit woman with a round kind face, hair in a bun and a flour-dusted white apron",
+  "seed": 547683
+ },
+ "nob": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a shy young hobbit servant with tousled hair, wearing a plain apron, eager to please",
+  "seed": 573924
+ },
+ "pippin": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a young hobbit with golden-brown curls, bright eyes and an impish grin, in a red waistcoat",
+  "seed": 454499
+ },
+ "sam": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a sturdy young hobbit gardener with sandy curly hair, a round honest freckled face and earnest eyes, in a brown jerkin",
+  "seed": 23320
+ },
+ "shire_hobbit_villager_1": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a middle-aged hobbit farmer with a ruddy round face and a straw hat",
+  "seed": 313207
+ },
+ "shire_hobbit_villager_2": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, an old hobbit woman with white hair and a lace cap, smiling",
+  "seed": 872013
+ },
+ "shire_hobbit_villager_3": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a young hobbit with messy red hair and freckles, in a blue waistcoat",
+  "seed": 600027
+ },
+ "shire_hobbit_villager_4": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a stout hobbit miller with flour on a bald head and a big moustache",
+  "seed": 226552
+ },
+ "shire_hobbit_villager_5": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a hobbit lass with a long brown braid and a flowered dress",
+  "seed": 2414
+ },
+ "shire_hobbit_villager_6": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, warm golden-green background, a thin elderly hobbit with spectacles and a green coat",
+  "seed": 903252
+ },
+ "strider": {
+  "prompt": "gouache illustration, flat painterly shapes with visible brush strokes and soft paper grain, storybook character portrait, head and shoulders, face centred, simple softly vignetted background, muted earthy colours, golden-hour warmth, hand-painted children's book art, not photographic, cooler dusky blue-brown background, a weathered Ranger of the North with dark hair, grey eyes and stubble, hood up, in a patched green-brown cloak, guarded and stern",
+  "seed": 839031
+ }
+}

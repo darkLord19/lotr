@@ -27,7 +27,7 @@ Terrain3D release binaries are not downloadable in the cloud container (GitHub r
 Remaining: villager spawner + villager definitions content, wire OffscreenSim.serialise/deserialise into SaveSystem, capture to docs/reports/m1_sim/ (--date=3018-09-24T16:00 at the riders' road).
 
 ## M1-T13 remaining (needs Mac/GPU/key; item 3 is code-only and already true: PlayerSession builds Journal and DialoguePanel, Main builds RumourNetwork)
-1. Portraits via mflux (FLUX schnell is gated and there is no HF account, so use ungated `mflux-generate-z-image-turbo`; install mflux into `.venv-art`, Python 3.12, because sentencepiece does not build on 3.15): `pip install mflux` into .venv (check disk, `df -h`, >= 30 GB must remain; use `-q 4` if tight), write tools/art/style.txt + tools/art/portraits.py (one per named NPC, 6 per villager template, 768x768 fixed seeds -> game/assets/portraits/<id>.png; Black Rider = hood with darkness, no face). Contact sheet check; max 3 retries per failure. Also journal/inventory UI textures, parchment, illustrated map.
+1. DONE: 35 portraits (see PROGRESS.md M1-T13). Still to do locally: journal/inventory UI textures, parchment, illustrated map with the same `tools/art` pipeline (add entries + sizes), reusing `build/art/zimage-q4`.
 2. Live dialogue probes -> docs/reports/m1_dialogue.md (Gaffer 09-24, Butterbur 09-20, Maggot/Mrs Maggot rumour, Strider 09-29, Gandalf).
 3. World scene must instantiate RumourNetwork, DialoguePanel and Journal (not autoloads yet).
 

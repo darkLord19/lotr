@@ -96,3 +96,6 @@
 - `build_heightmap.py` is stable across platforms to within 5 mm (max 0.0049 m vs the committed engine copy), so I reverted the regenerated terrain files and reports.
 - A fresh clone has no `game/.godot` class cache: `tools/test.sh` fails with "Identifier GameDate not declared" until `godot --headless --path game --import` has run once. Run that after cloning.
 - Mac toolchain: Godot 4.7.2 and Blender 5.2.3 via `brew install --cask`; symlinks in `tools/bin`; `.venv` from Homebrew Python 3.15 (all tools/ tests pass on it).
+
+- **📝 REVIEW ITEM (look): portraits** docs/reports/m1_portraits/contact_sheet.png. Consistent gouache storybook style. Weak spots: Gildor reads feminine; Mrs Maggot and Nob are very similar plain faces; Frodo looks young (canon: 50 but unageing). Regenerate any one with `.venv-art/bin/python tools/art/portraits.py --retry <id>` after editing tools/art/looks.json.
+- FLUX.1-schnell is gated on Hugging Face and the owner has no account, so the ungated Z-Image-Turbo is used (Apache-2.0, 6B).
