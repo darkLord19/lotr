@@ -90,3 +90,9 @@
 
 - **📝 M1-T17 playtest checklist (for you):** see docs/reports/m1_acceptance.md (Bucklander reaches Bree before 09-29 and meets Strider; Breelander in mode B who never goes west makes the party wait; save/load).
 - **📝 M1-T06 captures:** docs/reports/m1_style/{bag_end_close,hobbiton_overview,bree_gate,prancing_pony_yard}.png. Bree reads well (timber, lit windows); Bag End's hobbit-hole is dark and hard to pick out; open Shire is sparse; terrain shows stair-stepped shading near the camera.
+
+## Local (Mac) session
+- **place_world is not bit-reproducible across platforms.** `pytest tools/terrain/test_place_world.py::test_deterministic_and_in_sync_with_committed_file` fails on the Mac: libm differences in `cos/sin` change the Poisson-disk sampling and the trees diverge (25,491 vs 25,523 foliage, 370 vs 371 objects). The committed JSON (generated in the Linux container) is the canonical world; I did not regenerate it. Regenerating on the Mac would be fine visually but changes the placements every cloud/other-OS run is compared against. Options: (a) regenerate on the Mac and treat the Mac as canonical from now on, (b) make the sync test compare stats/tolerances instead of bytes. Left open.
+- `build_heightmap.py` is stable across platforms to within 5 mm (max 0.0049 m vs the committed engine copy), so I reverted the regenerated terrain files and reports.
+- A fresh clone has no `game/.godot` class cache: `tools/test.sh` fails with "Identifier GameDate not declared" until `godot --headless --path game --import` has run once. Run that after cloning.
+- Mac toolchain: Godot 4.7.2 and Blender 5.2.3 via `brew install --cask`; symlinks in `tools/bin`; `.venv` from Homebrew Python 3.15 (all tools/ tests pass on it).

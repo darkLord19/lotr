@@ -27,7 +27,7 @@ Terrain3D release binaries are not downloadable in the cloud container (GitHub r
 Register OffscreenSim as an autoload (bind(WorldClock, WorldState, Timeline, graph), load_tracks() after content), npc_body spawner (600 m spawn / 700 m despawn, NavigationAgent3D; use set_body_driven/report_body_progress), terrain height for y, villager spawner + villager definitions content, wire OffscreenSim.serialise/deserialise into SaveSystem, capture to docs/reports/m1_sim/ (--date=3018-09-24T16:00 at the riders' road).
 
 ## M1-T13 remaining (needs Mac/GPU/key)
-1. Portraits via mflux: `pip install mflux` into .venv (check disk, `df -h`, >= 30 GB must remain; use `-q 4` if tight), write tools/art/style.txt + tools/art/portraits.py (one per named NPC, 6 per villager template, 768x768 fixed seeds -> game/assets/portraits/<id>.png; Black Rider = hood with darkness, no face). Contact sheet check; max 3 retries per failure. Also journal/inventory UI textures, parchment, illustrated map.
+1. **Handed off to Antigravity/Gemini: see docs/ANTIGRAVITY.md (mflux dropped: FLUX schnell is gated, no HF account).** Old plan: portraits via mflux: `pip install mflux` into .venv (check disk, `df -h`, >= 30 GB must remain; use `-q 4` if tight), write tools/art/style.txt + tools/art/portraits.py (one per named NPC, 6 per villager template, 768x768 fixed seeds -> game/assets/portraits/<id>.png; Black Rider = hood with darkness, no face). Contact sheet check; max 3 retries per failure. Also journal/inventory UI textures, parchment, illustrated map.
 2. Live dialogue probes -> docs/reports/m1_dialogue.md (Gaffer 09-24, Butterbur 09-20, Maggot/Mrs Maggot rumour, Strider 09-29, Gandalf).
 3. World scene must instantiate RumourNetwork, DialoguePanel and Journal (not autoloads yet).
 
@@ -35,7 +35,7 @@ Register OffscreenSim as an autoload (bind(WorldClock, WorldState, Timeline, gra
 The cloud sandbox cannot reach the Git LFS server, so `game/assets/terrain/**` is exempted from LFS in `.gitattributes` (small files committed as plain objects). Any further generated assets committed from the cloud (models, portraits) need the same treatment or must be generated on the Mac. When ready, remove that line and run `git lfs migrate import --include="game/assets/**"`.
 
 ## M1-T14 remaining
-Profiling (Godot profiler/monitors on the M5), occlusion culling bakes, shadow cascade tuning, foliage density scaling, impostors for far trees, quality presets in config/game.json, benchmarks `tools/bench.sh flyover_full | walk_hobbiton_to_bree | night_rain_bree` (avg >= 60 fps, 1% low >= 45, mem < 6 GB; write tools/bench.sh + game/tools/bench_runner.gd first), lanterns/inn window glow at night, river mist volumes (WeatherModel.river_mist), wire WeatherDayNight.serialise into SaveSystem and its concealment/fear multipliers into RiderPerception callers. Re-run final daynight captures at 2560x1440.
+Benchmarks are done and pass (see above), so profiling/occlusion/impostors are optional polish. Still open: quality presets in config/game.json, lanterns/inn window glow at night, river mist volumes (WeatherModel.river_mist), wire WeatherDayNight.serialise into SaveSystem and its concealment/fear multipliers into RiderPerception callers. Re-run final daynight captures at 2560x1440.
 
 ## M1-T15 Audio (cloud used procedural fallback)
 The cloud sandbox cannot download CC0 packs (Kenney, freesound) or MusicGen weights, so every sound is synthesised
@@ -55,8 +55,11 @@ objects because the sandbox cannot reach LFS; `.gitattributes` already exempts `
    Create Music/Ambience audio buses if wanted (currently Master with a per-class dB offset in `config/audio.json` `bus_db`).
 5. Verify on the Mac that `AudioStreamSynchronized` stems stay loop-aligned and that the OGG loops are gap-free (Vorbis encoder padding).
 
-## M1-T06 benchmark
-- Run `tools/bench.sh flyover_full` (and walk routes) on the Mac with the populated world; check 60 fps avg / 45 fps 1% low / <6 GB. If heavy: lower `population.foliage.tier_ranges_m`, `load_radius_m`, tree density constants in tools/terrain/place_world.py, or shadow_kinds. Cloud only checked counters (test_cell_streamer budget sweep).
+## Benchmarks (DONE on the Mac, 2026-10-31)
+`tools/bench.sh flyover_full|walk_hobbiton_to_bree|night_rain_bree` all pass with large headroom (results in PROGRESS.md, CSVs in docs/reports/m1_bench/). Re-run after NPC bodies / riders / HUD / lanterns land (BENCH_UNCAPPED=1 shows headroom over the 120 Hz cap). `--max-seconds=30` gives a quick smoke run.
+
+## Mac setup status (2026-10-31)
+Done: Godot 4.7.2 + Blender 5.2.3 installed, tools/bin symlinks, `.venv` populated, `godot --headless --path game --import` run, `tools/verify.sh` passes except the place_world sync pytest (platform float differences, see REVIEW.md "Local (Mac) session"). Still no OPENROUTER_API_KEY in the environment, so the live LLM items above are blocked until it is exported. Free disk is ~47 GB, so mflux/MusicGen need the `-q 4` / `small` options to keep 30 GB free.
 
 ## Recommended order for the local (Mac) session
 1. `brew install --cask godot blender`; symlink into tools/bin; `.venv` + `pip install -r tools/requirements.txt`; run `tools/verify.sh` (should pass; the Python terrain tests and Blender build need the venv/Blender).
