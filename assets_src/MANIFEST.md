@@ -36,3 +36,13 @@ Checked by `tools/audio/test_audio_assets.py` (each path below must appear here)
 | `game/assets/audio/sfx/footstep_wood_3.ogg` | synth_sfx.py (numpy synthesis) | generated in-repo, seeded | CC0 / own work |
 | `game/assets/audio/sfx/heartbeat.ogg` | synth_sfx.py (numpy synthesis) | generated in-repo, seeded | CC0 / own work |
 | `game/assets/audio/sfx/rider_screech.ogg` | synth_sfx.py (numpy synthesis) | generated in-repo, seeded | CC0 / own work |
+| `game/assets/audio/music/cues/bree_evening.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/dusk_reflective.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/night_lullaby.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/rain_melancholy.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/rider_dread.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/road_travel.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/shire_day.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/shire_morning.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/tavern_jig.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |
+| `game/assets/audio/music/cues/tension_low.ogg` | tools/audio/musicgen_cues.py (MusicGen-small, facebook/musicgen-small, seeded) | generated locally, 30 s, -16 LUFS target | MusicGen weights are CC-BY-NC 4.0: personal use only |

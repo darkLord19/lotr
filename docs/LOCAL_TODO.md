@@ -43,9 +43,7 @@ The cloud sandbox cannot download CC0 packs (Kenney, freesound) or MusicGen weig
 objects because the sandbox cannot reach LFS; `.gitattributes` already exempts `game/assets/**`). To finish on the Mac:
 1. Listen to everything (nothing was auditioned; there is no audio device in the cloud). Retune synth constants or swap in real CC0 recordings
    for footsteps, birds, river, door and crowd murmur (record source + licence of each in `assets_src/MANIFEST.md`; keep the filenames or edit `config/audio.json`).
-2. MusicGen (MLX, `small` if disk is tight): generate 8-12 cues (pastoral folk flute/harp, tense low strings, tavern fiddle jig, night lullaby, ...) at 30 s,
-   trim to loops, loudnorm to -16 LUFS, OGG into `game/assets/audio/music/`, then add them as new cues/stems in `config/audio.json` (`music.cues`) — the director is data driven.
-   The current stems are 24 s phase-locked loops of one shared length; whole-cue MusicGen files would need a second player path (or be cut into the same length).
+2. DONE (generation): 10 whole-cue files in `game/assets/audio/music/cues/` (shire_morning, shire_day, road_travel, bree_evening, tavern_jig, night_lullaby, tension_low, rider_dread, rain_melancholy, dusk_reflective), 30 s, loudnorm -16 LUFS, no clipping. `tools/audio/musicgen_cues.py` (needs `.venv-music`: `uv venv --python 3.12 .venv-music && uv pip install --python .venv-music/bin/python torch transformers scipy soundfile numpy`). NOT auditioned (no ears here): listen and regenerate weak ones (edit the prompt/seed in CUES). Not wired: config/audio.json has no whole-cue path yet (code-only, cloud). Weights are CC-BY-NC, personal use only.
 3. Record the 60 s gameplay audio check: `godot --write-movie build/m1_audio.avi` along `walk_hobbiton_to_bree`, then
    `ffmpeg -i build/m1_audio.avi -af volumedetect -f null -` (max_volume < 0 dB) and copy to `docs/reports/m1_audio/`. Skipped in the cloud (no audio device).
 4. (CODE ONLY, cloud can do this) Scene wiring (world/ was off limits): add `Ambience` and `MusicDirector` nodes to the world scene; call `set_location` (settlement/field/river/forest_edge/inn_interior)

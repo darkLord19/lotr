@@ -10,3 +10,4 @@ assets_src/**
 __pycache__/
 *.pyc
 .venv-art/
+.venv-music/
