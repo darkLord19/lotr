@@ -19,7 +19,7 @@ FACTION = {"shire": (60, 140, 60), "buckland": (40, 110, 150), "bree": (170, 90,
 ROAD = {"road": ((150, 110, 60), 5), "path": ((170, 140, 90), 2), "ferry": ((40, 60, 160), 3), "bridge": ((90, 60, 30), 5)}
 
 
-def render(region: dict) -> Image.Image:
+def render(region: dict, labels: bool = True) -> Image.Image:
     w_m, h_m = region["size_m"]
     k = WIDTH / w_m
     h = round(h_m * k)
@@ -60,6 +60,8 @@ def render(region: dict) -> Image.Image:
         d.line([px([pos[a]["pos"][0], pos[a]["pos"][2]]), px([pos[b]["pos"][0], pos[b]["pos"][2]])], fill=(255, 255, 255, 70), width=S)
 
     img = img.resize((WIDTH, h), Image.LANCZOS)
+    if not labels:
+        return img  # art reference: terrain, water and roads only, no text or markers
     d = ImageDraw.Draw(img, "RGBA")
     font = ImageFont.truetype(FONT, 12)
     big = ImageFont.truetype(FONT_BOLD, 16)

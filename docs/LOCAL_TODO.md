@@ -27,7 +27,7 @@ Terrain3D release binaries are not downloadable in the cloud container (GitHub r
 Remaining: villager spawner + villager definitions content, wire OffscreenSim.serialise/deserialise into SaveSystem, capture to docs/reports/m1_sim/ (--date=3018-09-24T16:00 at the riders' road).
 
 ## M1-T13 remaining (needs Mac/GPU/key; item 3 is code-only and already true: PlayerSession builds Journal and DialoguePanel, Main builds RumourNetwork)
-1. DONE: 35 portraits (see PROGRESS.md M1-T13). Still to do locally: journal/inventory UI textures, parchment, illustrated map with the same `tools/art` pipeline (add entries + sizes), reusing `build/art/zimage-q4`.
+1. DONE: 35 portraits and UI textures (parchment, journal_page, inventory_panel, region_map in game/assets/ui/, see PROGRESS.md M1-T13). Using them in the UI is code-only (cloud): journal/inventory skins, map screen with POI labels overlaid, villager portrait lookup `<template>_<n>.png`.
 2. Live dialogue probes -> docs/reports/m1_dialogue.md (Gaffer 09-24, Butterbur 09-20, Maggot/Mrs Maggot rumour, Strider 09-29, Gandalf).
 3. World scene must instantiate RumourNetwork, DialoguePanel and Journal (not autoloads yet).
 
